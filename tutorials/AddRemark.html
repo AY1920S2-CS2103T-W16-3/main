@@ -167,7 +167,7 @@ Let&#8217;s change the command to throw an <code>CommandException</code> to accu
 <h2 id="enhancing-code-remarkcommand-code"><a class="link" href="#enhancing-code-remarkcommand-code">Enhancing <code>RemarkCommand</code></a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Let&#8217;s change <code>RemarkCommand</code> to  parse input from the user.</p>
+<p>Let&#8217;s change <code>RemarkCommand</code> to parse input from the user.</p>
 </div>
 <div class="sect2">
 <h3 id="make-the-command-accept-parameters"><a class="link" href="#make-the-command-accept-parameters">Make the command accept parameters</a></h3>
@@ -281,7 +281,8 @@ Let&#8217;s look through <code>ArgumentMultimap</code> :</p>
 </div>
 <div class="paragraph">
 <p>This appears to be what we need to get a String of the remark.
-But what about the Index? Taking a quick peek at existing an <code>Command</code>&#8230;&#8203;</p>
+But what about the Index?
+Taking a quick peek at existing an <code>Command</code>&#8230;&#8203;</p>
 </div>
 <div class="listingblock">
 <div class="title">DeleteCommandParser.java</div>
@@ -348,7 +349,8 @@ That means we should add a <code>Remark</code> class so that we can use a <code>
 <div class="sect2">
 <h3 id="add-a-new-code-remark-code-class"><a class="link" href="#add-a-new-code-remark-code-class">Add a new <code>Remark</code> class</a></h3>
 <div class="paragraph">
-<p>Create a new <code>Remark</code> in <code>seedu.address.model.person</code>. Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
+<p>Create a new <code>Remark</code> in <code>seedu.address.model.person</code>.
+Since a <code>Remark</code> is a field that is similar to <code>Address</code>, we can reuse a significant bit of code.</p>
 </div>
 <div class="paragraph">
 <p>A copy-paste and search-replace later, you should have something like <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/b7a47c50c8e5f0430d343a23d2863446b6ce9298#diff-af2f075d24dfcd333876f0fbce321f25">this</a>.
@@ -397,7 +399,8 @@ It might sound like Greek to you right now, don&#8217;t worry&#8201;&#8212;&#820
 <p>into <a href="https://github.com/nus-cs2103-AY1920S1/addressbook-level3/commit/2758455583f0101ed918a318fc75679270843a0d#diff-12580431f55d7880578aa4c16f249e71"><code>main/resources/view/PersonListCard.fxml</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>That&#8217;s it! Fire up the application again and you should see something like this:</p>
+<p>That&#8217;s it!
+Fire up the application again and you should see something like this:</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -530,7 +533,7 @@ Since all fields in a <code>Person</code> are immutable, we create a new instanc
                 personToEdit.getAddress(), remark, personToEdit.getTags());
 
         model.setPerson(personToEdit, editedPerson);
-        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+        model.updateFilteredPersonList(PREDICATE_SHOW_ALL_TASKS);
 
         <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(generateSuccessMessage(editedPerson));
     }
@@ -561,8 +564,8 @@ Since all fields in a <code>Person</code> are immutable, we create a new instanc
 <h2 id="writing-tests"><a class="link" href="#writing-tests">Writing tests</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Tests are crucial to ensuring that bugs don&#8217;t slip into the codebase unnoticed. This is especially true for large
-code bases where a change might lead to unintended behavior.</p>
+<p>Tests are crucial to ensuring that bugs don&#8217;t slip into the codebase unnoticed.
+This is especially true for large code bases where a change might lead to unintended behavior.</p>
 </div>
 <div class="paragraph">
 <p>Let&#8217;s verify the correctness of our code by writing some tests!</p>
@@ -599,7 +602,8 @@ On <code>IntelliJ IDEA</code> you can bring up the context menu and choose to <c
 <p>Following convention, let&#8217;s change the name of the generated method to <code>execute_addRemarkUnfilteredList_success</code>.</p>
 </div>
 <div class="paragraph">
-<p>Let&#8217;s use the utility functions provided in <code>CommandTestUtil</code>. The functions ensure that commands produce the expected <code>CommandResult</code> and output the correct message.
+<p>Let&#8217;s use the utility functions provided in <code>CommandTestUtil</code>.
+The functions ensure that commands produce the expected <code>CommandResult</code> and output the correct message.
 In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit as we are testing that a <code>RemarkCommand</code> will successfully add a <code>Remark</code>.</p>
 </div>
 <div class="paragraph">
@@ -616,4 +620,4 @@ In this case, <code>CommandTestUtil#assertCommandSuccess</code> is the best fit 
 <p>This concludes the tutorial for adding a new <code>Command</code> to AddressBook.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-06 04:11:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-08 05:04:38 UTC</div></div></div></body></html>

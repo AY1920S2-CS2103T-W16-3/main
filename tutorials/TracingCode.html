@@ -4,8 +4,8 @@
 <div class="sectionbody">
 <div class="quoteblock">
 <blockquote>
-Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as
-part of the effort to write new code.  &#8230;&#8203;[Therefore,] making it easy to read makes it easier to write.
+Indeed, the ratio of time spent reading versus writing is well over 10 to 1. We are constantly reading old code as part of the effort to write new code.
+&#8230;&#8203;[Therefore,] making it easy to read makes it easier to write.
 </blockquote>
 <div class="attribution">
 &#8212; Robert C. Martin<br>
@@ -13,14 +13,14 @@ part of the effort to write new code.  &#8230;&#8203;[Therefore,] making it easy
 </div>
 </div>
 <div class="paragraph">
-<p>When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution
-path through the code base. One easy way to trace an execution path is to use a debugger to step through the code.
+<p>When trying to understand an unfamiliar code base, one common strategy used is to trace some representative execution path through the code base.
+One easy way to trace an execution path is to use a debugger to step through the code.
 In this tutorial, you will be using the IntelliJ IDEA&#8217;s debugger to trace the execution path of a specific user command.</p>
 </div>
 <div class="paragraph">
-<p>Before we jump into the code, it is useful to get an idea of the overall structure and the high-level behavior of the
-application. This is provided in the 'Architecture' section of the developer guide. In particular, the
-architecture diagram (reproduced below), tells us that the App consists of several components.</p>
+<p>Before we jump into the code, it is useful to get an idea of the overall structure and the high-level behavior of the application.
+This is provided in the 'Architecture' section of the developer guide.
+In particular, the architecture diagram (reproduced below), tells us that the App consists of several components.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -37,9 +37,9 @@ architecture diagram (reproduced below), tells us that the App consists of sever
 <div class="title">Figure 1. Architecture sequence diagram from the developer guide</div>
 </div>
 <div class="paragraph">
-<p>Note how the diagram shows only how the execution flows <em>between</em> the main components. That is, it does not show details of
-the execution path <em>inside</em> each component. By hiding those details, the diagram succeeds in informing the reader
-about the overall execution path of a command without overwhelming the reader with too much details.
+<p>Note how the diagram shows only how the execution flows <em>between</em> the main components.
+That is, it does not show details of the execution path <em>inside</em> each component.
+By hiding those details, the diagram succeeds in informing the reader about the overall execution path of a command without overwhelming the reader with too much details.
 In this tutorial, you aim to find those omitted details so that you get a more in-depth understanding of the code base.</p>
 </div>
 <div class="paragraph">
@@ -65,13 +65,12 @@ In this tutorial, you aim to find those omitted details so that you get a more i
 <div class="sectionbody">
 <div class="paragraph">
 <p>As you know, the first step of debugging is to put in a breakpoint where you want the debugger to pause the execution.
-For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement
-of the <code>main</code> method. In our case, we would want to begin the tracing at the very point where the App start processing
-user input i.e., somewhere in the UI component, and then trace through how the execution proceeds through the UI component.
-However, the execution path through a GUI is often somewhat obscure due to various <em>event-driven mechanisms</em>
-used by GUI frameworks, which happens to be the case here too. Therefore, let us put the breakpoint where the UI transfers
-control to the Logic component. According to the sequence diagram, the UI component yields control to the Logic component
-through a method named <code>execute</code>. Searching through the code base for <code>execute()</code> yields a promising candidate in
+For example, if you are trying to understand how the App starts up, you would put a breakpoint in the first statement of the <code>main</code> method.
+In our case, we would want to begin the tracing at the very point where the App start processing user input i.e., somewhere in the UI component, and then trace through how the execution proceeds through the UI component.
+However, the execution path through a GUI is often somewhat obscure due to various <em>event-driven mechanisms</em> used by GUI frameworks, which happens to be the case here too.
+Therefore, let us put the breakpoint where the UI transfers control to the Logic component.
+According to the sequence diagram, the UI component yields control to the Logic component through a method named <code>execute</code>.
+Searching through the code base for <code>execute()</code> yields a promising candidate in
 <code>seedu.address.ui.CommandBox.CommandExecutor</code>.</p>
 </div>
 <div class="imageblock">
@@ -81,9 +80,10 @@ through a method named <code>execute</code>. Searching through the code base for
 <div class="title">Figure 2. Using the <code>Search for target by name</code> feature. <code>Navigate</code> &gt; <code>Symbol</code>.</div>
 </div>
 <div class="paragraph">
-<p>A quick look at the class confirms that this is indeed close to what we&#8217;re looking for. However, it is just an
-<code>Interface</code>. Let&#8217;s delve further and find the implementation of the interface by using the <code>Find Usages</code> feature in
-IntelliJ IDEA.</p>
+<p>A quick look at the class confirms that this is indeed close to what we&#8217;re looking for.
+However, it is just an
+<code>Interface</code>.
+Let&#8217;s delve further and find the implementation of the interface by using the <code>Find Usages</code> feature in IntelliJ IDEA.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -95,8 +95,9 @@ IntelliJ IDEA.</p>
 <p>Bingo! <code>MainWindow#executeCommand()</code> seems to be exactly what we&#8217;re looking for!</p>
 </div>
 <div class="paragraph">
-<p>Now let&#8217;s set the breakpoint. First, double-click the item to reach the corresponding code. Once there, click on the left
-gutter to set a breakpoint, as shown below.
+<p>Now let&#8217;s set the breakpoint.
+First, double-click the item to reach the corresponding code.
+Once there, click on the left gutter to set a breakpoint, as shown below.
 <span class="image"><img src="../images/tracing/LeftGutter.png" alt="LeftGutter"></span></p>
 </div>
 </div>
@@ -117,8 +118,8 @@ gutter to set a breakpoint, as shown below.
 <td class="content">
 <div class="title">Taking notes</div>
 <div class="paragraph">
-<p>Over the course of the debugging session, you will encounter every major component in the application. Try to jot down
-what happens inside the component and where the execution transfers to another component.</p>
+<p>Over the course of the debugging session, you will encounter every major component in the application.
+Try to jot down what happens inside the component and where the execution transfers to another component.</p>
 </div>
 </td>
 </tr>
@@ -154,7 +155,8 @@ what happens inside the component and where the execution transfers to another c
 </div>
 </li>
 <li>
-<p>We end up in <code>LogicManager#execute()</code>. Let&#8217;s take a look at the body of the method and annotate what we can deduce.</p>
+<p>We end up in <code>LogicManager#execute()</code>.
+Let&#8217;s take a look at the body of the method and annotate what we can deduce.</p>
 <div class="listingblock">
 <div class="title">LogicManager#execute()</div>
 <div class="content">
@@ -183,8 +185,8 @@ what happens inside the component and where the execution transfers to another c
 </div>
 </li>
 <li>
-<p><code>LogicManager#execute()</code> appears to delegate most of the heavy lifting to other components. Let&#8217;s take a closer
-look at each one.</p>
+<p><code>LogicManager#execute()</code> appears to delegate most of the heavy lifting to other components.
+Let&#8217;s take a closer look at each one.</p>
 </li>
 <li>
 <p><code>Step over</code> the logging code since it is of no interest to us now.
@@ -204,7 +206,8 @@ look at each one.</p>
 </div>
 </li>
 <li>
-<p><code>Step over</code> until you reach the <code>switch</code> statement. The <code>Variables</code> window now shows the value of both
+<p><code>Step over</code> until you reach the <code>switch</code> statement.
+The <code>Variables</code> window now shows the value of both
 <code>commandWord</code> and <code>arguments</code> :</p>
 <div class="paragraph">
 <p><span class="image"><img src="../images/tracing/Variables.png" alt="Variables"></span></p>
@@ -229,8 +232,7 @@ case EditCommand.COMMAND_WORD:
 <p>Let&#8217;s see what <code>EditCommandParser#parse()</code> does by stepping into it.</p>
 </li>
 <li>
-<p>Stepping through the method shows that it calls <code>ArgumentTokenizer#tokenize()</code> and <code>ParserUtil#parseIndex()</code> to
-obtain the arguments and index required.</p>
+<p>Stepping through the method shows that it calls <code>ArgumentTokenizer#tokenize()</code> and <code>ParserUtil#parseIndex()</code> to obtain the arguments and index required.</p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -240,7 +242,8 @@ obtain the arguments and index required.</p>
 <td class="content">
 <div class="title">Stepping out</div>
 <div class="paragraph">
-<p>Sometimes you might end up stepping into functions that are not of interest. Simply <code>step out</code> of them!</p>
+<p>Sometimes you might end up stepping into functions that are not of interest.
+Simply <code>step out</code> of them!</p>
 </div>
 </td>
 </tr>
@@ -249,7 +252,8 @@ obtain the arguments and index required.</p>
 </li>
 <li>
 <p>The rest of the method seems to exhaustively check for the existence of each possible parameter of the <code>edit</code>
-command and store any possible changes in an <code>EditPersonDescriptor</code>. Recall that we can verify the contents of
+command and store any possible changes in an <code>EditPersonDescriptor</code>.
+Recall that we can verify the contents of
 <code>editPersonDesciptor</code> through the <code>Variable</code> tool window.</p>
 <div class="paragraph">
 <p><span class="image"><img src="../images/tracing/EditCommand.png" alt="EditCommand"></span></p>
@@ -282,7 +286,7 @@ Does the execution path you traced in the code so far matches with the diagram?<
         <span class="keyword">throw</span> <span class="keyword">new</span> CommandException(MESSAGE_DUPLICATE_PERSON);
     }
     model.setPerson(personToEdit, editedPerson);
-    model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
+    model.updateFilteredPersonList(PREDICATE_SHOW_ALL_TASKS);
     <span class="keyword">return</span> <span class="keyword">new</span> CommandResult(<span class="predefined-type">String</span>.format(MESSAGE_EDIT_PERSON_SUCCESS, editedPerson));
 }</code></pre>
 </div>
@@ -296,8 +300,8 @@ Does the execution path you traced in the code so far matches with the diagram?<
 <code>JsonAddressBook#saveAddressBook()</code>.</p>
 </li>
 <li>
-<p>Again, it appears that the heavy lifting is delegated. Let&#8217;s take a look at <code>JsonSerializableAddressBook</code>'s
-constructor.</p>
+<p>Again, it appears that the heavy lifting is delegated.
+Let&#8217;s take a look at <code>JsonSerializableAddressBook</code>'s constructor.</p>
 <div class="listingblock">
 <div class="title">JsonSerializableAddressBook#JsonSerializableAddressBook()</div>
 <div class="content">
@@ -347,23 +351,22 @@ constructor.</p>
 <h2 id="conclusion"><a class="link" href="#conclusion">Conclusion</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>In this tutorial, we traced a valid edit command from raw user input to the result being displayed to the user. From
-this tutorial, you learned more about the inner workings of AddressBook and how the various components mesh together
-to form one cohesive product.</p>
+<p>In this tutorial, we traced a valid edit command from raw user input to the result being displayed to the user.
+From this tutorial, you learned more about the inner workings of AddressBook and how the various components mesh together to form one cohesive product.</p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="title">What&#8217;s next?</div>
 <div class="paragraph">
-<p>Here are some quick questions you can try to answer based on your execution path tracing. In some cases, you can
-do further tracing for the given commands to find exactly what happens.</p>
+<p>Here are some quick questions you can try to answer based on your execution path tracing.
+In some cases, you can do further tracing for the given commands to find exactly what happens.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>In this tutorial, we traced the "happy path" (i.e., no errors). What do you think will happen if we traced the following commands
-instead? What exceptions do you think will be thrown(if any), where will the exceptions be thrown and where will they be
-handled?</p>
+<p>In this tutorial, we traced the "happy path" (i.e., no errors).
+What do you think will happen if we traced the following commands instead?
+What exceptions do you think will be thrown(if any), where will the exceptions be thrown and where will they be handled?</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -417,4 +420,4 @@ handled?</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-06 04:11:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-08 05:04:38 UTC</div></div></div></body></html>
