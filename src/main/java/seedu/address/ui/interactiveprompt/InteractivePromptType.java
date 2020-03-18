@@ -15,6 +15,5 @@ public enum InteractivePromptType {
     CREATE_MODULE,
     SORT_TASK,
     HELP,
-    INVALID_MSG,
-    FIND_TASK;
+    INVALID_MSG;
 }
