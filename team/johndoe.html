@@ -415,7 +415,7 @@ If there are no such inconsistencies, the due soon command will not make any cha
 <div class="sect2">
 <h3 id="archive-feature"><a class="link" href="#archive-feature">Archive feature</a></h3>
 <div class="paragraph">
-<p>Archive stores selected task away into a seperate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
+<p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
 </div>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
@@ -429,6 +429,61 @@ If there are no such inconsistencies, the due soon command will not make any cha
 <div class="content">
 <img src="../images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="achievement-feature"><a class="link" href="#achievement-feature">Achievement feature</a></h3>
+<div class="paragraph">
+<p>The achievement feature keeps track of usage statistics and displays the user&#8217;s achievements
+and feedback on the user&#8217;s weekly performance.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h4>
+<div class="paragraph">
+<p>The achievement feature keeps track of usage statistics that are important to the user.
+Each usage statistic is recorded when the respective user command has completed. The user command is
+said to be completed when the respective <code>InteractivePrompt</code> has completed successfully.</p>
+</div>
+<div class="paragraph">
+<p>For example, the following are the usage statistics logged for the <code>CompleteTaskInteractivePrompt</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Number of tasks completed</p>
+</li>
+<li>
+<p>Number of tasks completed on time</p>
+</li>
+<li>
+<p>Number of tasks deadlines missed</p>
+</li>
+<li>
+<p>Average amount of time exceeded</p>
+</li>
+<li>
+<p>Average amount of buffer time</p>
+</li>
+<li>
+<p>Time spent on each type of task</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Similarly, usage statistics are recorded for other user commands as well.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">Example Use Scenario</a></h4>
+<div class="paragraph">
+<p>Clicking on the achievement menu item will enable this feature.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p>Pending.</p>
 </div>
 </div>
 </div>
@@ -893,4 +948,4 @@ Expected: Similar to previous.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:21:37 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:48:32 UTC</div></div></div></body></html>
