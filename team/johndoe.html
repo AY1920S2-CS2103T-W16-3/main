@@ -259,7 +259,7 @@ Deletes the 1st task in the results of the <code>find</code> command.</p>
 </div>
 <div class="paragraph">
 <p>Step 1. The user launches the application for the first time.
-The list of tasks due soon will be initialized and displayed with the initial address book state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
+The list of tasks due soon will b   e initialized and displayed with the initial address book state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
 </div>
 <div class="paragraph">
 <p>Activity diagram:</p>
@@ -343,6 +343,91 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </li>
 </ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">Calendar feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<div class="paragraph">
+<p>The calendar feature, as the name suggests, displays a calendar fo users.</p>
+</div>
+<div class="paragraph">
+<p>The feature is implemented by overriding the task list display panel on the main window with calendar box. The calendar currently supports following features:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Displays the name of all tasks on that day in the calendar grid.</p>
+</li>
+<li>
+<p>Access calendars in previous or next month using the buttons on top.</p>
+</li>
+<li>
+<p>Displays more information about tasks for the day on the due soon panel after clicking on a grid. (Not done)</p>
+</li>
+<li>
+<p>Fast forward to a specific year/month using CLI. (Not done)</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">Example usage scenario</a></h4>
+<div class="paragraph">
+<p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The calendar box object will be constructed</p>
+</li>
+<li>
+<p>The calendar loops through every day of the month while searching for tasks due on that day</p>
+</li>
+<li>
+<p>The task name is added to the calendar grid</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Activity diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>It is more efficient to cache the calendar rather than to generate a new one, however, we do not expect the user to have too many tasks (n&gt;1000000) and therefore it should not slow down the application.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="archive-feature"><a class="link" href="#archive-feature">Archive feature</a></h3>
+<div class="paragraph">
+<p>Archive stores selected task away into a seperate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<div class="paragraph">
+<p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
+</div>
+<div class="paragraph">
+<p>Sequence diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
 </div>
 </div>
@@ -808,4 +893,4 @@ Expected: Similar to previous.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 12:04:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 14:38:12 UTC</div></div></div></body></html>
