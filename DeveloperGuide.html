@@ -22,13 +22,15 @@
 </li>
 <li><a href="#implementation">3. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#due-soon-tasks-feature">3.1. Due Soon Tasks feature</a></li>
-<li><a href="#calendar-feature">3.2. Calendar feature</a></li>
-<li><a href="#archive-feature">3.3. Archive feature</a></li>
-<li><a href="#achievement-feature">3.4. Achievement feature</a></li>
-<li><a href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">3.6. Logging</a></li>
-<li><a href="#Implementation-Configuration">3.7. Configuration</a></li>
+<li><a href="#due-soon-tasks-feature">3.1. Due Soon Tasks Feature</a></li>
+<li><a href="#task-summary-feature">3.2. Task Summary Feature</a></li>
+<li><a href="#calendar-feature">3.3. Calendar feature</a></li>
+<li><a href="#archive-feature">3.4. Archive feature</a></li>
+<li><a href="#achievement-feature">3.5. Achievement feature</a></li>
+<li><a href="#modules">3.6. Modules</a></li>
+<li><a href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></li>
+<li><a href="#logging">3.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">3.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">4. Documentation</a></li>
@@ -178,8 +180,15 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/src/main/java/seedu/address/ui/Ui.java"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>CommandBox</code>, <code>ResultDisplay</code>, <code>PersonListPanel</code>, <code>StatusBarFooter</code> etc.
-All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>BrandingLabel</code>, <code>TaskListPanel</code>,
+ <code>DueSoonTaskListPanel</code>, <code>TaskSummaryPanel</code>, <code>CalenderPanel</code>, <code>ResultDisplay</code>, <code>CommandBox</code>, <code>StatusBarFooter</code> etc.</p>
+</div>
+<div class="paragraph">
+<p>All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>TaskListPanel</code> and <code>DueSoonTaskListPanel</code> can switch with <code>TaskSummaryPanel</code> or <code>CalenderPanel</code> accordingly
+as user click <code>Statistics&#8594;Task Summary</code> or <code>Calender&#8594;Show Calender</code>.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework.
@@ -187,17 +196,48 @@ The layout of these UI parts are defined in matching <code>.fxml</code> files th
 For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/src/main/java/seedu/address/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
 <div class="paragraph">
+<p>Study Buddy provides an interactive way for command execution. <code>AddTaskInteractivePrompt</code>, <code>DeleteTaskInteractivePrompt</code>,
+<code>SortTaskInteractivePrompt</code> etc are used to handle each types of command executions. Besides, they all <code>extends</code> the <code>InteractivePrompt</code> abstract class.</p>
+</div>
+<div class="paragraph">
 <p>The <code>UI</code> component,</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>Executes user commands using the <code>Logic</code> component.</p>
+<p>Provides interactive command process.</p>
+</li>
+<li>
+<p>Allows users to exit from a command execution at any interaction step using <code>quit</code>.</p>
+</li>
+<li>
+<p>Validate user input in each interaction.</p>
+</li>
+<li>
+<p>When invalid input received, proper message will respond in <code>ResultDisplay</code> node.
+The execution of the command will not be terminated, user can continue with the process with valid input.</p>
+</li>
+<li>
+<p>Result in final executable command and executes it using the <code>Logic</code> component.</p>
 </li>
 <li>
 <p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command execution will only terminate in two scenarios:<br>
+1.  When the command is successfully executed.<br>
+2.  When the user enter <code>quit</code> and <kbd>enter</kbd> to exit the execution.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
@@ -303,7 +343,7 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W16-
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">3.1. Due Soon Tasks feature</a></h3>
+<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">3.1. Due Soon Tasks Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">3.1.1. Implementation</a></h4>
 <div class="paragraph">
@@ -348,7 +388,7 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W16-
 <p>Refresh&#8201;&#8212;&#8201;</p>
 <div class="literalblock">
 <div class="content">
-<pre>Command: due soon</pre>
+<pre>Command: refresh</pre>
 </div>
 </div>
 </li>
@@ -365,7 +405,7 @@ For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W16-
 </div>
 <div class="paragraph">
 <p>Step 1. The user launches the application for the first time.
-The list of tasks due soon will b   e initialized and displayed with the initial address book state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
+The list of tasks due soon will be initialized and displayed with the initial address book state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
 </div>
 <div class="paragraph">
 <p>Activity diagram:</p>
@@ -454,9 +494,130 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.2. Calendar feature</a></h3>
+<h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">3.2. Task Summary Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">3.2.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The task summary feature allows user to enjoy visualized and real-time statistics of their tasks' information.</p>
+</div>
+<div class="paragraph">
+<p>This feature is implemented using different charts as <code>pie chart</code>, <code>area chart</code>, <code>bar chart</code> and <code>line chart</code>.
+All charts are organized in a <code>TabPanel</code> which will replace the <code>ListPanel</code> and <code>Due Soon List Panel</code> in the main window when
+<code>Task Summary</code> in the <code>Menu</code> is clicked.</p>
+</div>
+<div class="paragraph">
+<p>The data of each chart will automatically rebind when user manage their tasks using the commands as below:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>done</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>refresh</code></p>
+</li>
+</ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Only when there is task status change after <code>refresh</code>, the charts will refresh accordingly.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">3.2.2. Example Usage Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task summary mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application with some alive and archived task records in the <code>storage</code>.
+Statistics will perform on the records retrieved, and the result will be visualized as different charts organized in a <code>tab panel</code>.
+After the user clicks <code>Statistics &#8594; Task Summary</code>, the <code>tab panel</code> will display.
+The user successfully executes <code>add</code>, <code>delete</code> or <code>done</code> command when any chart is on the screen.
+The diagram will automatically refresh and reflect the updated record.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user successfully executes <code>add</code>, <code>delete</code> or <code>done</code> command when any chart is on the screen.
+The diagram will automatically refresh and reflect the updated record.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>refresh</code> command, and there is a task status update after the execution.
+For example, when the user is playing with the application, and meanwhile, a task expires.
+The status won&#8217;t update until user call <code>refresh</code> command. In this case, the chart will also automatically refresh and reflect the updated record.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The user executes <code>refresh</code>, and there is no task status update after the execution. The charts will remain the same.</p>
+</div>
+<div class="paragraph">
+<p>Activity diagram for step 4:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/TaskSummaryWithRefreshCommandActivityDiagram.png" alt="TaskSummaryWithRefreshCommandActivityDiagram" width="400">
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-display-charts"><a class="link" href="#aspect-how-to-display-charts">Aspect: How to display charts</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use a <code>tab panel</code> to organize different charts.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to organize and the UI is clean.</p>
+</li>
+<li>
+<p>Cons: Less interaction, and clicking is required. While allowing user to use command to switch among different tabs is under construction.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Use a simple <code>panel</code> to hold the chart, and allow user to use command to toggle the type of charts.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More flexible and more interaction possibilities.</p>
+</li>
+<li>
+<p>Cons: The cost overweight the benefit.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="future-possibility"><a class="link" href="#future-possibility">3.2.4. Future possibility</a></h4>
+<div class="sect4">
+<h5 id="question-should-we-write-this-in-dg"><a class="link" href="#question-should-we-write-this-in-dg">Question: should we write this in DG?</a></h5>
+
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">3.3. Calendar feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The calendar feature, as the name suggests, displays a calendar fo users.</p>
 </div>
@@ -481,7 +642,7 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">3.2.2. Example usage scenario</a></h4>
+<h4 id="example-usage-scenario-3"><a class="link" href="#example-usage-scenario-3">3.3.2. Example usage scenario</a></h4>
 <div class="paragraph">
 <p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
 </div>
@@ -508,7 +669,7 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">3.2.3. Design considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.3.3. Design considerations</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -519,12 +680,12 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </div>
 <div class="sect2">
-<h3 id="archive-feature"><a class="link" href="#archive-feature">3.3. Archive feature</a></h3>
+<h3 id="archive-feature"><a class="link" href="#archive-feature">3.4. Archive feature</a></h3>
 <div class="paragraph">
 <p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">3.3.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">3.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
 </div>
@@ -539,13 +700,13 @@ If there are no such inconsistencies, the due soon command will not make any cha
 </div>
 </div>
 <div class="sect2">
-<h3 id="achievement-feature"><a class="link" href="#achievement-feature">3.4. Achievement feature</a></h3>
+<h3 id="achievement-feature"><a class="link" href="#achievement-feature">3.5. Achievement feature</a></h3>
 <div class="paragraph">
 <p>The achievement feature keeps track of usage statistics and displays the user&#8217;s achievements
 and feedback on the user&#8217;s weekly performance.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">3.4.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">3.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The achievement feature keeps track of usage statistics that are important to the user.
 Each usage statistic is recorded when the respective user command has completed. The user command is
@@ -581,26 +742,65 @@ said to be completed when the respective <code>InteractivePrompt</code> has comp
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">3.4.2. Example Use Scenario</a></h4>
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">3.5.2. Example Use Scenario</a></h4>
 <div class="paragraph">
 <p>Clicking on the achievement menu item will enable this feature.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">3.4.3. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">3.5.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Pending.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.5. [Proposed] Data Encryption</a></h3>
+<h3 id="modules"><a class="link" href="#modules">3.6. Modules</a></h3>
 <div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
+<p>The <code>modules</code> feature enables users to be able to group and view their tasks according to various modules or subjects.
+Each module is assigned with a unique module code &amp; a name.
+By default, all task created with the <code>add</code> command will be be assigned to module code <code>O0000O</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-7"><a class="link" href="#implementation-7">3.6.1. Implementation</a></h4>
+<div class="paragraph">
+<p>Modules are created with <code>create mods</code> Command and the program will request for a module name and module code. There are no restrictions on module name as long as it is not an empty entry.</p>
+</div>
+<div class="paragraph">
+<p>Module codes however, require at least an alphabetical prefix, a number, and a postfix(optional).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Correct moduleCodes:
+A0A
+CS11X
+AA1234
+
+Incorrect moduleCodes:
+123456
+CAT
+555T</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">3.6.2. Sequence diagram for creating modules</a></h4>
+<div class="paragraph">
+<p>This is a sequence of how a module is created using the <code>create mods</code> feature. Take note that all interactions go through the <code>CommandBox</code> first in the UI, but it will be omitted from this diagram for simplicity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">3.6. Logging</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">3.7. [Proposed] Data Encryption</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="logging"><a class="link" href="#logging">3.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging.
 The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
@@ -608,7 +808,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.7, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 3.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -639,7 +839,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.7. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">3.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -1039,4 +1239,4 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:48:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 05:57:47 UTC</div></div></div></body></html>

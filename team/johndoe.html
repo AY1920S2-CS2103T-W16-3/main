@@ -197,301 +197,49 @@ Deletes the 1st task in the results of the <code>find</code> command.</p>
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">Due Soon Tasks feature</a></h3>
+<h3 id="modules"><a class="link" href="#modules">Modules</a></h3>
+<div class="paragraph">
+<p>The <code>modules</code> feature enables users to be able to group and view their tasks according to various modules or subjects.
+Each module is assigned with a unique module code &amp; a name.
+By default, all task created with the <code>add</code> command will be be assigned to module code <code>O0000O</code>.</p>
+</div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
 <div class="paragraph">
-<p>The Due Soon Tasks feature allows users to view the tasks that have deadlines within the next week.</p>
+<p>Modules are created with <code>create mods</code> Command and the program will request for a module name and module code. There are no restrictions on module name as long as it is not an empty entry.</p>
 </div>
 <div class="paragraph">
-<p>This feature is implemented using a panel on the main window with a list of tasks due soon that is updated with every "add", "delete" or "refresh".</p>
+<p>Module codes however, require at least an alphabetical prefix, a number, and a postfix(optional).</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Add&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>Command: add</pre>
+<pre class="CodeRay highlight"><code>Correct moduleCodes:
+A0A
+CS11X
+AA1234
+
+Incorrect moduleCodes:
+123456
+CAT
+555T</code></pre>
 </div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of due soon tasks.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Delete&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
-<div class="content">
-<pre>Command: delete</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>When a task that is deleted from the main list occurs in the due soon list as well, it is automatically deleted.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Refresh&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
-<div class="content">
-<pre>Command: due soon</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Refreshes the list of due soon tasks. This command is useful for a situation where due soon list is not up to date due to a drastic change in time.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">Example Usage Scenario</a></h4>
+<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">Sequence diagram for creating modules</a></h4>
 <div class="paragraph">
-<p>Given below is an example usage scenario and how the due soon list mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time.
-The list of tasks due soon will b   e initialized and displayed with the initial address book state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
-</div>
-<div class="paragraph">
-<p>Activity diagram:</p>
+<p>This is a sequence of how a module is created using the <code>create mods</code> feature. Take note that all interactions go through the <code>CommandBox</code> first in the UI, but it will be omitted from this diagram for simplicity.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
+<img src="../images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>add</code> command to add a task.
-The <code>add</code> command execution checks if this task belongs in the due soon tasks list (i.e it is due in 7 days). If it does, the task is added to both lists, else it is only added to the main list.</p>
-</div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>delete</code> command to delete a task.
-The <code>delete</code> command execution also checks if this task exists in the due soon task list. If it does, task is deleted from both lists, else it is only deleted from the main list.</p>
-</div>
-<div class="paragraph">
-<p>Step 4. The user executes <code>due soon</code> command to refresh the due soon task list.
-The <code>due soon</code> command execution will traverse the main list and check if there are any inconsistencies. For example, if there has been a change in time and a task is missing from the due soon task list, it will be added.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If there are no such inconsistencies, the due soon command will not make any changes.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Activity diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="400">
-</div>
-</div>
-<div class="paragraph">
-<p>Sequence diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="600">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
-<div class="sect4">
-<h5 id="aspect-how-code-due-soon-code-command-works"><a class="link" href="#aspect-how-code-due-soon-code-command-works">Aspect: How <code>due soon</code> command works</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Alternative 1 (current choice):</strong> Does not clear and reload the due soon task list.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Fewer operations need to be performed.</p>
-</li>
-<li>
-<p>Cons: May have be more prone to errors because list is not completely "refreshed". Some parts of it are the same.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Clear and reload the due soon task list.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Less prone to errors since the entire list is "refreshed".</p>
-</li>
-<li>
-<p>Cons: More operation intensive.</p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">Calendar feature</a></h3>
-<div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
-<div class="paragraph">
-<p>The calendar feature, as the name suggests, displays a calendar fo users.</p>
-</div>
-<div class="paragraph">
-<p>The feature is implemented by overriding the task list display panel on the main window with calendar box. The calendar currently supports following features:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Displays the name of all tasks on that day in the calendar grid.</p>
-</li>
-<li>
-<p>Access calendars in previous or next month using the buttons on top.</p>
-</li>
-<li>
-<p>Displays more information about tasks for the day on the due soon panel after clicking on a grid. (Not done)</p>
-</li>
-<li>
-<p>Fast forward to a specific year/month using CLI. (Not done)</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">Example usage scenario</a></h4>
-<div class="paragraph">
-<p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The calendar box object will be constructed</p>
-</li>
-<li>
-<p>The calendar loops through every day of the month while searching for tasks due on that day</p>
-</li>
-<li>
-<p>The task name is added to the calendar grid</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Activity diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design considerations</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>It is more efficient to cache the calendar rather than to generate a new one, however, we do not expect the user to have too many tasks (n&gt;1000000) and therefore it should not slow down the application.</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="archive-feature"><a class="link" href="#archive-feature">Archive feature</a></h3>
-<div class="paragraph">
-<p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
-<div class="paragraph">
-<p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
-</div>
-<div class="paragraph">
-<p>Sequence diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
-</div>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="achievement-feature"><a class="link" href="#achievement-feature">Achievement feature</a></h3>
-<div class="paragraph">
-<p>The achievement feature keeps track of usage statistics and displays the user&#8217;s achievements
-and feedback on the user&#8217;s weekly performance.</p>
-</div>
-<div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h4>
-<div class="paragraph">
-<p>The achievement feature keeps track of usage statistics that are important to the user.
-Each usage statistic is recorded when the respective user command has completed. The user command is
-said to be completed when the respective <code>InteractivePrompt</code> has completed successfully.</p>
-</div>
-<div class="paragraph">
-<p>For example, the following are the usage statistics logged for the <code>CompleteTaskInteractivePrompt</code>.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Number of tasks completed</p>
-</li>
-<li>
-<p>Number of tasks completed on time</p>
-</li>
-<li>
-<p>Number of tasks deadlines missed</p>
-</li>
-<li>
-<p>Average amount of time exceeded</p>
-</li>
-<li>
-<p>Average amount of buffer time</p>
-</li>
-<li>
-<p>Time spent on each type of task</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Similarly, usage statistics are recorded for other user commands as well.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">Example Use Scenario</a></h4>
-<div class="paragraph">
-<p>Clicking on the achievement menu item will enable this feature.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
-<div class="paragraph">
-<p>Pending.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
+
 </div>
 <div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
@@ -932,12 +680,6 @@ Expected: Similar to previous.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="proposed-data-encryption-2"><a class="link" href="#proposed-data-encryption-2">[Proposed] Data Encryption</a></h3>
-<div class="paragraph">
-<p><em>{Explain here how the data encryption feature will be implemented}</em></p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -948,4 +690,4 @@ Expected: Similar to previous.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 16:48:32 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-26 05:57:47 UTC</div></div></div></body></html>
