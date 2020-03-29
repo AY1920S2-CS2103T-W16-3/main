@@ -15,29 +15,24 @@
 <ul class="sectlevel2">
 <li><a href="#basic-features">3.1. Basic features</a>
 <ul class="sectlevel3">
-<li><a href="#help">3.1.1. Help :</a></li>
-<li><a href="#add">3.1.2. Add:</a></li>
-<li><a href="#delete">3.1.3. Delete</a></li>
-<li><a href="#delete-duplicates">3.1.4. Delete duplicates</a></li>
-<li><a href="#find">3.1.5. Find</a></li>
-<li><a href="#list">3.1.6. List</a></li>
-<li><a href="#refresh">3.1.7. Refresh</a></li>
-<li><a href="#edit">3.1.8. Edit</a></li>
-<li><a href="#clear">3.1.9. Clear</a></li>
-<li><a href="#saving-the-data">3.1.10. Saving the data</a></li>
-<li><a href="#exit">3.1.11. Exit</a></li>
+<li><a href="#viewing-help-code-help-code">3.1.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-task-code-add-code">3.1.2. Adding a task: <code>add</code></a></li>
+<li><a href="#listing-all-tasks-code-list-code">3.1.3. Listing all tasks : <code>list</code></a></li>
+<li><a href="#editing-a-task-code-edit-code">3.1.4. Editing a task : <code>edit</code></a></li>
+<li><a href="#locating-tasks-by-name-code-find-code">3.1.5. Locating tasks by name: <code>find</code></a></li>
+<li><a href="#deleting-a-task-code-delete-code">3.1.6. Deleting a task : <code>delete</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">3.1.7. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">3.1.8. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">3.1.9. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#dashboard">3.2. DashBoard</a></li>
-<li><a href="#due-soon-list">3.3. Due Soon List</a></li>
-<li><a href="#status-tags">3.4. Status Tags</a></li>
-<li><a href="#interactive-command-prompt">3.5. Interactive Command Prompt</a></li>
-<li><a href="#statistics">3.6. Statistics</a></li>
-<li><a href="#timers">3.7. Timers</a></li>
-<li><a href="#calendar">3.8. Calendar</a></li>
-<li><a href="#ui">3.9. UI</a></li>
-<li><a href="#profile">3.10. Profile</a></li>
-<li><a href="#piechart">3.11. Piechart</a></li>
+<li><a href="#statistics">3.3. Statistics</a></li>
+<li><a href="#timers">3.4. Timers</a></li>
+<li><a href="#calendar">3.5. Calendar</a></li>
+<li><a href="#ui">3.6. UI</a></li>
+<li><a href="#profile">3.7. Profile</a></li>
+<li><a href="#piechart">3.8. Piechart</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -48,25 +43,12 @@
 <div class="sect1">
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>StudyBuddy is an application designed for students. It makes keeping track of all <strong>module related tasks</strong> extremely convenient.</p>
-</li>
-<li>
-<p>The application even provides functions such as visual aids, timers etc to enhance the user experience.</p>
-</li>
-<li>
-<p>StudyBuddy is also <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
-</li>
-</ol>
-</div>
 <div class="paragraph">
-<p>If you can type fast, Study Buddy can get your module management done faster than traditional GUI apps.
-Interested?</p>
-</div>
-<div class="paragraph">
-<p>Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started.
+<p>StudyBuddy is for an application designed for those who <strong>prefer to use a desktop app for managing module related tasks</strong>.
+More importantly, StudyBuddy is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).
+If you can type fast, Study Buddy can get your module management done faster than traditional GUI apps.
+Interested?
+Jump to the <a href="#quick-start">Section 2, &#8220;Quick Start&#8221;</a> to get started.
 Enjoy!</p>
 </div>
 </div>
@@ -185,326 +167,41 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>add n/NAME</code>, <code>NAME</code> is a parameter which can be used as <code>add n/John Doe</code>.</p>
 </li>
 <li>
-<p>S and U stand for Study Buddy and User respectively.</p>
+<p>Items in square brackets are optional e.g <code>n/NAME [t/TAG]</code> can be used as <code>n/John Doe t/friend</code> or as <code>n/John Doe</code>.</p>
 </li>
 <li>
-<p>When a line is preceded by S, it implies that it is a reply displayed by Study Buddy.</p>
+<p>Items with <code>…</code>​ after them can be used multiple times including zero times e.g. <code>[t/TAG]&#8230;&#8203;</code> can be used as <code>&#160;</code> (i.e. 0 times), <code>t/friend</code>, <code>t/friend t/family</code> etc.</p>
 </li>
 <li>
-<p>When a line is preceded by U, it implies that it is a value that must be entered by the user.</p>
-</li>
-<li>
-<p>[enter] indicates hitting the enter key on your keyboard.</p>
-</li>
-<li>
-<p>[exits] indicates that application has closed</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
-<div class="admonitionblock note">
+<div class="sect3">
+<h4 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">3.1.1. Viewing help : <code>help</code></a></h4>
+<div class="paragraph">
+<p>Format: <code>help</code></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="adding-a-task-code-add-code"><a class="link" href="#adding-a-task-code-add-code">3.1.2. Adding a task: <code>add</code></a></h4>
+<div class="paragraph">
+<p>Adds a task to the study buddy<br>
+Format: <code>add n/NAME d/DATE e/DETAILS l/LABEL [t/TAG]&#8230;&#8203;</code></p>
+</div>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-These features utilize interactive command prompt. (described in section <a href="#interactive-command-prompt">Section 3.5, &#8220;Interactive Command Prompt&#8221;</a> )
+A task can have any number of tags (including 0)
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="help"><a class="link" href="#help">3.1.1. Help :</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>help</code></p>
-</div>
-<div class="paragraph">
-<p>S- list of commands</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function displays a list of commands that you can use.</p>
-</li>
-<li>
-<p>It also provides a link to this document, (our user guide) for your convenience.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>help</code></p>
-</div>
-<div class="paragraph">
-<p>S- Here is the list of available commands:<br>
-1. add<br>
-2. delete<br>
-3. edit<br>
-4. bye<br>
-5. sort<br>
-6. find<br>
-7. done<br>
-8. delete duplicates<br>
-9. sort<br>
-10. archive<br>
-11. help<br>
-12. list<br>
-13. clear<br>
-14. create mods<br>
-User Guide: <a href="https://ay1920s2-cs2103t-w16-3.github.io/main/UserGuide.html" class="bare">https://ay1920s2-cs2103t-w16-3.github.io/main/UserGuide.html</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="add"><a class="link" href="#add">3.1.2. Add:</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>add</code></p>
-</div>
-<div class="paragraph">
-<p>S- prompt for name</p>
-</div>
-<div class="paragraph">
-<p>U- <code>NAME</code></p>
-</div>
-<div class="paragraph">
-<p>S- list of possible task types, prompt for type index</p>
-</div>
-<div class="paragraph">
-<p>U- <code>TYPE INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>S- prompt for deadline</p>
-</div>
-<div class="paragraph">
-<p>U- <code>DEADINE</code></p>
-</div>
-<div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you to add a task to your list of tasks.</p>
-</li>
-<li>
-<p>You can assign a name, type, and deadline to your tasks.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
- The application does not allow you to enter a deadline that has already passed. It must be a time in the future.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The application allows for addition of duplicate tasks. It will however confirm with you if you are sure you want to add a duplicate.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>add</code></p>
-</div>
-<div class="paragraph">
-<p>S- Please enter the task name.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>Lab 1 submission</code></p>
-</div>
-<div class="paragraph">
-<p>S- The name of task is set to: Lab 1 submission.<br>
-Please choose the task type:<br>
-1. Assignment<br>
-2. Quiz<br>
-3. Presentation<br>
-4. Meeting<br>
-5. Exam<br>
-6. Others</p>
-</div>
-<div class="paragraph">
-<p>U- <code>1</code></p>
-</div>
-<div class="paragraph">
-<p>S- The type of task is set to: Assignment.<br>
-Please enter the deadline with format: HH:mm dd/MM/yyyy</p>
-</div>
-<div class="paragraph">
-<p>U- <code>18:00 23/06/2020</code></p>
-</div>
-<div class="paragraph">
-<p>S- The date and time is set to: 18:00 23/06/2020<br>
-Press enter again to add the task:<br>
-Lab 1 submission Assignment 18:00 23/06/2020</p>
-</div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Task added successfully!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete"><a class="link" href="#delete">3.1.3. Delete</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>delete</code></p>
-</div>
-<div class="paragraph">
-<p>S- prompt for task index</p>
-</div>
-<div class="paragraph">
-<p>U- <code>INDEX</code></p>
-</div>
-<div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you to delete a task from your list of tasks.</p>
-</li>
-<li>
-<p>You can refer to the list of tasks to determine the respective index number.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-The application does not allow you to enter an invalid index number. If you happen to enter one, just try again!
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>delete</code></p>
-</div>
-<div class="paragraph">
-<p>S- Please enter the index number of task you wish to delete.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>1</code></p>
-</div>
-<div class="paragraph">
-<p>S- The task Lab 1 submission will be deleted.<br>
-Please click enter again to make the desired deletion.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Task deleted successfully!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete-duplicates"><a class="link" href="#delete-duplicates">3.1.4. Delete duplicates</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>delete duplicates</code></p>
-</div>
-<div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you delete any duplicate tasks in your list of tasks.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>delete</code></p>
-</div>
-<div class="paragraph">
-<p>S- The duplicate tasks will be deleted<br>
-Please press enter again to make the desired changes.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Duplicated task deleted successfully!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="find"><a class="link" href="#find">3.1.5. Find</a></h4>
-<div class="paragraph">
-<p>Finds tasks whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="ulist">
-<ul>
-<li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
-</li>
-<li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
-</li>
-<li>
-<p>Only the name is searched.</p>
-</li>
-<li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
-</li>
-<li>
-<p>Tasks matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
-</li>
-</ul>
-</div>
-</div>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -512,123 +209,23 @@ Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
+<p><code>add n/Kattis Problem d/2020-03-12 e/Minimum Spanning Tree problem l/blue</code></p>
 </li>
 <li>
-<p><code>find Betsy Tim John</code><br>
-Returns any task having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+<p><code>add n/Post-Lecture Quiz t/schoolwork d/2020-04-12 e/For Lecture 7 l/green t/CS2103T</code></p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-To navigate back to the always on display list of tasks, you can use the <a href="#list">Section 3.1.6, &#8220;List&#8221;</a> function.
-</td>
-</tr>
-</table>
+</div>
+<div class="sect3">
+<h4 id="listing-all-tasks-code-list-code"><a class="link" href="#listing-all-tasks-code-list-code">3.1.3. Listing all tasks : <code>list</code></a></h4>
+<div class="paragraph">
+<p>Shows a list of all tasks in the study buddy.<br>
+Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list"><a class="link" href="#list">3.1.6. List</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>list</code></p>
-</div>
-<div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you to view a list of all your tasks.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>list</code></p>
-</div>
-<div class="paragraph">
-<p>S- Here is the complete list of tasks:</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="refresh"><a class="link" href="#refresh">3.1.7. Refresh</a></h4>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>refresh</code></p>
-</div>
-<div class="paragraph">
-<p>S- refreshes task tags and due soon list</p>
-</div>
-<div class="paragraph">
-<p><strong>Description</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you to refresh/update any tags/due soon tasks.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Both the status tags and due soon list auto-update when changes such as addition, deletion etc are performed. However the refresh function is helpful when the application has been open for a considerable amount of time and the tags/time on due soon list needs an update.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This function is linked to <a href="#due-soon-list">Section 3.3, &#8220;Due Soon List&#8221;</a> and <a href="#status-tags">Section 3.4, &#8220;Status Tags&#8221;</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>refresh</code></p>
-</div>
-<div class="paragraph">
-<p>S- The tasks list will be refreshed.<br>
-Please press enter again to make the desired changes.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Refreshed tasks' status and due soon list!</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="edit"><a class="link" href="#edit">3.1.8. Edit</a></h4>
+<h4 id="editing-a-task-code-edit-code"><a class="link" href="#editing-a-task-code-edit-code">3.1.4. Editing a task : <code>edit</code></a></h4>
 <div class="paragraph">
 <p>Edits an existing task in the study buddy.<br>
 Format: <code>edit INDEX [n/NAME] [d/DATE] [e/DETAILS] [l/LABEL] [t/TAG]&#8230;&#8203;</code></p>
@@ -675,113 +272,110 @@ Edits the name of the 2nd task to be <code>Database project</code> and clears al
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear"><a class="link" href="#clear">3.1.9. Clear</a></h4>
+<h4 id="locating-tasks-by-name-code-find-code"><a class="link" href="#locating-tasks-by-name-code-find-code">3.1.5. Locating tasks by name: <code>find</code></a></h4>
 <div class="paragraph">
-<p><strong>Format:</strong></p>
+<p>Finds tasks whose names contain any of the given keywords.<br>
+Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
-<div class="paragraph">
-<p>U- <code>clear</code></p>
-</div>
-<div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
 <li>
-<p>This function allows you clear your entire list.</p>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
 </li>
-</ol>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Only the name is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>Tasks matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This function will clear any data you have entered into the application. Use it with caution!
-</td>
-</tr>
-</table>
 </div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>clear</code></p>
 </div>
 <div class="paragraph">
-<p>S- Please press enter to clear all your tasks.<br>
-Else enter quit to go back.</p>
+<p>Examples:</p>
 </div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Tasks cleared successfully!</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>find John</code><br>
+Returns <code>john</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>find Betsy Tim John</code><br>
+Returns any task having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.1.10. Saving the data</a></h4>
+<h4 id="deleting-a-task-code-delete-code"><a class="link" href="#deleting-a-task-code-delete-code">3.1.6. Deleting a task : <code>delete</code></a></h4>
 <div class="paragraph">
-<p><strong>Description:</strong></p>
+<p>Deletes the specified task from the study buddy.<br>
+Format: <code>delete INDEX</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes the task at the specified <code>INDEX</code>.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the displayed task list.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+</ul>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>Study Buddy data is saved in the hard disk automatically after any command that changes the data.<br>
-There is no need to save manually!</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>list</code><br>
+<code>delete 2</code><br>
+Deletes the 2nd task in the study buddy.</p>
+</li>
+<li>
+<p><code>find Betsy</code><br>
+<code>delete 1</code><br>
+Deletes the 1st task in the results of the <code>find</code> command.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exit"><a class="link" href="#exit">3.1.11. Exit</a></h4>
+<h4 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">3.1.7. Clearing all entries : <code>clear</code></a></h4>
 <div class="paragraph">
-<p><strong>Format:</strong></p>
+<p>Clears all entries from the study buddy.<br>
+Format: <code>clear</code></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">3.1.8. Exiting the program : <code>exit</code></a></h4>
 <div class="paragraph">
-<p>U- <code>bye</code></p>
+<p>Exits the program.<br>
+Format: <code>exit</code></p>
 </div>
+</div>
+<div class="sect3">
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">3.1.9. Saving the data</a></h4>
 <div class="paragraph">
-<p>S- done!</p>
-</div>
-<div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This function allows you close the application.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Your data will be saved and reloaded when you reopen the application!
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>U- <code>bye</code></p>
-</div>
-<div class="paragraph">
-<p>S- Are you sure you want to quit?<br>
-Please press enter yes if you would like to close the application.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>yes</code></p>
-</div>
-<div class="paragraph">
-<p>S- [exits]</p>
+<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+There is no need to save manually.</p>
 </div>
 </div>
 </div>
@@ -806,38 +400,7 @@ By default, it shows the following:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="due-soon-list"><a class="link" href="#due-soon-list">3.3. Due Soon List</a></h3>
-<div class="paragraph">
-<p>The due soon task list is always on display in your application.<br>
-It provides the following functionality:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>It displays your tasks that are due within the next week. (uses deadline)</p>
-</li>
-<li>
-<p>It automatically updates when you make changes to your main list.</p>
-</li>
-<li>
-<p>It displays a tag with the time left to the deadline.</p>
-</li>
-<li>
-<p>It provides a <a href="#refresh">Section 3.1.7, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="status-tags"><a class="link" href="#status-tags">3.4. Status Tags</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="interactive-command-prompt"><a class="link" href="#interactive-command-prompt">3.5. Interactive Command Prompt</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.6. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">3.3. Statistics</a></h3>
 <div class="paragraph">
 <p>On the Statistics page, your usage statistics are displayed.
 You can use it to see how you can improve your time management and productivity.
@@ -868,7 +431,7 @@ These include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="timers"><a class="link" href="#timers">3.7. Timers</a></h3>
+<h3 id="timers"><a class="link" href="#timers">3.4. Timers</a></h3>
 <div class="paragraph">
 <p>The timer feature comprises several other features that manage time.
 Students can use it to plan their schedule, taking into account the various quizzes, assignments and deadlines they have.
@@ -886,7 +449,7 @@ Features like that include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">3.8. Calendar</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.5. Calendar</a></h3>
 <div class="paragraph">
 <p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month. This allows students to plan their time efficiently.</p>
 </div>
@@ -910,14 +473,14 @@ Features like that include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui"><a class="link" href="#ui">3.9. UI</a></h3>
+<h3 id="ui"><a class="link" href="#ui">3.6. UI</a></h3>
 <div class="paragraph">
 <p>You can customize the appearance of your app.
 You can change the colour of the background, as well as for different modules</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.10. Profile</a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.7. Profile</a></h3>
 <div class="paragraph">
 <p>The profile page shows the detail information of the user, such as:</p>
 </div>
@@ -939,7 +502,7 @@ You can change the colour of the background, as well as for different modules</p
 </div>
 </div>
 <div class="sect2">
-<h3 id="piechart"><a class="link" href="#piechart">3.11. Piechart</a></h3>
+<h3 id="piechart"><a class="link" href="#piechart">3.8. Piechart</a></h3>
 <div class="paragraph">
 <p>The application provides a summary of the information below using different piechart.
 These include:</p>
@@ -1005,4 +568,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 09:31:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-29 10:14:18 UTC</div></div></div></body></html>
