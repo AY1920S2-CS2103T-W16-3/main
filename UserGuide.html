@@ -36,13 +36,14 @@
 <li><a href="#add">5.1.2. Add:</a></li>
 <li><a href="#delete">5.1.3. Delete</a></li>
 <li><a href="#delete-duplicates">5.1.4. Delete duplicates</a></li>
-<li><a href="#find">5.1.5. Find</a></li>
-<li><a href="#list">5.1.6. List</a></li>
-<li><a href="#refresh">5.1.7. Refresh</a></li>
-<li><a href="#edit">5.1.8. Edit</a></li>
-<li><a href="#clear">5.1.9. Clear</a></li>
-<li><a href="#saving-the-data">5.1.10. Saving the data</a></li>
-<li><a href="#exit">5.1.11. Exit</a></li>
+<li><a href="#archive-unarchive">5.1.5. Archive/ Unarchive</a></li>
+<li><a href="#find">5.1.6. Find</a></li>
+<li><a href="#list">5.1.7. List</a></li>
+<li><a href="#refresh">5.1.8. Refresh</a></li>
+<li><a href="#edit">5.1.9. Edit</a></li>
+<li><a href="#clear">5.1.10. Clear</a></li>
+<li><a href="#saving-the-data">5.1.11. Saving the data</a></li>
+<li><a href="#exit">5.1.12. Exit</a></li>
 </ul>
 </li>
 <li><a href="#dashboard-2">5.2. DashBoard</a></li>
@@ -520,7 +521,76 @@ Please press enter again to make the desired changes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="find"><a class="link" href="#find">5.1.5. Find</a></h4>
+<h4 id="archive-unarchive"><a class="link" href="#archive-unarchive">5.1.5. Archive/ Unarchive</a></h4>
+<div class="paragraph">
+<p>This commands stores the specified task into a separate list.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>After a hard days work, you completed some tasks. You don&#8217;t want them in your to-do list anymore, but you don&#8217;t want to delete them; some of the information in the task card could still be useful.</p>
+</div>
+<div class="paragraph">
+<p>You can always store them in an archive!</p>
+</div>
+<div class="paragraph">
+<p>To <code>archive</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initiate the command using keyword <code>archive</code></p>
+</li>
+<li>
+<p>Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive_1.png" alt="archive 1" width="790">
+</div>
+<div class="title">Figure 2. Study Buddy&#8217;s reponse to 'archive'</div>
+</div>
+</li>
+<li>
+<p>Type the index of the task you want to archive.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive_2.png" alt="archive 2" width="790">
+</div>
+<div class="title">Figure 3. Study Buddy&#8217;s reponse to task index</div>
+</div>
+</li>
+<li>
+<p>Press <code>enter</code> again to confirm</p>
+</li>
+<li>
+<p>Task has been archived! You can view all archived task under the <code>StudyBuddy</code> &#8594; <code>Archived Tasks</code> tab.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/archive_3.png" alt="archive 3" width="790">
+</div>
+<div class="title">Figure 4. View archived tasks</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>To <code>unarchive</code> a task, and add it back to the main list, simply follow the same set of commands, but replace the <code>archive</code> keyword with <code>unarchive</code></p>
+</li>
+<li>
+<p>Remember to use the index in the <strong>Archived Task</strong> instead of <strong>All Tasks</strong></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="find"><a class="link" href="#find">5.1.6. Find</a></h4>
 <div class="paragraph">
 <p>Finds tasks whose names contain any of the given keywords.<br>
 Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
@@ -570,14 +640,14 @@ Returns any task having names <code>Betsy</code>, <code>Tim</code>, or <code>Joh
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-To navigate back to the always on display list of tasks, you can use the <a href="#list">Section 5.1.6, &#8220;List&#8221;</a> function.
+To navigate back to the always on display list of tasks, you can use the <a href="#list">Section 5.1.7, &#8220;List&#8221;</a> function.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list"><a class="link" href="#list">5.1.6. List</a></h4>
+<h4 id="list"><a class="link" href="#list">5.1.7. List</a></h4>
 <div class="paragraph">
 <p><strong>Format:</strong></p>
 </div>
@@ -608,7 +678,7 @@ To navigate back to the always on display list of tasks, you can use the <a href
 </div>
 </div>
 <div class="sect3">
-<h4 id="refresh"><a class="link" href="#refresh">5.1.7. Refresh</a></h4>
+<h4 id="refresh"><a class="link" href="#refresh">5.1.8. Refresh</a></h4>
 <div class="paragraph">
 <p><strong>Format:</strong></p>
 </div>
@@ -658,7 +728,7 @@ Please press enter again to make the desired changes.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit"><a class="link" href="#edit">5.1.8. Edit</a></h4>
+<h4 id="edit"><a class="link" href="#edit">5.1.9. Edit</a></h4>
 <div class="paragraph">
 <p>Edits an existing task in the study buddy.<br>
 Format: <code>edit INDEX [n/NAME] [d/DATE] [e/DETAILS] [l/LABEL] [t/TAG]&#8230;&#8203;</code></p>
@@ -705,7 +775,7 @@ Edits the name of the 2nd task to be <code>Database project</code> and clears al
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear"><a class="link" href="#clear">5.1.9. Clear</a></h4>
+<h4 id="clear"><a class="link" href="#clear">5.1.10. Clear</a></h4>
 <div class="paragraph">
 <p><strong>Format:</strong></p>
 </div>
@@ -755,7 +825,7 @@ Else enter quit to go back.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.1.10. Saving the data</a></h4>
+<h4 id="saving-the-data"><a class="link" href="#saving-the-data">5.1.11. Saving the data</a></h4>
 <div class="paragraph">
 <p><strong>Description:</strong></p>
 </div>
@@ -765,7 +835,7 @@ There is no need to save manually!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="exit"><a class="link" href="#exit">5.1.11. Exit</a></h4>
+<h4 id="exit"><a class="link" href="#exit">5.1.12. Exit</a></h4>
 <div class="paragraph">
 <p><strong>Format:</strong></p>
 </div>
@@ -853,7 +923,7 @@ It provides the following functionality:</p>
 <p>It displays a tag with the time left to the deadline.</p>
 </li>
 <li>
-<p>It provides a <a href="#refresh">Section 5.1.7, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
+<p>It provides a <a href="#refresh">Section 5.1.8, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
 </li>
 </ol>
 </div>
@@ -927,6 +997,7 @@ Features like that include:</p>
 <div class="content">
 <img src="images/calender_init.png" alt="calender init" width="790">
 </div>
+<div class="title">Figure 5. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -937,6 +1008,12 @@ Features like that include:</p>
 <p>Clicking on any date will show you all tasks for that day. Keep in mind that the <strong>Index</strong> shown in this panel cannot be used for other commands.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
+</div>
+<div class="title">Figure 6. calendar after clicking on a date</div>
 </div>
 </div>
 <div class="sect2">
@@ -1035,4 +1112,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 10:50:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-31 12:55:32 UTC</div></div></div></body></html>
