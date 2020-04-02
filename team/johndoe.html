@@ -336,7 +336,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new task</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my pending tasks in one place</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -379,6 +379,30 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who likes organization</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are due soon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know what to focus on in the next week</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who makes typos</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">be able to edit a task I have added</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">correct any typos I have made</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who is forgetful</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have an interactive command prompt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">not have to remember long commands</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who is starting a new semester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear all my tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">start adding on to an empty list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who takes many modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add my modules</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view my modules</p></td>
 </tr>
 </tbody>
 </table>
@@ -443,6 +467,91 @@ The given index is invalid.</p>
 </div>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-delete-duplicates" class="discrete">Use case: Delete duplicates</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list tasks</p>
+</li>
+<li>
+<p>Study Buddy shows a list of tasks</p>
+</li>
+<li>
+<p>User requests to delete all duplicates in the list</p>
+</li>
+<li>
+<p>Study Buddy deletes all but one occurrence of each task</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a.
+There are no duplicate tasks</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-refresh" class="discrete">Use case: Refresh</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User notices due soon list needs to be updates</p>
+</li>
+<li>
+<p>User requests to refresh</p>
+</li>
+<li>
+<p>Study Buddy refreshes the due soon list and status tags</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+<li>
+<p>3a.
+There is nothing to refresh</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -580,45 +689,37 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">Deleting a person</a></h3>
+<h3 id="deleting-a-task"><a class="link" href="#deleting-a-task">Deleting a task</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a task while all tasks are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
 <p>Prerequisites: List all persons using the <code>list</code> command.
-Multiple persons in the list.</p>
+Multiple tasks in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
    Expected: First contact is deleted from the list.
-Details of the deleted contact shown in the status message.
-Timestamp in the status bar is updated.</p>
+Successful deletion indication in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
    Expected: No person is deleted.
-Error details shown in the status message.
-Status bar remains the same.</p>
+Error details shown in the status message.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size), <code>delete x</code> (where x is a negative number)+
 Expected: Similar to previous.</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
-</div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -649,4 +750,4 @@ Expected: Similar to previous.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 07:17:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 09:36:12 UTC</div></div></div></body></html>
