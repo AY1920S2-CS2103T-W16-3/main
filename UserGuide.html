@@ -47,11 +47,10 @@
 </li>
 <li><a href="#statistics">3.5. Statistics</a></li>
 <li><a href="#calendar">3.6. Calendar</a></li>
-<li><a href="#profile">3.7. Profile</a></li>
+<li><a href="#productivity">3.7. Productivity</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
-<li><a href="#command-summary">5. Command Summary</a></li>
 </ul>
 </div>
 </div>
@@ -949,46 +948,62 @@ The <code>All Tasks Panel</code> will update automatically after successfully so
 <div class="sect3">
 <h4 id="find"><a class="link" href="#find">3.1.9. Find</a></h4>
 <div class="paragraph">
-<p>Finds tasks whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+<p>Finds tasks whose names contain any of the given keywords.</p>
+</div>
+<div class="paragraph">
+<p>To <code>find</code> a task:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initiate the command with <code>find</code>.</p>
+</li>
+<li>
+<p>Enter the keyword that you want to search for.</p>
+</li>
+<li>
+<p>You have found a list of tasks that contain your keyword!</p>
+</li>
+</ol>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+<p>The search is case insensitive. e.g <code>homework</code> will match <code>Homework</code></p>
 </li>
 <li>
-<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+<p>The order of the keywords does not matter. e.g. <code>CS Homework</code> will match <code>Homework CS</code></p>
 </li>
 <li>
 <p>Only the name is searched.</p>
 </li>
 <li>
-<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+<p>Substrings will be matched e.g. <code>work</code> will match <code>Homework</code></p>
 </li>
 <li>
-<p>Tasks matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+<p>Tasks matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>CS Homework</code> can return <code>CS Quiz</code>,
+<code>Reflection Homework</code>.</p>
 </li>
 </ul>
 </div>
 </div>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples</strong></p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>find John</code><br>
-Returns <code>john</code> and <code>John Doe</code></p>
-</li>
-<li>
-<p><code>find Betsy Tim John</code><br>
-Returns any task having names <code>Betsy</code>, <code>Tim</code>, or <code>John</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>U - <code>find</code><br></p>
+</div>
+<div class="paragraph">
+<p>S - Please type in a keyword that you want to search for.</p>
+</div>
+<div class="paragraph">
+<p>U - <code>quiz</code></p>
+</div>
+<div class="paragraph">
+<p>S - Returns <code>Weekly Quiz</code> and <code>Quiz 3</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1667,25 +1682,45 @@ When this issue happens, you can use any command that can trigger chart updating
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.7. Profile</a></h3>
+<h3 id="productivity"><a class="link" href="#productivity">3.7. Productivity</a></h3>
 <div class="paragraph">
-<p>The profile page shows the detail information of the user, such as:</p>
+<p>The productivity page shows insights related to your productivity over the past day, week and more.
+By keeping tabs on your past productivity, you can improve your future productivity.
+The productivity feature also gamifies your task management experience. Doing work has never been more fun!</p>
 </div>
-<div class="ulist">
-<ul>
+<div class="paragraph">
+<div class="title">1. Daily Productivity Tab</div>
+<p>The daily productivity tab records your the number of tasks you completed today.
+You can set a daily goal for the number of tasks you want to complete.
+Completing your goal each day adds to your streak.</p>
+</div>
+<div class="paragraph">
+<div class="title">2. Weekly Productivity Tab</div>
+<p>On the weekly productivity tab, you can look back on your progress over the past week.
+This tab displays information about your past productivity.</p>
+</div>
+<div class="paragraph">
+<div class="title">3. Productivity Points Tab</div>
+<p>The Productivity Points tab displays your current Productivity Points (PP) and your progression.
+You gain Productivity Points upon adding tasks, completing tasks, and using advanced features in StudyBuddy.
+On the other hand, you lose Productivity Points when your tasks go overdue.
+Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p>Personal information, such as name, gender, year of study</p>
+<p>Adding a task: +1</p>
 </li>
 <li>
-<p>Goal CAP</p>
+<p>Completing a task: +10</p>
 </li>
 <li>
-<p>Task history</p>
+<p>Using advanced features; +? (Explore StudyBuddy to find out!)</p>
 </li>
 <li>
-<p>etc</p>
+<p>Letting a task go overdue: -1</p>
 </li>
-</ul>
+</ol>
 </div>
 </div>
 </div>
@@ -1698,38 +1733,4 @@ When this issue happens, you can use any command that can trigger chart updating
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Study Buddy folder (should be under data &#8594; taskList.json).</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">5. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-</ul>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 18:29:28 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 21:03:13 UTC</div></div></div></body></html>
