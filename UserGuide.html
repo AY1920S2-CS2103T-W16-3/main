@@ -32,10 +32,24 @@
 <li><a href="#saving-data">3.2. Saving Data</a></li>
 <li><a href="#dashboard">3.3. DashBoard</a></li>
 <li><a href="#due-soon-tasks">3.4. Due Soon Tasks</a></li>
-<li><a href="#statistics">3.5. Statistics</a></li>
-<li><a href="#timers">3.6. Timers</a></li>
-<li><a href="#calendar">3.7. Calendar</a></li>
-<li><a href="#profile">3.8. Profile</a></li>
+<li><a href="#modules">3.5. Modules</a>
+<ul class="sectlevel3">
+<li><a href="#navigation">3.5.1. Navigation</a></li>
+<li><a href="#functions">3.5.2. Functions</a></li>
+<li><a href="#create-modules">3.5.3. Create Modules</a></li>
+<li><a href="#edit-modules">3.5.4. Edit Modules</a>
+<ul class="sectlevel5">
+<li><a href="#1-change-module-name">1. Change Module Name</a></li>
+<li><a href="#2-change-module-code">2. Change Module Code</a></li>
+<li><a href="#2-delete-module">2. Delete Module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#statistics">3.6. Statistics</a></li>
+<li><a href="#timers">3.7. Timers</a></li>
+<li><a href="#calendar">3.8. Calendar</a></li>
+<li><a href="#profile">3.9. Profile</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -1184,13 +1198,10 @@ By default, it shows the following:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The impending task from the task list, sorted by timing</p>
+<p><code>All Task</code> The impending task from the task list, sorted by timing</p>
 </li>
 <li>
-<p>A chart of the amount of time you spend on each of your modules</p>
-</li>
-<li>
-<p>Existing stopwatches that are already running</p>
+<p><code>Tasks Due Soon</code> Similar to <code>All Task</code>, but it shows tasks with upcoming deadlines.</p>
 </li>
 </ol>
 </div>
@@ -1266,7 +1277,190 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 </div>
 </div>
 <div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.5. Statistics</a></h3>
+<h3 id="modules"><a class="link" href="#modules">3.5. Modules</a></h3>
+<div class="paragraph">
+<p>The Modules tab is an easy way for students to organise their task, homework and deadlines into various modules.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Module-bar.png" alt="Module bar">
+</div>
+<div class="title">Figure 36. <code>Modules</code> in the menu bar</div>
+</div>
+<div class="paragraph">
+<p>By default, the Modules tab shows the following:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>Overview</strong>. This tab shows all the modules you will be taking for this semester.</p>
+</li>
+<li>
+<p><strong>No Module Allocated</strong>. This tab shows the list of tasks that has not yet been allocated to any module. By default,
+all tasks will show up here if you have not allocated any tasks to the modules.</p>
+</li>
+</ol>
+</div>
+<div class="sect3">
+<h4 id="navigation"><a class="link" href="#navigation">3.5.1. Navigation</a></h4>
+<div class="paragraph">
+<p>To navigate to the modules page, click on <code>Modules</code> in the menu bar.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Module-bar-2.png" alt="Module bar 2">
+</div>
+</div>
+<div class="paragraph">
+<p>Then click on <code>Show Modules</code>. The module page should show up.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Modules-page.png" alt="Modules page">
+</div>
+</div>
+<div class="paragraph">
+<p>The leftmost tab shows the <strong>overview</strong> of all your modules. it displays the module&#8217;s name and their code.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>The rightmost tab shows the list of task that has not been allocated to any modules.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>The tabs in the middle are modules that you have added to the modules page.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="functions"><a class="link" href="#functions">3.5.2. Functions</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="create-modules"><a class="link" href="#create-modules">3.5.3. Create Modules</a></h4>
+<div class="paragraph">
+<p>To create a module, click on <code>Modules</code> in the menu bar.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Click on <code>Create</code>. A prompt will show up at the bottom of the screen.
+Key in the name of your module. The name of this module cannot be the same as your existing modules.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Now key in your Module code. Your Module code should have a 2-3 letter prefix, a 4-digit number, followed
+by a single postfix.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Correct Module Codes:
+LSM1303
+CS2040C
+IS1103
+MA1521
+
+Incorrect Module Codes:
+CSSS1234    - Prefix is too long
+C0001       - Prefix is too short
+ZZ12345     - number is more than 4 digits
+A1111XX     - Postfix is too long</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Press enter one more time to confirm.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Congratulations, you have added a module to your modules page!</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-modules"><a class="link" href="#edit-modules">3.5.4. Edit Modules</a></h4>
+<div class="paragraph">
+<p>To create a module, click on <code>Modules</code> in the menu bar.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Click on <code>Edit</code>. A prompt will show up at the bottom of the screen.
+Key in the code of the module that you want to edit.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Now you have 3 options. You can choose to:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Change Module name.</p>
+</li>
+<li>
+<p>Change Module code.</p>
+</li>
+<li>
+<p>Delete Module.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Key in the index of your option.</p>
+</div>
+<div class="sect5">
+<h6 id="1-change-module-name"><a class="link" href="#1-change-module-name">1. Change Module Name</a></h6>
+<div class="paragraph">
+<p>Now key in your new module name.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Module name changed!</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="2-change-module-code"><a class="link" href="#2-change-module-code">2. Change Module Code</a></h6>
+<div class="paragraph">
+<p>Now key in your new module code. Make sure it follows the correct format
+as written in 3.7.3.</p>
+</div>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Module code changed!</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="2-delete-module"><a class="link" href="#2-delete-module">2. Delete Module</a></h6>
+<div class="paragraph">
+<p>image::[]</p>
+</div>
+<div class="paragraph">
+<p>Press Enter again to confirmed.</p>
+</div>
+<div class="paragraph">
+<p>Module deleted! All existing task in this module will be moved to <code>No Module Allocated</code> tab.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="statistics"><a class="link" href="#statistics">3.6. Statistics</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1305,7 +1499,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/entryOfStatistics.png" alt="entryOfStatistics" width="790">
 </div>
-<div class="title">Figure 36. Statistics entry</div>
+<div class="title">Figure 37. Statistics entry</div>
 </div>
 </li>
 </ul>
@@ -1321,7 +1515,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/initStatisticsPage.png" alt="initStatisticsPage" width="790">
 </div>
-<div class="title">Figure 37. Statistics initial page</div>
+<div class="title">Figure 38. Statistics initial page</div>
 </div>
 </li>
 <li>
@@ -1334,7 +1528,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/pieChartClick.png" alt="pieChartClick" width="790">
 </div>
-<div class="title">Figure 38. right panel update when clicking on pie chart</div>
+<div class="title">Figure 39. right panel update when clicking on pie chart</div>
 </div>
 </li>
 <li>
@@ -1343,13 +1537,13 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/areaChartClickOnArea.png" alt="areaChartClickOnArea" width="790">
 </div>
-<div class="title">Figure 39. right panel update when clicking on area chart&#8217;s area</div>
+<div class="title">Figure 40. right panel update when clicking on area chart&#8217;s area</div>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/areaChartClickDataPoint.png" alt="areaChartClickDataPoint" width="790">
 </div>
-<div class="title">Figure 40. right panel update when clicking on area chart&#8217;s data point</div>
+<div class="title">Figure 41. right panel update when clicking on area chart&#8217;s data point</div>
 </div>
 </li>
 <li>
@@ -1358,7 +1552,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/barChartClick.png" alt="barChartClick" width="790">
 </div>
-<div class="title">Figure 41. right panel update when clicking on bar chart</div>
+<div class="title">Figure 42. right panel update when clicking on bar chart</div>
 </div>
 </li>
 </ol>
@@ -1380,7 +1574,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 </div>
 </div>
 <div class="sect2">
-<h3 id="timers"><a class="link" href="#timers">3.6. Timers</a></h3>
+<h3 id="timers"><a class="link" href="#timers">3.7. Timers</a></h3>
 <div class="paragraph">
 <p>The timer feature comprises several other features that manage time.
 Students can use it to plan their schedule, taking into account the various quizzes, assignments and deadlines they have.
@@ -1398,7 +1592,7 @@ Features like that include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">3.7. Calendar</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.8. Calendar</a></h3>
 <div class="paragraph">
 <p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month. This allows students to plan their time efficiently.</p>
 </div>
@@ -1409,7 +1603,7 @@ Features like that include:</p>
 <div class="content">
 <img src="images/calender_init.png" alt="calender init" width="790">
 </div>
-<div class="title">Figure 42. calendar interface</div>
+<div class="title">Figure 43. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1425,11 +1619,11 @@ Features like that include:</p>
 <div class="content">
 <img src="images/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
 </div>
-<div class="title">Figure 43. calendar after clicking on a date</div>
+<div class="title">Figure 44. calendar after clicking on a date</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.8. Profile</a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.9. Profile</a></h3>
 <div class="paragraph">
 <p>The profile page shows the detail information of the user, such as:</p>
 </div>
@@ -1494,4 +1688,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 14:07:22 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 14:21:24 UTC</div></div></div></body></html>
