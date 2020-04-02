@@ -32,13 +32,10 @@
 <li><a href="#saving-data">3.2. Saving Data</a></li>
 <li><a href="#dashboard">3.3. DashBoard</a></li>
 <li><a href="#due-soon-tasks">3.4. Due Soon Tasks</a></li>
-<li><a href="#status-tags">3.5. Status Tags</a></li>
-<li><a href="#interactive-command-prompt">3.6. Interactive Command Prompt</a></li>
-<li><a href="#statistics">3.7. Statistics</a></li>
-<li><a href="#timers">3.8. Timers</a></li>
-<li><a href="#calendar">3.9. Calendar</a></li>
-<li><a href="#ui">3.10. UI</a></li>
-<li><a href="#profile">3.11. Profile</a></li>
+<li><a href="#statistics">3.5. Statistics</a></li>
+<li><a href="#timers">3.6. Timers</a></li>
+<li><a href="#calendar">3.7. Calendar</a></li>
+<li><a href="#profile">3.8. Profile</a></li>
 </ul>
 </li>
 <li><a href="#faq">4. FAQ</a></li>
@@ -190,7 +187,7 @@ Study Buddy will analyze your input and reply accordingly.
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-These features utilize interactive command prompt. (described in section <a href="#interactive-command-prompt">Section 3.6, &#8220;Interactive Command Prompt&#8221;</a> )
+These features utilize interactive command prompt. (described in section <a href="#Interactive Command Prompt">[Interactive Command Prompt]</a> )
 </td>
 </tr>
 </table>
@@ -237,13 +234,10 @@ These features utilize interactive command prompt. (described in section <a href
 <div class="sect3">
 <h4 id="add"><a class="link" href="#add">3.1.2. Add</a></h4>
 <div class="paragraph">
-<p><strong>Description:</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
 <p>This command is for you to record a new task into Study Buddy.</p>
-</li>
+</div>
+<div class="ulist">
+<ul>
 <li>
 <p>Through the interaction, task&#8217;s details will be collected.</p>
 <div class="olist loweralpha">
@@ -254,75 +248,8 @@ These features utilize interactive command prompt. (described in section <a href
 <li>
 <p>Optional information: module, task description, task weight, estimated number of hours needed</p>
 </li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>U- <code>add</code></p>
-</div>
-<div class="paragraph">
-<p>S-  asks for module information and provides the list of available modules</p>
-</div>
-<div class="paragraph">
-<p>U- <code>MODULE CODE</code> | <code>INDEX NUMBER OF MODULE</code> | press <kbd>enter</kbd> to skip</p>
-</div>
-<div class="paragraph">
-<p>S- asks for task name</p>
-</div>
-<div class="paragraph">
-<p>U- <code>TASK NAME</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for task type and provides the list of available task types</p>
-</div>
-<div class="paragraph">
-<p>U- <code>INDEX NUMBER OF TASK TYPE</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for deadline or duration of the task</p>
-</div>
-<div class="paragraph">
-<p>U- <code>TASK DEADLINE OR DURATION</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for task description</p>
-</div>
-<div class="paragraph">
-<p>U- <code>TASK DESCRIPTION</code> | press <kbd>enter</kbd> to skip</p>
-</div>
-<div class="paragraph">
-<p>S- asks for the weight of the task</p>
-</div>
-<div class="paragraph">
-<p>U- <code>TASK WEIGHT</code> | press <kbd>enter</kbd> to skip</p>
-</div>
-<div class="paragraph">
-<p>S- asks for estimated number of hours needed for this task</p>
-</div>
-<div class="paragraph">
-<p>U- <code>ESTIMATED NUMBER OF HOURS NEEDED</code> | press <kbd>enter</kbd> to skip</p>
-</div>
-<div class="paragraph">
-<p>S- provides the collected task details and asks for your confirmation to execute</p>
-</div>
-<div class="paragraph">
-<p>U- press <kbd>enter</kbd></p>
-</div>
-<div class="paragraph">
-<p>S- Task added successfully!</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Input format requirement:</strong></p>
-</div>
+<li>
+<p>Input format requirement:</p>
 <table class="tableblock frame-all grid-all spread">
 <colgroup>
 <col style="width: 25%;">
@@ -392,12 +319,11 @@ yyyy &#8594; year</code></p></td>
 </tr>
 </tbody>
 </table>
-<div class="dlist">
-<dl>
-<dt class="hdlist1">Other constraints</dt>
-<dd>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
+<li>
+<p>Other constraints::</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
 <p>The application does not allow you to assign date time that has already passed to a task.
 It must be a time in the future.</p>
@@ -410,13 +336,15 @@ be later than <code>start date</code>.</p>
 <p>The total weight of tasks under the same module is caped to 100.0.</p>
 </li>
 <li>
-<p>All <code>index numbers</code> should be positive and within a valid range. (i.e When there is only 5 modules available, the valid module index number range is 1 to 5).
-.</p>
+<p>All <code>index numbers</code> should be positive and within a valid range. (i.e When there is only 5 modules available, the valid module index number range is 1 to 5).</p>
 </li>
 </ol>
 </div>
-</dd>
-</dl>
+</li>
+</ol>
+</div>
+</li>
+</ul>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -431,211 +359,158 @@ The application allows for addition of duplicate tasks. It will however confirm 
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example:</strong></p>
+<p>To <code>add</code>:</p>
 </div>
-<div class="sidebarblock">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initiate the command using keyword <code>add</code></p>
+</li>
+<li>
+<p>Study Buddy should respond with <code>a list of available modules</code> as:</p>
+<div class="imageblock">
 <div class="content">
-<div class="paragraph">
-<p>U- <code>add</code></p>
+<img src="images/add_module.png" alt="add module" width="600">
 </div>
-<div class="paragraph">
-<p>S- Please choose a Module for this task or press enter to skip. Index number and module code are both acceptable.<br>
-&#160;&#160;&#160;&#160;The Modules available are:<br>
-&#160;&#160;&#160;&#160;1.CS2101 Effective Communication for Computing Professionals<br>
-&#160;&#160;&#160;&#160;2.CS2103T Software Engineering</p>
+<div class="title">Figure 2. Reponse to 'add'</div>
 </div>
-<div class="paragraph">
-<p>U- <code>1</code></p>
+</li>
+<li>
+<p>You can link this task with a module by entering its <code>MODULE CODE</code> | <code>INDEX NUMBER OF MODULE</code> here
+, or you can press <kbd>enter</kbd> to skip. Here we use <code>1</code> (CS2101) as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the module selected and the request of task name as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_task_name.png" alt="add task name" width="600">
 </div>
-<div class="paragraph">
-<p>S- The module has been set as: CS2101 Effective Communication for Computing Professionals</p>
+<div class="title">Figure 3. Asks for task&#8217;s name</div>
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please enter the task name.</p>
+</li>
+<li>
+<p>Here we use <code>new task</code> as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the task name defined and the request of task type as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_task_type.png" alt="add task type" width="600">
 </div>
-<div class="paragraph">
-<p>U- <code>Weekly Quiz 1</code></p>
+<div class="title">Figure 4. Asks for task&#8217;s type</div>
 </div>
-<div class="paragraph">
-<p>S- The name of task is set to: Weekly Quiz 1.</p>
+</li>
+<li>
+<p>Here we use <code>1</code> (Assignment) as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the task type defined and the request of task&#8217;s date time information as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_date_time.png" alt="add date time" width="600">
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please choose the task type:<br>
-&#160;&#160;&#160;&#160;1. Assignment<br>
-&#160;&#160;&#160;&#160;2. Quiz<br>
-&#160;&#160;&#160;&#160;3. Presentation<br>
-&#160;&#160;&#160;&#160;4. Meeting<br>
-&#160;&#160;&#160;&#160;5. Exam<br>
-&#160;&#160;&#160;&#160;6. Others</p>
+<div class="title">Figure 5. Asks for task&#8217;s date time</div>
 </div>
-<div class="paragraph">
-<p>U- <code>2</code></p>
+</li>
+<li>
+<p>Here we use <code>14:00 04/05/2020</code> as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the date time defined and the request of task&#8217;s description as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_desc.png" alt="add desc" width="600">
 </div>
-<div class="paragraph">
-<p>S- The type of task has been set to: Quiz.</p>
+<div class="title">Figure 6. Asks for task&#8217;s description</div>
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please enter the deadline/duration with format: HH:mm dd/MM/yyyy-HH:mm dd/MM/yyyy</p>
+</li>
+<li>
+<p>Here we use <code>new task description</code> as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the description defined and the request of task&#8217;s weight as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_weight.png" alt="add weight" width="600">
 </div>
-<div class="paragraph">
-<p>U- <code>12:00 10/04/2020-14:00 17/04/2020</code></p>
+<div class="title">Figure 7. Asks for task&#8217;s weight</div>
 </div>
-<div class="paragraph">
-<p>S- The date and time is set to: 12:00 10/04/2020-14:00 17/04/2020</p>
+</li>
+<li>
+<p>Here we use <code>10</code> as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the weight defined and the request of the estimated number of hours needed as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_time_cost.png" alt="add time cost" width="600">
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please enter task description or press enter to skip.</p>
+<div class="title">Figure 8. Asks for estimated number of hours needed</div>
 </div>
-<div class="paragraph">
-<p>U- <code>Read the topic first!!</code></p>
+</li>
+<li>
+<p>Here we use <code>10</code> as an example.</p>
+</li>
+<li>
+<p>Study Buddy should respond with the task details collected and the request of your confirmation to perform the command as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_task_info_1.png" alt="add task info 1" width="600">
 </div>
-<div class="paragraph">
-<p>S- The task description has been set as Read the topic first!!</p>
+<div class="title">Figure 9. Asks for user conformation to add a new task</div>
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please enter the weight of the task or press enter to skip.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_task_info_2.png" alt="add task info 2" width="600">
 </div>
-<div class="paragraph">
-<p>U- <code>5</code></p>
+<div class="title">Figure 10. Task details collected</div>
 </div>
-<div class="paragraph">
-<p>S- The weight of the task has been set as 5</p>
+</li>
+<li>
+<p>Now, by pressing <kbd>enter</kbd> the new task will be added into your Study Buddy.</p>
+</li>
+<li>
+<p>Study Buddy should respond as:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/add_result.png" alt="add result" width="600">
 </div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;Please enter the estimated number of hours cost or press enter to skip.</p>
+<div class="title">Figure 11. New task added</div>
 </div>
-<div class="paragraph">
-<p>U- <code>1</code></p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p>S- The estimated number of hours the task might take has been set as 1</p>
-</div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;The task is ready to be added, press enter again to add the task:</p>
-</div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;=========== TASK INFO ===========<br>
-&#160;&#160;&#160;&#160;Task Name :Weekly Quiz 1<br>
-&#160;&#160;&#160;&#160;Task Code: CS2101<br>
-&#160;&#160;&#160;&#160;Task Type: Quiz<br>
-&#160;&#160;&#160;&#160;Deadline/Duration: 12:00 10/04/2020-12:00 10/04/2020<br>
-&#160;&#160;&#160;&#160;Task Description: Read the topic first!!<br>
-&#160;&#160;&#160;&#160;Task weight: 5.0<br>
-&#160;&#160;&#160;&#160;Task Estimated Time Cost: 1.0 hrs</p>
-</div>
-<div class="paragraph">
-<p>U- <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Task added successfully!</p>
-</div>
-</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use <code>quit</code> command to quit from each step.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
 <h4 id="edit"><a class="link" href="#edit">3.1.3. Edit</a></h4>
 <div class="paragraph">
-<p><strong>Description</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This command is for you to edit an existing task.</p>
-</li>
-<li>
-<p>To indicate the task you want to edit, you need to provide its index number.</p>
-</li>
-</ol>
+<p>This command is for you to edit an existing task.
+To indicate the task you want to edit, you need to provide its index number.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/deleteResponse2.png" alt="deleteResponse2" width="790">
+<img src="images/deleteResponse2.png" alt="deleteResponse2" width="600">
 </div>
-<div class="title">Figure 2. Index number</div>
-</div>
-<div class="paragraph">
-<p><strong>Format</strong></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>U- <code>edit</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for index number of target task</p>
-</div>
-<div class="paragraph">
-<p>U- <code>INDEX NUMBER OF THE TASK</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for field you want to update and provides the editable fields</p>
-</div>
-<div class="paragraph">
-<p>U- <code>INDEX NUMBER OF THE FIELD</code></p>
-</div>
-<div class="paragraph">
-<p>S- asks for the new value</p>
-</div>
-<div class="paragraph">
-<p>U- <code>NEW VALID VALUE</code> + <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Task edited successfully</p>
-</div>
-</div>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Each new value and index number entered will be checked under the same constrain of add command.<br>
-</td>
-</tr>
-</table>
+<div class="title">Figure 12. Index number</div>
 </div>
 <div class="paragraph">
 <p><strong>Example:</strong></p>
 </div>
-<div class="sidebarblock">
-<div class="content">
 <div class="paragraph">
-<p>U- <code>edit</code></p>
-</div>
-<div class="paragraph">
-<p>S- Please enter the index of the task that you wish to edit.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>1</code></p>
-</div>
-<div class="paragraph">
-<p>S- Please choose the field that you wish to edit for task: Sample Task Name.</p>
-</div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;1. Task module<br>
-&#160;&#160;&#160;&#160;2. Task name<br>
-&#160;&#160;&#160;&#160;3. Task type<br>
-&#160;&#160;&#160;&#160;4. Task due date and time/ duration<br>
-&#160;&#160;&#160;&#160;5. Task description<br>
-&#160;&#160;&#160;&#160;6. Task weight<br>
-&#160;&#160;&#160;&#160;7. Estimated number of hour cost</p>
-</div>
-<div class="paragraph">
-<p>U- <code>2</code></p>
-</div>
-<div class="paragraph">
-<p>S- You are now editing the Task name field<br>
-&#160;&#160;&#160;&#160;Please enter the task name.</p>
-</div>
-<div class="paragraph">
-<p>U- <code>New Task Name</code> + <code>[enter]</code></p>
-</div>
-<div class="paragraph">
-<p>S- Task edited successfully</p>
-</div>
-</div>
+<p>When you want to update some details of a task or there are some typo in an existing
+task. You can use this command to edit as you wish.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -644,10 +519,65 @@ Each new value and index number entered will be checked under the same constrain
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-After successfully edit the task, the related task record entry will update automatically.
+Each new value and index number entered will be checked under the same constrain of add command.
 </td>
 </tr>
 </table>
+</div>
+<div class="paragraph">
+<p>To <code>edit</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initiate the command using keyword <code>edit</code></p>
+</li>
+<li>
+<p>Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit_index.png" alt="edit index" width="600">
+</div>
+<div class="title">Figure 13. Reponse to 'edit'</div>
+</div>
+</li>
+<li>
+<p>Type the index of the task you want to edit. here use <code>1</code> (Quiz 1) as an example.</p>
+</li>
+<li>
+<p>The Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit_response_index.png" alt="edit response index" width="600">
+</div>
+<div class="title">Figure 14. List of editable fields</div>
+</div>
+</li>
+<li>
+<p>Type the index of the field you want to edit, here use <code>2</code> (task name) as an example.</p>
+</li>
+<li>
+<p>The Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit_response_task_name.png" alt="edit response task name" width="600">
+</div>
+<div class="title">Figure 15. Asks for new task name</div>
+</div>
+</li>
+<li>
+<p>Enter new task name, here use <code>new task</code> as an example.</p>
+</li>
+<li>
+<p>The Study Buddy should respond as below with updated field.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/edit_result.png" alt="edit result" width="600">
+</div>
+<div class="title">Figure 16. Task edited</div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -655,11 +585,11 @@ After successfully edit the task, the related task record entry will update auto
 <div class="paragraph">
 <p>This commands clears all data in the Study Buddy.</p>
 </div>
-<div class="admonitionblock tip">
+<div class="admonitionblock warning">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
+<i class="fa icon-warning" title="Warning"></i>
 </td>
 <td class="content">
 Be careful with this command! It will remove any data you may have entered into the Study Buddy and you cannot retrieve it.
@@ -690,10 +620,7 @@ Be careful with this command! It will remove any data you may have entered into 
 <div class="content">
 <img src="images/clear1.png" alt="clear1" width="790">
 </div>
-<div class="title">Figure 3. Reponse to 'clear'</div>
-</div>
-</li>
-</ol>
+<div class="title">Figure 17. Response to 'clear'</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -707,8 +634,7 @@ You can enter <code>quit</code> if you wish to go back!
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+</li>
 <li>
 <p>Press <code>enter</code> again to confirm</p>
 </li>
@@ -718,7 +644,7 @@ You can enter <code>quit</code> if you wish to go back!
 <div class="content">
 <img src="images/clear2.png" alt="clear2" width="790">
 </div>
-<div class="title">Figure 4. View empty Study Buddy</div>
+<div class="title">Figure 18. View empty Study Buddy</div>
 </div>
 </li>
 </ol>
@@ -752,7 +678,7 @@ You can enter <code>quit</code> if you wish to go back!
 <div class="content">
 <img src="images/deleteResponse2.png" alt="deleteResponse2" width="790">
 </div>
-<div class="title">Figure 5. Reponse to 'delete'</div>
+<div class="title">Figure 19. Response to 'delete'</div>
 </div>
 </li>
 <li>
@@ -761,7 +687,7 @@ You can enter <code>quit</code> if you wish to go back!
 <div class="content">
 <img src="images/deleteResponse3.png" alt="deleteResponse3" width="790">
 </div>
-<div class="title">Figure 6. Reponse to delete index 1</div>
+<div class="title">Figure 20. Response to delete index 1</div>
 </div>
 </li>
 <li>
@@ -773,7 +699,7 @@ You can enter <code>quit</code> if you wish to go back!
 <div class="content">
 <img src="images/deleteResponse1.png" alt="deleteResponse1" width="790">
 </div>
-<div class="title">Figure 7. Updated list (without deleted task)</div>
+<div class="title">Figure 21. Updated list (without deleted task)</div>
 </div>
 </li>
 </ol>
@@ -819,7 +745,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/deleteDuplicates1.png" alt="deleteDuplicates1" width="790">
 </div>
-<div class="title">Figure 8. Reponse to 'delete duplicates'</div>
+<div class="title">Figure 22. Respons to 'delete duplicates'</div>
 </div>
 </li>
 <li>
@@ -831,7 +757,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/deleteDuplicates2.png" alt="deleteDuplicates2" width="790">
 </div>
-<div class="title">Figure 9. Updated list (without duplicate tasks)</div>
+<div class="title">Figure 23. Updated list (without duplicate tasks)</div>
 </div>
 </li>
 </ol>
@@ -865,7 +791,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/archive_1.png" alt="archive 1" width="790">
 </div>
-<div class="title">Figure 10. Study Buddy&#8217;s reponse to 'archive'</div>
+<div class="title">Figure 24. Study Buddy&#8217;s respons to 'archive'</div>
 </div>
 </li>
 <li>
@@ -874,7 +800,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/archive_2.png" alt="archive 2" width="790">
 </div>
-<div class="title">Figure 11. Study Buddy&#8217;s reponse to task index</div>
+<div class="title">Figure 25. Study Buddy&#8217;s respons to task index</div>
 </div>
 </li>
 <li>
@@ -886,7 +812,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/archive_3.png" alt="archive 3" width="790">
 </div>
-<div class="title">Figure 12. View archived tasks</div>
+<div class="title">Figure 26. View archived tasks</div>
 </div>
 </li>
 </ol>
@@ -938,7 +864,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <div class="content">
 <img src="images/beforeSort.png" alt="beforeSort" width="790">
 </div>
-<div class="title">Figure 13. All Task Panel</div>
+<div class="title">Figure 27. All Task Panel</div>
 </div>
 <div class="paragraph">
 <p><strong>Format</strong></p>
@@ -1119,7 +1045,7 @@ Due soon list shows tasks due within the next week. Details are in <a href="#due
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Status tags include information on the tasks' status. Details are in <a href="#status-tags">Section 3.5, &#8220;Status Tags&#8221;</a>
+Status tags include information on the tasks' status. Details are in <a href="#Status Tags">[Status Tags]</a>
 </td>
 </tr>
 </table>
@@ -1144,7 +1070,7 @@ Status tags include information on the tasks' status. Details are in <a href="#s
 <div class="content">
 <img src="images/refresh1.png" alt="refresh1" width="790">
 </div>
-<div class="title">Figure 14. Current state (needs to be refreshed)</div>
+<div class="title">Figure 28. Current state (needs to be refreshed)</div>
 </div>
 <div class="paragraph">
 <p>Suppose you notice that the task "Submit UG" is not due "now" anymore because some time has past since the deadline.</p>
@@ -1159,7 +1085,7 @@ Status tags include information on the tasks' status. Details are in <a href="#s
 <div class="content">
 <img src="images/refresh2.png" alt="refresh2" width="790">
 </div>
-<div class="title">Figure 15. Reponse to 'refresh'</div>
+<div class="title">Figure 29. Respons to 'refresh'</div>
 </div>
 </li>
 <li>
@@ -1171,7 +1097,7 @@ Status tags include information on the tasks' status. Details are in <a href="#s
 <div class="content">
 <img src="images/refresh3.png" alt="refresh3" width="790">
 </div>
-<div class="title">Figure 16. View refreshed Study Buddy</div>
+<div class="title">Figure 30. View refreshed Study Buddy</div>
 </div>
 <div class="paragraph">
 <p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".</p>
@@ -1220,7 +1146,7 @@ All your data will be saved and reloaded when you open the application later! Yo
 <div class="content">
 <img src="images/exit1.png" alt="exit1" width="790">
 </div>
-<div class="title">Figure 17. Reponse to 'bye'</div>
+<div class="title">Figure 31. Respons to 'bye'</div>
 </div>
 </li>
 <li>
@@ -1229,7 +1155,7 @@ All your data will be saved and reloaded when you open the application later! Yo
 <div class="content">
 <img src="images/exit2.png" alt="exit2" width="790">
 </div>
-<div class="title">Figure 18. Reponse to any command other than 'yes'</div>
+<div class="title">Figure 32. Respons to any command other than 'yes'</div>
 </div>
 <div class="paragraph">
 <p>In response to yes, the application should simply close.</p>
@@ -1285,7 +1211,7 @@ By default, it shows the following:</p>
 <div class="content">
 <img src="images/duesoon1.png" alt="duesoon1" width="790">
 </div>
-<div class="title">Figure 19. Due Soon List</div>
+<div class="title">Figure 33. Due Soon List</div>
 </div>
 </li>
 <li>
@@ -1294,7 +1220,7 @@ By default, it shows the following:</p>
 <div class="content">
 <img src="images/duesoon3.png" alt="duesoon3" width="790">
 </div>
-<div class="title">Figure 20. Due Soon List</div>
+<div class="title">Figure 34. Due Soon List</div>
 </div>
 </li>
 <li>
@@ -1306,7 +1232,7 @@ By default, it shows the following:</p>
 <div class="content">
 <img src="images/duesoon2.png" alt="duesoon2" width="790">
 </div>
-<div class="title">Figure 21. Due Soon List</div>
+<div class="title">Figure 35. Due Soon List</div>
 </div>
 </li>
 <li>
@@ -1326,11 +1252,11 @@ Time left is never displayed in days and minutes. Hence if the current time is 9
 </tr>
 </table>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 Due soon list will never display finished tasks. If you unarchive a completed task, it will not appear in the due soon list.
@@ -1340,15 +1266,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 </div>
 </div>
 <div class="sect2">
-<h3 id="status-tags"><a class="link" href="#status-tags">3.5. Status Tags</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="interactive-command-prompt"><a class="link" href="#interactive-command-prompt">3.6. Interactive Command Prompt</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="statistics"><a class="link" href="#statistics">3.7. Statistics</a></h3>
+<h3 id="statistics"><a class="link" href="#statistics">3.5. Statistics</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1387,7 +1305,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/entryOfStatistics.png" alt="entryOfStatistics" width="790">
 </div>
-<div class="title">Figure 22. Statistics entry</div>
+<div class="title">Figure 36. Statistics entry</div>
 </div>
 </li>
 </ul>
@@ -1403,7 +1321,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/initStatisticsPage.png" alt="initStatisticsPage" width="790">
 </div>
-<div class="title">Figure 23. Statistics initial page</div>
+<div class="title">Figure 37. Statistics initial page</div>
 </div>
 </li>
 <li>
@@ -1416,7 +1334,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/pieChartClick.png" alt="pieChartClick" width="790">
 </div>
-<div class="title">Figure 24. right panel update when clicking on pie chart</div>
+<div class="title">Figure 38. right panel update when clicking on pie chart</div>
 </div>
 </li>
 <li>
@@ -1425,13 +1343,13 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/areaChartClickOnArea.png" alt="areaChartClickOnArea" width="790">
 </div>
-<div class="title">Figure 25. right panel update when clicking on area chart&#8217;s area</div>
+<div class="title">Figure 39. right panel update when clicking on area chart&#8217;s area</div>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/areaChartClickDataPoint.png" alt="areaChartClickDataPoint" width="790">
 </div>
-<div class="title">Figure 26. right panel update when clicking on area chart&#8217;s data point</div>
+<div class="title">Figure 40. right panel update when clicking on area chart&#8217;s data point</div>
 </div>
 </li>
 <li>
@@ -1440,7 +1358,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 <div class="content">
 <img src="images/barChartClick.png" alt="barChartClick" width="790">
 </div>
-<div class="title">Figure 27. right panel update when clicking on bar chart</div>
+<div class="title">Figure 41. right panel update when clicking on bar chart</div>
 </div>
 </li>
 </ol>
@@ -1462,7 +1380,7 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 </div>
 </div>
 <div class="sect2">
-<h3 id="timers"><a class="link" href="#timers">3.8. Timers</a></h3>
+<h3 id="timers"><a class="link" href="#timers">3.6. Timers</a></h3>
 <div class="paragraph">
 <p>The timer feature comprises several other features that manage time.
 Students can use it to plan their schedule, taking into account the various quizzes, assignments and deadlines they have.
@@ -1480,7 +1398,7 @@ Features like that include:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar"><a class="link" href="#calendar">3.9. Calendar</a></h3>
+<h3 id="calendar"><a class="link" href="#calendar">3.7. Calendar</a></h3>
 <div class="paragraph">
 <p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month. This allows students to plan their time efficiently.</p>
 </div>
@@ -1491,7 +1409,7 @@ Features like that include:</p>
 <div class="content">
 <img src="images/calender_init.png" alt="calender init" width="790">
 </div>
-<div class="title">Figure 28. calendar interface</div>
+<div class="title">Figure 42. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -1507,18 +1425,11 @@ Features like that include:</p>
 <div class="content">
 <img src="images/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
 </div>
-<div class="title">Figure 29. calendar after clicking on a date</div>
+<div class="title">Figure 43. calendar after clicking on a date</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="ui"><a class="link" href="#ui">3.10. UI</a></h3>
-<div class="paragraph">
-<p>You can customize the appearance of your app.
-You can change the colour of the background, as well as for different modules</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="profile"><a class="link" href="#profile">3.11. Profile</a></h3>
+<h3 id="profile"><a class="link" href="#profile">3.8. Profile</a></h3>
 <div class="paragraph">
 <p>The profile page shows the detail information of the user, such as:</p>
 </div>
@@ -1583,4 +1494,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 13:16:43 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-02 13:19:43 UTC</div></div></div></body></html>
