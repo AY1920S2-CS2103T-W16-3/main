@@ -204,7 +204,7 @@ table.tableblock > .title,
 
 /* Do not display site header on print mediums */
 @media print {
-    #seedu-header {
+    #draganddrop-header {
         display: none;
     }
 
