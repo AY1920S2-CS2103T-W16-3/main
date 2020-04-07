@@ -193,12 +193,9 @@ CAT
 <div class="content">
 <img src="../images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
+<div class="title">Figure 1. Sequence diagram for modules</div>
 </div>
 </div>
-</div>
-<div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data Encryption</a></h3>
-
 </div>
 <div class="sect2">
 <h3 id="logging"><a class="link" href="#logging">Logging</a></h3>
@@ -283,7 +280,10 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <p>has a need to manage a significant number of tasks for various modules</p>
 </li>
 <li>
-<p>prefers desktop apps over other types</p>
+<p>appreciates visualization tools to aid in task management</p>
+</li>
+<li>
+<p>prefers desktop apps over mobile apps</p>
 </li>
 <li>
 <p>can type fast</p>
@@ -376,6 +376,12 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter all pending tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my pending tasks in one place</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who likes organization</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are due soon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know what to focus on in the next week</p></td>
@@ -464,6 +470,74 @@ The given index is invalid.</p>
 <p>3a1. Study Buddy shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-filter-tasks" class="discrete">Use case: Filter tasks</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to filter tasks</p>
+</li>
+<li>
+<p>Study Buddy shows two options for filter</p>
+</li>
+<li>
+<p>User requests to filter by status</p>
+</li>
+<li>
+<p>Study Buddy provides options to filter by status</p>
+</li>
+<li>
+<p>User provides input</p>
+</li>
+<li>
+<p>Study Buddy shows filtered task list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+User chooses to filter by type instead.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a. Study Buddy provides options to filter by type</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
 </div>
 </li>
 </ul>
@@ -598,44 +672,7 @@ There is nothing to refresh</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -730,8 +767,21 @@ Error details shown in the status message.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em>
-<em>{ more test cases &#8230;&#8203; }</em></p>
+<p>Prerequisites: Delete the "tasklist.json" file from data folder.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file needed is missing and creates one.
+Application launches successfully but has no data.
+c</p>
+</li>
+<li>
+<p>Prerequisites: Modify the "tasklist.json" file to show some incorrect data.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file is corrupted.
+Application launches successfully but has no data.</p>
 </li>
 </ol>
 </div>
@@ -749,4 +799,4 @@ Error details shown in the status message.</p>
 <p><em>{Optionally, you may include other projects in your portfolio.}</em></p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 05:19:18 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 09:07:34 UTC</div></div></div></body></html>

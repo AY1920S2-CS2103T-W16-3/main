@@ -85,7 +85,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Study Buddy is a desktop application which is designed for students who <strong>wish to manege their module related tasks</strong>.
+<p>Study Buddy is a desktop application which is designed for students who <strong>wish to manage their module related tasks</strong>.
 More importantly, Study Buddy is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI).</p>
 </div>
 <div class="paragraph">
@@ -151,18 +151,6 @@ you may refer to the guide below.</p>
 </li>
 <li>
 <p>Last, double-click the file to start the app and the dashboard should appear in a few seconds.</p>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-You may need to adjust the size of the Study Buddy window when you launch it.
-</td>
-</tr>
-</table>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/Ui.png" alt="Ui" width="790">
@@ -217,11 +205,26 @@ This symbol indicates an aspect that should be used with caution.
 </tr>
 </table>
 </div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This symbol indicates something to which we want to draw your attention.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="useful-tips"><a class="link" href="#useful-tips">2.2. Useful tips</a></h4>
 <div class="ulist">
 <ul>
+<li>
+<p>You may need to adjust the size of the Study Buddy window when you launch it.</p>
+</li>
 <li>
 <p>The scroll bar on the right of the response box can be used to view the entire reply.</p>
 </li>
@@ -233,10 +236,10 @@ This symbol indicates an aspect that should be used with caution.
 It utilizes an "interactive command prompt". (explained in each command&#8217;s description under <a href="#Features">Section 4, &#8220;Features&#8221;</a>)</p>
 </li>
 <li>
-<p><strong>[enter]</strong> indicates <strong>hitting the enter key on your keyboard</strong>.</p>
+<p>In this document, <strong>[enter]</strong> indicates <strong>hitting the enter key on your keyboard</strong>.</p>
 </li>
 <li>
-<p><strong>|</strong> indicates an <strong>alternative option</strong> (i.e. A | B implies A or B).</p>
+<p>In this document, <strong>|</strong> indicates an <strong>alternative option</strong> (i.e. A | B implies A or B).</p>
 </li>
 </ul>
 </div>
@@ -248,10 +251,11 @@ It utilizes an "interactive command prompt". (explained in each command&#8217;s 
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="understanding-the-dashboard"><a class="link" href="#understanding-the-dashboard">3.1. Understanding the dashboard</a></h3>
-<div class="paragraph">
-<p>The top of the DashBoard is the <strong>menu bar</strong>. You can use it to access to other data such as
-modules &amp; archives.</p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The top of the DashBoard is the <strong>menu bar</strong>. You can access other features such as
+modules, archived list, calendar, statistics and productivity tracker. Simply click on the icon to navigate to it.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/dashboard/dashboard_1.png" alt="dashboard 1" width="600">
@@ -259,8 +263,11 @@ modules &amp; archives.</p>
 <div class="title">Figure 2. Access other features here!</div>
 </div>
 <div class="paragraph">
-<p>The left side features the detail information of the entire unarchived tasks.</p>
+<p><br></p>
 </div>
+</li>
+<li>
+<p>The left side features your entire list of unarchived tasks.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/dashboard/dashboard_2.png" alt="dashboard 2" width="600">
@@ -268,9 +275,11 @@ modules &amp; archives.</p>
 <div class="title">Figure 3. All task to complete</div>
 </div>
 <div class="paragraph">
-<p>The panel on the right will remind you of tasks which will due in next week,
-and the list of tasks are automatically sorted by date and time.</p>
+<p><br></p>
 </div>
+</li>
+<li>
+<p>The right side displays your tasks that are due soon.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/dashboard/dashboard_3.png" alt="dashboard 3" width="600">
@@ -278,15 +287,31 @@ and the list of tasks are automatically sorted by date and time.</p>
 <div class="title">Figure 4. Task due soon</div>
 </div>
 <div class="paragraph">
-<p>You can enter commands at the box with the words <code>Please enter your command here&#8230;&#8203;</code> and press <kbd>enter</kbd>
-to interact with Study Buddy.
-He will reply accordingly via the box above.</p>
+<p><br></p>
 </div>
+</li>
+<li>
+<p>The bottom is your input line. You can type your commands to tell Study Buddy what to do and he will reply accordingly!</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/dashboard/dashboard_4.png" alt="dashboard 4" width="600">
 </div>
 <div class="title">Figure 5. Chat with Studdy Buddy here!</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A more detailed explanation of each of the usage of these components is given in <a href="#Features">Section 4, &#8220;Features&#8221;</a>
+</td>
+</tr>
+</table>
 </div>
 <div class="sect3">
 <h4 id="useful-tips-2"><a class="link" href="#useful-tips-2">3.1.1. Useful tips</a></h4>
@@ -310,7 +335,8 @@ It utilizes an "interactive command prompt". (explained in each command&#8217;s 
 </li>
 <li>
 <p>When mention about task&#8217;s <strong>index number</strong>, it refers to the index number displayed in <strong>All Tasks panel</strong>. Noted that the
-index of the same task could be different after <code>filter</code>, <code>find</code> and <code>sort</code> commands.</p>
+index of the same task could be different after <code>filter</code>, <code>find</code> and <code>sort</code> commands.
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 441170cf5d2c312d6a420efef1bf2b7a0384684b</p>
 </li>
 </ul>
 </div>
@@ -328,37 +354,6 @@ index of the same task could be different after <code>filter</code>, <code>find<
 <div class="paragraph">
 <p>This function displays a list of interactive commands that you can use.
 It also provides a link to this document, (our user guide).</p>
-</div>
-<div class="paragraph">
-<p><strong>Format:</strong></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>You-</strong> <code>help</code></p>
-</div>
-<div class="paragraph">
-<p><strong>SB -</strong> list of interactive commands</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p><strong>You-</strong> <code>help</code></p>
-</div>
-<div class="paragraph">
-<p><strong>SB -</strong> &#160;Here is the list of available commands:<br>
-&#160;&#160;&#160;&#160;&#160;1. add  2. delete  3. edit  4. bye  5. sort  6. find  7. done  8. delete duplicates  9. sort  10. archive  11. help<br>
-&#160;&#160;&#160;&#160;&#160;12. list  13. clear 14. create mods</p>
-</div>
-<div class="paragraph">
-<p>&#160;&#160;&#160;&#160;&#160;&#160;User Guide: <a href="https://ay1920s2-cs2103t-w16-3.github.io/main/UserGuide.html" class="bare">https://ay1920s2-cs2103t-w16-3.github.io/main/UserGuide.html</a></p>
-</div>
-</div>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -535,11 +530,11 @@ be later than <code>start date</code>.</p>
 </li>
 </ul>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 The application allows for addition of duplicate tasks. It will however confirm with you if you are sure you want to add a duplicate. In case you change your mind, <a href="#delete-duplicates">Section 4.1.7, &#8220;Delete duplicates&#8221;</a> could be helpful.
@@ -770,36 +765,51 @@ task. You can use this command to edit as you wish.</p>
 </div>
 <div class="sect3">
 <h4 id="done"><a class="link" href="#done">4.1.4. Done</a></h4>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>This command completes a task. Key in <code>done</code> &amp; you should get this prompt:</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/basic/done/done_1.png" alt="done 1" width="700">
 </div>
 <div class="title">Figure 21. Presentation to be marked as finished</div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Now key in the index of the task you wish to complete.</p>
-</div>
+</li>
+<li>
+<p>Press <kbd>enter</kbd> again to confirm your change.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/basic/done/done_2.png" alt="done 2" width="700">
 </div>
 <div class="title">Figure 22. Press <kbd>enter</kbd> to confirm changes</div>
 </div>
-<div class="paragraph">
-<p>Press <kbd>enter</kbd> again to confirm your change.</p>
-</div>
+</li>
+<li>
+<p>Task set to <code>finished</code> successfully! Note that the task in your task list has the tag <code>FINISHED</code>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/basic/done/done_3.png" alt="done 3" width="700">
 </div>
 <div class="title">Figure 23. Presentation 1 is marked as finished</div>
 </div>
-<div class="paragraph">
-<p>Task set to <code>done</code> successfully! Note that the task in your task list has the tag <code>FINISHED</code>.
-You can choose to archive it using the <code>archive</code> command.</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can choose to archive your completed task using the <code>archive</code> command.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -844,11 +854,11 @@ Be careful with this command! It will remove any data you may have entered into 
 </div>
 <div class="title">Figure 24. Response to 'clear'</div>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 Remember that you can enter <code>quit</code> if you wish to go back!
@@ -952,6 +962,18 @@ Once a task is deleted, it cannot be retrieved. Use this command with caution!
 </td>
 <td class="content">
 A task is considered duplicate when the name, type, module, description, weightage, estimated time cost and deadline are the same. (Status is not checked)
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This feature is case sensitive. This means that if one task is named "Task", it will be considered different from "task".
 </td>
 </tr>
 </table>
@@ -1206,11 +1228,11 @@ You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to d
 </div>
 </div>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 To navigate back to the always on display list of tasks, you can use the <a href="#list">Section 4.1.11, &#8220;List&#8221;</a> function.
@@ -1356,11 +1378,11 @@ To navigate back to your main list, check out <a href="#list">Section 4.1.11, &#
 <div class="paragraph">
 <p>This commands refreshes the list of tasks due soon as well as status tags.</p>
 </div>
-<div class="admonitionblock note">
+<div class="admonitionblock important">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-note" title="Note"></i>
+<i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
 Due soon list shows tasks due within the next week. Details are in <a href="#due-soon-tasks">Section 4.3, &#8220;Due Soon Tasks&#8221;</a>
@@ -1616,45 +1638,49 @@ all tasks will show up here if you have not allocated any tasks to the modules.<
 </div>
 <div class="sect3">
 <h4 id="navigation"><a class="link" href="#navigation">4.4.1. Navigation</a></h4>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>To navigate to the modules page, click on <code>Modules</code> in the menu bar.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_2.png" alt="module 2" width="790">
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Then click on <code>Show Modules</code>. The module page should show up.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_3.png" alt="module 3" width="790">
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>The clicking on the leftmost tab shows the <code><strong>Overview</strong></code> of all your modules. it displays the module&#8217;s name and their code.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_4.png" alt="module 4" width="790">
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>The rightmost tab shows the list of task that has not been allocated to any modules.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_5.png" alt="module 5" width="790">
 </div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>The tabs in the middle are modules that you have added to the modules page.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_6.png" alt="module 6" width="790">
 </div>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -1664,10 +1690,8 @@ all tasks will show up here if you have not allocated any tasks to the modules.<
 <div class="sect3">
 <h4 id="create-modules"><a class="link" href="#create-modules">4.4.3. Create Modules</a></h4>
 <div class="paragraph">
-<p>To create a module, click on <code>Modules</code> in the menu bar.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively, you can key in <code>create mods</code> into the input line.</p>
+<p>To create a module, click on <code>Modules</code> in the menu bar.
+Alternatively, you can key in <code>create mods</code> into the input line.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1730,21 +1754,22 @@ A1111XX     - Postfix is too long</code></pre>
 </div>
 <div class="sect3">
 <h4 id="edit-modules"><a class="link" href="#edit-modules">4.4.4. Edit Modules</a></h4>
-<div class="paragraph">
-<p>To create a module, click on <code>Modules</code> in the menu bar.</p>
-</div>
-<div class="paragraph">
-<p>Alternatively, you can key in <code>edit mods</code> into the input line.</p>
-</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To create a module, click on <code>Modules</code> in the menu bar.
+Alternatively, you can key in <code>edit mods</code> into the input line.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_12.png" alt="module 12" width="500">
 </div>
 </div>
-<div class="paragraph">
-<p>Click on <code>Edit</code>. A prompt will show up at the bottom of the screen.
-Key in the code of the module that you want to edit.</p>
-</div>
+</li>
+<li>
+<p>Click on <code>Edit</code>. A prompt will show up at the bottom of the screen.</p>
+</li>
+<li>
+<p>Key in the code of the module that you want to edit.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_13.png" alt="module 13" width="790" height=""">
@@ -1763,9 +1788,9 @@ Key in the code of the module that you want to edit.</p>
 </div>
 <div class="title">Figure 61. Key in 1, 2 or 3 depending on which option you prefer</div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Now you have 3 options. You can choose to:</p>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1779,8 +1804,11 @@ Key in the code of the module that you want to edit.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Key in the index of your option.</p>
+</li>
+</ol>
 </div>
 <div class="sect4">
 <h5 id="a-change-module-name"><a class="link" href="#a-change-module-name">a) Change Module Name</a></h5>
@@ -1789,17 +1817,21 @@ Key in the code of the module that you want to edit.</p>
 <img src="images/module/module_16.png" alt="module 16" width="790">
 </div>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Now key in your new module name.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_17.png" alt="module 17" width="790">
 </div>
 <div class="title">Figure 62. Module BA1001&#8217;s name has changed from 'CS' to 'New Module Name'</div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Module name changed!</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect4">
@@ -1809,18 +1841,22 @@ Key in the code of the module that you want to edit.</p>
 <img src="images/module/module_18.png" alt="module 18" width="790">
 </div>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Now key in your new module code. Make sure it follows the correct format
 as written in 3.7.3.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_19.png" alt="module 19" width="790">
 </div>
 <div class="title">Figure 63. Module code BA1001 has changed to CS3230</div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Module code changed!</p>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect4">
@@ -1830,17 +1866,21 @@ as written in 3.7.3.</p>
 <img src="images/module/module_20.png" alt="module 20" width="790">
 </div>
 </div>
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p>Press <kbd>enter</kbd> again to confirmed.</p>
-</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_21.png" alt="module 21" width="790">
 </div>
 <div class="title">Figure 64. deleted BA1001</div>
 </div>
-<div class="paragraph">
+</li>
+<li>
 <p>Module deleted! All existing task in this module will be moved to <code>No Module Allocated</code> tab.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2143,4 +2183,4 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Study Buddy folder (should be under data &#8594; taskList.json).</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 05:19:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 09:07:34 UTC</div></div></div></body></html>

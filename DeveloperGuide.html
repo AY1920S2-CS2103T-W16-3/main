@@ -11,43 +11,42 @@
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a></li>
 <li><a href="#setting-up">2. Setting up</a></li>
-<li><a href="#design">3. Design</a>
+<li><a href="#commonly-used-symbols">3. Commonly Used Symbols</a></li>
+<li><a href="#design">4. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
-<li><a href="#Design-Ui">3.2. UI component</a></li>
-<li><a href="#Design-Logic">3.3. Logic component</a></li>
-<li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
-<li><a href="#Design-Commons">3.6. Common classes</a></li>
+<li><a href="#Design-Architecture">4.1. Architecture</a></li>
+<li><a href="#Design-Ui">4.2. UI component</a></li>
+<li><a href="#Design-Logic">4.3. Logic component</a></li>
+<li><a href="#Design-Model">4.4. Model component</a></li>
+<li><a href="#Design-Storage">4.5. Storage component</a></li>
+<li><a href="#Design-Commons">4.6. Common classes</a></li>
 </ul>
 </li>
-<li><a href="#implementation">4. Implementation</a>
+<li><a href="#implementation">5. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#due-soon-tasks-feature">4.1. Due Soon Tasks Feature</a></li>
-<li><a href="#task-summary-feature">4.2. Task Summary Feature</a></li>
-<li><a href="#calendar-feature">4.3. Calendar feature</a></li>
-<li><a href="#archive-feature">4.4. Archive feature</a></li>
-<li><a href="#achievement-feature">4.5. Achievement feature</a></li>
-<li><a href="#modules">4.6. Modules</a></li>
-<li><a href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></li>
-<li><a href="#logging">4.8. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
+<li><a href="#due-soon-tasks-feature">5.1. Due Soon Tasks Feature</a></li>
+<li><a href="#task-summary-feature">5.2. Task Summary Feature</a></li>
+<li><a href="#calendar-feature">5.3. Calendar feature</a></li>
+<li><a href="#archive-feature">5.4. Archive feature</a></li>
+<li><a href="#achievement-feature">5.5. Achievement feature</a></li>
+<li><a href="#modules">5.6. Modules</a></li>
+<li><a href="#logging">5.7. Logging</a></li>
+<li><a href="#Implementation-Configuration">5.8. Configuration</a></li>
 </ul>
 </li>
-<li><a href="#documentation">5. Documentation</a></li>
-<li><a href="#testing">6. Testing</a></li>
-<li><a href="#dev-ops">7. Dev Ops</a></li>
+<li><a href="#documentation">6. Documentation</a></li>
+<li><a href="#testing">7. Testing</a></li>
+<li><a href="#dev-ops">8. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
 <li><a href="#use-cases">Appendix C: Use Cases</a></li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-task">G.2. Deleting a task</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-task">F.2. Deleting a task</a></li>
+<li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
 </ul>
@@ -79,10 +78,63 @@
 </div>
 </div>
 <div class="sect1">
-<h2 id="design"><a class="link" href="#design">3. Design</a></h2>
+<h2 id="commonly-used-symbols"><a class="link" href="#commonly-used-symbols">3. Commonly Used Symbols</a></h2>
+<div class="sectionbody">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This symbol indicates something you should take note of.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This symbol indicates a tip that you could use.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This symbol indicates an aspect that should be used with caution.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+This symbol indicates something to which we want to draw your attention.
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="design"><a class="link" href="#design">4. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">4.1. Architecture</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
@@ -168,7 +220,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="700">
 </div>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
@@ -178,7 +230,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram">
+<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="600">
 </div>
 <div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
 </div>
@@ -187,7 +239,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Ui"><a class="link" href="#Design-Ui">3.2. UI component</a></h3>
+<h3 id="Design-Ui"><a class="link" href="#Design-Ui">4.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/UiClassDiagram.png" alt="UiClassDiagram">
@@ -259,10 +311,10 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Logic"><a class="link" href="#Design-Logic">3.3. Logic component</a></h3>
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">4.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="600">
 </div>
 <div class="title">Figure 5. Structure of the Logic Component</div>
 </div>
@@ -291,7 +343,7 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">3.4. Model component</a></h3>
+<h3 id="Design-Model"><a class="link" href="#Design-Model">4.4. Model component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="500">
@@ -322,7 +374,7 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">4.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
@@ -347,7 +399,7 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Commons"><a class="link" href="#Design-Commons">3.6. Common classes</a></h3>
+<h3 id="Design-Commons"><a class="link" href="#Design-Commons">4.6. Common classes</a></h3>
 <div class="paragraph">
 <p>Classes used by multiple components are in the <code>draganddrop.studybuddy.commons</code> package.</p>
 </div>
@@ -355,15 +407,15 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 </div>
 <div class="sect1">
-<h2 id="implementation"><a class="link" href="#implementation">4. Implementation</a></h2>
+<h2 id="implementation"><a class="link" href="#implementation">5. Implementation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">4.1. Due Soon Tasks Feature</a></h3>
+<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">5.1. Due Soon Tasks Feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">4.1.1. Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">5.1.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The Due Soon Tasks feature allows users to view the tasks that have deadlines within the next week.</p>
 </div>
@@ -418,9 +470,21 @@ The command execution will only terminate in two scenarios:<br>
 <div class="paragraph">
 <p>Refreshes the list of due soon tasks and status tags. This command is useful for a situation where due soon list is not up to date due to a drastic change in time.</p>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Other command like edit, delete duplicates etc also trigger due soon feature in a similar manner.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">4.1.2. Example Usage Scenario</a></h4>
+<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">5.1.2. Example Usage Scenario</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the due soon list mechanism behaves at each step.</p>
 </div>
@@ -432,13 +496,16 @@ The command execution will only terminate in two scenarios:<br>
 </div>
 <div class="paragraph">
 <p>Step 2. The user executes <code>add</code> command to add a task.
-The <code>add</code> command execution checks if this task belongs in the due soon tasks list (i.e it is due in 7 days). If it does, the task is added to both lists, else it is only added to the main list.</p>
+The <code>add</code> command execution checks if this task belongs in the due soon tasks list (i.e it is due in 7 days). If it does, the task is added to both lists, else it is only added to the main list.<br></p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
 </div>
 <div class="title">Figure 8. Activity Diagram for Add to Due Soon list</div>
+</div>
+<div class="paragraph">
+<p><br></p>
 </div>
 <div class="paragraph">
 <p>Step 3. The user executes <code>delete</code> command to delete a task.
@@ -462,19 +529,22 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="400">
+<img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
 </div>
 <div class="title">Figure 9. Activity diagram for refresh</div>
 </div>
+<div class="paragraph">
+<p><br></p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="600">
+<img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
 </div>
 <div class="title">Figure 10. Sequence diagram for refresh</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.1.3. Design Considerations</a></h4>
+<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-refresh-code-command-works"><a class="link" href="#aspect-how-code-refresh-code-command-works">Aspect: How <code>refresh</code> command works</a></h5>
 <div class="ulist">
@@ -511,9 +581,9 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </div>
 </div>
 <div class="sect2">
-<h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">4.2. Task Summary Feature</a></h3>
+<h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">5.2. Task Summary Feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">4.2.1. Implementation</a></h4>
+<h4 id="implementation-3"><a class="link" href="#implementation-3">5.2.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The task summary feature allows user to enjoy visualized and real-time statistics of their tasks' information.</p>
 </div>
@@ -555,7 +625,7 @@ Only when there is task status change after <code>refresh</code>, the charts wil
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">4.2.2. Example Usage Scenario</a></h4>
+<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">5.2.2. Example Usage Scenario</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the task summary mechanism behaves at each step.</p>
 </div>
@@ -585,10 +655,11 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/TaskSummaryWithRefreshCommandActivityDiagram.png" alt="TaskSummaryWithRefreshCommandActivityDiagram" width="400">
 </div>
+<div class="title">Figure 11. Task summary with refresh command Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">4.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.2.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-display-charts"><a class="link" href="#aspect-how-to-display-charts">Aspect: How to display charts</a></h5>
 <div class="ulist">
@@ -624,7 +695,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </div>
 </div>
 <div class="sect3">
-<h4 id="future-possibility"><a class="link" href="#future-possibility">4.2.4. Future possibility</a></h4>
+<h4 id="future-possibility"><a class="link" href="#future-possibility">5.2.4. Future possibility</a></h4>
 <div class="sect4">
 <h5 id="question-should-we-write-this-in-dg"><a class="link" href="#question-should-we-write-this-in-dg">Question: should we write this in DG?</a></h5>
 
@@ -632,9 +703,9 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">4.3. Calendar feature</a></h3>
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">5.3. Calendar feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">4.3.1. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">5.3.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The calendar feature, as the name suggests, displays a calendar fo users.</p>
 </div>
@@ -659,7 +730,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario-3"><a class="link" href="#example-usage-scenario-3">4.3.2. Example usage scenario</a></h4>
+<h4 id="example-usage-scenario-3"><a class="link" href="#example-usage-scenario-3">5.3.2. Example usage scenario</a></h4>
 <div class="paragraph">
 <p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
 </div>
@@ -683,10 +754,11 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
 </div>
+<div class="title">Figure 12. Calendar Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">4.3.3. Design considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.3.3. Design considerations</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -697,12 +769,12 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </div>
 </div>
 <div class="sect2">
-<h3 id="archive-feature"><a class="link" href="#archive-feature">4.4. Archive feature</a></h3>
+<h3 id="archive-feature"><a class="link" href="#archive-feature">5.4. Archive feature</a></h3>
 <div class="paragraph">
 <p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">4.4.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">5.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
 </div>
@@ -713,17 +785,18 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
+<div class="title">Figure 13. Archive Sequence Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="achievement-feature"><a class="link" href="#achievement-feature">4.5. Achievement feature</a></h3>
+<h3 id="achievement-feature"><a class="link" href="#achievement-feature">5.5. Achievement feature</a></h3>
 <div class="paragraph">
 <p>The achievement feature keeps track of usage statistics and displays the user&#8217;s achievements
 and feedback on the user&#8217;s weekly performance.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">4.5.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">5.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The achievement feature keeps track of usage statistics that are important to the user.
 Each usage statistic is recorded when the respective user command has completed. The user command is
@@ -759,27 +832,27 @@ said to be completed when the respective <code>InteractivePrompt</code> has comp
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">4.5.2. Example Use Scenario</a></h4>
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">5.5.2. Example Use Scenario</a></h4>
 <div class="paragraph">
 <p>Clicking on the achievement menu item will enable this feature.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">4.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.3. Design Considerations</a></h4>
 <div class="paragraph">
 <p>Pending.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="modules"><a class="link" href="#modules">4.6. Modules</a></h3>
+<h3 id="modules"><a class="link" href="#modules">5.6. Modules</a></h3>
 <div class="paragraph">
 <p>The <code>modules</code> feature enables users to be able to group and view their tasks according to various modules or subjects.
 Each module is assigned with a unique module code &amp; a name.
 By default, all task created with the <code>add</code> command will be be assigned to module code <code>OO0000O</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">4.6.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">5.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Modules are created with <code>create mods</code> Command and the program will request for a module name and module code. There are no restrictions on module name as long as it is not an empty entry.</p>
 </div>
@@ -801,7 +874,7 @@ CAT
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">4.6.2. Sequence diagram for creating modules</a></h4>
+<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">5.6.2. Sequence diagram for creating modules</a></h4>
 <div class="paragraph">
 <p>This is a sequence of how a module is created using the <code>create mods</code> feature. Take note that all interactions go through the <code>CommandBox</code> first in the UI, but it will be omitted from this diagram for simplicity.</p>
 </div>
@@ -809,15 +882,12 @@ CAT
 <div class="content">
 <img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
+<div class="title">Figure 14. Sequence diagram for modules</div>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">4.7. [Proposed] Data Encryption</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.7. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging.
 The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
@@ -825,7 +895,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 5.8, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -856,7 +926,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -864,7 +934,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect1">
-<h2 id="documentation"><a class="link" href="#documentation">5. Documentation</a></h2>
+<h2 id="documentation"><a class="link" href="#documentation">6. Documentation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Documentation.html">here</a>.</p>
@@ -872,7 +942,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect1">
-<h2 id="testing"><a class="link" href="#testing">6. Testing</a></h2>
+<h2 id="testing"><a class="link" href="#testing">7. Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="Testing.html">here</a>.</p>
@@ -880,7 +950,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect1">
-<h2 id="dev-ops"><a class="link" href="#dev-ops">7. Dev Ops</a></h2>
+<h2 id="dev-ops"><a class="link" href="#dev-ops">8. Dev Ops</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Refer to the guide <a href="DevOps.html">here</a>.</p>
@@ -899,7 +969,10 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <p>has a need to manage a significant number of tasks for various modules</p>
 </li>
 <li>
-<p>prefers desktop apps over other types</p>
+<p>appreciates visualization tools to aid in task management</p>
+</li>
+<li>
+<p>prefers desktop apps over mobile apps</p>
 </li>
 <li>
 <p>can type fast</p>
@@ -992,6 +1065,12 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter all pending tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my pending tasks in one place</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who likes organization</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are due soon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know what to focus on in the next week</p></td>
@@ -1080,6 +1159,74 @@ The given index is invalid.</p>
 <p>3a1. Study Buddy shows an error message.</p>
 <div class="paragraph">
 <p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-filter-tasks" class="discrete">Use case: Filter tasks</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to filter tasks</p>
+</li>
+<li>
+<p>Study Buddy shows two options for filter</p>
+</li>
+<li>
+<p>User requests to filter by status</p>
+</li>
+<li>
+<p>Study Buddy provides options to filter by status</p>
+</li>
+<li>
+<p>User provides input</p>
+</li>
+<li>
+<p>Study Buddy shows filtered task list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+User chooses to filter by type instead.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a. Study Buddy provides options to filter by type</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
 </div>
 </li>
 </ul>
@@ -1214,44 +1361,7 @@ There is nothing to refresh</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1269,7 +1379,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1307,7 +1417,7 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-task"><a class="link" href="#deleting-a-task">G.2. Deleting a task</a></h3>
+<h3 id="deleting-a-task"><a class="link" href="#deleting-a-task">F.2. Deleting a task</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1338,7 +1448,7 @@ Error details shown in the status message.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1346,8 +1456,21 @@ Error details shown in the status message.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><em>{explain how to simulate a missing/corrupted file and the expected behavior}</em>
-<em>{ more test cases &#8230;&#8203; }</em></p>
+<p>Prerequisites: Delete the "tasklist.json" file from data folder.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file needed is missing and creates one.
+Application launches successfully but has no data.
+c</p>
+</li>
+<li>
+<p>Prerequisites: Modify the "tasklist.json" file to show some incorrect data.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file is corrupted.
+Application launches successfully but has no data.</p>
 </li>
 </ol>
 </div>
@@ -1356,4 +1479,4 @@ Error details shown in the status message.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 05:19:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 09:07:34 UTC</div></div></div></body></html>
