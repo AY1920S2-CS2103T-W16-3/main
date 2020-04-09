@@ -59,7 +59,7 @@
 <p>Study Buddy is a task-management tool made for students who want to be able to track and manage their tasks in one place.</p>
 </div>
 <div class="paragraph">
-<p>Study Buddy uses various visualization tools such as pie charts and calendars, provides useful functionality such as archive, due soon task list etc to make task management simple and convenient.</p>
+<p>Study Buddy uses various visualization tools such as pie charts and calendars, provides useful functionality such as archive, Due Soon task list etc to make task management simple and convenient.</p>
 </div>
 <div class="paragraph">
 <p>In particular, Study Buddy is a Command Line Interface (CLI) application that also provides some Graphical User Interface (GUI). This means that users are expected to interact with the Study Buddy mainly through the command line, but each command executed will evoke a visual response as well.</p>
@@ -420,84 +420,29 @@ The command execution will only terminate in two scenarios:<br>
 <p>The Due Soon Tasks feature allows users to view the tasks that have deadlines within the next week.</p>
 </div>
 <div class="paragraph">
-<p>This feature is implemented using a panel on the main window with a list of tasks due soon that is updated with every command that may affect due soon task list (such as add, delete or archive).</p>
+<p>This feature is implemented using a panel on the main window with a list of tasks Due Soon that is updated with every command that may affect Due Soon task list (such as add, delete or archive).</p>
 </div>
 <div class="paragraph">
-<p>Some commands that trigger due soon feature are:</p>
+<p>Some situations that trigger due soon feature are:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
-<div class="content">
-<pre>Command: add</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of due soon tasks.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<p>When user enters a task:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p>Delete&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
-<div class="content">
-<pre>Command: delete</pre>
-</div>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>When a task that is deleted from the main list occurs in the due soon list as well, it is automatically deleted.</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<p>What it does:<br></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
-<p>Refresh&#8201;&#8212;&#8201;</p>
-<div class="literalblock">
-<div class="content">
-<pre>Command: refresh</pre>
-</div>
-</div>
+<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of due soon tasks.<br></p>
 </li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Refreshes the list of due soon tasks and status tags. This command is useful for a situation where due soon list is not up to date due to a drastic change in time.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Other command like edit, delete duplicates etc also trigger due soon feature in a similar manner.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">5.1.2. Example Usage Scenario</a></h4>
-<div class="paragraph">
-<p>Given below is an example usage scenario and how the due soon list mechanism behaves at each step.</p>
-</div>
-<div class="paragraph">
-<p>Step 1. The user launches the application for the first time.</p>
-</div>
-<div class="paragraph">
-<p>The list of tasks due soon will be initialized and displayed with the initial study buddy state. Initialization is done by filtering tasks that are due soon from the general list of tasks.</p>
-</div>
-<div class="paragraph">
-<p>Step 2. The user executes <code>add</code> command to add a task.
-The <code>add</code> command execution checks if this task belongs in the due soon tasks list (i.e it is due in 7 days). If it does, the task is added to both lists, else it is only added to the main list.<br></p>
-</div>
+<li>
+<p>The list is automatically sorted to be in increasing order of deadlines.<br></p>
+</li>
+<li>
+<p>The time left for the deadline is also added.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
@@ -507,13 +452,243 @@ The <code>add</code> command execution checks if this task belongs in the due so
 <div class="paragraph">
 <p><br></p>
 </div>
-<div class="paragraph">
-<p>Step 3. The user executes <code>delete</code> command to delete a task.
-The <code>delete</code> command execution also checks if this task exists in the due soon task list. If it does, task is deleted from both lists, else it is only deleted from the main list.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Details:<br></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The add command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case AddTaskInteractivePrompt).<br></p>
+</li>
+<li>
+<p>In the AddTaskInteractivePrompt class, the data entered by user is parsed.<br></p>
+</li>
+<li>
+<p>If there are no errors, the AddTaskCommand object is created which triggers the addTask() function in Model.<br></p>
+</li>
+<li>
+<p>This function in turns calls addTask() function in Study Buddy.<br></p>
+</li>
+<li>
+<p>This function calls the isDueSoon() function in Task to confirm if the task belong to the due soon list.<br></p>
+</li>
+<li>
+<p>If it does, it is added to due soon list and main list, and the due soon list is sorted. Else, it is simply added to the main list.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddDueSoonSequence.png" alt="AddDueSoonSequence" width="800">
+</div>
+<div class="title">Figure 9. Sequence Diagram for Add to Due Soon list</div>
 </div>
 <div class="paragraph">
-<p>Step 4. The user executes <code>refresh</code> command to refresh the due soon task list.
-The <code>refresh</code> command execution will traverse the main list and check if there are any inconsistencies. For example, if there has been a change in time and a task is missing from the due soon task list, it will be added.</p>
+<p><br></p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+<br>
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>When user deletes a task:</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of Due Soon tasks.</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>What it does:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>When a task that is deleted from the main list occurs in the due soon list as well, it is automatically deleted.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteDueSoonActivityDiagram.png" alt="DeleteDueSoonActivityDiagram" width="200">
+</div>
+<div class="title">Figure 10. Activity Diagram for Delete from Due Soon list</div>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Details:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The delete command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case DeleteTaskInteractivePrompt).</p>
+</li>
+<li>
+<p>In the DeleteTaskInteractivePrompt class, the data entered by user is parsed.</p>
+</li>
+<li>
+<p>If there are no errors, the DeleteTaskCommand object is created which triggers the deleteTask() function in Model.</p>
+</li>
+<li>
+<p>This function in turns calls removeTask() function in Study Buddy.</p>
+</li>
+<li>
+<p>removeTask() calls the updateDeleteDueSoon() function in StudyBuddy which checks if the task exists in the due soon list.</p>
+</li>
+<li>
+<p>If it does, it is deleted from the due soon list and main list. Else, it is simply deleted from the main list.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DeleteDueSoonSequence.png" alt="DeleteDueSoonSequence" width="800">
+</div>
+<div class="title">Figure 11. Sequence Diagram for Delete from Due Soon list</div>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When user refreshes due soon list:</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>What it does:<br></p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Refreshes the list of due soon tasks and status tags. This command is useful for a situation where due soon list is not up to date due to a drastic change in time.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
+</div>
+<div class="title">Figure 12. Activity diagram for refresh</div>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Details:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The refresh command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case RefreshTaskInteractivePrompt).</p>
+</li>
+<li>
+<p>In the RefreshTaskInteractivePrompt class, the data entered by user is parsed.</p>
+</li>
+<li>
+<p>If there are no errors, the RefreshCommand object is created which clears the due soon list and then, iterates through the main list and calls addDueSoonTask() in Model, for any tasks that are due soon.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 13. Sequence diagram for refresh</div>
+</div>
+<div class="paragraph">
+<p><br></p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>When a task that is deleted from the main list occurs in the Due Soon list as well, it is automatically deleted.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the application launches:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>What it does:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>It loads the due soon tasks into a panel by filtering tasks that are due soon from the main list.</p>
+</li>
+<li>
+<p>This is necessary, because old list of due soon tasks may not be up-to-date.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Details:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The addTask() function in StudyBuddy class already checks if task is due soon and adds to due soon list (as mentioned above).</p>
+</li>
+<li>
+<p>While all tasks are being added to their respective lists in JsonSerializableStudyBuddy class, the due soon list gets automatically updated.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -522,25 +697,59 @@ The <code>refresh</code> command execution will traverse the main list and check
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-If there are no such inconsistencies, the refresh command will not make any changes to the due soon task list.
+Other commands like edit, delete duplicates etc also trigger due soon feature in a similar manner.
 </td>
 </tr>
 </table>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Calculation of time left for deadline and check for if task is due soon can be found in the Task class.
+</td>
+</tr>
+</table>
 </div>
-<div class="title">Figure 9. Activity diagram for refresh</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">5.1.2. Example Usage Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the Due Soon list mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p><br></p>
+<p>Step 1. The user launches the application for the first time.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
+<div class="paragraph">
+<p>The list of tasks Due Soon will be initialized and displayed with the initial study buddy state. Initialization is done by filtering tasks that are Due Soon from the general list of tasks.</p>
 </div>
-<div class="title">Figure 10. Sequence diagram for refresh</div>
+<div class="paragraph">
+<p>Step 2. The user executes <code>add</code> command to add a task.
+The <code>add</code> command execution checks if this task belongs in the Due Soon tasks list (i.e it is due in 7 days). If it does, the task is added to both lists, else it is only added to the main list.<br></p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user executes <code>delete</code> command to delete a task.
+The <code>delete</code> command execution also checks if this task exists in the Due Soon task list. If it does, task is deleted from both lists, else it is only deleted from the main list.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The user executes <code>refresh</code> command to refresh the due soon task list.
+The <code>refresh</code> command execution will traverse the main list and check if there are any inconsistencies. For example, if there has been a change in time and a task is missing from the due soon task list, it will be added.
+It will also update the time left.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If there are no such inconsistencies, the refresh command will not make any changes to the Due Soon task list.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect3">
@@ -550,20 +759,7 @@ If there are no such inconsistencies, the refresh command will not make any chan
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Does not clear and reload the due soon task list.</p>
-<div class="ulist">
-<ul>
-<li>
-<p>Pros: Fewer operations need to be performed.</p>
-</li>
-<li>
-<p>Cons: May have be more prone to errors because list is not completely "refreshed". Some parts of it are the same.</p>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Alternative 2:</strong> Clear and reload the due soon task list.</p>
+<p><strong>Alternative 1 (current choice):</strong> Clear and reload the due soon task list.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -571,6 +767,19 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </li>
 <li>
 <p>Cons: More operation intensive.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Does not clear and reload the due soon task list.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Fewer operations need to be performed.</p>
+</li>
+<li>
+<p>Cons: May have be more prone to errors because list is not completely "refreshed". Some parts of it are the same.</p>
 </li>
 </ul>
 </div>
@@ -655,7 +864,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/TaskSummaryWithRefreshCommandActivityDiagram.png" alt="TaskSummaryWithRefreshCommandActivityDiagram" width="400">
 </div>
-<div class="title">Figure 11. Task summary with refresh command Activity Diagram</div>
+<div class="title">Figure 14. Task summary with refresh command Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -721,7 +930,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <p>Access calendars in previous or next month using the buttons on top.</p>
 </li>
 <li>
-<p>Displays more information about tasks for the day on the due soon panel after clicking on a grid. (Not done)</p>
+<p>Displays more information about tasks for the day on the Due Soon panel after clicking on a grid. (Not done)</p>
 </li>
 <li>
 <p>Fast forward to a specific year/month using CLI. (Not done)</p>
@@ -754,7 +963,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
 </div>
-<div class="title">Figure 12. Calendar Activity Diagram</div>
+<div class="title">Figure 15. Calendar Activity Diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -785,7 +994,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <div class="content">
 <img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 13. Archive Sequence Diagram</div>
+<div class="title">Figure 16. Archive Sequence Diagram</div>
 </div>
 </div>
 </div>
@@ -882,7 +1091,7 @@ CAT
 <div class="content">
 <img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
-<div class="title">Figure 14. Sequence diagram for modules</div>
+<div class="title">Figure 17. Sequence diagram for modules</div>
 </div>
 </div>
 </div>
@@ -1019,13 +1228,13 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view a list of my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know what I have pending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">know what I have Pending</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my pending tasks in one place</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my Pending tasks in one place</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1037,7 +1246,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update my list of pending tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update my list of Pending tasks</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1066,13 +1275,13 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter all pending tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my pending tasks in one place</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter all Pending tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my Pending tasks in one place</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who likes organization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are due soon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are Due Soon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">know what to focus on in the next week</p></td>
 </tr>
 <tr>
@@ -1285,13 +1494,13 @@ There are no duplicate tasks</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User notices due soon list needs to be updates</p>
+<p>User notices Due Soon list needs to be updates</p>
 </li>
 <li>
 <p>User requests to refresh</p>
 </li>
 <li>
-<p>Study Buddy refreshes the due soon list and status tags</p>
+<p>Study Buddy refreshes the Due Soon list and status tags</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1479,4 +1688,4 @@ Application launches successfully but has no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 14:57:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 05:43:39 UTC</div></div></div></body></html>

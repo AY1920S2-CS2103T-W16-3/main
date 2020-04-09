@@ -16,11 +16,22 @@
 <li><a href="#useful-tips">2.2. Useful tips</a></li>
 </ul>
 </li>
-<li><a href="#DashBoard">3. Dashboard</a>
+<li><a href="#UI">3. User Interface Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#understanding-the-dashboard">3.1. Understanding the dashboard</a>
+<li><a href="#dashboard">3.1. Dashboard</a>
 <ul class="sectlevel3">
-<li><a href="#useful-tips-2">3.1.1. Useful tips</a></li>
+<li><a href="#navigation-menu-bar">3.1.1. Navigation Menu Bar</a></li>
+<li><a href="#all-tasks-panel">3.1.2. All Tasks Panel</a>
+<ul class="sectlevel4">
+<li><a href="#task-badges">Task Badges</a></li>
+</ul>
+</li>
+<li><a href="#tasks-due-soon-panel">3.1.3. Tasks Due Soon Panel</a>
+<ul class="sectlevel4">
+<li><a href="#task-badges-2">Task Badges</a></li>
+</ul>
+</li>
+<li><a href="#interactive-prompt-box">3.1.4. Interactive Prompt Box</a></li>
 </ul>
 </li>
 </ul>
@@ -31,18 +42,19 @@
 <ul class="sectlevel3">
 <li><a href="#help">4.1.1. Help :</a></li>
 <li><a href="#add">4.1.2. Add</a></li>
-<li><a href="#edit">4.1.3. Edit</a></li>
-<li><a href="#done">4.1.4. Done</a></li>
-<li><a href="#clear">4.1.5. Clear</a></li>
-<li><a href="#delete">4.1.6. Delete</a></li>
-<li><a href="#delete-duplicates">4.1.7. Delete duplicates</a></li>
-<li><a href="#archive-unarchive">4.1.8. Archive/ Unarchive</a></li>
-<li><a href="#sort">4.1.9. Sort</a></li>
-<li><a href="#find">4.1.10. Find</a></li>
-<li><a href="#list">4.1.11. List</a></li>
-<li><a href="#filter">4.1.12. Filter</a></li>
-<li><a href="#refresh">4.1.13. Refresh</a></li>
-<li><a href="#exit">4.1.14. Exit</a></li>
+<li><a href="#add-duplicates">4.1.3. Add duplicates</a></li>
+<li><a href="#edit">4.1.4. Edit</a></li>
+<li><a href="#done">4.1.5. Done</a></li>
+<li><a href="#clear">4.1.6. Clear</a></li>
+<li><a href="#delete">4.1.7. Delete</a></li>
+<li><a href="#view-duplicates">4.1.8. View duplicates</a></li>
+<li><a href="#archive-unarchive">4.1.9. Archive/ Unarchive</a></li>
+<li><a href="#Sort">4.1.10. Sort</a></li>
+<li><a href="#Find">4.1.11. Find</a></li>
+<li><a href="#LIST">4.1.12. List</a></li>
+<li><a href="#Filter">4.1.13. Filter</a></li>
+<li><a href="#Refresh">4.1.14. Refresh</a></li>
+<li><a href="#exit">4.1.15. Exit</a></li>
 </ul>
 </li>
 <li><a href="#saving-data">4.2. Saving Data</a></li>
@@ -159,7 +171,7 @@ you may refer to the guide below.</p>
 </div>
 </li>
 <li>
-<p>The box with the words <code>Please enter your command here&#8230;&#8203;</code> is where you can key in your desired command and click <kbd>Enter</kbd> to execute.</p>
+<p>Jump to <a href="#dashboard">Section 3.1, &#8220;Dashboard&#8221;</a> to get more information about dashboard.</p>
 </li>
 <li>
 <p>To view a list of available command, you can key in <strong><code>help</code></strong> and click <kbd>Enter</kbd>. A more detailed description of our features is available in
@@ -226,6 +238,9 @@ This symbol indicates something to which we want to draw your attention.
 <p>You may need to adjust the size of the Study Buddy window when you launch it.</p>
 </li>
 <li>
+<p>Make sure not to use any extra white spaces before or after commands. Study Buddy might consider it as an invalid command.</p>
+</li>
+<li>
 <p>The scroll bar on the right of the response box can be used to view the entire reply.</p>
 </li>
 <li>
@@ -241,65 +256,197 @@ It utilizes an "interactive command prompt". (explained in each command&#8217;s 
 <li>
 <p>In this document, <strong>|</strong> indicates an <strong>alternative option</strong> (i.e. A | B implies A or B).</p>
 </li>
+<li>
+<p>A task&#8217;s <strong>index number</strong>, refers to the number displayed on the left of a task in <strong>All Tasks panel</strong>. Note that the
+index of the same task could be different after <code>filter</code>, <code>find</code> and <code>sort</code> commands.</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="DashBoard"><a class="link" href="#DashBoard">3. Dashboard</a></h2>
+<h2 id="UI"><a class="link" href="#UI">3. User Interface Introduction</a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>The enjoyable user interface of Study Buddy provides you with better user experience.
+Especially its lovely colour themes and vivid animations can release the pressure you have accumulated from school.</p>
+</div>
 <div class="sect2">
-<h3 id="understanding-the-dashboard"><a class="link" href="#understanding-the-dashboard">3.1. Understanding the dashboard</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The top of the DashBoard is the <strong>menu bar</strong>. You can access other features such as
-modules, archived list, calendar, statistics and productivity tracker. Simply click on the icon to navigate to it.</p>
+<h3 id="dashboard"><a class="link" href="#dashboard">3.1. Dashboard</a></h3>
+<div class="paragraph">
+<p>The <strong>dashboard</strong> is the landing page each time the application is launched.<br>
+It consists of different components that can interact with you and provide you with meaningful information.</p>
+</div>
+<div class="sect3">
+<h4 id="navigation-menu-bar"><a class="link" href="#navigation-menu-bar">3.1.1. Navigation Menu Bar</a></h4>
+<div class="paragraph">
+<p>The <strong>menu bar</strong> lays at the top of the dashboard and is primarily used for navigation.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="images/dashboard/dashboard_1.png" alt="dashboard 1" width="600">
+<img src="images/dashboard/nav_bar.png" alt="nav bar" width="600">
 </div>
-<div class="title">Figure 2. Access other features here!</div>
+<div class="title">Figure 2. Menu bar</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="all-tasks-panel"><a class="link" href="#all-tasks-panel">3.1.2. All Tasks Panel</a></h4>
+<div class="paragraph">
+<p>By default, the <strong>All Tasks Panel</strong> lists all unarchived task records with their detail information in the order of creation date and time.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">You can</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Reorder them using command <a href="#Sort">Section 4.1.10, &#8220;Sort&#8221;</a>.</p>
+</li>
+<li>
+<p>Filter them using command <a href="#Filter">Section 4.1.13, &#8220;Filter&#8221;</a> or <a href="#Find">Section 4.1.11, &#8220;Find&#8221;</a>.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dashboard/all_tasks.png" alt="all tasks" width="600">
+</div>
+<div class="title">Figure 3. All tasks panel</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges"><a class="link" href="#task-badges">Task Badges</a></h5>
+<div class="paragraph">
+<p>To bold the important information of each task in <strong>All Tasks Panel</strong> , we use <strong>Badges</strong> to highlight <code>Module Code</code>,
+<code>Task Type</code> and  <code>Task Status</code> of each task.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Module Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light steelblue.</p>
+</li>
+<li>
+<p>If the task is not related to any module, the Module Badges will be omitted.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Different Type Badges are in different colours.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Status</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Different Task Statuses using different colours.</p>
+</li>
+<li>
+<p>The task which is due in next week (i.e. 7 days) will be marked as <code>Due Soon</code> status, sometimes
+you may need to use <a href="#Refresh">Section 4.1.14, &#8220;Refresh&#8221;</a> command to refresh the status of all tasks.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tasks-due-soon-panel"><a class="link" href="#tasks-due-soon-panel">3.1.3. Tasks Due Soon Panel</a></h4>
+<div class="paragraph">
+<p>The tasks which will due in next week (i.e. 7 days) will be listed here.
+You can jump to <a href="#due-soon-tasks">Section 4.3, &#8220;Due Soon Tasks&#8221;</a> to get more details.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/dashboard/due_soon.png" alt="due soon" width="600">
+</div>
+<div class="title">Figure 4. Task Due Soon</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges-2"><a class="link" href="#task-badges-2">Task Badges</a></h5>
+<div class="paragraph">
+<p>To bold the important information of each tasks in <strong>Tasks Due Soon Panel</strong> , we use <strong>Badges</strong> to highlight <code>Weight &amp; Module Code</code>,
+<code>Deadline/ Starting Date Counting Down</code> and  <code>Task Type</code> of each tasks.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Weight &amp; Module Code</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in steelblue.</p>
+</li>
+<li>
+<p>It provides weight and the module code of the task.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Deadline/ Starting Date Counting Down</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light orange.</p>
+</li>
+<li>
+<p>It displays the counting down for the tasks' deadline or starting date.</p>
+</li>
+<li>
+<p>More information please refer to <a href="#due-soon-tasks">Section 4.3, &#8220;Due Soon Tasks&#8221;</a></p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Different Type Badges are in different colours.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="interactive-prompt-box"><a class="link" href="#interactive-prompt-box">3.1.4. Interactive Prompt Box</a></h4>
+<div class="paragraph">
+<p>The <strong>Interactive Prompt Box</strong> lays at the bottom of the user interface.</p>
 </div>
 <div class="paragraph">
-<p><br></p>
-</div>
-</li>
-<li>
-<p>The left side features your entire list of unarchived tasks.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/dashboard/dashboard_2.png" alt="dashboard 2" width="600">
-</div>
-<div class="title">Figure 3. All task to complete</div>
+<p>To interact with Study Buddy, you can enter the desired command in the box with the words <code>Please enter your command here&#8230;&#8203;</code>
+and press <kbd>Enter</kbd> to execute.</p>
 </div>
 <div class="paragraph">
-<p><br></p>
+<p>The reply from Study Buddy will be displayed in the box next to the cartoon boy.</p>
 </div>
-</li>
-<li>
-<p>The right side displays your tasks that are due soon.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/dashboard/dashboard_3.png" alt="dashboard 3" width="600">
+<img src="images/dashboard/prompt_box.png" alt="prompt box" width="600">
 </div>
-<div class="title">Figure 4. Task due soon</div>
-</div>
-<div class="paragraph">
-<p><br></p>
-</div>
-</li>
-<li>
-<p>The bottom is your input line. You can type your commands to tell Study Buddy what to do and he will reply accordingly!</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/dashboard/dashboard_4.png" alt="dashboard 4" width="600">
-</div>
-<div class="title">Figure 5. Chat with Studdy Buddy here!</div>
-</div>
-</li>
-</ol>
+<div class="title">Figure 5. Interactive Prompt Box</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -308,37 +455,10 @@ modules, archived list, calendar, statistics and productivity tracker. Simply cl
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-A more detailed explanation of each of the usage of these components is given in <a href="#Features">Section 4, &#8220;Features&#8221;</a>
+To get more detailed information about different user interface components, please refer to <a href="#Features">Section 4, &#8220;Features&#8221;</a>.
 </td>
 </tr>
 </table>
-</div>
-<div class="sect3">
-<h4 id="useful-tips-2"><a class="link" href="#useful-tips-2">3.1.1. Useful tips</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>The scroll bar on the right of the response box can be used to view the entire reply.</p>
-</li>
-<li>
-<p>At any point during the execution of a command, you can use <code>quit</code> to quit the command and start over/try a different command.</p>
-</li>
-<li>
-<p>Study Buddy will analyze your input and reply accordingly.
-It utilizes an "interactive command prompt". (explained in each command&#8217;s description under <a href="#Features">Section 4, &#8220;Features&#8221;</a>)</p>
-</li>
-<li>
-<p><strong>[enter]</strong> indicates <strong>hitting the enter key on your keyboard</strong>.</p>
-</li>
-<li>
-<p><strong>|</strong> indicates an <strong>alternative option</strong> (i.e. A | B implies A or B).</p>
-</li>
-<li>
-<p>When mention about task&#8217;s <strong>index number</strong>, it refers to the index number displayed in <strong>All Tasks panel</strong>. Noted that the
-index of the same task could be different after <code>filter</code>, <code>find</code> and <code>sort</code> commands.
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; 441170cf5d2c312d6a420efef1bf2b7a0384684b</p>
-</li>
-</ul>
 </div>
 </div>
 </div>
@@ -388,7 +508,7 @@ This is the command you should use if you are unsure of what to type for a certa
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/helpCommand.png" alt="helpCommand" width="400">
+<img src="images/basic/help/help_rep.png" alt="help rep" width="600">
 </div>
 <div class="title">Figure 6. Response to 'help'</div>
 </div>
@@ -502,6 +622,9 @@ yyyy &#8594; year</code></p></td>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
+<p>The application does not allow you to enter a name that has special characters (any character that is not a letter in the alphabet).</p>
+</li>
+<li>
 <p>The application does not allow you to assign date time that has already passed to a task.
 It must be a time in the future.</p>
 </li>
@@ -525,22 +648,20 @@ be later than <code>start date</code>.</p>
 </ol>
 </div>
 </li>
+<li>
+<p>Adding duplicate tasks:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Look at <a href="#add-duplicates">Section 4.1.3, &#8220;Add duplicates&#8221;</a> for more information.</p>
+</li>
+</ol>
+</div>
+</li>
 </ol>
 </div>
 </li>
 </ul>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-The application allows for addition of duplicate tasks. It will however confirm with you if you are sure you want to add a duplicate. In case you change your mind, <a href="#delete-duplicates">Section 4.1.7, &#8220;Delete duplicates&#8221;</a> could be helpful.
-</td>
-</tr>
-</table>
 </div>
 <div class="paragraph">
 <p>To <code>add</code>:</p>
@@ -554,9 +675,9 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with <code>a list of available modules</code> as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_module.png" alt="add module" width="500">
+<img src="images/basic/add/add_module.png" alt="add module" width="600">
 </div>
-<div class="title">Figure 7. Reponse to 'add'</div>
+<div class="title">Figure 7. Reponse to 'add', asks for module</div>
 </div>
 </li>
 <li>
@@ -567,7 +688,7 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the module selected and the request of task name as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_task_name.png" alt="add task name" width="500">
+<img src="images/basic/add/add_task_name.png" alt="add task name" width="600">
 </div>
 <div class="title">Figure 8. Asks for task&#8217;s name</div>
 </div>
@@ -579,7 +700,7 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the task name defined and the request of task type as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_task_type.png" alt="add task type" width="400">
+<img src="images/basic/add/add_task_type.png" alt="add task type" width="600">
 </div>
 <div class="title">Figure 9. Asks for task&#8217;s type</div>
 </div>
@@ -591,7 +712,7 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the task type defined and the request of task&#8217;s date time information as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_date_time.png" alt="add date time" width="500">
+<img src="images/basic/add/add_date_time.png" alt="add date time" width="600">
 </div>
 <div class="title">Figure 10. Asks for task&#8217;s date time</div>
 </div>
@@ -603,7 +724,7 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the date time defined and the request of task&#8217;s description as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_desc.png" alt="add desc" width="400">
+<img src="images/basic/add/add_desc.png" alt="add desc" width="600">
 </div>
 <div class="title">Figure 11. Asks for task&#8217;s description</div>
 </div>
@@ -615,7 +736,7 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the description defined and the request of task&#8217;s weight as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_weight.png" alt="add weight" width="400">
+<img src="images/basic/add/add_weight.png" alt="add weight" width="600">
 </div>
 <div class="title">Figure 12. Asks for task&#8217;s weight</div>
 </div>
@@ -639,13 +760,13 @@ The application allows for addition of duplicate tasks. It will however confirm 
 <p>Study Buddy should respond with the task details collected and the request of your confirmation to perform the command as:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_task_info_1.png" alt="add task info 1" width="500">
+<img src="images/basic/add/add_task_info_1.png" alt="add task info 1" width="600">
 </div>
 <div class="title">Figure 14. Asks for user conformation to add a new task</div>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/add/add_task_info_2.png" alt="add task info 2" width="500">
+<img src="images/basic/add/add_task_info_2.png" alt="add task info 2" width="600">
 </div>
 <div class="title">Figure 15. Task details collected</div>
 </div>
@@ -678,7 +799,116 @@ Remember, you can use <code>quit</code> command to quit at any step.
 </div>
 </div>
 <div class="sect3">
-<h4 id="edit"><a class="link" href="#edit">4.1.3. Edit</a></h4>
+<h4 id="add-duplicates"><a class="link" href="#add-duplicates">4.1.3. Add duplicates</a></h4>
+<div class="paragraph">
+<p>This command accounts for you adding duplicate tasks. When you attempt to add a duplicate, the name will be modified slightly so that you can differentiate them.</p>
+</div>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Say you have tried to add a task, you enter all the fields needed and at the end, you realise that you have already added this task.</p>
+</div>
+<div class="paragraph">
+<p>Study Buddy lets you add duplicate tasks with a slight modification! So, now you can add the task and edit it as needed.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+A task is considered duplicate when the name, type, module, description, weightage, estimated time cost and deadline are the same. (Status is not checked)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To <code>add duplicates</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Follow the same steps as in <a href="#add">Section 4.1.2, &#8220;Add&#8221;</a>, but enter a duplicate task.</p>
+</li>
+<li>
+<p>Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/addDuplicate.png" alt="addDuplicate" width="600">
+</div>
+<div class="title">Figure 17. Reponse to adding a duplicate</div>
+</div>
+</li>
+<li>
+<p>Type in <code>yes</code> if you would like to continue and <code>no</code> if you do not.</p>
+</li>
+<li>
+<p>If you type <code>yes</code> and press <kbd>enter</kbd></p>
+</li>
+<li>
+<p>The Study Buddy should respond with:</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/addDuplicate1.png" alt="addDuplicate1" width="600">
+</div>
+<div class="title">Figure 18. Response to adding duplicate</div>
+</div>
+</li>
+<li>
+<p>As you can see in the snippet above, Study Buddy will append a number in brackets to the task name. This number corresponds to the number of times this task name has been duplicated.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you add two duplicates of a task (eg: task(1) and task(2)), and then delete task(1), when u try to duplicate it again, it will get added as task(3). The number will not reset to 2, because this is the third time you are attempting to duplicate.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>If you choose to enter <code>no</code> at step 2, this is what you will see.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/addDuplicate2.png" alt="addDuplicate2" width="600">
+</div>
+<div class="title">Figure 19. Response to choosing not to add</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can view all tasks that have been auto-edited this way, using the <a href="#view-duplicates">Section 4.1.8, &#8220;View duplicates&#8221;</a>
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Use the <a href="#edit">Section 4.1.4, &#8220;Edit&#8221;</a> to edit your duplicated tasks!
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit"><a class="link" href="#edit">4.1.4. Edit</a></h4>
 <div class="paragraph">
 <p>This command is for you to edit an existing task.
 To indicate the task you want to edit, you need to provide its index number.</p>
@@ -703,6 +933,9 @@ task. You can use this command to edit as you wish.</p>
 <li>
 <p>When editing weight or module, the application will also make sure the total weight of related module&#8217;s tasks will not overflow (i.e. exceed 100).</p>
 </li>
+<li>
+<p>You cannot edit a task to be a duplicate. i.e all the fields cannot be the same as a task that already exists.</p>
+</li>
 </ol>
 </div>
 </div>
@@ -721,11 +954,11 @@ task. You can use this command to edit as you wish.</p>
 <div class="content">
 <img src="images/basic/edit/edit_index.png" alt="edit index" width="600">
 </div>
-<div class="title">Figure 17. Reponse to 'edit'</div>
+<div class="title">Figure 20. Reponse to 'edit'</div>
 </div>
 </li>
 <li>
-<p>Type the index of the task you want to edit. here use <code>1</code> (Quiz 1) as an example.</p>
+<p>Type the index of the task you want to edit. here use <code>1</code> (Homework 1) as an example.</p>
 </li>
 <li>
 <p>The Study Buddy should respond with:</p>
@@ -733,7 +966,7 @@ task. You can use this command to edit as you wish.</p>
 <div class="content">
 <img src="images/basic/edit/edit_response_index.png" alt="edit response index" width="600">
 </div>
-<div class="title">Figure 18. List of editable fields</div>
+<div class="title">Figure 21. List of editable fields</div>
 </div>
 </li>
 <li>
@@ -745,11 +978,11 @@ task. You can use this command to edit as you wish.</p>
 <div class="content">
 <img src="images/basic/edit/edit_response_task_name.png" alt="edit response task name" width="600">
 </div>
-<div class="title">Figure 19. Asks for new task name</div>
+<div class="title">Figure 22. Asks for new task name</div>
 </div>
 </li>
 <li>
-<p>Enter new task name, here use <code>new task</code> as an example.</p>
+<p>Enter new task name, here use <code>Updated Task</code> as an example.</p>
 </li>
 <li>
 <p>The Study Buddy should respond as below with updated field.</p>
@@ -757,23 +990,43 @@ task. You can use this command to edit as you wish.</p>
 <div class="content">
 <img src="images/basic/edit/edit_result.png" alt="edit result" width="600">
 </div>
-<div class="title">Figure 20. Task edited</div>
+<div class="title">Figure 23. Task edited</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="done"><a class="link" href="#done">4.1.4. Done</a></h4>
+<h4 id="done"><a class="link" href="#done">4.1.5. Done</a></h4>
+<div class="paragraph">
+<p>This command is for you to mark a task as <strong>Finished</strong>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constrains</strong></p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>This command completes a task. Key in <code>done</code> &amp; you should get this prompt:</p>
+<p>A <strong>Finished</strong> task cannot be marked as <strong>Finished</strong> again.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To <code>done</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Key in <code>done</code> and press <kbd>enter</kbd>, you should get this prompt:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/done/done_1.png" alt="done 1" width="700">
+<img src="images/basic/done/done_index.png" alt="done index" width="600">
 </div>
-<div class="title">Figure 21. Presentation to be marked as finished</div>
+<div class="title">Figure 24. Asks foe task index.</div>
 </div>
 </li>
 <li>
@@ -783,18 +1036,18 @@ task. You can use this command to edit as you wish.</p>
 <p>Press <kbd>enter</kbd> again to confirm your change.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/done/done_2.png" alt="done 2" width="700">
+<img src="images/basic/done/done_confirm.png" alt="done confirm" width="600">
 </div>
-<div class="title">Figure 22. Press <kbd>enter</kbd> to confirm changes</div>
+<div class="title">Figure 25. Asks for confirmation</div>
 </div>
 </li>
 <li>
-<p>Task set to <code>finished</code> successfully! Note that the task in your task list has the tag <code>FINISHED</code>.</p>
+<p>Task set to <code>Finished</code> successfully! Note that the task in your task list has the tag <code>FINISHED</code>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/done/done_3.png" alt="done 3" width="700">
+<img src="images/basic/done/done_result.png" alt="done result" width="600">
 </div>
-<div class="title">Figure 23. Presentation 1 is marked as finished</div>
+<div class="title">Figure 26. Done result</div>
 </div>
 </li>
 </ol>
@@ -806,14 +1059,15 @@ task. You can use this command to edit as you wish.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-You can choose to archive your completed task using the <code>archive</code> command.
+You can choose to archive your completed task using the <code>archive</code> command. Check more details
+from <a href="#archive-unarchive">Section 4.1.9, &#8220;Archive/ Unarchive&#8221;</a>.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="clear"><a class="link" href="#clear">4.1.5. Clear</a></h4>
+<h4 id="clear"><a class="link" href="#clear">4.1.6. Clear</a></h4>
 <div class="paragraph">
 <p>This commands clears all data in the Study Buddy.</p>
 </div>
@@ -833,7 +1087,7 @@ Be careful with this command! It will remove any data you may have entered into 
 <p><strong>Example:</strong></p>
 </div>
 <div class="paragraph">
-<p>Say you have finished a semester and would like to clear everything in your Study Buddy and start over.</p>
+<p>Say you have Finished a semester and would like to clear everything in your Study Buddy and start over.</p>
 </div>
 <div class="paragraph">
 <p>You can always clear everything!</p>
@@ -850,9 +1104,9 @@ Be careful with this command! It will remove any data you may have entered into 
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/clear/clear1.png" alt="clear1" width="590">
+<img src="images/basic/clear/clear_confirm.png" alt="clear confirm" width="590">
 </div>
-<div class="title">Figure 24. Response to 'clear'</div>
+<div class="title">Figure 27. Response to 'clear'</div>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -874,16 +1128,16 @@ Remember that you can enter <code>quit</code> if you wish to go back!
 <p>Study Buddy has been cleared completely!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/clear/clear2.png" alt="clear2" width="700">
+<img src="images/basic/clear/clear_result.png" alt="clear result" width="700">
 </div>
-<div class="title">Figure 25. View empty Study Buddy</div>
+<div class="title">Figure 28. View empty Study Buddy</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete"><a class="link" href="#delete">4.1.6. Delete</a></h4>
+<h4 id="delete"><a class="link" href="#delete">4.1.7. Delete</a></h4>
 <div class="paragraph">
 <p>This commands deletes a task from the existing list, using the index provided by you.</p>
 </div>
@@ -920,18 +1174,18 @@ Once a task is deleted, it cannot be retrieved. Use this command with caution!
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/delete/deleteResponse2.png" alt="deleteResponse2" width="790">
+<img src="images/basic/delete/delete_index.png" alt="delete index" width="600">
 </div>
-<div class="title">Figure 26. Response to 'delete'</div>
+<div class="title">Figure 29. Response to 'delete'</div>
 </div>
 </li>
 <li>
 <p>Type the index of the task you want to delete.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/delete/deleteResponse3.png" alt="deleteResponse3" width="500">
+<img src="images/basic/delete/delete_confirm.png" alt="delete confirm" width="600">
 </div>
-<div class="title">Figure 27. Response to delete index 1</div>
+<div class="title">Figure 30. Asks for confirmation</div>
 </div>
 </li>
 <li>
@@ -941,30 +1195,27 @@ Once a task is deleted, it cannot be retrieved. Use this command with caution!
 <p>Task has been deleted! You will notice that the task at the index you selected has disappeared from the list of tasks.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/delete/deleteResponse1.png" alt="deleteResponse1" width="790">
+<img src="images/basic/delete/delete_result.png" alt="delete result" width="600">
 </div>
-<div class="title">Figure 28. Updated list (without deleted task)</div>
+<div class="title">Figure 31. Updated All Tasks Panel</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="delete-duplicates"><a class="link" href="#delete-duplicates">4.1.7. Delete duplicates</a></h4>
+<h4 id="view-duplicates"><a class="link" href="#view-duplicates">4.1.8. View duplicates</a></h4>
 <div class="paragraph">
-<p>This commands deletes all duplicated tasks in the list.</p>
+<p>This commands filtered all duplicated tasks in the list i.e tasks that have a number appended to their names.</p>
 </div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-A task is considered duplicate when the name, type, module, description, weightage, estimated time cost and deadline are the same. (Status is not checked)
-</td>
-</tr>
-</table>
+<div class="paragraph">
+<p><strong>Example:</strong></p>
+</div>
+<div class="paragraph">
+<p>Say you want to go back and edit all the tasks that are duplicated in your list. Yet you do not want to scroll through the entire list to find them.</p>
+</div>
+<div class="paragraph">
+<p>Study Buddy provides you an option to view all your duplicate tasks in the list!</p>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -973,54 +1224,57 @@ A task is considered duplicate when the name, type, module, description, weighta
 <i class="fa icon-caution" title="Caution"></i>
 </td>
 <td class="content">
-This feature is case sensitive. This means that if one task is named "Task", it will be considered different from "task".
+You will still need to navigate to the main list and use that index to perform any index based operations (eg: delete, edit etc)
 </td>
 </tr>
 </table>
 </div>
 <div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>After having added a duplicated task, you realise that there is no more need for this duplicate task. Yet you do not want to scroll through the entire list to delete it.</p>
-</div>
-<div class="paragraph">
-<p>Study Buddy provides you an option to delete all your duplicate tasks from the list!</p>
-</div>
-<div class="paragraph">
-<p>To <code>delete duplicates</code>:</p>
+<p>To <code>view duplicates</code>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Initiate the command using keyword <code>delete duplicates</code></p>
+<p>Initiate the command using keyword <code>view duplicates</code></p>
 </li>
 <li>
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/deleteduplicate/deleteDuplicates1.png" alt="deleteDuplicates1" width="500">
+<img src="images/viewDuplicates.png" alt="viewDuplicates" width="500">
 </div>
-<div class="title">Figure 29. Response to 'delete duplicates'</div>
+<div class="title">Figure 32. Response to 'view duplicates'</div>
 </div>
 </li>
 <li>
 <p>Press <kbd>enter</kbd> again to confirm</p>
 </li>
 <li>
-<p>Duplicate tasks have been deleted! You will notice that only one copy (most recent) of each task will be left in the list.</p>
+<p>Duplicate tasks have been filtered!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/deleteduplicate/deleteDuplicates2.png" alt="deleteDuplicates2" width="500">
+<img src="images/viewDuplicates1.png" alt="viewDuplicates1" width="500">
 </div>
-<div class="title">Figure 30. Updated list (without duplicate tasks)</div>
+<div class="title">Figure 33. Updated list of duplicate tasks</div>
 </div>
 </li>
 </ol>
 </div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In order to navigate back to the main list, use <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="archive-unarchive"><a class="link" href="#archive-unarchive">4.1.8. Archive/ Unarchive</a></h4>
+<h4 id="archive-unarchive"><a class="link" href="#archive-unarchive">4.1.9. Archive/ Unarchive</a></h4>
 <div class="paragraph">
 <p>This commands stores the specified task into a separate list.</p>
 </div>
@@ -1045,30 +1299,45 @@ This feature is case sensitive. This means that if one task is named "Task", it 
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/archive/archive_1.png" alt="archive 1" width="400">
+<img src="images/basic/archive/archive_index.png" alt="archive index" width="600">
 </div>
-<div class="title">Figure 31. Response to 'archive'</div>
+<div class="title">Figure 34. Response to 'archive'</div>
 </div>
 </li>
 <li>
-<p>Type the index of the task you want to archive.</p>
+<p>Type the index of the task you want to archive, here use <code>1</code> (Leadership Presentation) as an example.</p>
+</li>
+<li>
+<p>Study Buddy will ask for your confirmation before archive the target task.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/archive/archive_2.png" alt="archive 2" width="600">
+<img src="images/basic/archive/archive_confirm.png" alt="archive confirm" width="600">
 </div>
-<div class="title">Figure 32. Response to task index</div>
+<div class="title">Figure 35. Asks for confirmation</div>
 </div>
 </li>
 <li>
-<p>Press <kbd>enter</kbd> again to confirm</p>
-</li>
-<li>
-<p>Task has been archived! You can view all archived task under the <code>StudyBuddy</code> &#8594; <code>Archived Tasks</code> tab.</p>
+<p>Press <kbd>enter</kbd> again to confirm, the task will be archived and the user interface will update.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/archive/archive_3.png" alt="archive 3" width="790">
+<img src="images/basic/archive/archive_result.png" alt="archive result" width="600">
 </div>
-<div class="title">Figure 33. View archived tasks</div>
+<div class="title">Figure 36. Task is archived successfully</div>
+</div>
+</li>
+<li>
+<p>You can view the archived task under the <code>StudyBuddy</code> &#8594; <code>Archived Tasks</code> tab.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/basic/archive/check_archive.png" alt="check archive" width="600">
+</div>
+<div class="title">Figure 37. Navigates to archived tasks</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/basic/archive/archive_list.png" alt="archive list" width="600">
+</div>
+<div class="title">Figure 38. Archived tasks</div>
 </div>
 </li>
 </ol>
@@ -1087,9 +1356,21 @@ This feature is case sensitive. This means that if one task is named "Task", it 
 </div>
 </div>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+If you attempt to unarchive a task that already exists in the main list, the name will automatically be appended with a number in order to avoid duplication. This is done in the same way as <a href="#add-duplicates">Section 4.1.3, &#8220;Add duplicates&#8221;</a>
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="sort"><a class="link" href="#sort">4.1.9. Sort</a></h4>
+<h4 id="Sort"><a class="link" href="#Sort">4.1.10. Sort</a></h4>
 <div class="paragraph">
 <p>This command is for you to reorder the task list in <strong>All Tasks</strong> panel.<br>
 Currently you can sort tasks by their:</p>
@@ -1126,18 +1407,18 @@ utilize this command to achieve the desire order.</p>
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/sort/before_sort.png" alt="before sort" width="790">
+<img src="images/basic/sort/sort_term.png" alt="sort term" width="600">
 </div>
-<div class="title">Figure 34. Response to 'sort'</div>
+<div class="title">Figure 39. Response to 'sort'</div>
 </div>
 </li>
 <li>
 <p>Type the index number of sort term and press <kbd>enter</kbd>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/sort/sort_confirm.png" alt="sort confirm" width="790">
+<img src="images/basic/sort/sort_confirm.png" alt="sort confirm" width="600">
 </div>
-<div class="title">Figure 35. Asks for sort term</div>
+<div class="title">Figure 40. Asks for sort term</div>
 </div>
 </li>
 <li>
@@ -1147,9 +1428,9 @@ utilize this command to achieve the desire order.</p>
 <p>The tasks in <strong>All Tasks</strong> panel will be sorted accordingly.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/sort/after_sort.png" alt="after sort" width="790">
+<img src="images/basic/sort/sort_result.png" alt="sort result" width="600">
 </div>
-<div class="title">Figure 36. Sorted tasks</div>
+<div class="title">Figure 41. Sorted tasks</div>
 </div>
 </li>
 </ol>
@@ -1169,7 +1450,7 @@ You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to d
 </div>
 </div>
 <div class="sect3">
-<h4 id="find"><a class="link" href="#find">4.1.10. Find</a></h4>
+<h4 id="Find"><a class="link" href="#Find">4.1.11. Find</a></h4>
 <div class="paragraph">
 <p>Finds tasks whose names contain any of the given keywords.</p>
 </div>
@@ -1185,21 +1466,21 @@ You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to d
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/find/find1.png" alt="find1" width="400">
+<img src="images/basic/find/find_keyword.png" alt="find keyword" width="600">
 </div>
-<div class="title">Figure 37. Find reponse</div>
+<div class="title">Figure 42. Response to 'find'</div>
 </div>
 </li>
 <li>
-<p>Enter the keyword that you want to search for. e.g. quiz</p>
+<p>Enter the keyword that you want to search for, e.g. quiz, and press <kbd>enter</kbd> to confirm sorting.</p>
 </li>
 <li>
 <p>You have found a list of tasks that contain your keyword!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/find/find2.png" alt="find2" width="400">
+<img src="images/basic/find/find_result.png" alt="find result" width="600">
 </div>
-<div class="title">Figure 38. Found response</div>
+<div class="title">Figure 43. Find result</div>
 </div>
 </li>
 </ol>
@@ -1235,14 +1516,14 @@ You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to d
 <i class="fa icon-important" title="Important"></i>
 </td>
 <td class="content">
-To navigate back to the always on display list of tasks, you can use the <a href="#list">Section 4.1.11, &#8220;List&#8221;</a> function.
+To navigate back to the always on display list of tasks, you can use the <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a> function.
 </td>
 </tr>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="list"><a class="link" href="#list">4.1.11. List</a></h4>
+<h4 id="LIST"><a class="link" href="#LIST">4.1.12. List</a></h4>
 <div class="paragraph">
 <p>Oh no! How do I get the original list back after using <code>find</code>? Calm down and use the <code>list</code> command!
 The <code>list</code> command lists all the tasks that have been created in StudyBuddy.</p>
@@ -1259,16 +1540,16 @@ The <code>list</code> command lists all the tasks that have been created in Stud
 <p>Done! All your tasks are listed once again!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/list/file.png" alt="file" width="400">
+<img src="images/basic/list/list_result.png" alt="list result" width="600">
 </div>
-<div class="title">Figure 39. List Success</div>
+<div class="title">Figure 44. List result</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="filter"><a class="link" href="#filter">4.1.12. Filter</a></h4>
+<h4 id="Filter"><a class="link" href="#Filter">4.1.13. Filter</a></h4>
 <div class="paragraph">
 <p>This commands helps you filter your tasks by category. The two categories available are status and type.</p>
 </div>
@@ -1279,7 +1560,7 @@ The <code>list</code> command lists all the tasks that have been created in Stud
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Note that due soon tasks are already filtered for you. Refer to <a href="#due-soon-tasks">Section 4.3, &#8220;Due Soon Tasks&#8221;</a>
+Note that Due Soon tasks are already filtered for you. Refer to <a href="#due-soon-tasks">Section 4.3, &#8220;Due Soon Tasks&#8221;</a>
 </td>
 </tr>
 </table>
@@ -1291,7 +1572,7 @@ Note that due soon tasks are already filtered for you. Refer to <a href="#due-so
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-To navigate back to your main list, check out <a href="#list">Section 4.1.11, &#8220;List&#8221;</a>
+To navigate back to your main list, check out <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a>
 </td>
 </tr>
 </table>
@@ -1300,7 +1581,7 @@ To navigate back to your main list, check out <a href="#list">Section 4.1.11, &#
 <p><strong>Example:</strong></p>
 </div>
 <div class="paragraph">
-<p>Say you want to view a list of all your pending tasks.</p>
+<p>Say you want to view a list of all your Pending tasks.</p>
 </div>
 <div class="paragraph">
 <p>Study Buddy provides an option to filter your list!</p>
@@ -1317,45 +1598,36 @@ To navigate back to your main list, check out <a href="#list">Section 4.1.11, &#
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/filter/filter1.png" alt="filter1" width="590">
+<img src="images/basic/filter/filter_term.png" alt="filter term" width="600">
 </div>
-<div class="title">Figure 40. Response to 'filter'</div>
+<div class="title">Figure 45. Response to 'filter'</div>
 </div>
 </li>
 <li>
 <p>Enter your choice. If you enter 1, you have chosen to filter by status.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/filter/filter2.png" alt="filter2" width="590">
+<img src="images/basic/filter/filter_status.png" alt="filter status" width="600">
 </div>
-<div class="title">Figure 41. Response to filter by 'status'</div>
-</div>
-</li>
-<li>
-<p>Suppose this is what your task list looks like before you filter.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/basic/filter/beforeFilter.png" alt="beforeFilter" width="790">
-</div>
-<div class="title">Figure 42. Before filter</div>
+<div class="title">Figure 46. Response to filter by 'status'</div>
 </div>
 </li>
 <li>
-<p>You can then proceed to choose what status type you would like to filter by. Here we have filtered by "pending" as an example.</p>
+<p>You can then proceed to choose what status type you would like to filter by. Here we have filtered by "Pending" as an example.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/filter/filter3.png" alt="filter3" width="790">
+<img src="images/basic/filter/filter_status_result.png" alt="filter status result" width="600">
 </div>
-<div class="title">Figure 43. Response to filter by status tag 'Pending'</div>
+<div class="title">Figure 47. Response to filter by status tag 'Pending'</div>
 </div>
 </li>
 <li>
 <p>At point 3 above, if you enter 2 instead, you have chosen to filter by task types.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/filter/filter4.png" alt="filter4" width="590">
+<img src="images/basic/filter/filter_type.png" alt="filter type" width="600">
 </div>
-<div class="title">Figure 44. Response to filter by task 'type'</div>
+<div class="title">Figure 48. Response to filter by task 'type'</div>
 </div>
 </li>
 <li>
@@ -1367,16 +1639,16 @@ To navigate back to your main list, check out <a href="#list">Section 4.1.11, &#
 <div class="content">
 <img src="images/basic/filter/filter5.png" alt="filter5" width="790">
 </div>
-<div class="title">Figure 45. Response to filter by task type 'assignment'</div>
+<div class="title">Figure 49. Response to filter by task type 'assignment'</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="refresh"><a class="link" href="#refresh">4.1.13. Refresh</a></h4>
+<h4 id="Refresh"><a class="link" href="#Refresh">4.1.14. Refresh</a></h4>
 <div class="paragraph">
-<p>This commands refreshes the list of tasks due soon as well as status tags.</p>
+<p>This commands refreshes the list of tasks Due Soon as well as status tags.</p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -1406,10 +1678,22 @@ Status tags include information on the tasks' status. Details are in <a href="#S
 <p><strong>Example:</strong></p>
 </div>
 <div class="paragraph">
-<p>Say you left Study Buddy open overnight because you fell asleep studying. When you wake up, you notice that the time left for the deadline on the due soon tasks is not accurate.</p>
+<p>Say you left Study Buddy open for a few days. When you come back, you notice that the time left for the deadline on the Due Soon tasks is not accurate.</p>
 </div>
 <div class="paragraph">
 <p>You can refresh them!</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can use this command to update the time left tag on due soon tasks.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
 <p>To <code>refresh</code>:</p>
@@ -1420,28 +1704,16 @@ Status tags include information on the tasks' status. Details are in <a href="#S
 <p>Say this is what Study Buddy looks like.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/refresh/refresh1.png" alt="refresh1" width="790">
+<img src="images/basic/refresh/refresh_before.png" alt="refresh before" width="600">
 </div>
-<div class="title">Figure 46. Current state (needs to be refreshed)</div>
+<div class="title">Figure 50. Current state (needs to be refreshed)</div>
 </div>
 <div class="paragraph">
-<p>Suppose you notice that the task "Submit UG" is not due "now" anymore because some time has past since the deadline.</p>
+<p>Suppose you notice that the task "Homework 1" is still in pending status.</p>
 </div>
 </li>
 <li>
-<p>Initiate the refresh command using keyword <code>refresh</code></p>
-</li>
-<li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/basic/refresh/refresh2.png" alt="refresh2" width="790">
-</div>
-<div class="title">Figure 47. Response to 'refresh'</div>
-</div>
-</li>
-<li>
-<p>Press <kbd>enter</kbd> again to confirm</p>
+<p>Initiate the refresh command using keyword <code>refresh</code> and press <kbd>enter</kbd> to confirm the action.</p>
 </li>
 <li>
 <p>Tasks have been refreshed!</p>
@@ -1449,17 +1721,30 @@ Status tags include information on the tasks' status. Details are in <a href="#S
 <div class="content">
 <img src="images/basic/refresh/refresh3.png" alt="refresh3" width="790">
 </div>
-<div class="title">Figure 48. View refreshed Study Buddy</div>
+<div class="title">Figure 51. View refreshed Study Buddy</div>
 </div>
 <div class="paragraph">
-<p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".</p>
+<p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".
+image::basic/refresh/refresh_result.png[width="600", title="Refreshed Study Buddy"]</p>
 </div>
 </li>
 </ol>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+After 'refresh', the tasks in <strong>All Tasks Panel</strong> will be sorted by their deadline or start date.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
-<h4 id="exit"><a class="link" href="#exit">4.1.14. Exit</a></h4>
+<h4 id="exit"><a class="link" href="#exit">4.1.15. Exit</a></h4>
 <div class="paragraph">
 <p>This command exits from Study Buddy.</p>
 </div>
@@ -1496,22 +1781,13 @@ All your data will be saved and reloaded when you open the application later! Yo
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/exit/exit1.png" alt="exit1" width="790">
+<img src="images/basic/exit/exit_confirm.png" alt="exit confirm" width="600">
 </div>
-<div class="title">Figure 49. Response to 'bye'</div>
+<div class="title">Figure 52. Response to 'bye'</div>
 </div>
 </li>
 <li>
-<p>Type 'yes' if you want to exit and anything else if you do not wish to exit.</p>
-<div class="imageblock">
-<div class="content">
-<img src="images/basic/exit/exit2.png" alt="exit2" width="790">
-</div>
-<div class="title">Figure 50. Response to any command other than 'yes'</div>
-</div>
-<div class="paragraph">
-<p>In response to yes, the application should simply close.</p>
-</div>
+<p>Type 'yes' and press <kbd>enter</kbd> to exit, the Study Buddy window will close automatically.</p>
 </li>
 </ol>
 </div>
@@ -1544,7 +1820,7 @@ Any command other than <code>yes</code> (including <kbd>enter</kbd>) will be con
 <div class="sect2">
 <h3 id="due-soon-tasks"><a class="link" href="#due-soon-tasks">4.3. Due Soon Tasks</a></h3>
 <div class="paragraph">
-<p>The due soon task list is always on display in your application under <code>Study Buddy</code> &#8594; <code>All tasks</code></p>
+<p>The Due Soon task list is always on display in your application under <code>Study Buddy</code> &#8594; <code>All tasks</code></p>
 </div>
 <div class="paragraph">
 <p>It provides the following functionality:</p>
@@ -1555,34 +1831,34 @@ Any command other than <code>yes</code> (including <kbd>enter</kbd>) will be con
 <p>It displays your tasks that are due within the next week. (uses deadline you have provided)</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/duesoon/duesoon1.png" alt="duesoon1" width="790">
+<img src="images/duesoon/due_soon.png" alt="due soon" width="600">
 </div>
-<div class="title">Figure 51. Due Soon List</div>
+<div class="title">Figure 53. Due Soon List</div>
 </div>
 </li>
 <li>
 <p>It automatically sorts these tasks in an ascending order of deadlines.</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/duesoon/duesoon3.png" alt="duesoon3" width="790">
+<img src="images/duesoon/due_soon_sort.png" alt="due soon sort" width="600">
 </div>
-<div class="title">Figure 52. Due Soon List</div>
+<div class="title">Figure 54. Due Soon List</div>
 </div>
 </li>
 <li>
-<p>It automatically adds applicable tasks when you make changes to your main list, such as add (<a href="#add">Section 4.1.2, &#8220;Add&#8221;</a>) or delete (<a href="#delete">Section 4.1.6, &#8220;Delete&#8221;</a>).</p>
+<p>It automatically adds applicable tasks when you make changes to your main list, such as add (<a href="#add">Section 4.1.2, &#8220;Add&#8221;</a>) or delete (<a href="#delete">Section 4.1.7, &#8220;Delete&#8221;</a>).</p>
 </li>
 <li>
 <p>It displays a tag with the time left to the deadline.</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/duesoon/duesoon2.png" alt="duesoon2" width="790">
+<img src="images/duesoon/due_soon_tag.png" alt="due soon tag" width="600">
 </div>
-<div class="title">Figure 53. Due Soon List</div>
+<div class="title">Figure 55. Due Soon List</div>
 </div>
 </li>
 <li>
-<p>It provides a <a href="#refresh">Section 4.1.13, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
+<p>It provides a <a href="#Refresh">Section 4.1.14, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
 </li>
 </ol>
 </div>
@@ -1605,7 +1881,7 @@ Time left is never displayed in days and minutes. Hence if the current time is 9
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Due soon list will never display finished tasks. If you unarchive a completed task, it will not appear in the due soon list.
+Due soon list will never display Finished tasks. If you unarchive a completed task, it will not appear in the Due Soon list.
 </td>
 </tr>
 </table>
@@ -1618,9 +1894,9 @@ Due soon list will never display finished tasks. If you unarchive a completed ta
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_1.png" alt="module 1" width="790">
+<img src="images/module/module_1.png" alt="module 1" width="600">
 </div>
-<div class="title">Figure 54. <code>Modules</code> in the menu bar</div>
+<div class="title">Figure 56. <code>Modules</code> in the menu bar</div>
 </div>
 <div class="paragraph">
 <p>By default, the Modules tab shows the following:</p>
@@ -1644,40 +1920,45 @@ all tasks will show up here if you have not allocated any tasks to the modules.<
 <p>To navigate to the modules page, click on <code>Modules</code> in the menu bar.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_2.png" alt="module 2" width="790">
+<img src="images/module/module_nav.png" alt="module nav" width="600">
 </div>
+<div class="title">Figure 57. Modules dropdown menu</div>
 </div>
 </li>
 <li>
 <p>Then click on <code>Show Modules</code>. The module page should show up.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_3.png" alt="module 3" width="790">
+<img src="images/module/module_show.png" alt="module show" width="600">
 </div>
+<div class="title">Figure 58. Module page</div>
 </div>
 </li>
 <li>
 <p>The clicking on the leftmost tab shows the <code><strong>Overview</strong></code> of all your modules. it displays the module&#8217;s name and their code.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_4.png" alt="module 4" width="790">
+<img src="images/module/module_tab_1.png" alt="module tab 1" width="600">
 </div>
+<div class="title">Figure 59. Module tab <code>Overview</code></div>
 </div>
 </li>
 <li>
 <p>The rightmost tab shows the list of task that has not been allocated to any modules.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_5.png" alt="module 5" width="790">
+<img src="images/module/module_tab_3.png" alt="module tab 3" width="600">
 </div>
+<div class="title">Figure 60. Module tab <code>No Module Allocated</code></div>
 </div>
 </li>
 <li>
 <p>The tabs in the middle are modules that you have added to the modules page.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_6.png" alt="module 6" width="790">
+<img src="images/module/module_tab_2.png" alt="module tab 2" width="600">
 </div>
+<div class="title">Figure 61. Module tab available modules</div>
 </div>
 </li>
 </ol>
@@ -1695,58 +1976,97 @@ Alternatively, you can key in <code>create mods</code> into the input line.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_7.png" alt="module 7" width="500">
+<img src="images/module/module_nav_create.png" alt="module nav create" width="600">
 </div>
-<div class="title">Figure 55. click on <code>Create</code></div>
+<div class="title">Figure 62. Click on <code>Create</code></div>
 </div>
 <div class="paragraph">
-<p>Click on <code>Create</code>. A prompt will show up at the bottom of the screen.
-Key in the name of your module. The name of this module cannot be the same as your existing modules.</p>
+<p>Click on <code>Create</code>. A prompt will show up at the bottom of the screen.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_8.png" alt="module 8" width="790">
+<img src="images/module/module_create_name.png" alt="module create name" width="600">
 </div>
-<div class="title">Figure 56. setting module name as 'New Module'</div>
+<div class="title">Figure 63. Asks for module name</div>
+</div>
+<div class="paragraph">
+<p>Key in the name of your module.The name of this module cannot be the same as your existing modules.
+Here we use "New Module" as an example.<br>
+Then Study Buddy will ask for the module code.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/module/module_create_code.png" alt="module create code" width="600">
+</div>
+<div class="title">Figure 64. Asks for module code</div>
 </div>
 <div class="paragraph">
 <p>Now key in your Module code. Your Module code should have a 2-3 letter prefix, a 4-digit number, followed
 by a single postfix.</p>
 </div>
-<div class="listingblock">
+<div class="exampleblock">
 <div class="content">
-<pre class="CodeRay highlight"><code>Correct Module Codes:
-LSM1303
-CS2040C
-IS1103
-MA1521
-
-Incorrect Module Codes:
-CSSS1234    - Prefix is too long
-C0001       - Prefix is too short
-ZZ12345     - number is more than 4 digits
-A1111XX     - Postfix is too long</code></pre>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Correct Module Codes</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>LSM1303</p>
+</li>
+<li>
+<p>CS2040C</p>
+</li>
+<li>
+<p>IS1103</p>
+</li>
+<li>
+<p>MA1521</p>
+</li>
+</ul>
 </div>
+</dd>
+<dt class="hdlist1">Incorrect Module Codes</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>CSSS1234    - Prefix is too long</p>
+</li>
+<li>
+<p>C0001       - Prefix is too short</p>
+</li>
+<li>
+<p>ZZ12345     - number is more than 4 digits</p>
+</li>
+<li>
+<p>A1111XX     - Postfix is too long</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Here we use "CSS1234" as an example.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_9.png" alt="module 9" width="790">
+<img src="images/module/module_create_confirm.png" alt="module create confirm" width="600">
 </div>
-<div class="title">Figure 57. Keyed in CSS1234 as module code</div>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/module/module_10.png" alt="module 10" width="790">
-</div>
+<div class="title">Figure 65. Asks for confirmation</div>
 </div>
 <div class="paragraph">
 <p>Press <kbd>enter</kbd> one more time to confirm.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/module/module_11.png" alt="module 11" width="790">
+<img src="images/module/module_create_result.png" alt="module create result" width="600">
 </div>
-<div class="title">Figure 58. New Module with code CSS1234 created.</div>
+<div class="title">Figure 66. New Module with code CSS1234 created.</div>
 </div>
 <div class="paragraph">
 <p>Congratulations, you have added a module to your modules page!</p>
@@ -1774,19 +2094,19 @@ Alternatively, you can key in <code>edit mods</code> into the input line.</p>
 <div class="content">
 <img src="images/module/module_13.png" alt="module 13" width="790" height=""">
 </div>
-<div class="title">Figure 59. Changing module with code  BA1001</div>
+<div class="title">Figure 67. Changing module with code  BA1001</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_14.png" alt="module 14" width="790">
 </div>
-<div class="title">Figure 60. Keyed in BA1001</div>
+<div class="title">Figure 68. Keyed in BA1001</div>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/module/module_15.png" alt="module 15" width="790">
 </div>
-<div class="title">Figure 61. Key in 1, 2 or 3 depending on which option you prefer</div>
+<div class="title">Figure 69. Key in 1, 2 or 3 depending on which option you prefer</div>
 </div>
 </li>
 <li>
@@ -1825,7 +2145,7 @@ Alternatively, you can key in <code>edit mods</code> into the input line.</p>
 <div class="content">
 <img src="images/module/module_17.png" alt="module 17" width="790">
 </div>
-<div class="title">Figure 62. Module BA1001&#8217;s name has changed from 'CS' to 'New Module Name'</div>
+<div class="title">Figure 70. Module BA1001&#8217;s name has changed from 'CS' to 'New Module Name'</div>
 </div>
 </li>
 <li>
@@ -1850,7 +2170,7 @@ as written in 3.7.3.</p>
 <div class="content">
 <img src="images/module/module_19.png" alt="module 19" width="790">
 </div>
-<div class="title">Figure 63. Module code BA1001 has changed to CS3230</div>
+<div class="title">Figure 71. Module code BA1001 has changed to CS3230</div>
 </div>
 </li>
 <li>
@@ -1874,7 +2194,7 @@ as written in 3.7.3.</p>
 <div class="content">
 <img src="images/module/module_21.png" alt="module 21" width="790">
 </div>
-<div class="title">Figure 64. deleted BA1001</div>
+<div class="title">Figure 72. deleted BA1001</div>
 </div>
 </li>
 <li>
@@ -1929,7 +2249,7 @@ The color theme will also change randomly, hope you enjoy :)
 <div class="content">
 <img src="images/stats/stats_nav.png" alt="stats nav" width="790">
 </div>
-<div class="title">Figure 65. Task Status Chart</div>
+<div class="title">Figure 73. Task Status Chart</div>
 </div>
 </div>
 <div class="sect3">
@@ -1948,7 +2268,7 @@ number of tasks in different statuses.</p>
 <div class="content">
 <img src="images/stats/stats_pie.png" alt="stats pie" width="790">
 </div>
-<div class="title">Figure 66. Task Status Chart</div>
+<div class="title">Figure 74. Task Status Chart</div>
 </div>
 <div class="paragraph">
 <p>When you clicking on the chart, the related task records will display on the
@@ -1958,7 +2278,7 @@ right panel automatically.</p>
 <div class="content">
 <img src="images/stats/stats_pie_click.png" alt="stats pie click" width="790">
 </div>
-<div class="title">Figure 67. Clicking on Task Status Chart</div>
+<div class="title">Figure 75. Clicking on Task Status Chart</div>
 </div>
 </div>
 <div class="sect4">
@@ -1971,7 +2291,7 @@ chart.</p>
 <div class="content">
 <img src="images/stats/stats_area.png" alt="stats area" width="790">
 </div>
-<div class="title">Figure 68. Module Related Tasks' Deadline/Start Date Chart</div>
+<div class="title">Figure 76. Module Related Tasks' Deadline/Start Date Chart</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2021,7 +2341,7 @@ overlapping layers of data in the same area.</p>
 <div class="content">
 <img src="images/stats/stats_area_click_area.png" alt="stats area click area" width="790">
 </div>
-<div class="title">Figure 69. Clicking on data area.</div>
+<div class="title">Figure 77. Clicking on data area.</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2034,7 +2354,7 @@ overlapping layers of data in the same area.</p>
 <div class="content">
 <img src="images/stats/stats_area_click_point.png" alt="stats area click point" width="790">
 </div>
-<div class="title">Figure 70. Clicking on data point</div>
+<div class="title">Figure 78. Clicking on data point</div>
 </div>
 </div>
 <div class="sect4">
@@ -2046,7 +2366,7 @@ overlapping layers of data in the same area.</p>
 <div class="content">
 <img src="images/stats/stats_bar.png" alt="stats bar" width="790">
 </div>
-<div class="title">Figure 71. Module Related Tasks' Weight</div>
+<div class="title">Figure 79. Module Related Tasks' Weight</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2079,7 +2399,7 @@ overlapping layers of data in the same area.</p>
 <div class="content">
 <img src="images/stats/stats_bar_click.png" alt="stats bar click" width="790">
 </div>
-<div class="title">Figure 72. Clicking on stacked bar chart</div>
+<div class="title">Figure 80. Clicking on stacked bar chart</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2110,7 +2430,7 @@ When this issue happens, you can use any command that can trigger chart updating
 <div class="content">
 <img src="images/calendar/calender_init.png" alt="calender init" width="790">
 </div>
-<div class="title">Figure 73. calendar interface</div>
+<div class="title">Figure 81. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2126,7 +2446,7 @@ When this issue happens, you can use any command that can trigger chart updating
 <div class="content">
 <img src="images/calendar/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
 </div>
-<div class="title">Figure 74. calendar after clicking on a date</div>
+<div class="title">Figure 82. calendar after clicking on a date</div>
 </div>
 </div>
 <div class="sect2">
@@ -2153,7 +2473,7 @@ This tab displays information about your past productivity.</p>
 <p>You can go to this tab directly by clicking your Productivity Point count on the top right of the menu.
 The Productivity Points tab displays your current Productivity Points (PP) and your progression.
 You gain Productivity Points upon adding tasks, completing tasks, and using advanced features in StudyBuddy.
-On the other hand, you lose Productivity Points when your tasks go overdue.
+On the other hand, you lose Productivity Points when your tasks go Overdue.
 Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 </div>
 <div class="olist loweralpha">
@@ -2168,7 +2488,7 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <p>Using advanced features; <em>+?</em> (Explore StudyBuddy to find out!)</p>
 </li>
 <li>
-<p>Letting a task go overdue: <em>-1</em></p>
+<p>Letting a task go Overdue: <em>-1</em></p>
 </li>
 </ol>
 </div>
@@ -2183,4 +2503,4 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Study Buddy folder (should be under data &#8594; taskList.json).</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 14:57:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 05:43:39 UTC</div></div></div></body></html>
