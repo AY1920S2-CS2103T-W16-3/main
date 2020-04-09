@@ -773,7 +773,7 @@ To navigate back to your main list, check out <a href="#List">[List]</a>
 <p>You can then proceed to choose what task type you would like to filter by. Here we have filtered by "assignment" as an example.</p>
 <div class="imageblock">
 <div class="content">
-<img src="../images/basic/filter/filter5.png" alt="filter5" width="790">
+<img src="../images/basic/filter/filter_type_result.png" alt="filter type result" width="790">
 </div>
 <div class="title">Figure 13. Response to filter by task type 'assignment'</div>
 </div>
@@ -858,9 +858,9 @@ You can use this command to update the time left tag on due soon tasks.
 <p>Tasks have been refreshed!</p>
 <div class="imageblock">
 <div class="content">
-<img src="../images/basic/refresh/refresh3.png" alt="refresh3" width="790">
+<img src="../images/basic/refresh/refresh_result.png" alt="refresh result" width="600">
 </div>
-<div class="title">Figure 15. View refreshed Study Buddy</div>
+<div class="title">Figure 15. Refreshed Study Buddy</div>
 </div>
 <div class="paragraph">
 <p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".
@@ -1089,10 +1089,11 @@ Study Buddy is a task-management tool made for students who want to be able to t
 <div class="paragraph">
 <p>Some situations that trigger due soon feature are:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When user enters a task:</p>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>When user enters a task:</strong></p>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1169,14 +1170,13 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>When user deletes a task:</p>
-</li>
-</ol>
+</div>
 </div>
 <div class="exampleblock">
 <div class="content">
+<div class="paragraph">
+<p><strong>When user deletes a task:</strong></p>
+</div>
 <div class="paragraph">
 <p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of Due Soon tasks.</p>
 </div>
@@ -1243,17 +1243,21 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </tr>
 </table>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When user refreshes due soon list:</p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
-</li>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>When user refreshes due soon list:</strong></p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
 <p>What it does:<br></p>
 <div class="olist lowerroman">
@@ -1312,15 +1316,16 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-</div>
-</div>
 <div class="paragraph">
 <p>When a task that is deleted from the main list occurs in the Due Soon list as well, it is automatically deleted.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>When the application launches:</p>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>When the application launches:</strong></p>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -1351,8 +1356,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-</li>
-</ol>
+</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1415,6 +1419,33 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </tr>
 </table>
 </div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
+</div>
+<div class="title">Figure 26. Activity diagram for refresh</div>
+</div>
+<div class="paragraph">
+<p>{bl}</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 27. Sequence diagram for refresh</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline of an object should not continue after deletion. Lifeline is still shown due to a limitation of plantUML.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
@@ -1448,7 +1479,7 @@ If there are no such inconsistencies, the refresh command will not make any chan
 <ol class="loweralpha" type="a">
 <li>
 <p>Use cases pertaining to my features<br></p>
-<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<h3 id="use-case-list-task" class="discrete">Use case: List task</h3>
 </li>
 </ol>
 </div>
@@ -1464,10 +1495,27 @@ If there are no such inconsistencies, the refresh command will not make any chan
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>User is on the <code>All tasks</code> or <code>productivity</code> tab.</p>
+</li>
+<li>
 <p>User requests to list tasks</p>
 </li>
 <li>
-<p>Study Buddy shows a list of tasks</p>
+<p>Study Buddy shows a list of unarchived tasks</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Refer to List task use case</p>
 </li>
 <li>
 <p>User requests to delete a specific task in the list</p>
@@ -1589,10 +1637,7 @@ User chooses to filter by type instead.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list tasks</p>
-</li>
-<li>
-<p>Study Buddy shows a list of tasks</p>
+<p>Refer to List tasks use case</p>
 </li>
 <li>
 <p>User requests to delete all duplicates in the list</p>
@@ -1911,4 +1956,4 @@ eg: done command could provide an option to user to delete/archive if necessary<
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 05:43:40 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 09:04:19 UTC</div></div></div></body></html>

@@ -85,7 +85,11 @@
 </li>
 </ul>
 </li>
-<li><a href="#calendar">4.6. Calendar</a></li>
+<li><a href="#calendar">4.6. Calendar</a>
+<ul class="sectlevel3">
+<li><a href="#navigation-using-cli">4.6.1. Navigation using CLI</a></li>
+</ul>
+</li>
 <li><a href="#productivity">4.7. Productivity</a></li>
 </ul>
 </li>
@@ -1637,7 +1641,7 @@ To navigate back to your main list, check out <a href="#LIST">Section 4.1.12, &#
 <p>You can then proceed to choose what task type you would like to filter by. Here we have filtered by "assignment" as an example.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/filter/filter5.png" alt="filter5" width="790">
+<img src="images/basic/filter/filter_type_result.png" alt="filter type result" width="790">
 </div>
 <div class="title">Figure 49. Response to filter by task type 'assignment'</div>
 </div>
@@ -1719,13 +1723,12 @@ You can use this command to update the time left tag on due soon tasks.
 <p>Tasks have been refreshed!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/refresh/refresh3.png" alt="refresh3" width="790">
+<img src="images/basic/refresh/refresh_result.png" alt="refresh result" width="600">
 </div>
-<div class="title">Figure 51. View refreshed Study Buddy</div>
+<div class="title">Figure 51. Refreshed Study Buddy</div>
 </div>
 <div class="paragraph">
-<p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".
-image::basic/refresh/refresh_result.png[width="600", title="Refreshed Study Buddy"]</p>
+<p>You will notice that the overdue task has now moved out of the due soon list and has the updated status tag "overdue".</p>
 </div>
 </li>
 </ol>
@@ -2420,6 +2423,23 @@ When this issue happens, you can use any command that can trigger chart updating
 </div>
 <div class="sect2">
 <h3 id="calendar"><a class="link" href="#calendar">4.6. Calendar</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constraints</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The calendar GUI does not work well if the window size is set too small.</p>
+</li>
+<li>
+<p>You will not be able to navigate too far into the past/ future using CLI.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
 <div class="paragraph">
 <p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month. This allows students to plan their time efficiently.</p>
 </div>
@@ -2447,6 +2467,46 @@ When this issue happens, you can use any command that can trigger chart updating
 <img src="images/calendar/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
 </div>
 <div class="title">Figure 82. calendar after clicking on a date</div>
+</div>
+<div class="sect3">
+<h4 id="navigation-using-cli"><a class="link" href="#navigation-using-cli">4.6.1. Navigation using CLI</a></h4>
+<div class="paragraph">
+<p>Study buddy also allows you to navigate to any date in the <code>Calendar</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To initiate fast navigation, simply key in <code>calendar</code> into the input line.</p>
+</li>
+<li>
+<p>Study buddy will ask you for a date</p>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/calendar/Calendar_CLI_Date.png" alt="Calendar CLI Date" width="790">
+</div>
+<div class="title">Figure 83. Interactive prompt after keying in calendar</div>
+</div>
+<div class="paragraph">
+<p>In this example, we entered <code>11/04/2020</code>.</p>
+</div>
+</li>
+<li>
+<p>Input your date using the format shown and press <kbd>enter</kbd> once to proceed.</p>
+</li>
+<li>
+<p>Press <kbd>enter</kbd> again to confirm your command.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You will now see the calendar for your selected date as well as all the tasks on that day.</p>
+</div>
+<div class="imageblock" style="text-align: left">
+<div class="content">
+<img src="images/calendar/calendar_after_CLI.png" alt="calendar after CLI" width="790">
+</div>
+<div class="title">Figure 84. Successfully navigated calendar using CLI</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -2502,5 +2562,9 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Study Buddy folder (should be under data &#8594; taskList.json).</p>
 </div>
+<div class="paragraph">
+<p><strong>Q</strong>: How do I save my data?<br>
+<strong>A</strong>: Study buddy saves your data automatically after every command.</p>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 05:43:39 UTC</div></div></div></body></html>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-09 09:04:19 UTC</div></div></div></body></html>
