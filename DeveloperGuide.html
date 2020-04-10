@@ -32,6 +32,7 @@
 <li><a href="#modules">5.6. Modules</a></li>
 <li><a href="#logging">5.7. Logging</a></li>
 <li><a href="#Implementation-Configuration">5.8. Configuration</a></li>
+<li><a href="#proposed-data-encryption">5.9. [Proposed] Data encryption</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a></li>
@@ -49,6 +50,7 @@
 <li><a href="#saving-data">F.3. Saving data</a></li>
 </ul>
 </li>
+<li><a href="#effort">Appendix G: Effort</a></li>
 </ul>
 </div>
 </div>
@@ -377,7 +379,7 @@ The command execution will only terminate in two scenarios:<br>
 <h3 id="Design-Storage"><a class="link" href="#Design-Storage">4.5. Storage component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram">
+<img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="600" height="400">
 </div>
 <div class="title">Figure 7. Structure of the Storage Component</div>
 </div>
@@ -919,20 +921,13 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="future-possibility"><a class="link" href="#future-possibility">5.2.4. Future possibility</a></h4>
-<div class="sect4">
-<h5 id="question-should-we-write-this-in-dg"><a class="link" href="#question-should-we-write-this-in-dg">Question: should we write this in DG?</a></h5>
-
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="calendar-feature"><a class="link" href="#calendar-feature">5.3. Calendar feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-4"><a class="link" href="#implementation-4">5.3.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The calendar feature, as the name suggests, displays a calendar fo users.</p>
+<p>The calendar feature displays a calendar for users.</p>
 </div>
 <div class="paragraph">
 <p>The feature is implemented by overriding the task list display panel on the main window with calendar box. The calendar currently supports following features:</p>
@@ -953,9 +948,20 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>When a calender is requested, a CalendarBox object is constructed, the object diagram below shows the structure of a CalendarBox. We will be using the date <code>01/04/2020</code> as an example.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/CalendarBoxObjectDiagram.png" alt="CalendarBoxObjectDiagram">
+</div>
+<div class="title">Figure 17. CalendarBox object diagram</div>
+</div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario-3"><a class="link" href="#example-usage-scenario-3">5.3.2. Example usage scenario</a></h4>
+<h4 id="example-usage-scenarios"><a class="link" href="#example-usage-scenarios">5.3.2. Example usage scenarios</a></h4>
+<div class="sect4">
+<h5 id="using-mouse-click"><a class="link" href="#using-mouse-click">Using mouse click</a></h5>
 <div class="paragraph">
 <p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
 </div>
@@ -972,14 +978,34 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </li>
 </ol>
 </div>
+</div>
+<div class="sect4">
+<h5 id="using-cli"><a class="link" href="#using-cli">Using CLI</a></h5>
 <div class="paragraph">
-<p>Activity diagram:</p>
+<p>As of Study Buddy v1.4, a new feature has been added that allows users to navigate the calendar using CLI.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user enters 'calendar' into the command box.</p>
+</li>
+<li>
+<p>The user enters the selected date into the command box.</p>
+</li>
+<li>
+<p>Calendar will be generated the same way as a mouse click, however, it will use the selected date as parameters.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
 </div>
-<div class="title">Figure 17. Calendar Activity Diagram</div>
+<div class="title">Figure 18. Calendar Activity Diagram</div>
+</div>
 </div>
 </div>
 <div class="sect3">
@@ -1004,13 +1030,7 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
 </div>
 <div class="paragraph">
-<p>Sequence diagram:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
-</div>
-<div class="title">Figure 18. Archive Sequence Diagram</div>
+<p>The archived task list is stored within Model as a seperate list.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1019,7 +1039,28 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-The lifeline of an object should not continue after deletion. Lifeline is still shown due to a limitation of plantUML.
+The index for archived tasks are not used for any commands other than <code>unarchive</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sequence diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
+</div>
+<div class="title">Figure 19. Archive Sequence Diagram</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The lifeline of an object should not continue after deletion. Lifeline is shown due to a limitation of plantUML.
 </td>
 </tr>
 </table>
@@ -1119,7 +1160,7 @@ CAT
 <div class="content">
 <img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
-<div class="title">Figure 19. Sequence diagram for modules</div>
+<div class="title">Figure 20. Sequence diagram for modules</div>
 </div>
 </div>
 </div>
@@ -1166,6 +1207,67 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.8. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">5.9. [Proposed] Data encryption</a></h3>
+<div class="paragraph">
+<p>Since Study Buddy is an offline application, there is no threat of being attacked via a network channel. However, in case the computer has a shared owner, a password feature can be implemented in the future for privacy purposes.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-8"><a class="link" href="#implementation-8">5.9.1. Implementation</a></h4>
+<div class="paragraph">
+<p>The goal is to encrypt <code>taskList.json</code>, while still allowing the owner to access his/her tasks using his password.</p>
+</div>
+<div class="paragraph">
+<p>We will be using AES (Advanced Encryption Scheme) for encryption, and a slow hashing algorithm to derive a key from the user&#8217;s password. The slow hashing algorithm is to prevent brute force attacks.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Encryption</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User sets a password. (Optional)</p>
+</li>
+<li>
+<p>Study Buddy uses a slow hashing algorithm (<a href="https://github.com/patrickfav/bcrypt">bCrypt</a>) to generate a key.</p>
+</li>
+<li>
+<p>When user exits the app, Study Buddy will encrypt taskList.json using the <a href="https://github.com/facebookarchive/conceal">conceal</a> library and the generated key.</p>
+</li>
+<li>
+<p>TaskList.json should now be encrypted</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Decryption</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters a password.</p>
+</li>
+<li>
+<p>If the password is correct, the same key should be hashed and taskList.json can be decrypted.</p>
+</li>
+<li>
+<p>If the password is incorrect, user will be allowed to try again.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>We leave it to the user&#8217;s own jurisdiction to create a strong password.</p>
+</div>
 </div>
 </div>
 </div>
@@ -1335,6 +1437,12 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who takes many modules</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add my modules</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view my modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who finds it hard to keep track of all my deadlines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">have a calendar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily find tasks due on a day</p></td>
 </tr>
 </tbody>
 </table>
@@ -1610,7 +1718,7 @@ There is nothing to refresh</p>
 <dl>
 <dt class="hdlist1">Index</dt>
 <dd>
-<p>The index of a task refers to the sequence number of the task in the dashboard</p>
+<p>The index of a task refers to the sequence number of a task in the dashboard</p>
 </dd>
 </dl>
 </div>
@@ -1717,7 +1825,6 @@ Error details shown in the status message.</p>
 <li>
 <p>Test case: Launch the application<br>
    Expected: The application indicates that the data file needed is missing and creates one.
-Application launches successfully but has no data.
 c</p>
 </li>
 <li>
@@ -1735,4 +1842,42 @@ Application launches successfully but has no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:53:42 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
+<div class="sectionbody">
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Interactive prompt</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AB3 requires users to input a whole line of text at once, which is unintuitive and prone to typos by the user. Furthermore, AB3 uses tags like
+&#8220;\p&#8221; to break the user&#8217;s input up for parsing. This means that users will not be able to use these strings for any of their inputs.</p>
+</li>
+<li>
+<p>Study buddy fixes that issue by introducing an interactive prompt for every command. This required a lot effort as there had to be an interactive prompt
+for every command.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Refactoring</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>AB3 uses the <code>Person</code> class which had 5 fields. Study buddy has 12 fields, every one of them is used in a major feature.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:29:33 UTC</div></div></div></body></html>
