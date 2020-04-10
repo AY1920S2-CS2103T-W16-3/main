@@ -16,7 +16,7 @@
 <li><a href="#useful-tips">2.2. Useful tips</a></li>
 </ul>
 </li>
-<li><a href="#UI">3. User Interface Introduction</a>
+<li><a href="#user-interface-introduction">3. User Interface Introduction</a>
 <ul class="sectlevel2">
 <li><a href="#dashboard">3.1. Dashboard</a>
 <ul class="sectlevel3">
@@ -72,12 +72,12 @@
 </li>
 <li><a href="#statistics">4.5. Statistics</a>
 <ul class="sectlevel3">
-<li><a href="#navigate-to-statics-page">4.5.1. Navigate to Statics Page</a></li>
-<li><a href="#statistics-user-interface-and-interaction">4.5.2. Statistics User Interface and Interaction</a>
+<li><a href="#navigate-to-statistics-page">4.5.1. Navigate to Statistics Page</a></li>
+<li><a href="#statistics-page-user-interface-and-interaction">4.5.2. Statistics Page User Interface and Interaction</a>
 <ul class="sectlevel4">
-<li><a href="#task-status-chart">Task Status Chart</a></li>
-<li><a href="#module-related-tasks-deadline-start-date">Module related tasks' deadline/ start date</a></li>
-<li><a href="#module-related-tasks-weight">Module related tasks' weight</a></li>
+<li><a href="#task-status-tab">Task Status Tab</a></li>
+<li><a href="#module-related-tasks-deadline-start-date-tab">Module Related Tasks' Deadline/Start Date Tab</a></li>
+<li><a href="#module-related-tasks-weight-tab">Module Related Tasks' Weight Tab</a></li>
 </ul>
 </li>
 </ul>
@@ -265,7 +265,7 @@ index of the same task could be different after some commands, such as <code>fil
 </div>
 </div>
 <div class="sect1">
-<h2 id="UI"><a class="link" href="#UI">3. User Interface Introduction</a></h2>
+<h2 id="user-interface-introduction"><a class="link" href="#user-interface-introduction">3. User Interface Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Study Buddy makes use of color schemes and animations to enhance your user experience.</p>
@@ -488,7 +488,7 @@ This is the command you should use if you are unsure of what to type for a certa
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/help.png" alt="help" width="600">
+<img src="images/basic/help/help_rep.png" alt="help rep" width="600">
 </div>
 <div class="title">Figure 6. Response to 'help'</div>
 </div>
@@ -814,7 +814,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/addDuplicate.png" alt="addDuplicate" width="600">
+<img src="images/duplicate/addDuplicate.png" alt="addDuplicate" width="600">
 </div>
 <div class="title">Figure 17. Reponse to adding a duplicate</div>
 </div>
@@ -829,7 +829,7 @@ A task is considered duplicate when the name, type, module, description, weighta
 <p>The Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/addDuplicate1.png" alt="addDuplicate1" width="600">
+<img src="images/duplicate/addDuplicate1.png" alt="addDuplicate1" width="600">
 </div>
 <div class="title">Figure 18. Response to adding duplicate</div>
 </div>
@@ -853,7 +853,7 @@ If you add two duplicates of a task (eg: task(1) and task(2)), and then delete t
 <p>If you choose to enter <code>no</code> at step 2, this is what you will see.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/addDuplicate2.png" alt="addDuplicate2" width="600">
+<img src="images/duplicate/addDuplicate2.png" alt="addDuplicate2" width="600">
 </div>
 <div class="title">Figure 19. Response to choosing not to add</div>
 </div>
@@ -1004,7 +1004,7 @@ task. You can use this command to edit as you wish.</p>
 <div class="content">
 <img src="images/basic/done/done_index.png" alt="done index" width="600">
 </div>
-<div class="title">Figure 24. Asks foe task index.</div>
+<div class="title">Figure 24. Asks for task index.</div>
 </div>
 </li>
 <li>
@@ -1020,7 +1020,7 @@ task. You can use this command to edit as you wish.</p>
 </div>
 </li>
 <li>
-<p>Task set to <code>Finished</code> successfully! Note that the task in your task list has the tag <code>FINISHED</code>.</p>
+<p>Task set to <code>Finished</code> successfully! Note that the task in your task list has the tag <code>Finished</code>.</p>
 <div class="imageblock">
 <div class="content">
 <img src="images/basic/done/done_result.png" alt="done result" width="600">
@@ -1216,7 +1216,7 @@ You will still need to navigate to the main list and use that index to perform a
 <p>Study Buddy should respond with:</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/viewrenamed/viewRenamed1.png" alt="viewRenamed1" width="500">
+<img src="images/basic/viewrenamed/viewRenamed1.png" alt="viewRenamed1" width="600">
 </div>
 <div class="title">Figure 33. Response to 'view renamed'</div>
 </div>
@@ -1228,7 +1228,7 @@ You will still need to navigate to the main list and use that index to perform a
 <p>Renamed tasks have been filtered!</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/basic/viewrenamed/viewRenamed2.png" alt="viewRenamed2" width="500">
+<img src="images/basic/viewrenamed/viewRenamed2.png" alt="viewRenamed2" width="600">
 </div>
 <div class="title">Figure 34. Updated list of renamed tasks</div>
 </div>
@@ -2259,8 +2259,9 @@ statistics about:</p>
 </ul>
 </div>
 <div class="paragraph">
-<p>It utilizes different charts to make the information easier to understand, and the charts will update automatically after executing of
-<code>add</code> <code>edit</code> <code>delete</code> <code>sort</code>  <code>find</code> <code>archive</code> <code>done</code> <code>list</code> and <code>clear</code> commands.</p>
+<p>It utilizes different types of charts to make the information more straightforward for you to understand.
+Furthermore, the charts always update automatically together with the task&#8217;s records', especially after executing commands. such as
+<code>add</code> <code>edit</code> <code>delete</code> <code>sort</code>  <code>find</code> <code>archive</code> <code>done</code> <code>list</code> and <code>clear</code>.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -2269,63 +2270,94 @@ statistics about:</p>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The color theme will also change randomly, hope you enjoy :)
+The colour theme will also change randomly, hope you enjoy :)
 </td>
 </tr>
 </table>
 </div>
 <div class="sect3">
-<h4 id="navigate-to-statics-page"><a class="link" href="#navigate-to-statics-page">4.5.1. Navigate to Statics Page</a></h4>
+<h4 id="navigate-to-statistics-page"><a class="link" href="#navigate-to-statistics-page">4.5.1. Navigate to Statistics Page</a></h4>
 <div class="paragraph">
-<p>You can navigate to Statistics page by clicking the <strong>Statistics</strong> item from menu list.</p>
+<p>You can navigate to Statistics page by clicking the <strong>Statistics</strong> item from the menu bar.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/stats/stats_nav.png" alt="stats nav" width="790">
+<img src="images/stats/stats_nav.png" alt="stats nav" width="600">
 </div>
-<div class="title">Figure 75. Task Status Chart</div>
+<div class="title">Figure 75. Entry of Statistics page</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="statistics-user-interface-and-interaction"><a class="link" href="#statistics-user-interface-and-interaction">4.5.2. Statistics User Interface and Interaction</a></h4>
+<h4 id="statistics-page-user-interface-and-interaction"><a class="link" href="#statistics-page-user-interface-and-interaction">4.5.2. Statistics Page User Interface and Interaction</a></h4>
 <div class="paragraph">
-<p>The tap panel on the left contains different charts to present different statistics, the panel on the
-right will be updated accordingly when you clicking on charts.</p>
+<p>The tap panel on the left contains different charts for different statistics.
+You can use the tabs circled to navigate arounf them.</p>
+</div>
+<div class="paragraph">
+<p>The right-side panel is used to display related task records when you clicking on charts.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/stats/stats_ui.png" alt="stats ui" width="600">
+</div>
+<div class="title">Figure 76. Statistics Page User Interface </div>
 </div>
 <div class="sect4">
-<h5 id="task-status-chart"><a class="link" href="#task-status-chart">Task Status Chart</a></h5>
+<h5 id="task-status-tab"><a class="link" href="#task-status-tab">Task Status Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>The summary of comparison of the number of tasks in different statuses
+is represented using a clickable <strong>pie chart</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/stats/stats_pie.png" alt="stats pie" width="600">
+</div>
+<div class="title">Figure 77. Task Status Chart</div>
+</div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>After you click on the chart,
+all the tasks with the selected status will display on the right-side panel automatically.</p>
 <div class="paragraph">
-<p>Summary of task statuses is represented using a pie chart, which provides the comparison of the
-number of tasks in different statuses.</p>
+<p>Here is an example when you clicking on the <strong>Due Soon</strong> part of the chart.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The part highlighted by light purple lines represents all your Due Soon tasks. When you are clicking on
+this part, all tasks with Due Soon status will be listed in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/stats/stats_pie.png" alt="stats pie" width="790">
+<img src="images/stats/stats_pie_click.png" alt="stats pie click" width="600">
 </div>
-<div class="title">Figure 76. Task Status Chart</div>
+<div class="title">Figure 78. Clicking on 'Due Soon' part</div>
 </div>
-<div class="paragraph">
-<p>When you clicking on the chart, the related task records will display on the
-right panel automatically.</p>
+</li>
+</ul>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/stats/stats_pie_click.png" alt="stats pie click" width="790">
-</div>
-<div class="title">Figure 77. Clicking on Task Status Chart</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect4">
-<h5 id="module-related-tasks-deadline-start-date"><a class="link" href="#module-related-tasks-deadline-start-date">Module related tasks' deadline/ start date</a></h5>
-<div class="paragraph">
-<p>Summary of different modules' tasks deadline or start date is represented in this clickable area
-chart.</p>
-</div>
+<h5 id="module-related-tasks-deadline-start-date-tab"><a class="link" href="#module-related-tasks-deadline-start-date-tab">Module Related Tasks' Deadline/Start Date Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>The summary of different modules' tasks deadline or start date is represented in this clickable <strong>area
+chart</strong>.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/stats/stats_area.png" alt="stats area" width="790">
+<img src="images/stats/stats_area.png" alt="stats area" width="600">
 </div>
-<div class="title">Figure 78. Module Related Tasks' Deadline/Start Date Chart</div>
+<div class="title">Figure 79. Module Related Tasks' Deadline/Start Date Chart</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2336,23 +2368,32 @@ chart.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The X-axis represents the actual date of each task&#8217;s due or start date.</p>
+<p>The <strong>X-axis</strong> represents the actual date of each task&#8217;s due or start date.</p>
 </li>
 <li>
-<p>The Y-axis represents the number of tasks due or start on each date.</p>
+<p>The <strong>Y-axis</strong> represents the number of tasks due or starts on each date.</p>
 </li>
 <li>
-<p>Tasks under different Module have different background color.</p>
+<p>The <strong>area</strong> (i.e. The triangles or quadrilaterals exclude their vertices) with the same background colour
+represents the tasks under the same module.</p>
 </li>
 <li>
-<p>Only the tasks due or start within next 2 months will be displayed here.</p>
+<p>The <strong>data point</strong>'s (i.e. The vertices of the triangles or quadrilaterals) <strong>Y-axis</strong>  represents the number of tasks
+under a particular module, which will due or start on the data of its <strong>X-axis</strong> value.</p>
 </li>
 <li>
-<p>Since the color of each module is translucent, "extra" colors may appear in the chart as a result of multiple
-overlapping layers of data in the same area.</p>
+<p>Tasks under different module have a different background colour.</p>
 </li>
 <li>
-<p>When there is an overlapping, only one layer&#8217;s related records will be displayed by clicking.</p>
+<p>Only the tasks due or start within <strong>the next 60 days</strong> will be displayed in both chart or right-side
+panel.</p>
+</li>
+<li>
+<p>Since the colour of each module is translucent, "extra" colours may appear in the chart as a result of
+data overlapping.</p>
+</li>
+<li>
+<p>When there is an overlapping, only one layer&#8217;s related records will be displayed in the right-side panel after clicking.</p>
 </li>
 </ol>
 </div>
@@ -2361,46 +2402,88 @@ overlapping layers of data in the same area.</p>
 </div>
 </div>
 </div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>After you click on the chart, the related task records will display on the right-side panel automatically.</p>
 <div class="paragraph">
-<p>When you clicking on the chart, the related task records will display on the right panel automatically.</p>
+<p>Here are two different behaviours according to the place you click.</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Click on data area:</p>
-</li>
-</ol>
+<p><strong>Click on data area</strong>:</p>
+<div class="paragraph">
+<p>The tasks under a particular module will be listed in the right-side panel.</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/stats/stats_area_click_area.png" alt="stats area click area" width="790">
+<div class="paragraph">
+<p>Here is an example when you are clicking on the area of module "CS2101".</p>
 </div>
-<div class="title">Figure 79. Clicking on data area.</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>Click on data point:</p>
-</li>
-</ol>
+<p>The parts highlighted using light purple lines represents the tasks under module "CS2101".
+When you are clicking on those areas, the tasks under CS2101 and will due or start within
+the next 60 days will display in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/stats/stats_area_click_point.png" alt="stats area click point" width="790">
+<img src="images/stats/stats_area_click_area.png" alt="stats area click area" width="600">
 </div>
-<div class="title">Figure 80. Clicking on data point</div>
+<div class="title">Figure 80. Clicking on the area of module 'CS2101'</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Click on data point</strong>:</p>
+<div class="paragraph">
+<p>The tasks under a particular module and will due or start on a specific date will be listed in the right-side panel.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example when you are clicking on the data point of tasks under module "CS2101" and
+will due or start on 13/04/2020.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The point circled in light purple is the data point you clicked. When you are clicking on this point,
+the tasks under module "CS2101" and will due or start on 13/04/2020 will display in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/stats/stats_click_point.png" alt="stats click point" width="600">
+</div>
+<div class="title">Figure 81. Clicking on the data point of module 'CS2101&#8217;s tasks which will due or start on 13/04/2020</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
 </div>
 </div>
 <div class="sect4">
-<h5 id="module-related-tasks-weight"><a class="link" href="#module-related-tasks-weight">Module related tasks' weight</a></h5>
-<div class="paragraph">
-<p>Summary of different types of tasks' weight under each module is represented using stacked bar chart.</p>
-</div>
+<h5 id="module-related-tasks-weight-tab"><a class="link" href="#module-related-tasks-weight-tab">Module Related Tasks' Weight Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>The summary of weight comparison of different types of tasks in the same module
+is represented in this clickable <strong>stacked bar chart</strong>.</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
 <img src="images/stats/stats_bar.png" alt="stats bar" width="790">
 </div>
-<div class="title">Figure 81. Module Related Tasks' Weight</div>
+<div class="title">Figure 82. Module Related Tasks' Weight Chart</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2411,13 +2494,16 @@ overlapping layers of data in the same area.</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The X-axis represents different modules.</p>
+<p>The <strong>X-axis</strong> represents different modules.</p>
 </li>
 <li>
-<p>The Y-axis represents the sum of weight under the same module.</p>
+<p>The <strong>Y-axis</strong> represents the weight-sum under the same module.</p>
 </li>
 <li>
-<p>Different types' of tasks have different background color.</p>
+<p>The <strong>blocks</strong> in each bar represent the total weight of a particular task type.</p>
+</li>
+<li>
+<p>Different task type has a different background colour.</p>
 </li>
 </ol>
 </div>
@@ -2426,14 +2512,33 @@ overlapping layers of data in the same area.</p>
 </div>
 </div>
 </div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>After you click on the chart,
+the tasks under the selected module and type will display on the right-side panel automatically.</p>
 <div class="paragraph">
-<p>When you clicking on the chart, the related task records will display on the right panel automatically.</p>
+<p>Here is an example when you are clicking on the block which represents the assignments of module "CS2101".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The block highlighted using light purple lines represents the assignments of module "CS2101".
+When you are clicking it, all assignments of module "CS2101" will show in the right-size panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/stats/stats_bar_click.png" alt="stats bar click" width="790">
+<img src="images/stats/stats_bar_click.png" alt="stats bar click" width="600">
 </div>
-<div class="title">Figure 82. Clicking on stacked bar chart</div>
+<div class="title">Figure 83. Clicking on the block of 'CS2101''s assignments</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2443,7 +2548,7 @@ overlapping layers of data in the same area.</p>
 </td>
 <td class="content">
 As the data of charts are filled dynamically, thus it is possible that their labels can overlap together.<br>
-This is due to JavaFX chart off-sync and it was raised <a href="https://bugs.openjdk.java.net/browse/JDK-8198830">here</a>.<br>
+This is an unfixed bug regarding the JDK which is caused by JavaFX chart off-sync. To get more information, you may refer to <a href="https://bugs.openjdk.java.net/browse/JDK-8198830">here</a>.<br>
 When this issue happens, you can use any command that can trigger chart updating to refresh the chart.
 </td>
 </tr>
@@ -2475,13 +2580,13 @@ When this issue happens, you can use any command that can trigger chart updating
 <p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month. This allows students to plan their time efficiently.</p>
 </div>
 <div class="paragraph">
-<p>The calendar feature can be toggled by clicking <code>Calendar</code> &#8594; <code>Display</code></p>
+<p>The calendar feature can be toggled by clicking <code>Calendar</code> from the menu bar.</p>
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/calendar/calender_init.png" alt="calender init" width="790">
+<img src="images/calendar/calendar_init.png" alt="calendar init" width="600">
 </div>
-<div class="title">Figure 83. calendar interface</div>
+<div class="title">Figure 84. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2495,9 +2600,9 @@ When this issue happens, you can use any command that can trigger chart updating
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/calendar/calendar_after_choose_date.png" alt="calendar after choose date" width=", align=" height="left"">
+<img src="images/calendar/calendar_click.png" alt="calendar click" width=", align=" height="left"">
 </div>
-<div class="title">Figure 84. calendar after clicking on a date</div>
+<div class="title">Figure 85. calendar after clicking on a date</div>
 </div>
 <div class="sect3">
 <h4 id="navigation-using-cli"><a class="link" href="#navigation-using-cli">4.6.1. Navigation using CLI</a></h4>
@@ -2513,12 +2618,12 @@ When this issue happens, you can use any command that can trigger chart updating
 <p>Study buddy will ask you for a date</p>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/calendar/Calendar_CLI_Date.png" alt="Calendar CLI Date" width="790">
+<img src="images/calendar/Calendar_CLI_Date.png" alt="Calendar CLI Date" width="600">
 </div>
-<div class="title">Figure 85. Interactive prompt after keying in calendar</div>
+<div class="title">Figure 86. Interactive prompt after keying in calendar</div>
 </div>
 <div class="paragraph">
-<p>In this example, we entered <code>11/04/2020</code>.</p>
+<p>In this example, we entered <code>20/04/2020</code>.</p>
 </div>
 </li>
 <li>
@@ -2534,9 +2639,9 @@ When this issue happens, you can use any command that can trigger chart updating
 </div>
 <div class="imageblock" style="text-align: left">
 <div class="content">
-<img src="images/calendar/calendar_after_CLI.png" alt="calendar after CLI" width="790">
+<img src="images/calendar/calendar_after_CLI.png" alt="calendar after CLI" width="600">
 </div>
-<div class="title">Figure 86. Successfully navigated calendar using CLI</div>
+<div class="title">Figure 87. Successfully navigated calendar using CLI</div>
 </div>
 </div>
 </div>
@@ -2652,4 +2757,4 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <strong>A</strong>: Study buddy saves your data automatically after every command.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 14:29:33 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 15:28:14 UTC</div></div></div></body></html>
