@@ -428,11 +428,10 @@ The command execution will only terminate in two scenarios:<br>
 <div class="paragraph">
 <p>Some situations that trigger due soon feature are:</p>
 </div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p><strong>When user enters a task:</strong></p>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -503,24 +502,17 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </tr>
 </table>
 </div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
 <p><strong>When user deletes a task:</strong></p>
+</li>
+</ol>
 </div>
-<div class="paragraph">
-<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of Due Soon tasks.</p>
+</li>
+</ol>
 </div>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+</li>
 <li>
 <p>What it does:</p>
 <div class="olist lowerroman">
@@ -588,13 +580,9 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
+</li>
+<li>
 <p><strong>When user refreshes due soon list:</strong></p>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -655,16 +643,9 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>When a task that is deleted from the main list occurs in the Due Soon list as well, it is automatically deleted.</p>
-</div>
-</div>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
+</li>
+<li>
 <p><strong>When the application launches:</strong></p>
-</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
@@ -695,7 +676,8 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </li>
 </ol>
 </div>
-</div>
+</li>
+</ol>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -704,7 +686,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Other commands like edit, delete duplicates etc also trigger due soon feature in a similar manner.
+Other commands like edit, archive etc also trigger due soon feature in a similar manner.
 </td>
 </tr>
 </table>
@@ -1315,13 +1297,13 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete duplicate tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">easily filter out any duplicate data in my list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view renamed tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">easily filter out any renamed data in my list</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter all Pending tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filter all pending tasks</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view all my Pending tasks in one place</p></td>
 </tr>
 <tr>
@@ -1506,20 +1488,17 @@ User chooses to filter by type instead.</p>
 </li>
 </ul>
 </div>
-<h3 id="use-case-delete-duplicates" class="discrete">Use case: Delete duplicates</h3>
+<h3 id="use-case-view-renamed" class="discrete">Use case: View renamed</h3>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Refer to List tasks use case</p>
+<p>User requests to view renamed tasks</p>
 </li>
 <li>
-<p>User requests to delete all duplicates in the list</p>
-</li>
-<li>
-<p>Study Buddy deletes all but one occurrence of each task</p>
+<p>Study Buddy shows a list of renamed tasks</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1756,4 +1735,4 @@ Application launches successfully but has no data.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 08:18:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 10:53:42 UTC</div></div></div></body></html>
