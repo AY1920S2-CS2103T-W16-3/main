@@ -28,7 +28,7 @@
 <li><a href="#task-summary-feature">5.2. Task Summary Feature</a></li>
 <li><a href="#calendar-feature">5.3. Calendar feature</a></li>
 <li><a href="#archive-feature">5.4. Archive feature</a></li>
-<li><a href="#achievement-feature">5.5. Achievement feature</a></li>
+<li><a href="#productivity-feature">5.5. Productivity feature</a></li>
 <li><a href="#modules">5.6. Modules</a></li>
 <li><a href="#logging">5.7. Logging</a></li>
 <li><a href="#Implementation-Configuration">5.8. Configuration</a></li>
@@ -1041,57 +1041,199 @@ The lifeline of an object should not continue after deletion. Lifeline is shown 
 </div>
 </div>
 <div class="sect2">
-<h3 id="achievement-feature"><a class="link" href="#achievement-feature">5.5. Achievement feature</a></h3>
-<div class="paragraph">
-<p>The achievement feature keeps track of usage statistics and displays the user&#8217;s achievements
-and feedback on the user&#8217;s weekly performance.</p>
-</div>
+<h3 id="productivity-feature"><a class="link" href="#productivity-feature">5.5. Productivity feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">5.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p>The achievement feature keeps track of usage statistics that are important to the user.
-Each usage statistic is recorded when the respective user command has completed. The user command is
-said to be completed when the respective <code>InteractivePrompt</code> has completed successfully.</p>
+<p>The productivity feature displays insights related to the user&#8217;s productivity over the
+past day, week and more on the Productivity page.
+The Productivity page is integrated with the main page as a side panel.</p>
 </div>
 <div class="paragraph">
-<p>For example, the following are the usage statistics logged for the <code>CompleteTaskInteractivePrompt</code>.</p>
+<p>The Productivity page is further composed of 3 tabs:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Number of tasks completed</p>
+<p>Daily Productivity Tab</p>
 </li>
 <li>
-<p>Number of tasks completed on time</p>
+<p>Weekly Productivity Tab</p>
 </li>
 <li>
-<p>Number of tasks deadlines missed</p>
-</li>
-<li>
-<p>Average amount of time exceeded</p>
-</li>
-<li>
-<p>Average amount of buffer time</p>
-</li>
-<li>
-<p>Time spent on each type of task</p>
+<p>Productivity Points Tab</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>Similarly, usage statistics are recorded for other user commands as well.</p>
+<p>The Productivity page can be viewed by clicking on the Productivity menu item,
+which directs the user to the Daily Productivity Tab.
+The Productivity page can also be viewed by clicking on the Productivity Points shown on
+the top right of the application window.
+This directs the user to the Productivity Points Tab.</p>
+</div>
+<div class="paragraph">
+<p>The productivity feature is facilitated by the <code>Statistics</code> class, which allows
+StudyBuddy to keep track of relevant usage statistics of the user.
+<code>Statistics</code> is further composed of classes that keep track of specific statistics:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>CompletionStats</code> keeps track of the number of tasks completed by the user each day and each week</p>
+</li>
+<li>
+<p><code>OverdueStats</code> keeps track of the number of tasks that went overdue each day and each week.</p>
+</li>
+<li>
+<p><code>ScoreStats</code> keeps track of the user&#8217;s Productivity Points and rank each day</p>
+</li>
+<li>
+<p><code>GeneralStats</code> keeps track of the user&#8217;s goal, streak, and other statistics not covered by the other statistics classes</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The user can gain or lose Productivity Points in StudyBuddy when certain actions or events are completed. These include:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Adding a task: <em>+1</em></p>
+</li>
+<li>
+<p>Completing a task: <em>+10</em></p>
+</li>
+<li>
+<p>Completing your daily goal: <em>+(points equivalent to daily goal)</em></p>
+</li>
+<li>
+<p>Using advanced features; <em>+1</em></p>
+</li>
+<li>
+<p>Letting a task go Overdue: <em>-1</em></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Each usage statistic is updated accordingly when the respective user action or event
+has concluded. These statistics are then rendered on the <code>ProductivityPage</code>.
+The chart visualizations are implemented using <code>ProgressIndicator</code>, <code>BarChart</code> and <code>AreaChart</code>.</p>
+</div>
+<div class="paragraph">
+<p>When the statistics are updated, the task list&#8217;s event listener and classes implementing
+<code>GoalObserver</code> will be informed of the changes. <code>ProductivityPage</code> re-renders the
+displayed information when either of these are updated.</p>
+</div>
+<div class="paragraph">
+<p>The data displayed will be automatically updated upon calling any of the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>done</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>refresh</code></p>
+</li>
+<li>
+<p><code>goal</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect3">
 <h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">5.5.2. Example Use Scenario</a></h4>
 <div class="paragraph">
-<p>Clicking on the achievement menu item will enable this feature.</p>
+<p>Given below is an example usage scenario and how the
+Productivity feature behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches the application.
+Step 2: The Productivity feature displays the user&#8217;s Productivity Points on the top right of the screen.
+Step 3: The user clicks the Productivity Menu button
+Step 4: The Daily Productivity Tab is displayed to the user
+Step 5: The user completes a task using <code>done</code>
+Step 6: The daily number of tasks is added and Productivity Points is increased.
+If the daily goal has been reached, the user&#8217;s streak is incremented.</p>
+</div>
+<div class="paragraph">
+<p>Here is an activity diagram of the aforementioned steps:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ProductivityActivityDiagram.png" alt="ProductivityActivityDiagram" width="400">
+</div>
+<div class="title">Figure 18. Productivity Feature Example Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>Extension: Suppose the user sees the Productivity Points and clicks it
+Step 3: The user clicks the Productivity Points on the top right of the screen
+Step 4: The Productivity Points Tab is displayed to the user</p>
+</div>
+<div class="paragraph">
+<p>From here, the user can continue to manage tasks as per Step 5 and 6 above,
+or navigate to other Productivity tabs.</p>
+</div>
+<div class="sect4">
+<h5 id="clicking-the-productivity-menu-item"><a class="link" href="#clicking-the-productivity-menu-item">Clicking the Productivity menu item</a></h5>
+<div class="paragraph">
+<p>image</p>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-re-render-productivity-page-when-statistics-are-updated"><a class="link" href="#aspect-how-to-re-render-productivity-page-when-statistics-are-updated">Aspect: How to re-render Productivity page when statistics are updated</a></h5>
 <div class="paragraph">
-<p>Pending.</p>
+<p><strong>Alternative 1</strong>: re-render only the values that have been updated</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: maximizes loading speed and minimizes lag for the user</p>
+</li>
+<li>
+<p>Cons: increases complexity for codebase, higher chance of bugs occuring</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 2</strong>: always re-render the whole Productivity Page</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: easy to implement</p>
+</li>
+<li>
+<p>Cons: may result in slower loading speed and more lag for the user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 3 (current choice)</strong>: re-render only the values that have been updated
+if it does not result in increased code complexity</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: improves loading speed and decreases lag for the user,
+while keeping the codebase readable and easy to reason with.</p>
+</li>
+<li>
+<p>Cons: may result in slower loading speed. However, based on testing,
+this trade-off does not result in any measurable delay.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1133,7 +1275,7 @@ CAT
 <div class="content">
 <img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
 </div>
-<div class="title">Figure 18. Sequence diagram for modules</div>
+<div class="title">Figure 19. Sequence diagram for modules</div>
 </div>
 </div>
 </div>
@@ -1853,4 +1995,4 @@ for every command.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 19:03:35 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 21:53:43 UTC</div></div></div></body></html>
