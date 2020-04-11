@@ -52,9 +52,10 @@
 <li><a href="#Sort">4.1.10. Sort</a></li>
 <li><a href="#Find">4.1.11. Find</a></li>
 <li><a href="#LIST">4.1.12. List</a></li>
-<li><a href="#Filter">4.1.13. Filter</a></li>
-<li><a href="#Refresh">4.1.14. Refresh</a></li>
-<li><a href="#exit">4.1.15. Exit</a></li>
+<li><a href="#goal">4.1.13. Goal</a></li>
+<li><a href="#Filter">4.1.14. Filter</a></li>
+<li><a href="#Refresh">4.1.15. Refresh</a></li>
+<li><a href="#exit">4.1.16. Exit</a></li>
 </ul>
 </li>
 <li><a href="#saving-data">4.2. Saving Data</a></li>
@@ -87,7 +88,13 @@
 <li><a href="#navigation-using-cli">4.6.1. Navigation using CLI</a></li>
 </ul>
 </li>
-<li><a href="#productivity">4.7. Productivity</a></li>
+<li><a href="#productivity">4.7. Productivity</a>
+<ul class="sectlevel3">
+<li><a href="#daily-productivity-tab">4.7.1. Daily Productivity Tab</a></li>
+<li><a href="#weekly-productivity-tab">4.7.2. Weekly Productivity Tab</a></li>
+<li><a href="#productivity-points-tab">4.7.3. Productivity Points Tab</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a href="#Summary">5. Command Summary</a></li>
@@ -338,7 +345,7 @@ It consists of different components that can interact with you and provide you w
 </li>
 <li>
 <p>Tasks that are due within a week (i.e. 7 days) will be marked as <code>Due Soon</code>.
-You may need to use the refresh command (<a href="#Refresh">Section 4.1.14, &#8220;Refresh&#8221;</a>) to refresh the status of all your tasks.</p>
+You may need to use the refresh command (<a href="#Refresh">Section 4.1.15, &#8220;Refresh&#8221;</a>) to refresh the status of all your tasks.</p>
 </li>
 </ul>
 </div>
@@ -1448,14 +1455,14 @@ You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to d
 </div>
 </div>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-To navigate back to the always on display list of tasks, you can use the <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a> function.
+To navigate back to the full list of tasks, you can use the <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a> function.
 </td>
 </tr>
 </table>
@@ -1491,7 +1498,55 @@ All your tasks are listed once again!</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Filter"><a class="link" href="#Filter">4.1.13. Filter</a></h4>
+<h4 id="goal"><a class="link" href="#goal">4.1.13. Goal</a></h4>
+<div class="paragraph">
+<p>Want to challenge yourself to complete tasks? You can set your daily goal using <code>goal</code>.</p>
+</div>
+<div class="paragraph">
+<p>To use the <code>goal</code> command:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initiate the command with <code>goal</code>. StudyBuddy should reply with:</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/productivity/goal1.png" alt="goal1" width="790">
+</div>
+<div class="title">Figure 38. Prompt after entering <code>goal</code></div>
+</div>
+</li>
+<li>
+<p>Now enter the number of tasks that you want to complete today.
+It should be a number between 1 and 100. As usual, hit <kbd>Enter</kbd> once you&#8217;re done.</p>
+</li>
+<li>
+<p>Your goal has been set and reflected on the Daily goal tracker. All the best in achieving it!</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/productivity/goal2.png" alt="goal2" width="790">
+</div>
+<div class="title">Figure 39. Prompt after entering the number 7</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Your daily goal is displayed on the Productivity Page. You can find more information
+about the Productivity Page in <a href="#productivity">Section 4.7, &#8220;Productivity&#8221;</a>.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="Filter"><a class="link" href="#Filter">4.1.14. Filter</a></h4>
 <div class="paragraph">
 <p>This commands helps you filter your tasks by category.
 The two categories available are status and type.</p>
@@ -1544,7 +1599,7 @@ To navigate back to your main list, check out <a href="#LIST">Section 4.1.12, &#
 <div class="content">
 <img src="images/basic/filter/filter_term.png" alt="filter term" width="790">
 </div>
-<div class="title">Figure 38. Response to 'filter'</div>
+<div class="title">Figure 40. Response to 'filter'</div>
 </div>
 </li>
 <li>
@@ -1554,7 +1609,7 @@ If you enter 1, you have chosen to filter by status.</p>
 <div class="content">
 <img src="images/basic/filter/filter_status.png" alt="filter status" width="790">
 </div>
-<div class="title">Figure 39. Response to filter by 'status'</div>
+<div class="title">Figure 41. Response to filter by 'status'</div>
 </div>
 </li>
 <li>
@@ -1564,7 +1619,7 @@ Here we have filtered by "Pending" as an example.</p>
 <div class="content">
 <img src="images/basic/filter/filter_status_result.png" alt="filter status result" width="790">
 </div>
-<div class="title">Figure 40. Response to filter by status tag 'Pending'</div>
+<div class="title">Figure 42. Response to filter by status tag 'Pending'</div>
 </div>
 </li>
 <li>
@@ -1573,7 +1628,7 @@ Here we have filtered by "Pending" as an example.</p>
 <div class="content">
 <img src="images/basic/filter/filter_type.png" alt="filter type" width="790">
 </div>
-<div class="title">Figure 41. Response to filter by task 'type'</div>
+<div class="title">Figure 43. Response to filter by task 'type'</div>
 </div>
 </li>
 <li>
@@ -1586,14 +1641,14 @@ Here we have filtered by "assignment" as an example.</p>
 <div class="content">
 <img src="images/basic/filter/filter_type_result.png" alt="filter type result" width="790">
 </div>
-<div class="title">Figure 42. Response to filter by task type 'assignment'</div>
+<div class="title">Figure 44. Response to filter by task type 'assignment'</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
 <div class="sect3">
-<h4 id="Refresh"><a class="link" href="#Refresh">4.1.14. Refresh</a></h4>
+<h4 id="Refresh"><a class="link" href="#Refresh">4.1.15. Refresh</a></h4>
 <div class="paragraph">
 <p>This commands refreshes the list of tasks Due Soon as well as status tags.</p>
 </div>
@@ -1655,7 +1710,7 @@ Anytime you notice an inconsistency in time left/status, use this command!
 <div class="content">
 <img src="images/basic/refresh/refresh_before.png" alt="refresh before" width="790">
 </div>
-<div class="title">Figure 43. Current state (needs to be refreshed)</div>
+<div class="title">Figure 45. Current state (needs to be refreshed)</div>
 </div>
 <div class="paragraph">
 <p>Suppose you notice that the task "Homework 1" is still in pending status.</p>
@@ -1670,7 +1725,7 @@ Anytime you notice an inconsistency in time left/status, use this command!
 <div class="content">
 <img src="images/basic/refresh/refresh_result.png" alt="refresh result" width="790">
 </div>
-<div class="title">Figure 44. Refreshed Study Buddy</div>
+<div class="title">Figure 46. Refreshed Study Buddy</div>
 </div>
 <div class="paragraph">
 <p>You will notice that the pending task has now moved to the due soon list and the status has been updated.</p>
@@ -1692,7 +1747,7 @@ After 'refresh', the tasks in <strong>All Tasks Panel</strong> will be sorted by
 </div>
 </div>
 <div class="sect3">
-<h4 id="exit"><a class="link" href="#exit">4.1.15. Exit</a></h4>
+<h4 id="exit"><a class="link" href="#exit">4.1.16. Exit</a></h4>
 <div class="paragraph">
 <p>This command exits from Study Buddy.</p>
 </div>
@@ -1732,7 +1787,7 @@ You can find details about this in <a href="#saving-data">Section 4.2, &#8220;Sa
 <div class="content">
 <img src="images/basic/exit/exit_confirm.png" alt="exit confirm" width="790">
 </div>
-<div class="title">Figure 45. Response to 'bye'</div>
+<div class="title">Figure 47. Response to 'bye'</div>
 </div>
 </li>
 <li>
@@ -1744,7 +1799,7 @@ You can find details about this in <a href="#saving-data">Section 4.2, &#8220;Sa
 <div class="content">
 <img src="images/basic/exit/exit_no.png" alt="exit no" width="790">
 </div>
-<div class="title">Figure 46. Response to 'no'</div>
+<div class="title">Figure 48. Response to 'no'</div>
 </div>
 </li>
 </ol>
@@ -1791,7 +1846,7 @@ You can still use <code>quit</code> to go back.
 <div class="content">
 <img src="images/duesoon/due_soon.png" alt="due soon" width="790">
 </div>
-<div class="title">Figure 47. Due Soon List</div>
+<div class="title">Figure 49. Due Soon List</div>
 </div>
 </li>
 <li>
@@ -1800,7 +1855,7 @@ You can still use <code>quit</code> to go back.
 <div class="content">
 <img src="images/duesoon/due_soon_sort.png" alt="due soon sort" width="790">
 </div>
-<div class="title">Figure 48. Due Soon List Auto-Sort</div>
+<div class="title">Figure 50. Due Soon List Auto-Sort</div>
 </div>
 </li>
 <li>
@@ -1812,11 +1867,11 @@ You can still use <code>quit</code> to go back.
 <div class="content">
 <img src="images/duesoon/due_soon_tag.png" alt="due soon tag" width="790">
 </div>
-<div class="title">Figure 49. Due Soon List Time Tags</div>
+<div class="title">Figure 51. Due Soon List Time Tags</div>
 </div>
 </li>
 <li>
-<p>It provides a <a href="#Refresh">Section 4.1.14, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
+<p>It provides a <a href="#Refresh">Section 4.1.15, &#8220;Refresh&#8221;</a> function that allows you to refresh time/state of this list if needed.</p>
 </li>
 </ol>
 </div>
@@ -1866,7 +1921,7 @@ By default, all tasks will show up here if you have not allocated any tasks to t
 <div class="content">
 <img src="images/module/module_show.png" alt="module show" width="790">
 </div>
-<div class="title">Figure 50. modules page</div>
+<div class="title">Figure 52. modules page</div>
 </div>
 </li>
 </ol>
@@ -1885,7 +1940,7 @@ By default, all tasks will show up here if you have not allocated any tasks to t
 <div class="content">
 <img src="images/module/modules_show_module.png" alt="modules show module" width="790">
 </div>
-<div class="title">Figure 51. Modules dropdown menu</div>
+<div class="title">Figure 53. Modules dropdown menu</div>
 </div>
 </li>
 </ol>
@@ -1901,7 +1956,7 @@ By default, all tasks will show up here if you have not allocated any tasks to t
 <div class="content">
 <img src="images/module/module_tab_1.png" alt="module tab 1" width="790">
 </div>
-<div class="title">Figure 52. Module tab <code>Overview</code></div>
+<div class="title">Figure 54. Module tab <code>Overview</code></div>
 </div>
 </li>
 <li>
@@ -1910,7 +1965,7 @@ By default, all tasks will show up here if you have not allocated any tasks to t
 <div class="content">
 <img src="images/module/module_tab_3.png" alt="module tab 3" width="790">
 </div>
-<div class="title">Figure 53. Module tab <code>No Module Allocated</code></div>
+<div class="title">Figure 55. Module tab <code>No Module Allocated</code></div>
 </div>
 </li>
 <li>
@@ -1919,7 +1974,7 @@ By default, all tasks will show up here if you have not allocated any tasks to t
 <div class="content">
 <img src="images/module/module_tab_2.png" alt="module tab 2" width="790">
 </div>
-<div class="title">Figure 54. Module tab available modules</div>
+<div class="title">Figure 56. Module tab available modules</div>
 </div>
 </li>
 </ol>
@@ -1952,7 +2007,7 @@ Alternatively, you can key in <code>create mods</code> into the input line.</p>
 <div class="content">
 <img src="images/module/module_nav_create.png" alt="module nav create" width="790">
 </div>
-<div class="title">Figure 55. Entry of module creation</div>
+<div class="title">Figure 57. Entry of module creation</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2012,7 +2067,7 @@ A prompt will show up at the bottom of the screen.</p>
 <div class="content">
 <img src="images/module/module_create_name.png" alt="module create name" width="790">
 </div>
-<div class="title">Figure 56. Asks for module name</div>
+<div class="title">Figure 58. Asks for module name</div>
 </div>
 </li>
 <li>
@@ -2022,7 +2077,7 @@ Then Study Buddy will ask for the module code.</p>
 <div class="content">
 <img src="images/module/module_create_code.png" alt="module create code" width="790">
 </div>
-<div class="title">Figure 57. Asks for module code</div>
+<div class="title">Figure 59. Asks for module code</div>
 </div>
 </li>
 <li>
@@ -2031,7 +2086,7 @@ Then Study Buddy will ask for the module code.</p>
 <div class="content">
 <img src="images/module/module_create_confirm.png" alt="module create confirm" width="790">
 </div>
-<div class="title">Figure 58. Asks for confirmation</div>
+<div class="title">Figure 60. Asks for confirmation</div>
 </div>
 </li>
 <li>
@@ -2040,7 +2095,7 @@ Then Study Buddy will ask for the module code.</p>
 <div class="content">
 <img src="images/module/module_create_result.png" alt="module create result" width="790">
 </div>
-<div class="title">Figure 59. New Module with code CSS1234 created.</div>
+<div class="title">Figure 61. New Module with code CSS1234 created.</div>
 </div>
 </li>
 </ol>
@@ -2060,7 +2115,7 @@ Alternatively, you can key in <code>edit mods</code> into the input line.</p>
 <div class="content">
 <img src="images/module/module_nav_edit.png" alt="module nav edit" width="790">
 </div>
-<div class="title">Figure 60. Entry of module edition</div>
+<div class="title">Figure 62. Entry of module edition</div>
 </div>
 <div class="paragraph">
 <p>Study Buddy provides three module edition options.</p>
@@ -2117,7 +2172,7 @@ A prompt will show up to ask the module code of target module.</p>
 <div class="content">
 <img src="images/module/module_edit_code.png" alt="module edit code" width="790">
 </div>
-<div class="title">Figure 61. Asks for module mode</div>
+<div class="title">Figure 63. Asks for module mode</div>
 </div>
 </li>
 <li>
@@ -2128,7 +2183,7 @@ Then Study Buddy will ask for the edit option.</p>
 <div class="content">
 <img src="images/module/module_edit_option.png" alt="module edit option" width="790">
 </div>
-<div class="title">Figure 62. Asks for edit option</div>
+<div class="title">Figure 64. Asks for edit option</div>
 </div>
 </li>
 <li>
@@ -2146,7 +2201,7 @@ The module page will update accordingly.</p>
 <div class="content">
 <img src="images/module/module_edit_name_result.png" alt="module edit name result" width="790">
 </div>
-<div class="title">Figure 63. Module name edition result</div>
+<div class="title">Figure 65. Module name edition result</div>
 </div>
 </li>
 <li>
@@ -2160,7 +2215,7 @@ The module page will update accordingly.</p>
 <div class="content">
 <img src="images/module/module_edit_code_result.png" alt="module edit code result" width="790">
 </div>
-<div class="title">Figure 64. Module code edition result</div>
+<div class="title">Figure 66. Module code edition result</div>
 </div>
 <div class="paragraph">
 <p>Module code changed!</p>
@@ -2192,7 +2247,7 @@ To better showcase the behaviour of deletion, here we use "CS2103T" as an exampl
 <div class="content">
 <img src="images/module/module_delete_before.png" alt="module delete before" width="790">
 </div>
-<div class="title">Figure 65. Before delete</div>
+<div class="title">Figure 67. Before delete</div>
 </div>
 </li>
 <li>
@@ -2206,7 +2261,7 @@ After successfully deleted target module, the module page will update accordingl
 <div class="content">
 <img src="images/module/module_delete_after.png" alt="module delete after" width="790">
 </div>
-<div class="title">Figure 66. Checking the affected tasks</div>
+<div class="title">Figure 68. Checking the affected tasks</div>
 </div>
 </li>
 </ol>
@@ -2278,7 +2333,7 @@ Therefore, even though this feature involves mouse-clicking, it is still designe
 <div class="content">
 <img src="images/stats/stats_nav.png" alt="stats nav" width="790">
 </div>
-<div class="title">Figure 67. Entry of Statistics page</div>
+<div class="title">Figure 69. Entry of Statistics page</div>
 </div>
 </div>
 <div class="sect3">
@@ -2294,7 +2349,7 @@ You can use the tabs circled in light orange to navigate.</p>
 <div class="content">
 <img src="images/stats/stats_ui.png" alt="stats ui" width="790">
 </div>
-<div class="title">Figure 68. Statistics Page User Interface </div>
+<div class="title">Figure 70. Statistics Page User Interface </div>
 </div>
 <div class="sect4">
 <h5 id="task-status-tab"><a class="link" href="#task-status-tab">Task Status Tab</a></h5>
@@ -2307,7 +2362,7 @@ You can use the tabs circled in light orange to navigate.</p>
 <div class="content">
 <img src="images/stats/stats_pie.png" alt="stats pie" width="790">
 </div>
-<div class="title">Figure 69. Task Status Chart</div>
+<div class="title">Figure 71. Task Status Chart</div>
 </div>
 </dd>
 <dt class="hdlist1">Clicking Action</dt>
@@ -2328,7 +2383,7 @@ When you are clicking on it, all tasks with Due Soon status will be listed in th
 <div class="content">
 <img src="images/stats/stats_pie_click.png" alt="stats pie click" width="790">
 </div>
-<div class="title">Figure 70. Clicking on 'Due Soon' part</div>
+<div class="title">Figure 72. Clicking on 'Due Soon' part</div>
 </div>
 </li>
 </ul>
@@ -2348,7 +2403,7 @@ When you are clicking on it, all tasks with Due Soon status will be listed in th
 <div class="content">
 <img src="images/stats/stats_area.png" alt="stats area" width="790">
 </div>
-<div class="title">Figure 71. Module Related Tasks' Deadline/Start Date Chart</div>
+<div class="title">Figure 73. Module Related Tasks' Deadline/Start Date Chart</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2418,7 +2473,7 @@ When you are clicking on those areas, the tasks under CS2101 and will due or sta
 <div class="content">
 <img src="images/stats/stats_area_click_area.png" alt="stats area click area" width="790">
 </div>
-<div class="title">Figure 72. Clicking on the area of module 'CS2101'</div>
+<div class="title">Figure 74. Clicking on the area of module 'CS2101'</div>
 </div>
 </li>
 </ul>
@@ -2444,7 +2499,7 @@ After you clicked on this point, the tasks under module "CS2101" and will due or
 <div class="content">
 <img src="images/stats/stats_click_point.png" alt="stats click point" width="790">
 </div>
-<div class="title">Figure 73. Clicking on the data point of module 'CS2101&#8217;s tasks which will due or start on 13/04/2020</div>
+<div class="title">Figure 75. Clicking on the data point of module 'CS2101&#8217;s tasks which will due or start on 13/04/2020</div>
 </div>
 </li>
 </ul>
@@ -2467,7 +2522,7 @@ After you clicked on this point, the tasks under module "CS2101" and will due or
 <div class="content">
 <img src="images/stats/stats_bar.png" alt="stats bar" width="790">
 </div>
-<div class="title">Figure 74. Module Related Tasks' Weight Chart</div>
+<div class="title">Figure 76. Module Related Tasks' Weight Chart</div>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -2515,7 +2570,7 @@ When you are clicking it, all assignments of module "CS2101" will show in the ri
 <div class="content">
 <img src="images/stats/stats_bar_click.png" alt="stats bar click" width="790">
 </div>
-<div class="title">Figure 75. Clicking on the block of 'CS2101''s assignments</div>
+<div class="title">Figure 77. Clicking on the block of 'CS2101''s assignments</div>
 </div>
 </li>
 </ul>
@@ -2571,7 +2626,7 @@ This allows students to plan their time efficiently.</p>
 <div class="content">
 <img src="images/calendar/calendar_init.png" alt="calendar init" width="790">
 </div>
-<div class="title">Figure 76. calendar interface</div>
+<div class="title">Figure 78. calendar interface</div>
 </div>
 <div class="ulist">
 <ul>
@@ -2588,7 +2643,7 @@ Keep in mind that the <strong>Index</strong> shown in this panel cannot be used 
 <div class="content">
 <img src="images/calendar/calendar_click.png" alt="calendar click" width="790">
 </div>
-<div class="title">Figure 77. calendar after clicking on a date</div>
+<div class="title">Figure 79. calendar after clicking on a date</div>
 </div>
 <div class="sect3">
 <h4 id="navigation-using-cli"><a class="link" href="#navigation-using-cli">4.6.1. Navigation using CLI</a></h4>
@@ -2606,7 +2661,7 @@ Keep in mind that the <strong>Index</strong> shown in this panel cannot be used 
 <div class="content">
 <img src="images/calendar/Calendar_CLI_Date.png" alt="Calendar CLI Date" width="790">
 </div>
-<div class="title">Figure 78. Interactive prompt after keying in calendar</div>
+<div class="title">Figure 80. Interactive prompt after keying in calendar</div>
 </div>
 <div class="paragraph">
 <p>In this example, we entered <code>20/04/2020</code>.</p>
@@ -2627,7 +2682,7 @@ Keep in mind that the <strong>Index</strong> shown in this panel cannot be used 
 <div class="content">
 <img src="images/calendar/calendar_after_CLI.png" alt="calendar after CLI" width="790">
 </div>
-<div class="title">Figure 79. Successfully navigated calendar using CLI</div>
+<div class="title">Figure 81. Successfully navigated calendar using CLI</div>
 </div>
 </div>
 </div>
@@ -2639,25 +2694,76 @@ By keeping tabs on your past productivity, you can improve your future productiv
 The productivity feature also gamifies your task management experience.
 Doing work has never been more fun!</p>
 </div>
+<div class="sect3">
+<h4 id="daily-productivity-tab"><a class="link" href="#daily-productivity-tab">4.7.1. Daily Productivity Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/productivity/daily_tab.png" alt="daily tab" width="790">
+</div>
+<div class="title">Figure 82. Daily Productivity Tab</div>
+</div>
 <div class="paragraph">
-<div class="title">1. Daily Productivity Tab</div>
 <p>To get started, click on the Productivity menu button.
-The daily productivity tab records your the number of tasks you completed today.
+The daily productivity tab tracks the number of tasks you completed today.
+As you complete tasks using the <code>done</code> command, you will get closer to your daily goal.</p>
+</div>
+<div class="paragraph">
+<p>Completing your goal each day adds to your streak.
+Your streak will reset to zero if you fail to complete your goal.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
 You can set a daily goal for the number of tasks you want to complete using the command <code>goal</code>.
-Completing your goal each day adds to your streak.</p>
+Refer to <a href="#goal">Section 4.1.13, &#8220;Goal&#8221;</a> for more details on the <code>goal</code> command.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="weekly-productivity-tab"><a class="link" href="#weekly-productivity-tab">4.7.2. Weekly Productivity Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/productivity/weekly_tab.png" alt="weekly tab" width="790">
+</div>
+<div class="title">Figure 83. Weekly Productivity Tab</div>
 </div>
 <div class="paragraph">
-<div class="title">2. Weekly Productivity Tab</div>
 <p>On the weekly productivity tab, you can look back on your progress over the past week.
-This tab displays information about your past productivity.</p>
+The weekly tab displays information about your productivity for the past seven days.</p>
 </div>
 <div class="paragraph">
-<div class="title">3. Productivity Points Tab</div>
+<p>Here, you can keep track of the total number of tasks you completed this week.
+You can visualize the number of tasks you completed using the bar chart shown.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, you can keep track of the number of tasks that went overdue this week,
+so that you can be more punctual in the future.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="productivity-points-tab"><a class="link" href="#productivity-points-tab">4.7.3. Productivity Points Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/productivity/points-tab.png" alt="points tab" width="790">
+</div>
+<div class="title">Figure 84. Productivity Points Tab</div>
+</div>
+<div class="paragraph">
 <p>You can go to this tab directly by clicking your Productivity Point count on the top right of the menu.
-The Productivity Points tab displays your current Productivity Points (PP) and your progression.
-You gain Productivity Points upon adding tasks, completing tasks, and using advanced features in StudyBuddy.
-On the other hand, you lose Productivity Points when your tasks go Overdue.
-Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
+The Productivity Points tab displays your current Productivity Points (PP) and your progression.</p>
+</div>
+<div class="paragraph">
+<p>You gain Productivity Points upon adding tasks, completing tasks, and using advanced features in StudyBuddy.
+On the other hand, you lose Productivity Points when your tasks go Overdue.</p>
+</div>
+<div class="paragraph">
+<p>Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -2678,19 +2784,23 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
 <h2 id="Summary"><a class="link" href="#Summary">5. Command Summary</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
 <li>
+<p>help <a href="#help">Section 4.1.1, &#8220;Help&#8221;</a></p>
+</li>
+<li>
 <p>add <a href="#add">Section 4.1.2, &#8220;Add&#8221;</a></p>
 </li>
 <li>
-<p>archive <a href="#archive-unarchive">Section 4.1.9, &#8220;Archive/ Unarchive&#8221;</a></p>
+<p>edit <a href="#edit">Section 4.1.4, &#8220;Edit&#8221;</a></p>
 </li>
 <li>
-<p>bye <a href="#exit">Section 4.1.15, &#8220;Exit&#8221;</a></p>
+<p>archive <a href="#archive-unarchive">Section 4.1.9, &#8220;Archive/ Unarchive&#8221;</a></p>
 </li>
 <li>
 <p>clear <a href="#clear">Section 4.1.6, &#8220;Clear&#8221;</a></p>
@@ -2708,25 +2818,28 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <p>done <a href="#done">Section 4.1.5, &#8220;Done&#8221;</a></p>
 </li>
 <li>
-<p>edit <a href="#edit">Section 4.1.4, &#8220;Edit&#8221;</a></p>
-</li>
-<li>
-<p>filter <a href="#Filter">Section 4.1.13, &#8220;Filter&#8221;</a></p>
-</li>
-<li>
 <p>find <a href="#Find">Section 4.1.11, &#8220;Find&#8221;</a></p>
-</li>
-<li>
-<p>help <a href="#help">Section 4.1.1, &#8220;Help&#8221;</a></p>
 </li>
 <li>
 <p>list <a href="#LIST">Section 4.1.12, &#8220;List&#8221;</a></p>
 </li>
 <li>
+<p>goal <a href="#goal">Section 4.1.13, &#8220;Goal&#8221;</a></p>
+</li>
+<li>
+<p>filter <a href="#Filter">Section 4.1.14, &#8220;Filter&#8221;</a></p>
+</li>
+<li>
 <p>sort <a href="#Sort">Section 4.1.10, &#8220;Sort&#8221;</a></p>
 </li>
 <li>
-<p>refresh <a href="#Refresh">Section 4.1.14, &#8220;Refresh&#8221;</a></p>
+<p>refresh <a href="#Refresh">Section 4.1.15, &#8220;Refresh&#8221;</a></p>
+</li>
+<li>
+<p>calendar <a href="#calendar">Section 4.6, &#8220;Calendar&#8221;</a></p>
+</li>
+<li>
+<p>bye <a href="#exit">Section 4.1.16, &#8220;Exit&#8221;</a></p>
 </li>
 </ol>
 </div>
@@ -2744,4 +2857,4 @@ Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
 <strong>A</strong>: Study buddy saves your data automatically after every command.</p>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 12:09:53 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 12:55:05 UTC</div></div></div></body></html>
