@@ -1381,9 +1381,26 @@ CAT
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/UMLmodule.jpeg" alt="UMLmodule" width="1000">
+<img src="images/ModuleSequenceDiagram.png" alt="ModuleSequenceDiagram" width="1000">
 </div>
 <div class="title">Figure 19. Sequence diagram for modules</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the user keys in  <code>create mods</code> or click <strong>Module/create</strong> on the menu bar,
+a <code>CreateModuleInteractivePrompt</code> class is created. It automatically constructs an <code>EmptyModule</code>.</p>
+</li>
+<li>
+<p>The interactivePrompt class will then change module attributes such as
+name and <code>ModuleCode</code> on according to user input.</p>
+</li>
+<li>
+<p>At the last stage, the prompt will construct a <code>CreateModCommand</code> for execution.
+It will go through the various layers in Model before returning to the prompt,
+which will then return to the user.</p>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -2322,4 +2339,4 @@ for every command.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:37:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 19:01:15 UTC</div></div></div></body></html>
