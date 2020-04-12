@@ -232,7 +232,7 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="600">
+<img src="images/ArchitectureSequenceDiagram.png" alt="ArchitectureSequenceDiagram" width="450">
 </div>
 <div class="title">Figure 3. Component interactions for <code>delete 1</code> command</div>
 </div>
@@ -244,7 +244,7 @@ The following class plays an important role at the architecture level:</p>
 <h3 id="Design-Ui"><a class="link" href="#Design-Ui">4.2. UI component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="images/UiClassDiagram.png" alt="UiClassDiagram">
+<img src="images/UiClassDiagram.png" alt="UiClassDiagram" width="650">
 </div>
 <div class="title">Figure 4. Structure of the UI Component</div>
 </div>
@@ -252,50 +252,58 @@ The following class plays an important role at the architecture level:</p>
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/tree/master/src/main/java/draganddrop/studybuddy/ui"><code>Ui.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The UI consists of a <code>MainWindow</code> that is made up of parts e.g.<code>BrandingLabel</code>, <code>TaskListPanel</code>,
- <code>DueSoonTaskListPanel</code>, <code>TaskSummaryPanel</code>, <code>CalenderPanel</code>, <code>ResultDisplay</code>, <code>CommandBox</code>, <code>StatusBarFooter</code> etc.</p>
-</div>
-<div class="paragraph">
-<p>All these, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>TaskListPanel</code> and <code>DueSoonTaskListPanel</code> can switch with <code>TaskSummaryPanel</code> or <code>CalenderPanel</code> accordingly
-as user click <code>Statistics&#8594;Task Summary</code> or <code>Calender&#8594;Show Calender</code>.</p>
+<p>The <code>UI</code> consists of a <code>MainWindow</code> which is made up by different components such as <code>StatusBarFooter</code>, <code>FeedbackDisplayBox</code>,
+ <code>CommandBox</code> as well as variants <code>Panels</code> and <code>Cards</code>. All these components, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
 </div>
 <div class="paragraph">
 <p>The <code>UI</code> component uses JavaFx UI framework.
 The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder.
 For example, the layout of the <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/src/main/java/draganddrop/studybuddy/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
 </div>
-<div class="paragraph">
-<p>Study Buddy provides an interactive way for command execution. <code>AddTaskInteractivePrompt</code>, <code>DeleteTaskInteractivePrompt</code>,
-<code>SortTaskInteractivePrompt</code> etc are used to handle each types of command executions. Besides, they all <code>extends</code> the <code>InteractivePrompt</code> abstract class.</p>
-</div>
-<div class="paragraph">
-<p>The <code>UI</code> component,</p>
-</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">The <code>UI</code> component</dt>
+<dd>
 <div class="ulist">
 <ul>
 <li>
-<p>Provides interactive command process.</p>
+<p><strong>Interacts with user</strong> in an interactive process with the help of <code>Logic</code> component.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CommandBox</code> collects the user keyboard input.</p>
 </li>
 <li>
-<p>Allows users to exit from a command execution at any interaction step using <code>quit</code>.</p>
+<p><code>Logic</code> parses user input in each interaction and executes the command subsequently if the interaction ends without any exception.</p>
 </li>
 <li>
-<p>Validate user input in each interaction.</p>
-</li>
+<p><code>FeedbackDisplayBox</code> responses system information to user, such as error message and command execution result.</p>
+<div class="ulist">
+<ul>
 <li>
-<p>When invalid input received, proper message will respond in <code>ResultDisplay</code> node.
-The execution of the command will not be terminated, user can continue with the process with valid input.</p>
-</li>
-<li>
-<p>Result in final executable command and executes it using the <code>Logic</code> component.</p>
-</li>
-<li>
-<p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
+<p>When invalid input received, proper message will respond via <code>FeedbackDisplayBox</code>. The interaction of the command will not be terminated, user can continue with the process with valid input.</p>
 </li>
 </ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Listens for changes to Model data</strong> so that the UI can be updated simultaneously.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All Cards components and <code>CalenderPanel</code>, <code>ModuleListPanel</code>, <code>ProductivityPanel</code> and <code>TaskSummaryPanel</code> will listen to
+the changes to Model data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -784,32 +792,103 @@ If there are no such inconsistencies, the refresh command will not make any chan
 <h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">5.2. Task Summary Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-3"><a class="link" href="#implementation-3">5.2.1. Implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Feature introduction</strong></p>
 <div class="paragraph">
-<p>The task summary feature allows user to enjoy visualized and real-time statistics of their tasks' information.</p>
+<p>The task summary feature automatically summarizes the collected data into different charts.
+It also allows the user to click on a chart to find the relevant tasks.
+The UI of the feature is in the <code>Statistics</code> Page.</p>
+</div>
+</li>
+<li>
+<p><strong>Implementation detail</strong></p>
+<div class="paragraph">
+<p>This feature is implemented using <code>JavaFx</code> charts such as <code>PieChart</code>, <code>AreaChart</code> and <code>StackedBarChart</code>, as well as a
+<code>Task List Panel</code>.</p>
 </div>
 <div class="paragraph">
-<p>This feature is implemented using different charts as <code>pie chart</code>, <code>area chart</code>, <code>bar chart</code> and <code>line chart</code>.
-All charts are organized in a <code>TabPanel</code> which will replace the <code>ListPanel</code> and <code>Due Soon List Panel</code> in the main window when
-<code>Task Summary</code> in the <code>Menu</code> is clicked.</p>
+<p>The Task List Panel is used to show the relevant task records when the user clicks on these <code>charts</code>.</p>
+</div>
+</li>
+<li>
+<p><strong>Charts &amp; DataBind &amp; OnClick Action Table</strong></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+To improve the readability, only the tasks due or start within the next <strong>60 days</strong> will be counted into <code>Area Chart</code>.
+</td>
+</tr>
+</table>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 37.5%;">
+<col style="width: 25%;">
+<col style="width: 37.5%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Chart Type</th>
+<th class="tableblock halign-left valign-top">Data Used</th>
+<th class="tableblock halign-left valign-top">OnClick Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PieChart</strong><br>
+<br>
+Compare the number of tasks in different statuses.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><br>
+<code>TaskStatus</code>, <code>TaskCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all tasks with the selected status.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AreaChar</strong><br>
+<br>
+Summarize the task deadlines or start dates for different modules.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><br>
+<code>ModuleCode</code>, <code>Deadline/Start date</code>,<br>
+ <code>TaskCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Click on area</strong>:<br>
+Display tasks under the selected module.<br>
+<br>
+<strong>Click on data point</strong>:<br>
+Display tasks under the selected module and will due or start the chosen date.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>StackedBar Chart</strong><br>
+<br>
+Compare the weight of different types of tasks in each module.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><br>
+<code>ModuleCode</code>, <code>TaskType</code>, <code>WeightSum</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display tasks under the selected module and type.</p></td>
+</tr>
+</tbody>
+</table>
+</li>
+<li>
+<p><strong>OnChangeListener</strong></p>
+<div class="paragraph">
+<p>The feature listens to the change of <code>UnArchived Task List</code>, <code>Archived Task List</code> and <code>Module List</code>.</p>
 </div>
 <div class="paragraph">
-<p>The data of each chart will automatically rebind when user manage their tasks using the commands as below:</p>
+<p>Therefore, the charts can automatically update according to the command execution.</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>add</code></p>
-</li>
-<li>
-<p><code>done</code></p>
-</li>
-<li>
-<p><code>delete</code></p>
-</li>
-<li>
-<p><code>refresh</code></p>
-</li>
-</ul>
+<div class="paragraph">
+<p>Currently, commands as <code>add</code> <code>edit</code> <code>delete</code> <code>sort</code> <code>find</code> <code>archive</code> <code>done</code> <code>list</code> and <code>clear</code> can
+trigger the refresh of the charts.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TaskSummaryOnDataChangeSequenceDiagram.png" alt="TaskSummaryOnDataChangeSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 14. Sequence diagram for task summary UI update when data change</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -818,10 +897,15 @@ All charts are organized in a <code>TabPanel</code> which will replace the <code
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Only when there is task status change after <code>refresh</code>, the charts will refresh accordingly.
+It is possible that the pie chart&#8217;s labels can overlap together.
+This is an unfixed bug regarding the JDK which is caused by JavaFX chart off-sync. To get more information, you may refer to <a href="https://bugs.openjdk.java.net/browse/JDK-8198830">here</a>.
+When this issue happens, you can use any command that can trigger chart updating to refresh the chart.
 </td>
 </tr>
 </table>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect3">
@@ -830,62 +914,80 @@ Only when there is task status change after <code>refresh</code>, the charts wil
 <p>Given below is an example usage scenario and how the task summary mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>Step 1. The user launches the application with some alive and archived task records in the <code>storage</code>.
-Statistics will perform on the records retrieved, and the result will be visualized as different charts organized in a <code>tab panel</code>.
-After the user clicks <code>Statistics &#8594; Task Summary</code>, the <code>tab panel</code> will display.
-The user successfully executes <code>add</code>, <code>delete</code> or <code>done</code> command when any chart is on the screen.
-The diagram will automatically refresh and reflect the updated record.</p>
+<p>Step 1. The user launches the application for the first time, the statistics will perform on top of the sample records,
+and the result will be visualized into different charts organized in the <code>Tab Panel</code>. After the user clicks <code>Statistics</code>
+from the top menu bar, the <code>Tab Panel</code> and the <code>Task List Panel</code> will display.</p>
 </div>
 <div class="paragraph">
-<p>Step 2. The user successfully executes <code>add</code>, <code>delete</code> or <code>done</code> command when any chart is on the screen.
-The diagram will automatically refresh and reflect the updated record.</p>
+<p>Step 2. The user navigates to the <code>Statistics</code> Page for the first time. The <code>Tab Panel</code> should
+display the <code>Pie Chart</code> and the <code>Task List Panel</code> is empty with a title: "Click on Chart to View Related Tasks".
+Indeed, this is how the <code>Statistics</code> Page looks like every time the user navigates back from another Page.</p>
 </div>
 <div class="paragraph">
-<p>Step 3. The user executes <code>refresh</code> command, and there is a task status update after the execution.
-For example, when the user is playing with the application, and meanwhile, a task expires.
-The status won&#8217;t update until user call <code>refresh</code> command. In this case, the chart will also automatically refresh and reflect the updated record.</p>
+<p>Step 3. The user clicks on <code>Pie Chart</code> 's <code>Pending</code> portion. All tasks in <code>Pending</code> status should display in <code>Task List Panel</code>.
+Meanwhile, the title of the Panel will change to "PENDING: # Tasks" (# stands for the number of <code>Pending</code> tasks).</p>
 </div>
 <div class="paragraph">
-<p>Step 4. The user executes <code>refresh</code>, and there is no task status update after the execution. The charts will remain the same.</p>
+<p>Step 4. The user clicks on <code>Area Chart</code> 's <code>CS2101</code> area. All tasks under <code>CS2101</code> should display in <code>Task List Panel</code>.
+Meanwhile, the title of the Panel will change to "Tasks under CS2101".</p>
 </div>
 <div class="paragraph">
-<p>Activity diagram for step 4:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/TaskSummaryWithRefreshCommandActivityDiagram.png" alt="TaskSummaryWithRefreshCommandActivityDiagram" width="400">
-</div>
-<div class="title">Figure 14. Task summary with refresh command Activity Diagram</div>
+<p>Step 5. The user executes <code>add</code> command at <code>Statistics</code> Page,
+the charts should update automatically.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.2.3. Design Considerations</a></h4>
 <div class="sect4">
-<h5 id="aspect-how-to-display-charts"><a class="link" href="#aspect-how-to-display-charts">Aspect: How to display charts</a></h5>
+<h5 id="aspect-will-this-feature-contribute-value-to-cli-user"><a class="link" href="#aspect-will-this-feature-contribute-value-to-cli-user">Aspect: Will this feature contribute value to CLI user</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Consideration</dt>
+<dd>
+<p>Task Summary feature involves mouse clicking event.</p>
+</dd>
+<dt class="hdlist1">Explanation</dt>
+<dd>
+<p>The most significant value of Task Summary Feature is the statistics it provides, instead of retrieving the
+relevant tasks.</p>
+<div class="paragraph">
+<p>The statistics is auto-generated along the way the user managing their task records using keyboard input.
+Which means Study Buddy only supports keyboard input for statistics generating.
+Therefore,
+this feature still let the CLI users gain more benefits.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-update-charts"><a class="link" href="#aspect-how-to-update-charts">Aspect: How to update charts</a></h5>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use a <code>tab panel</code> to organize different charts.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>onChangeListener</code> to monitor the data update and re-render the UI accordingly.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: Easy to organize and the UI is clean.</p>
+<p>Pros: More user-friendly, no need to manually update.</p>
 </li>
 <li>
-<p>Cons: Less interaction, and clicking is required. While allowing user to use command to switch among different tabs is under construction.</p>
+<p>Cons: Might encounter JavaFX chart off-sync bug, and results in label overlapping. But user can always use another
+command which can trigger data updating to walk around this problem.</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Use a simple <code>panel</code> to hold the chart, and allow user to use command to toggle the type of charts.</p>
+<p><strong>Alternative 2:</strong> Ask the user to re-launch the application or just re-open the Page to trigger the UI rendering.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: More flexible and more interaction possibilities.</p>
+<p>Pros: Safe from the JavaFX chart off-sync bug.</p>
 </li>
 <li>
-<p>Cons: The cost overweight the benefit.</p>
+<p>Cons: Force user to close or navigate around the application every time he/she wants to
+check the updated charts.</p>
 </li>
 </ul>
 </div>
@@ -922,13 +1024,13 @@ The status won&#8217;t update until user call <code>refresh</code> command. In t
 </ol>
 </div>
 <div class="paragraph">
-<p>When a calender is requested, a CalendarBox object is constructed, the object diagram below shows the structure of a CalendarBox. We will be using the date <code>01/04/2020</code> as an example.</p>
+<p>When a calender is requested, a CalendarPanel object is constructed, the object diagram below shows the structure of a CalendarPanel. We will be using the date <code>01/04/2020</code> as an example.</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="images/CalendarBoxObjectDiagram.png" alt="CalendarBoxObjectDiagram">
 </div>
-<div class="title">Figure 15. CalendarBox object diagram</div>
+<div class="title">Figure 15. CalendarPanel object diagram</div>
 </div>
 </div>
 <div class="sect3">
@@ -1479,7 +1581,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add a new task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my Pending tasks in one place</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks in one place</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
@@ -1498,6 +1600,12 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">find a task by keyword</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">locate details of a task without having to go through the entire list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user with task deadline extended</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit the particular task</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">update my task accordingly</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1552,6 +1660,18 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who takes many modules</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">add my modules</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">view my modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who has many tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check the summary of their current status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better plan my time</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">user who has many tasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">check the summary of their current status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">better plan my time</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
@@ -1995,4 +2115,4 @@ for every command.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 10:23:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 18:16:40 UTC</div></div></div></body></html>
