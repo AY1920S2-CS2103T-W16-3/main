@@ -24,15 +24,16 @@
 </li>
 <li><a href="#implementation">5. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#due-soon-tasks-feature">5.1. Due Soon Tasks Feature</a></li>
-<li><a href="#task-summary-feature">5.2. Task Summary Feature</a></li>
-<li><a href="#calendar-feature">5.3. Calendar feature</a></li>
-<li><a href="#archive-feature">5.4. Archive feature</a></li>
-<li><a href="#productivity-feature">5.5. Productivity feature</a></li>
-<li><a href="#modules">5.6. Modules</a></li>
-<li><a href="#logging">5.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">5.8. Configuration</a></li>
-<li><a href="#proposed-data-encryption">5.9. [Proposed] Data encryption</a></li>
+<li><a href="#interactive-command-process-feature">5.1. Interactive Command Process Feature</a></li>
+<li><a href="#due-soon-tasks-feature">5.2. Due Soon Tasks Feature</a></li>
+<li><a href="#task-summary-feature">5.3. Task Summary Feature</a></li>
+<li><a href="#calendar-feature">5.4. Calendar feature</a></li>
+<li><a href="#archive-feature">5.5. Archive feature</a></li>
+<li><a href="#productivity-feature">5.6. Productivity feature</a></li>
+<li><a href="#modules">5.7. Modules</a></li>
+<li><a href="#logging">5.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">5.9. Configuration</a></li>
+<li><a href="#proposed-data-encryption">5.10. [Proposed] Data encryption</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a></li>
@@ -432,9 +433,162 @@ The command execution will only terminate in two scenarios:<br>
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">5.1. Due Soon Tasks Feature</a></h3>
+<h3 id="interactive-command-process-feature"><a class="link" href="#interactive-command-process-feature">5.1. Interactive Command Process Feature</a></h3>
 <div class="sect3">
 <h4 id="implementation-2"><a class="link" href="#implementation-2">5.1.1. Implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Feature introduction</strong></p>
+<div class="paragraph">
+<p>The Interactive Command Process Feature allows user to execute his/her command in an
+interactive way.</p>
+</div>
+</li>
+<li>
+<p><strong>Implementation detail</strong></p>
+<div class="paragraph">
+<p>This feature applies on all commands provided by Study Buddy and is implemented using:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The <code><strong>CommandBox</strong></code> from <code>UI</code> component to collect user input and init an associate interactivePrompt</p>
+</li>
+<li>
+<p>The <code><strong>InteractivePrompt</strong></code> from <code>Logic</code> component to parse user input step by step and generate meaningful response
+message accordingly.
+It also produces an executable <code>Command</code> from each successful interaction to perform the user&#8217;s desired action.</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Different types of <code>InteractivePrompt</code> such as <code>AddTaskInteractivePrompt</code> are provided to handel interactions with different purpose.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/AddTaskObjectDiagram.png" alt="AddTaskObjectDiagram" width="550">
+</div>
+<div class="title">Figure 8. Object diagram when user add task using interactive command process</div>
+</div>
+</li>
+<li>
+<p>Allow user to quit from each step of an interaction using <code>quit</code> (case insensitive) key word. Here is an example of user quiting from add task interactive command process.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/QuitFromInteractionActivityDiagram.png" alt="QuitFromInteractionActivityDiagram" width="550">
+</div>
+<div class="title">Figure 9. Activity diagram when user quite from add task interactive command process</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">5.1.2. Example Usage Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the interactive command process mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time and skips the user guid.
+By following the hint from <code>UI</code> (i.e. when <code>CommandBox</code> is idle, it should display "Please enter your command here&#8230;&#8203;"),
+he can try some random input and hit enter to get the list of available commands.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user picks a command from the list and type it in the <code>CommandBox</code>. The guide information of the next step will
+display in <code>FeedbackDisplayBox</code> after user press enter.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+For some commands there is only one interaction involved, such as <code>help</code> and <code>list</code>. In such a case
+the application will execute the command right after user press enter.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Step 3. The user made a typo mistake in the data and time filed when adding a task record.
+Proper massage with the error type and the correct format of the data and time will be displayed in the
+<code>FeedbackDisplayBox</code>. User can follow the instruction to continue the interaction.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The user is performing an interaction to edit a task, but realized he/she
+chose a wrong task from the list, he/she can use <code>quit</code> to exit
+the process without making any changes to the task.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.3. Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-react-to-an-invalid-input"><a class="link" href="#aspect-how-to-react-to-an-invalid-input">Aspect: How to react to an invalid input</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> provides relevant error message and stays at current interaction step.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>If the next input is</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid: provides the relevant error message and continue waiting for another input.</p>
+</li>
+<li>
+<p>Valid: start next interaction step.</p>
+</li>
+<li>
+<p><code>quit</code>: quite from the command process.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pros: Save the data from previous stages, especially in add task interaction, thus user no need to repeatedly
+enter the same information. Also the clear instruction provided by error message makes the
+interaction more straightforward.</p>
+</li>
+<li>
+<p>Cons: The interaction can only be stopped when user successfully complete the process or use
+<code>quit</code> to exit half-way.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Quite from current step with proper error message.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Quit the interaction immediately, which allows user to start with a new
+interaction. It will be useful when user want to quit from a particular process but forgets the exit command
+(i.e. <code>quit</code>).</p>
+</li>
+<li>
+<p>Cons: User has to restart the entire interaction process when the he/she enter
+invalid command.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">5.2. Due Soon Tasks Feature</a></h3>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">5.2.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The Due Soon Tasks feature allows users to view the tasks that have deadlines within the next week.</p>
 </div>
@@ -466,7 +620,7 @@ The command execution will only terminate in two scenarios:<br>
 <div class="content">
 <img src="images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
 </div>
-<div class="title">Figure 8. Activity Diagram for Add to Due Soon list</div>
+<div class="title">Figure 10. Activity Diagram for Add to Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -500,7 +654,7 @@ The command execution will only terminate in two scenarios:<br>
 <div class="content">
 <img src="images/AddDueSoonSequence.png" alt="AddDueSoonSequence" width="800">
 </div>
-<div class="title">Figure 9. Sequence Diagram for Add to Due Soon list</div>
+<div class="title">Figure 11. Sequence Diagram for Add to Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -539,7 +693,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <div class="content">
 <img src="images/DeleteDueSoonActivityDiagram.png" alt="DeleteDueSoonActivityDiagram" width="200">
 </div>
-<div class="title">Figure 10. Activity Diagram for Delete from Due Soon list</div>
+<div class="title">Figure 12. Activity Diagram for Delete from Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -573,7 +727,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <div class="content">
 <img src="images/DeleteDueSoonSequence.png" alt="DeleteDueSoonSequence" width="800">
 </div>
-<div class="title">Figure 11. Sequence Diagram for Delete from Due Soon list</div>
+<div class="title">Figure 13. Sequence Diagram for Delete from Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -627,7 +781,7 @@ Other commands like edit, archive etc also trigger due soon feature in a similar
 <div class="content">
 <img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
 </div>
-<div class="title">Figure 12. Activity diagram for refresh</div>
+<div class="title">Figure 14. Activity diagram for refresh</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -652,7 +806,7 @@ Other commands like edit, archive etc also trigger due soon feature in a similar
 <div class="content">
 <img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 13. Sequence diagram for refresh</div>
+<div class="title">Figure 15. Sequence diagram for refresh</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -725,7 +879,7 @@ Calculation of time left for deadline and check for if task is due soon can be f
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">5.1.2. Example Usage Scenario</a></h4>
+<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">5.2.2. Example Usage Scenario</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the Due Soon list mechanism behaves at each step.</p>
 </div>
@@ -762,7 +916,7 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">5.1.3. Design Considerations</a></h4>
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.2.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-code-refresh-code-command-works"><a class="link" href="#aspect-how-code-refresh-code-command-works">Aspect: How <code>refresh</code> command works</a></h5>
 <div class="ulist">
@@ -799,9 +953,9 @@ If there are no such inconsistencies, the refresh command will not make any chan
 </div>
 </div>
 <div class="sect2">
-<h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">5.2. Task Summary Feature</a></h3>
+<h3 id="task-summary-feature"><a class="link" href="#task-summary-feature">5.3. Task Summary Feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-3"><a class="link" href="#implementation-3">5.2.1. Implementation</a></h4>
+<h4 id="implementation-4"><a class="link" href="#implementation-4">5.3.1. Implementation</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -819,11 +973,11 @@ The UI of the feature is in the <code>Statistics</code> Page.</p>
 <code>Task List Panel</code>.</p>
 </div>
 <div class="paragraph">
-<p>The Task List Panel is used to show the relevant task records when the user clicks on these <code>charts</code>.</p>
+<p>The <code>Task List Panel</code> is used to show the relevant task records when the user clicks on <code>charts</code>.</p>
 </div>
 </li>
 <li>
-<p><strong>Charts &amp; DataBind &amp; OnClick Action Table</strong></p>
+<p><strong>Table of Charts &amp; DataBind &amp; OnClick Action</strong></p>
 <div class="admonitionblock tip">
 <table>
 <tr>
@@ -881,24 +1035,30 @@ Compare the weight of different types of tasks in each module.</p></td>
 </tr>
 </tbody>
 </table>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="images/TaskSummaryOnClickActivityDiagram.png" alt="TaskSummaryOnClickActivityDiagram" width="650">
+</div>
+<div class="title">Figure 16. Sequence diagram for task summary UI update when data change</div>
+</div>
 </li>
 <li>
 <p><strong>OnChangeListener</strong></p>
 <div class="paragraph">
-<p>The feature listens to the change of <code>UnArchived Task List</code>, <code>Archived Task List</code> and <code>Module List</code>.</p>
+<p>The feature listens to the change of <code>Model&#8217;s</code> <code>UnArchived Task Records</code>, <code>Archived Task Records</code> and <code>Module Records</code>.</p>
 </div>
 <div class="paragraph">
-<p>Therefore, the charts can automatically update according to the command execution.</p>
+<p>Once a change is captured, the charts will automatically re-render to show the latest statistics.</p>
 </div>
 <div class="paragraph">
-<p>Currently, commands as <code>add</code> <code>edit</code> <code>delete</code> <code>sort</code> <code>find</code> <code>archive</code> <code>done</code> <code>list</code> and <code>clear</code> can
+<p>Currently, commands as <code>add</code> <code>edit</code> <code>delete</code> <code>sort</code> <code>find</code> <code>archive</code> <code>done</code> <code>list</code> <code>clear</code> etc. can
 trigger the refresh of the charts.</p>
 </div>
 <div class="imageblock" style="text-align: center">
 <div class="content">
 <img src="images/TaskSummaryOnDataChangeSequenceDiagram.png" alt="TaskSummaryOnDataChangeSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 14. Sequence diagram for task summary UI update when data change</div>
+<div class="title">Figure 17. Sequence diagram for task summary UI update when data change</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -907,9 +1067,9 @@ trigger the refresh of the charts.</p>
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-It is possible that the pie chart&#8217;s labels can overlap together.
+It is possible that the labels of charts can overlap together.
 This is an unfixed bug regarding the JDK which is caused by JavaFX chart off-sync. To get more information, you may refer to <a href="https://bugs.openjdk.java.net/browse/JDK-8198830">here</a>.
-When this issue happens, you can use any command that can trigger chart updating to refresh the chart.
+When this issue happens, you can use any command that can trigger chart updating to refresh.
 </td>
 </tr>
 </table>
@@ -919,7 +1079,7 @@ When this issue happens, you can use any command that can trigger chart updating
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">5.2.2. Example Usage Scenario</a></h4>
+<h4 id="example-usage-scenario-3"><a class="link" href="#example-usage-scenario-3">5.3.2. Example Usage Scenario</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the task summary mechanism behaves at each step.</p>
 </div>
@@ -945,26 +1105,39 @@ Meanwhile, the title of the Panel will change to "Tasks under CS2101".</p>
 <p>Step 5. The user executes <code>add</code> command at <code>Statistics</code> Page,
 the charts should update automatically.</p>
 </div>
+<div class="paragraph">
+<p>Step 6. The user executes <code>done</code> command at another page, and navigate back to <code>Statistics</code> Page
+the charts should show the latest statistics.</p>
+</div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">5.2.3. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.3.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-will-this-feature-contribute-value-to-cli-user"><a class="link" href="#aspect-will-this-feature-contribute-value-to-cli-user">Aspect: Will this feature contribute value to CLI user</a></h5>
 <div class="dlist">
 <dl>
 <dt class="hdlist1">Consideration</dt>
 <dd>
-<p>Task Summary feature involves mouse clicking event.</p>
+<p>Task Summary feature involves mouse clicking event when user retrieving relevant tasks.</p>
 </dd>
 <dt class="hdlist1">Explanation</dt>
 <dd>
-<p>The most significant value of Task Summary Feature is the statistics it provides, instead of retrieving the
-relevant tasks.</p>
+<p>The Task Summary Feature provides tow main services:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>automatic statistics</strong> of the user input (i.e. the tasks and modules information).</p>
+</li>
+<li>
+<p>The relevant <strong>records retrieving</strong>.</p>
+</li>
+</ol>
+</div>
 <div class="paragraph">
-<p>The statistics is auto-generated along the way the user managing their task records using keyboard input.
-Which means Study Buddy only supports keyboard input for statistics generating.
-Therefore,
-this feature still let the CLI users gain more benefits.</p>
+<p>The retrieving service is built on top of the statistics result.
+Meanwhile, the statistics is auto-generated along the way the user managing their records using <strong>keyboard input</strong>.<br>
+Therefore, this feature can make a fast typist be more productive, especially when Study Buddy
+supports the CLI.</p>
 </div>
 </dd>
 </dl>
@@ -975,11 +1148,11 @@ this feature still let the CLI users gain more benefits.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><strong>Alternative 1 (current choice):</strong> Use <code>onChangeListener</code> to monitor the data update and re-render the UI accordingly.</p>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>onChangeListener</code> to monitor the data update and re-render the UI simultaneously.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Pros: More user-friendly, no need to manually update.</p>
+<p>Pros: More user-friendly, no need to ask user to manually update.</p>
 </li>
 <li>
 <p>Cons: Might encounter JavaFX chart off-sync bug, and results in label overlapping. But user can always use another
@@ -989,7 +1162,7 @@ command which can trigger data updating to walk around this problem.</p>
 </div>
 </li>
 <li>
-<p><strong>Alternative 2:</strong> Ask the user to re-launch the application or just re-open the Page to trigger the UI rendering.</p>
+<p><strong>Alternative 2:</strong> Trigger the UI rendering by asking the user to re-launch the application or navigate away and back to the page.</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1008,9 +1181,9 @@ check the updated charts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="calendar-feature"><a class="link" href="#calendar-feature">5.3. Calendar feature</a></h3>
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">5.4. Calendar feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-4"><a class="link" href="#implementation-4">5.3.1. Implementation</a></h4>
+<h4 id="implementation-5"><a class="link" href="#implementation-5">5.4.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The calendar feature displays a calendar for users.</p>
 </div>
@@ -1040,11 +1213,11 @@ check the updated charts.</p>
 <div class="content">
 <img src="images/CalendarBoxObjectDiagram.png" alt="CalendarBoxObjectDiagram">
 </div>
-<div class="title">Figure 15. CalendarPanel object diagram</div>
+<div class="title">Figure 18. CalendarPanel object diagram</div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-usage-scenarios"><a class="link" href="#example-usage-scenarios">5.3.2. Example usage scenarios</a></h4>
+<h4 id="example-usage-scenarios"><a class="link" href="#example-usage-scenarios">5.4.2. Example usage scenarios</a></h4>
 <div class="sect4">
 <h5 id="using-mouse-click"><a class="link" href="#using-mouse-click">Using mouse click</a></h5>
 <div class="paragraph">
@@ -1089,12 +1262,12 @@ check the updated charts.</p>
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
 </div>
-<div class="title">Figure 16. Calendar Activity Diagram</div>
+<div class="title">Figure 19. Calendar Activity Diagram</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.3.3. Design considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.4.3. Design considerations</a></h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1105,12 +1278,12 @@ check the updated charts.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="archive-feature"><a class="link" href="#archive-feature">5.4. Archive feature</a></h3>
+<h3 id="archive-feature"><a class="link" href="#archive-feature">5.5. Archive feature</a></h3>
 <div class="paragraph">
 <p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-5"><a class="link" href="#implementation-5">5.4.1. Implementation</a></h4>
+<h4 id="implementation-6"><a class="link" href="#implementation-6">5.5.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
 </div>
@@ -1136,7 +1309,7 @@ The index for archived tasks are not used for any commands other than <code>unar
 <div class="content">
 <img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 17. Archive Sequence Diagram</div>
+<div class="title">Figure 20. Archive Sequence Diagram</div>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -1153,9 +1326,9 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </div>
 </div>
 <div class="sect2">
-<h3 id="productivity-feature"><a class="link" href="#productivity-feature">5.5. Productivity feature</a></h3>
+<h3 id="productivity-feature"><a class="link" href="#productivity-feature">5.6. Productivity feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-6"><a class="link" href="#implementation-6">5.5.1. Implementation</a></h4>
+<h4 id="implementation-7"><a class="link" href="#implementation-7">5.6.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The productivity feature displays insights related to the user&#8217;s productivity over the
 past day, week and more on the Productivity panel.
@@ -1261,7 +1434,7 @@ displayed information when either of these are updated.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">5.5.2. Example Use Scenario</a></h4>
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">5.6.2. Example Use Scenario</a></h4>
 <div class="paragraph">
 <p>Given below is an example usage scenario and how the
 Productivity feature behaves at each step.</p>
@@ -1282,7 +1455,7 @@ If the daily goal has been reached, the user&#8217;s streak is incremented.</p>
 <div class="content">
 <img src="images/ProductivityActivityDiagram.png" alt="ProductivityActivityDiagram" width="400">
 </div>
-<div class="title">Figure 18. Productivity Feature Example Activity Diagram</div>
+<div class="title">Figure 21. Productivity Feature Example Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>Extension: Suppose the user sees the Productivity Points and clicks it
@@ -1301,7 +1474,7 @@ or navigate to other Productivity tabs.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.5.3. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.3. Design Considerations</a></h4>
 <div class="sect4">
 <h5 id="aspect-how-to-re-render-productivity-panel-when-statistics-are-updated"><a class="link" href="#aspect-how-to-re-render-productivity-panel-when-statistics-are-updated">Aspect: How to re-render Productivity Panel when statistics are updated</a></h5>
 <div class="paragraph">
@@ -1350,14 +1523,14 @@ this trade-off does not result in any measurable delay.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="modules"><a class="link" href="#modules">5.6. Modules</a></h3>
+<h3 id="modules"><a class="link" href="#modules">5.7. Modules</a></h3>
 <div class="paragraph">
 <p>The <code>modules</code> feature enables users to be able to group and view their tasks according to various modules or subjects.
 Each module is assigned with a unique module code &amp; a name.
 By default, all task created with the <code>add</code> command will be be assigned to module code <code>OO0000O</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-7"><a class="link" href="#implementation-7">5.6.1. Implementation</a></h4>
+<h4 id="implementation-8"><a class="link" href="#implementation-8">5.7.1. Implementation</a></h4>
 <div class="paragraph">
 <p>Modules are created with <code>create mods</code> Command and the program will request for a module name and module code. There are no restrictions on module name as long as it is not an empty entry.</p>
 </div>
@@ -1379,7 +1552,7 @@ CAT
 </div>
 </div>
 <div class="sect3">
-<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">5.6.2. Sequence diagram for creating modules</a></h4>
+<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">5.7.2. Sequence diagram for creating modules</a></h4>
 <div class="paragraph">
 <p>This is a sequence of how a module is created using the <code>create mods</code> feature. Take note that all interactions go through the <code>CommandBox</code> first in the UI, but it will be omitted from this diagram for simplicity.</p>
 </div>
@@ -1387,7 +1560,7 @@ CAT
 <div class="content">
 <img src="images/ModuleSequenceDiagram.png" alt="ModuleSequenceDiagram" width="1000">
 </div>
-<div class="title">Figure 19. Sequence diagram for modules</div>
+<div class="title">Figure 22. Sequence diagram for modules</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -1409,7 +1582,7 @@ which will then return to the user.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">5.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">5.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging.
 The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
@@ -1417,7 +1590,7 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 5.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 5.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1448,18 +1621,18 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">5.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">5.9. [Proposed] Data encryption</a></h3>
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">5.10. [Proposed] Data encryption</a></h3>
 <div class="paragraph">
 <p>Since Study Buddy is an offline application, there is no threat of being attacked via a network channel. However, in case the computer has a shared owner, a password feature can be implemented in the future for privacy purposes.</p>
 </div>
 <div class="sect3">
-<h4 id="implementation-8"><a class="link" href="#implementation-8">5.9.1. Implementation</a></h4>
+<h4 id="implementation-9"><a class="link" href="#implementation-9">5.10.1. Implementation</a></h4>
 <div class="paragraph">
 <p>The goal is to encrypt <code>taskList3.json</code>, while still allowing the owner to access his/her tasks using his password.</p>
 </div>
@@ -2356,4 +2529,4 @@ for every command.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:48:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:03:23 UTC</div></div></div></body></html>
