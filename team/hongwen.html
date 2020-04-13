@@ -1,0 +1,927 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Tin Hong Wen  - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="draganddrop-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/draganddropLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main">AB-1</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">StudyBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Tin Hong Wen  - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-study-buddy"><a class="link" href="#project-study-buddy">PROJECT: Study Buddy</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>StudyBuddy is a desktop application designed for students who <strong>wish to manage their module related tasks</strong> in a convenient and user-friendly interface.
+It is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) but still contains some aspects of Graphical User Interface (GUI) which was written using JavaFX.
+The codebase is in Java and contains about 13kLoc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="main-enhancements"><a class="link" href="#main-enhancements">Main Enhancements</a></h3>
+<div class="sect3">
+<h4 id="designed-the-module-feature"><a class="link" href="#designed-the-module-feature">Designed the Module Feature</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+This optional feature enables users to view their tasks sorted according to the modules that they have taken.
+Each module is designed to contain a name, a unique module code, as well as all the tasks that it holds.
+Users can choose to assign their task to any module they want (or not at all), as well as create new modules,
+edit or delete any existing modules.</p>
+</li>
+<li>
+<p>Justification:
+Given how college students have many, many task coming from multiple assignments,
+I believe this is one of the good way they can organise and view their tasks if they need to sift
+multiple tasks.</p>
+</li>
+<li>
+<p>Highlights:
+One of the challenging features is to design something for tasks that do not have any modules
+assigned to them. All task by default will have a module attached to them, so we have to create a "figurehead" module
+for these tasks. This figurehead module have to be able to conceal its module code from the user and has to prevent
+users from edits and deletes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Another difficulty is dealing with storage. To avoid changing the order of the tasks, module has to be designed to
+temporarily store tasks instead of actually storing it in the program.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-create-module-function"><a class="link" href="#edit-create-module-function">Edit &amp; Create Module Function</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+These 2 features allows users to create new modules, as well as edit existing modules. Users cannot
+create any modules with duplicate names or code, or those with invalid module codes. In <code>edit mods</code>,
+users can choose to edit name, code or even delete existing modules.</p>
+</li>
+<li>
+<p>Highlights:
+One key challenge with designing <code>edit mod</code> function is dealing with existing tasks is under the module.
+The program has to be designed to change the module of each consecutive task that was under the module,
+making this portion fragile.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="added-complete-function"><a class="link" href="#added-complete-function">Added Complete Function</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+Allows users to set their task from pending to <code>Finished</code>.</p>
+</li>
+<li>
+<p>Justification:
+To allow users to mark their task as complete so that it can be easily ignored /hidden by the user.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="minor-enhancements"><a class="link" href="#minor-enhancements">Minor Enhancements</a></h3>
+<div class="sect3">
+<h4 id="added-modules-option-in-edit-function"><a class="link" href="#added-modules-option-in-edit-function">Added 'modules' option in Edit function</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+Allow users to edit change the module in which the task was assigned to.</p>
+</li>
+<li>
+<p>Justification:
+So that users can edit and reassign task to a different existing module.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="team-based-tasks"><a class="link" href="#team-based-tasks">Team-based Tasks</a></h3>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Debugged a serious bug involving storage that was holding the entire team back for a week at the start of tP.</p>
+</li>
+<li>
+<p>Help to refactor team&#8217;s code by creating parent class.</p>
+</li>
+<li>
+<p>Helped repackaged some of the old codes into separate folders, as well as reorganizing
+<code>commands</code> and <code>interactiveprompts</code> into many folders</p>
+</li>
+<li>
+<p>Modified &amp; cropped many of the team&#8217;s UG images for better readability.</p>
+</li>
+<li>
+<p>Helped shorten some existing nested codes with <code>streams</code>.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="review-mentoring"><a class="link" href="#review-mentoring">Review/Mentoring</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Left constructive feedback on teammate&#8217;s repo.</p>
+</li>
+<li>
+<p>Left feedback for another team&#8217;s DG. <a href="https://github.com/AY1920S2-CS2103-W14-3/main/issues/59">59</a></p>
+</li>
+<li>
+<p>Left feedback for another team&#8217;s UG. <a href="https://github.com/aegis-bot/ped/issues/4" class="bare">https://github.com/aegis-bot/ped/issues/4</a> [4]</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed:</a></h3>
+<div class="paragraph">
+<p><a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=aegis-bot&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false" class="bare">https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=aegis-bot&amp;sort=groupTitle&amp;sortWithin=title&amp;since=2020-02-14&amp;timeframe=commit&amp;mergegroup=false&amp;groupSelect=groupByRepos&amp;breakdown=false</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-guide"><a class="link" href="#user-guide">User guide</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-interface-introduction"><a class="link" href="#user-interface-introduction">User Interface Introduction</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(Contributed by Yuting, Hong Wen &amp; Teik Jun)</p>
+</div>
+<div class="paragraph">
+<p>Study Buddy makes use of color schemes and animations to enhance your user experience.</p>
+</div>
+<div class="sect2">
+<h3 id="dashboard"><a class="link" href="#dashboard">Dashboard</a></h3>
+<div class="paragraph">
+<p>The <strong>dashboard</strong> is the landing page each time the application is launched.<br>
+It consists of different components that can interact with you and provide you with meaningful information.</p>
+</div>
+<div class="sect3">
+<h4 id="navigation-menu-bar"><a class="link" href="#navigation-menu-bar">Navigation Menu Bar</a></h4>
+<div class="paragraph">
+<p>The <strong>menu bar</strong> is located at the top of the dashboard and is primarily used for navigation.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/nav_bar.png" alt="nav bar" width="790">
+</div>
+<div class="title">Figure 1. Menu bar</div>
+</div>
+<div class="paragraph">
+<p>Shortcuts are available for navigating to each page:</p>
+</div>
+<div class="paragraph">
+<p><kbd>F1</kbd> - Modules</p>
+</div>
+<div class="paragraph">
+<p><kbd>F3</kbd> - Statistics</p>
+</div>
+<div class="paragraph">
+<p><kbd>F4</kbd> - Calendar</p>
+</div>
+<div class="paragraph">
+<p><kbd>F5</kbd> - Productivity</p>
+</div>
+<div class="paragraph">
+<p><kbd>F6</kbd> - StudyBuddy (All Tasks)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="all-tasks-panel"><a class="link" href="#all-tasks-panel">All Tasks Panel</a></h4>
+<div class="paragraph">
+<p>By default, the <strong>All Tasks Panel</strong> lists all unarchived task tasks with their detailed information in the order of creation date and time.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/all_tasks.png" alt="all tasks" width="600">
+</div>
+<div class="title">Figure 2. All Tasks Panel</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges"><a class="link" href="#task-badges">Task Badges</a></h5>
+<div class="paragraph">
+<p>To highlight <code>Module code</code>, <code>Task Type</code> and  <code>Task Status</code> of each task in the <strong>All Tasks list</strong> , we use <strong>Badges</strong>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Module Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light steelblue.</p>
+</li>
+<li>
+<p>If the task is not related to any module, the Module Badges will be omitted.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different types are in different colours.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Status</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different status types are in different colours.</p>
+</li>
+<li>
+<p>Tasks that are due within a week (i.e. 7 days) will be marked as <code>Due Soon</code>.
+You may need to use the refresh command (<a href="#Refresh">[Refresh]</a>) to refresh the status of all your tasks.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tasks-due-soon-panel"><a class="link" href="#tasks-due-soon-panel">Tasks Due Soon Panel</a></h4>
+<div class="paragraph">
+<p>The tasks that are due within a week (i.e. 7 days) will be listed here.
+You can jump to <a href="#Due Soon Tasks">[Due Soon Tasks]</a> to get more details.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/due_soon.png" alt="due soon" width="600">
+</div>
+<div class="title">Figure 3. Task Due Soon Panel</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges-2"><a class="link" href="#task-badges-2">Task Badges</a></h5>
+<div class="paragraph">
+<p>To highlight the <code>Weight &amp; Module Code</code>,
+<code>Time left for deadline</code> and  <code>Task Type</code> of each task in the <strong>Tasks Due Soon Panel</strong> , we use <strong>Badges</strong>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Weight &amp; Module Code</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in steelblue.</p>
+</li>
+<li>
+<p>Display the weight and module code of a task.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Time left for deadline</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light orange.</p>
+</li>
+<li>
+<p>Display the time left for a tasks' deadline.</p>
+</li>
+<li>
+<p>More information please refer to <a href="#Due Soon Tasks">[Due Soon Tasks]</a></p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different types are in different colors.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="interactive-prompt-box"><a class="link" href="#interactive-prompt-box">Interactive Prompt Box</a></h4>
+<div class="paragraph">
+<p>The <strong>Interactive Prompt Box</strong> can be found at the bottom of the user interface.</p>
+</div>
+<div class="paragraph">
+<p>To interact with Study Buddy, you can enter the desired command in the box with the words <code>Please enter your command here&#8230;&#8203;</code>
+and press <kbd>enter</kbd> to execute.</p>
+</div>
+<div class="paragraph">
+<p>The reply from Study Buddy will be displayed in the box above.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/prompt_box.png" alt="prompt box" width="790">
+</div>
+<div class="title">Figure 4. Interactive Prompt Box</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To get more detailed information about how to use Study Buddy, please refer to <a href="#Features">[Features]</a>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This command is for you to mark a task as <strong>Finished</strong>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constraints</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>A <strong>Finished</strong> task cannot be marked as <strong>Finished</strong> again.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To <code>done</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Key in <code>done</code> and press <kbd>enter</kbd>, you should get this prompt:</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/basic/done/done_index.png" alt="done index" width="790">
+</div>
+<div class="title">Figure 5. Asks for task index.</div>
+</div>
+</li>
+<li>
+<p>Now key in the index of the task you wish to complete.</p>
+</li>
+<li>
+<p>Press <kbd>enter</kbd> again to confirm your change.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/basic/done/done_confirm.png" alt="done confirm" width="790">
+</div>
+<div class="title">Figure 6. Asks for confirmation</div>
+</div>
+</li>
+<li>
+<p>Task set to <code>Finished</code> successfully!
+Note that the task in your task list has the tag <code>Finished</code>.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/basic/done/done_result.png" alt="done result" width="790">
+</div>
+<div class="title">Figure 7. Done result</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+You can choose to archive your completed task using the <code>archive</code> command.
+Check more details from <a href="#Archive/ Unarchive">[Archive/ Unarchive]</a>.
+=== Modules
+(Contributed by Hong Wen)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The modules page organises your tasks into various modules.
+By default (i.e, when there is no module created), the modules page shows the following:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Overview</strong>.
+This tab shows all the modules you created.</p>
+</li>
+<li>
+<p><strong>No Module Allocated</strong>.
+This tab shows the list of tasks that has not yet been allocated to any module.
+By default, all tasks will show up here if you have not allocated any tasks to the modules.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_show.png" alt="module show" width="790">
+</div>
+<div class="title">Figure 8. modules page</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="navigation"><a class="link" href="#navigation">Navigation</a></h4>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Navigate to modules page</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To navigate to the modules page, click on <code>Modules</code> &#8594; <code>Show Modules</code> in the menu bar or press <kbd>F1</kbd> in your keyboard.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/modules_show_module.png" alt="modules show module" width="790">
+</div>
+<div class="title">Figure 9. Modules dropdown menu</div>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+<dt class="hdlist1">Navigation in modules page</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The clicking on the leftmost tab shows the <code><strong>Overview</strong></code> of all your modules. it displays the module&#8217;s name and their code.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_tab_1.png" alt="module tab 1" width="790">
+</div>
+<div class="title">Figure 10. Module tab <code>Overview</code></div>
+</div>
+</li>
+<li>
+<p>The rightmost tab shows the list of task that has not been allocated to any modules.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_tab_3.png" alt="module tab 3" width="790">
+</div>
+<div class="title">Figure 11. Module tab <code>No Module Allocated</code></div>
+</div>
+</li>
+<li>
+<p>The tabs in the middle are modules that you have added to the modules page.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_tab_2.png" alt="module tab 2" width="790">
+</div>
+<div class="title">Figure 12. Module tab available modules</div>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect3">
+<h4 id="functions"><a class="link" href="#functions">Functions</a></h4>
+<div class="sect4">
+<h5 id="create-modules"><a class="link" href="#create-modules">Create Modules</a></h5>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Study Buddy provides tow approaches for user to execute <code>create module</code> and <code>edit module</code> actions.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To start the interaction of creating a module, click on <code>Modules</code>&#8594; <code>Create</code> in the menu bar.<br>
+Alternatively, you can key in <code>create mods</code> into the input line.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_nav_create.png" alt="module nav create" width="790">
+</div>
+<div class="title">Figure 13. Entry of module creation</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constraints</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Module Name</strong><br>
+The name of this module cannot be the same as any existing modules.</p>
+</li>
+<li>
+<p><strong>Module Code Format</strong><br></p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The module code also need to be unique.<br></p>
+</li>
+<li>
+<p>The module code should have a 2-3 letter prefix, a 4-digit number, followed by a single postfix.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Correct Module Code Examples</strong><br>
+LSM1303<br>
+CS2040C<br>
+IS1103<br>
+MA1521</p>
+</li>
+<li>
+<p><strong>Incorrect Module Code Examples</strong><br>
+CSSS1234 - Prefix is too long<br>
+C0001 - Prefix is too short<br>
+ZZ12345 - number is more than 4 digits<br>
+A1111XX - Postfix is too long</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To <code>Create Module</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on <code>Module</code> &#8594; <code>Create</code> or key in <code>create mods</code>.
+A prompt will show up at the bottom of the screen.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_create_name.png" alt="module create name" width="790">
+</div>
+<div class="title">Figure 14. Asks for module name</div>
+</div>
+</li>
+<li>
+<p>Key in the name of your module.Here we use "New Module" as an example.
+Then Study Buddy will ask for the module code.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_create_code.png" alt="module create code" width="790">
+</div>
+<div class="title">Figure 15. Asks for module code</div>
+</div>
+</li>
+<li>
+<p>Here we use "CSS1234" as an example.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_create_confirm.png" alt="module create confirm" width="790">
+</div>
+<div class="title">Figure 16. Asks for confirmation</div>
+</div>
+</li>
+<li>
+<p>Press <kbd>enter</kbd> to confirm, and the module page will update accordingly.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_create_result.png" alt="module create result" width="790">
+</div>
+<div class="title">Figure 17. New Module with code CSS1234 created.</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Congratulations, you have added a module to your modules page!</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="edit-modules"><a class="link" href="#edit-modules">Edit Modules</a></h4>
+<div class="paragraph">
+<p>To start the interaction of editing a module, click on <code>Modules</code>&#8594; <code>Edit</code> in the menu bar.<br>
+Alternatively, you can key in <code>edit mods</code> into the input line.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_nav_edit.png" alt="module nav edit" width="790">
+</div>
+<div class="title">Figure 18. Entry of module editing</div>
+</div>
+<div class="paragraph">
+<p>Study Buddy provides three module editing options.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Edit options</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Change Module name.</p>
+</li>
+<li>
+<p>Change Module code.</p>
+</li>
+<li>
+<p>Delete Module.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constraints:</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When choosing the module to edit, you need to provide a valid and existed module code.</p>
+</li>
+<li>
+<p>When entering the value of new module name or new module code, you need to provide a different valid value.</p>
+</li>
+<li>
+<p>The above "valid" judgment follows the same constraints as <a href="#create-modules">Create Modules</a>.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>To <code>Edit Module</code>:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Click on <code>Module</code> &#8594; <code>Edit</code> key in edit mods.
+A prompt will show up to ask the module code of target module.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_edit_code.png" alt="module edit code" width="790">
+</div>
+<div class="title">Figure 19. Asks for module mode</div>
+</div>
+</li>
+<li>
+<p>Key in the code of the module that you want to edit.
+Here we use "CSS1234" as an example.
+Then Study Buddy will ask for the edit option.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_edit_option.png" alt="module edit option" width="790">
+</div>
+<div class="title">Figure 20. Asks for edit option</div>
+</div>
+</li>
+<li>
+<p>Key in the index of your option.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>"1" &#8594; Change Module Name</p>
+<div class="paragraph">
+<p>Key in your new module name and press <kbd>enter</kbd> to confirm the editing.
+Here we use "Edited Module Name" as an example.<br>
+The module page will update accordingly.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_edit_name_result.png" alt="module edit name result" width="790">
+</div>
+<div class="title">Figure 21. Module name editing result</div>
+</div>
+</li>
+<li>
+<p>"2" &#8594; Change Module Code</p>
+<div class="paragraph">
+<p>Key in your new module code and press <kbd>enter</kbd> to confirm the editing.
+Here we use "LY3000" as an example.<br>
+The module page will update accordingly.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_edit_code_result.png" alt="module edit code result" width="790">
+</div>
+<div class="title">Figure 22. Module code editing result</div>
+</div>
+<div class="paragraph">
+<p>Module code changed!</p>
+</div>
+</li>
+<li>
+<p>"3" &#8594; Delete Module</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+After successfully deleting a module, the related tasks will also be affected.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>To delete the chosen module, you only need to press <kbd>enter</kbd> to confirmed the deletion.
+To better showcase the behaviour of deletion, here we use "CS2103T" as an example.</p>
+</div>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Before delete:</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_delete_before.png" alt="module delete before" width="790">
+</div>
+<div class="title">Figure 23. Before delete</div>
+</div>
+</li>
+<li>
+<p>After delete:<br>
+After successfully deleted target module, the module page will update accordingly and switch to
+<code>Overview</code> page.</p>
+<div class="paragraph">
+<p>If you switch to <code>No Module Allocated</code> tab, you&#8217;ll find the tasks affected by this deletion (i.e. The tasks which belong to the deleted module).</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/module/module_delete_after.png" alt="module delete after" width="790">
+</div>
+<div class="title">Figure 24. Checking the affected tasks</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developer-guide"><a class="link" href="#developer-guide">Developer Guide</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">Architecture</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchitectureDiagram.png" alt="ArchitectureDiagram">
+</div>
+<div class="title">Figure 25. Architecture Diagram</div>
+</div>
+<div class="paragraph">
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App.
+Given below is a quick overview of each component.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="modules"><a class="link" href="#modules">Modules</a></h3>
+<div class="paragraph">
+<p>(Contributed by Hong Wen)
+The <code>modules</code> feature enables users to be able to group and view their tasks according to various modules or subjects.
+Each module is assigned with a unique module code &amp; a name.
+By default, all task created with the <code>add</code> command will be be assigned to module code <code>OO0000O</code>.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>Modules are created with <code>create mods</code> Command and the program will request for a module name and module code. There are no restrictions on module name as long as it is not an empty entry.</p>
+</div>
+<div class="paragraph">
+<p>Module codes however, require at least an alphabetical prefix, a number, and a postfix(optional).</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code>Correct moduleCodes:
+A0A
+CS11X
+AA1234
+
+Incorrect moduleCodes:
+123456
+CAT
+555T</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sequence-diagram-for-creating-modules"><a class="link" href="#sequence-diagram-for-creating-modules">Sequence diagram for creating modules</a></h4>
+<div class="paragraph">
+<p>This is a sequence of how a module is created using the <code>create mods</code> feature. Take note that all interactions go through the <code>CommandBox</code> first in the UI, but it will be omitted from this diagram for simplicity.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ModuleSequenceDiagram.png" alt="ModuleSequenceDiagram" width="1000">
+</div>
+<div class="title">Figure 26. Sequence diagram for modules</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>When the user keys in  <code>create mods</code> or click <strong>Module/create</strong> on the menu bar,
+a <code>CreateModuleInteractivePrompt</code> class is created. It automatically constructs an <code>EmptyModule</code>.</p>
+</li>
+<li>
+<p>The interactivePrompt class will then change module attributes such as
+name and <code>ModuleCode</code> on according to user input.</p>
+</li>
+<li>
+<p>At the last stage, the prompt will construct a <code>CreateModCommand</code> for execution.
+It will go through the various layers in Model before returning to the prompt,
+which will then return to the user.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>{bl}</p>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+{bl}
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Diagrams:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ArchitectureDiagram.puml">ArchitectureDiagram</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ModuleSequenceDiagram.puml.puml">ModuleSequenceDiagram</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:48:25 UTC</div></div></div></body></html>
