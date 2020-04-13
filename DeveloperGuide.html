@@ -233,6 +233,9 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
+<div class="paragraph">
+<p>Note: HiddenModel is used to represent the hidden contents of the Model Component.</p>
+</div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
 <p>The <em>Sequence Diagram</em> below shows how the components interact with each other for the scenario where the user issues the command <code>delete 1</code>.</p>
@@ -342,7 +345,8 @@ The command execution will only terminate in two scenarios:<br>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The <code>InteractiveCommandPrompt</code> in <code>Ui</code> uses the parsers to parse the user command.</p>
+<p>After receiving the user input from Ui, <code>InteractivePrompt</code> processes the user&#8217;s input,
+using the Parsers to parse the command if necessary.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -1511,12 +1515,6 @@ Step 4: The Productivity Points Tab is displayed to the user</p>
 <p>From here, the user can continue to manage tasks as per Step 5 and 6 above,
 or navigate to other Productivity tabs.</p>
 </div>
-<div class="sect4">
-<h5 id="clicking-the-productivity-menu-item"><a class="link" href="#clicking-the-productivity-menu-item">Clicking the Productivity menu item</a></h5>
-<div class="paragraph">
-<p>image</p>
-</div>
-</div>
 </div>
 <div class="sect3">
 <h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.6.3. Design Considerations</a></h4>
@@ -2574,4 +2572,4 @@ for every command.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:00:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:06:16 UTC</div></div></div></body></html>
