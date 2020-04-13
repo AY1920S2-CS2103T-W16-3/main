@@ -1,0 +1,556 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Huang ge xiang - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="draganddrop-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/draganddropLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main">AB-1</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">StudyBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Huang ge xiang - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-study-buddy"><a class="link" href="#project-study-buddy">PROJECT: Study Buddy</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>StudyBuddy is a desktop application designed for students who <strong>wish to manage their module related tasks</strong> in a convenient and user-friendly interface.
+It is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) but still contains the benefits of <strong>Graphical User Interface</strong> (GUI).
+The codebase is in Java and contains about 13kLoc.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="enhancements"><a class="link" href="#enhancements">Enhancements</a></h3>
+<div class="paragraph">
+<p><strong>Major enhancements</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added a <strong>calendar</strong> to Study buddy.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>What it does</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>The calendar allows users to have an overview of all the tasks that has to be done.</p>
+</li>
+<li>
+<p>Calendar also allows you to view all tasks due on the day the user clicks on.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Justification</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature is important as the task list will be too cluttered without it.</p>
+</li>
+<li>
+<p>A calendar gives a good indication of how busy the user is going to be.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Highlights</em></p>
+<div class="paragraph">
+<p>Challenges faced when implementing this feature:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Had to learn what the different panes and objects in javafx does and choose the most suitable one for the feature</p>
+</li>
+<li>
+<p>There was an 50% chance (tested) the click event would return the wrong object,
+leading to complications. This meant that tasks cannot be within the calendar itself.
+I had to reverse engineer the algorithm used to generate a calendar and use that data to find tasks for the date the user clicked on.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Archive</strong> and <strong>unarchive</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p><em>What it does</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Allows users to store their task into a separate archive list</p>
+</li>
+<li>
+<p>Unarchive retrieves tasks from archive list and stores it into the main list</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Justification</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Archive allows users to store task that they have completed or do not wish to look at right now, while still keeping those tasks in check.</p>
+</li>
+<li>
+<p>This is important as users sometimes do not wish to delete a task they completed.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><em>Highlights</em>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>This feature was not particularly difficult to implement. However, as it is the first feature to be pushed to address book,
+I had to carefully trace and modify the code to make sure it did not break address book.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Minor enhancements</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Calendar view command</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Calendar view command was created in response to an <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/217">issue</a> that claimed the app is not CLI friendly.</p>
+</li>
+<li>
+<p>This command allows a user to jump to any date they want to on the calendar.</p>
+</li>
+<li>
+<p>It also serves as a way to find tasks by date.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed</a></h3>
+<div class="paragraph">
+<p><a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=gx-huang">Tp-dashboard</a></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="team-based-tasks"><a class="link" href="#team-based-tasks">Team-based Tasks</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Helped set up the github team and repo.</p>
+</li>
+<li>
+<p>Assigned issues to my team mates. <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/33">33</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/31">31</a></p>
+</li>
+<li>
+<p>Wrote proposed feature in developer&#8217;s guide.</p>
+</li>
+<li>
+<p>Created test cases for classes that were not mine. <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/61">61</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="review-mentoring"><a class="link" href="#review-mentoring">Review/Mentoring</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Left constructive feedback on my team mate&#8217;s pull request. <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/58">58</a></p>
+</li>
+<li>
+<p>Helped resolve some issues my team mates had regarding address book 3. <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/49">49</a></p>
+</li>
+<li>
+<p>Left feedback for another team&#8217;s DG. <a href="https://github.com/AY1920S2-CS2103-W14-3/main/issues/59">59</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-guide-contributions"><a class="link" href="#user-guide-contributions">User guide contributions</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Given below is a section that I contributed to the User Guide. It showcases my ability to write documentation targeting end-users.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar"><a class="link" href="#calendar">Calendar</a></h3>
+<div class="paragraph">
+<p>(contributed by gexiang)</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Constraints</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The calendar GUI does not work well if the window size is set too small.</p>
+</li>
+<li>
+<p>You will not be able to navigate too far into the past/ future using CLI.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>The calendar feature allows you to visualise your schedule by displaying the number of task you have for the month.
+This allows students to plan their time efficiently.</p>
+</div>
+<div class="paragraph">
+<p>The calendar feature can be toggled by clicking <code>Calendar</code> from the menu bar.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/calendar/calendar_init.png" alt="calendar init" width="790">
+</div>
+<div class="title">Figure 1. calendar interface</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>Previous</code> and <code>Next</code> buttons can be used to navigate through previous and next months respectively. <code>Current month</code> button brings you to the current date, which is in a blue border.</p>
+</li>
+<li>
+<p>Clicking on any date will show you all tasks for that day.
+Keep in mind that the <strong>Index</strong> shown in this panel cannot be used for other commands.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/calendar/calendar_click.png" alt="calendar click" width="790">
+</div>
+<div class="title">Figure 2. calendar after clicking on a date</div>
+</div>
+<div class="sect3">
+<h4 id="navigation-using-cli"><a class="link" href="#navigation-using-cli">Navigation using CLI</a></h4>
+<div class="paragraph">
+<p>Study buddy also allows you to navigate to any date in the <code>Calendar</code>.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>To initiate fast navigation, simply key in <code>calendar</code> into the input line.</p>
+</li>
+<li>
+<p>Study buddy will ask you for a date</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/calendar/Calendar_CLI_Date.png" alt="Calendar CLI Date" width="790">
+</div>
+<div class="title">Figure 3. Interactive prompt after keying in calendar</div>
+</div>
+<div class="paragraph">
+<p>In this example, we entered <code>20/04/2020</code>.</p>
+</div>
+</li>
+<li>
+<p>Input your date using the format shown and press <kbd>enter</kbd> once to proceed.</p>
+</li>
+<li>
+<p>Press <kbd>enter</kbd> again to confirm your command.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>You will now see the calendar for your selected date as well as all the tasks on that day.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/calendar/calendar_after_CLI.png" alt="calendar after CLI" width="790">
+</div>
+<div class="title">Figure 4. Successfully navigated calendar using CLI</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="developer-guide-contributions"><a class="link" href="#developer-guide-contributions">Developer Guide contributions</a></h3>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Given below are some sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="calendar-feature"><a class="link" href="#calendar-feature">Calendar feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The calendar feature displays a calendar for users.</p>
+</div>
+<div class="paragraph">
+<p>The feature is implemented by overriding the task list display panel on the main window with calendar box. The calendar currently supports following features:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Displays the name of all tasks on that day in the calendar grid.</p>
+</li>
+<li>
+<p>Access calendars in previous or next month using the buttons on top.</p>
+</li>
+<li>
+<p>Displays more information about tasks for the day on the Due Soon panel after clicking on a grid.</p>
+</li>
+<li>
+<p>Fast forward to a specific year/month using CLI.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When a calender is requested, a CalendarPanel object is constructed, the object diagram below shows the structure of a CalendarPanel. We will be using the date <code>01/04/2020</code> as an example.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalendarBoxObjectDiagram.png" alt="CalendarBoxObjectDiagram">
+</div>
+<div class="title">Figure 5. CalendarPanel object diagram</div>
+</div>
+<div class="paragraph">
+<p>Tasks shown in <code>calendar</code> will automatically be updated upon using any of the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>archive</code></p>
+</li>
+<li>
+<p><code>unarchive</code></p>
+</li>
+<li>
+<p>Any other commands that modifies the task list</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenarios"><a class="link" href="#example-usage-scenarios">Example usage scenarios</a></h4>
+<div class="sect4">
+<h5 id="using-mouse-click"><a class="link" href="#using-mouse-click">Using mouse click</a></h5>
+<div class="paragraph">
+<p>Clicking on the show calendar menu item under the calendar menu will enable this feature. Upon requesting for the calendar to be shown:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The calendar box object will be constructed</p>
+</li>
+<li>
+<p>The calendar loops through every day of the month while searching for tasks due on that day</p>
+</li>
+<li>
+<p>The task name is added to the calendar grid</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="using-cli"><a class="link" href="#using-cli">Using CLI</a></h5>
+<div class="paragraph">
+<p>As of Study Buddy v1.4, a new feature has been added that allows users to navigate the calendar using CLI.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The user enters 'calendar' into the command box.</p>
+</li>
+<li>
+<p>The user enters the selected date into the command box.</p>
+</li>
+<li>
+<p>Calendar will be generated the same way as a mouse click, however, it will use the entered date as parameters.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>It is implemented by getting the latest instance of <code>MainWindow</code> and directly changing the UI by calling <code>handleShowCalendar()</code>.</p>
+</div>
+<div class="paragraph">
+<p>Below is an activity diagram describing the events that will happen:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
+</div>
+<div class="title">Figure 6. Calendar Activity Diagram</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design considerations</a></h4>
+<div class="ulist">
+<ul>
+<li>
+<p>It is more efficient to cache the calendar rather than to generate a new one, however, we do not expect the user to have too many tasks and therefore it should not slow down the application.</p>
+</li>
+<li>
+<p>The implementation used for CLI involves a static method in MainWindow which might be unsafe, however, it was the best choice given the time constraints.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="archive-feature"><a class="link" href="#archive-feature">Archive feature</a></h3>
+<div class="paragraph">
+<p>Archive stores selected task away into a separate task list, this command is used when the user has completed a task but still wants to keep track of it.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<div class="paragraph">
+<p>Archive uses a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it
+into another list stored within model.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The index for archived tasks are not used for any commands other than <code>unarchive</code>.
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sequence diagram:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
+</div>
+<div class="title">Figure 7. Archive Sequence Diagram</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">Design consideration</a></h4>
+<div class="paragraph">
+<p>There were two possible ways to store archived tasks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Store it as a separate list</p>
+</li>
+<li>
+<p>Add another field to task to keep track of its archived state</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The first choice was chosen as it speeds up the runtime. Also, it makes it easier to manage the indexes.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="proposed-data-encryption"><a class="link" href="#proposed-data-encryption">[Proposed] Data encryption</a></h3>
+<div class="paragraph">
+<p>Since Study Buddy is an offline application, there is no threat of being attacked via a network channel. However, in case the computer has a shared owner, a password feature can be implemented in the future for privacy purposes.</p>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<div class="paragraph">
+<p>The goal is to encrypt <code>taskList3.json</code>, while still allowing the owner to access his/her tasks using his password.</p>
+</div>
+<div class="paragraph">
+<p>We will be using AES (Advanced Encryption Scheme) for encryption, and a slow hashing algorithm to derive a key from the user&#8217;s password. The slow hashing algorithm is to prevent brute force attacks.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Encryption</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User sets a password. (Optional)</p>
+</li>
+<li>
+<p>Study Buddy uses a slow hashing algorithm (<a href="https://github.com/patrickfav/bcrypt">bCrypt</a>) to generate a key.</p>
+</li>
+<li>
+<p>When user exits the app, Study Buddy will encrypt taskList.json using the <a href="https://github.com/facebookarchive/conceal">conceal</a> library and the generated key.</p>
+</li>
+<li>
+<p>TaskList.json should now be encrypted</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><strong>Decryption</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User enters a password.</p>
+</li>
+<li>
+<p>If the password is correct, the same key should be hashed and taskList.json can be decrypted.</p>
+</li>
+<li>
+<p>If the password is incorrect, user will be allowed to try again.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>We leave it to the user&#8217;s own jurisdiction to create a strong password.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:04:58 UTC</div></div></div></body></html>

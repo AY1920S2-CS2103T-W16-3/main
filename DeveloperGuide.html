@@ -1215,6 +1215,28 @@ check the updated charts.</p>
 </div>
 <div class="title">Figure 18. CalendarPanel object diagram</div>
 </div>
+<div class="paragraph">
+<p>Tasks shown in <code>calendar</code> will automatically be updated upon using any of the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>archive</code></p>
+</li>
+<li>
+<p><code>unarchive</code></p>
+</li>
+<li>
+<p>Any other commands that modifies the task list</p>
+</li>
+</ul>
+</div>
 </div>
 <div class="sect3">
 <h4 id="example-usage-scenarios"><a class="link" href="#example-usage-scenarios">5.4.2. Example usage scenarios</a></h4>
@@ -1251,9 +1273,12 @@ check the updated charts.</p>
 <p>The user enters the selected date into the command box.</p>
 </li>
 <li>
-<p>Calendar will be generated the same way as a mouse click, however, it will use the selected date as parameters.</p>
+<p>Calendar will be generated the same way as a mouse click, however, it will use the entered date as parameters.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>It is implemented by getting the latest instance of <code>MainWindow</code> and directly changing the UI by calling <code>handleShowCalendar()</code>.</p>
 </div>
 <div class="paragraph">
 <p>Below is an activity diagram describing the events that will happen:</p>
@@ -1273,6 +1298,9 @@ check the updated charts.</p>
 <li>
 <p>It is more efficient to cache the calendar rather than to generate a new one, however, we do not expect the user to have too many tasks and therefore it should not slow down the application.</p>
 </li>
+<li>
+<p>The implementation used for CLI involves a static method in MainWindow which might be unsafe, however, it was the best choice given the time constraints.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1285,10 +1313,8 @@ check the updated charts.</p>
 <div class="sect3">
 <h4 id="implementation-6"><a class="link" href="#implementation-6">5.5.1. Implementation</a></h4>
 <div class="paragraph">
-<p>Archive uses both the old delete and a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it elsewhere.</p>
-</div>
-<div class="paragraph">
-<p>The archived task list is stored within Model as a seperate list.</p>
+<p>Archive uses a new archive command. Upon executing the archive command, it will call the model to delete the task and archive it
+into another list stored within model.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1322,6 +1348,25 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </td>
 </tr>
 </table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-consideration"><a class="link" href="#design-consideration">5.5.2. Design consideration</a></h4>
+<div class="paragraph">
+<p>There were two possible ways to store archived tasks:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Store it as a separate list</p>
+</li>
+<li>
+<p>Add another field to task to keep track of its archived state</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The first choice was chosen as it speeds up the runtime. Also, it makes it easier to manage the indexes.</p>
 </div>
 </div>
 </div>
@@ -2529,4 +2574,4 @@ for every command.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 10:50:44 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:04:58 UTC</div></div></div></body></html>
