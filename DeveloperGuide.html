@@ -229,12 +229,21 @@ The following class plays an important role at the architecture level:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="700">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
 <div class="title">Figure 2. Class Diagram of the Logic Component</div>
 </div>
-<div class="paragraph">
-<p>Note: HiddenModel is used to represent the hidden contents of the Model Component.</p>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+HiddenModel is used to represent the hidden contents of the Model Component.
+</td>
+</tr>
+</table>
 </div>
 <h4 id="how-the-architecture-components-interact-with-each-other" class="discrete">How the architecture components interact with each other</h4>
 <div class="paragraph">
@@ -334,7 +343,7 @@ The command execution will only terminate in two scenarios:<br>
 <h3 id="Design-Logic"><a class="link" href="#Design-Logic">4.3. Logic component</a></h3>
 <div id="fig-LogicClassDiagram" class="imageblock">
 <div class="content">
-<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="600">
+<img src="images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
 </div>
 <div class="title">Figure 5. Structure of the Logic Component</div>
 </div>
@@ -345,8 +354,20 @@ The command execution will only terminate in two scenarios:<br>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>After receiving the user input from Ui, <code>InteractivePrompt</code> processes the user&#8217;s input,
-using the Parsers to parse the command if necessary.</p>
+<p>After receiving the user input from Ui, <code>InteractivePrompt</code> processes the user&#8217;s input.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the user input is complicated, <code>InteractivePrompt</code> uses <code>Parser</code> classes to
+parse the input.</p>
+</li>
+<li>
+<p>If more information is needed from the user, <code>InteractivePrompt</code> signals the <code>Ui</code>
+component to prompt the user for more information using the <code>interact</code> command.
+Otherwise, if no more information is needed, proceed to the next step.</p>
+</li>
+</ol>
+</div>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -362,6 +383,27 @@ using the Parsers to parse the command if necessary.</p>
 </li>
 </ol>
 </div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>interact("list")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ListTaskSequenceDiagram.png" alt="ListTaskSequenceDiagram" width="700">
+</div>
+<div class="title">Figure 6. Sequence diagram for list</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
 <h3 id="Design-Model"><a class="link" href="#Design-Model">4.4. Model component</a></h3>
@@ -369,7 +411,7 @@ using the Parsers to parse the command if necessary.</p>
 <div class="content">
 <img src="images/ModelClassDiagram.png" alt="ModelClassDiagram" width="500">
 </div>
-<div class="title">Figure 6. Structure of the Model Component</div>
+<div class="title">Figure 7. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/src/main/java/draganddrop/studybuddy/model/Model.java"><code>Model.java</code></a></p>
@@ -400,7 +442,7 @@ using the Parsers to parse the command if necessary.</p>
 <div class="content">
 <img src="images/StorageClassDiagram.png" alt="StorageClassDiagram" width="600" height="400">
 </div>
-<div class="title">Figure 7. Structure of the Storage Component</div>
+<div class="title">Figure 8. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/src/main/java/draganddrop/studybuddy/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -471,7 +513,7 @@ It also produces an executable <code>Command</code> from each successful interac
 <div class="content">
 <img src="images/AddTaskObjectDiagram.png" alt="AddTaskObjectDiagram" width="550">
 </div>
-<div class="title">Figure 8. Object diagram when user add task using interactive command process</div>
+<div class="title">Figure 9. Object diagram when user add task using interactive command process</div>
 </div>
 </li>
 <li>
@@ -480,7 +522,7 @@ It also produces an executable <code>Command</code> from each successful interac
 <div class="content">
 <img src="images/QuitFromInteractionActivityDiagram.png" alt="QuitFromInteractionActivityDiagram" width="550">
 </div>
-<div class="title">Figure 9. Activity diagram when user quite from add task interactive command process</div>
+<div class="title">Figure 10. Activity diagram when user quite from add task interactive command process</div>
 </div>
 </li>
 </ol>
@@ -624,7 +666,7 @@ invalid command.</p>
 <div class="content">
 <img src="images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
 </div>
-<div class="title">Figure 10. Activity Diagram for Add to Due Soon list</div>
+<div class="title">Figure 11. Activity Diagram for Add to Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -658,7 +700,7 @@ invalid command.</p>
 <div class="content">
 <img src="images/AddDueSoonSequence.png" alt="AddDueSoonSequence" width="800">
 </div>
-<div class="title">Figure 11. Sequence Diagram for Add to Due Soon list</div>
+<div class="title">Figure 12. Sequence Diagram for Add to Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -697,7 +739,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <div class="content">
 <img src="images/DeleteDueSoonActivityDiagram.png" alt="DeleteDueSoonActivityDiagram" width="200">
 </div>
-<div class="title">Figure 12. Activity Diagram for Delete from Due Soon list</div>
+<div class="title">Figure 13. Activity Diagram for Delete from Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -731,7 +773,7 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <div class="content">
 <img src="images/DeleteDueSoonSequence.png" alt="DeleteDueSoonSequence" width="800">
 </div>
-<div class="title">Figure 13. Sequence Diagram for Delete from Due Soon list</div>
+<div class="title">Figure 14. Sequence Diagram for Delete from Due Soon list</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -785,7 +827,7 @@ Other commands like edit, archive etc also trigger due soon feature in a similar
 <div class="content">
 <img src="images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
 </div>
-<div class="title">Figure 14. Activity diagram for refresh</div>
+<div class="title">Figure 15. Activity diagram for refresh</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -810,7 +852,7 @@ Other commands like edit, archive etc also trigger due soon feature in a similar
 <div class="content">
 <img src="images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 15. Sequence diagram for refresh</div>
+<div class="title">Figure 16. Sequence diagram for refresh</div>
 </div>
 <div class="paragraph">
 <p><br></p>
@@ -1043,7 +1085,7 @@ Compare the weight of different types of tasks in each module.</p></td>
 <div class="content">
 <img src="images/TaskSummaryOnClickActivityDiagram.png" alt="TaskSummaryOnClickActivityDiagram" width="650">
 </div>
-<div class="title">Figure 16. Sequence diagram for task summary UI update when data change</div>
+<div class="title">Figure 17. Sequence diagram for task summary UI update when data change</div>
 </div>
 </li>
 <li>
@@ -1062,7 +1104,7 @@ trigger the refresh of the charts.</p>
 <div class="content">
 <img src="images/TaskSummaryOnDataChangeSequenceDiagram.png" alt="TaskSummaryOnDataChangeSequenceDiagram" width="800">
 </div>
-<div class="title">Figure 17. Sequence diagram for task summary UI update when data change</div>
+<div class="title">Figure 18. Sequence diagram for task summary UI update when data change</div>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1217,7 +1259,7 @@ check the updated charts.</p>
 <div class="content">
 <img src="images/CalendarBoxObjectDiagram.png" alt="CalendarBoxObjectDiagram">
 </div>
-<div class="title">Figure 18. CalendarPanel object diagram</div>
+<div class="title">Figure 19. CalendarPanel object diagram</div>
 </div>
 <div class="paragraph">
 <p>Tasks shown in <code>calendar</code> will automatically be updated upon using any of the following commands:</p>
@@ -1291,7 +1333,7 @@ check the updated charts.</p>
 <div class="content">
 <img src="images/CalendarActivityDiagram.png" alt="CalendarActivityDiagram" width="400">
 </div>
-<div class="title">Figure 19. Calendar Activity Diagram</div>
+<div class="title">Figure 20. Calendar Activity Diagram</div>
 </div>
 </div>
 </div>
@@ -1339,7 +1381,7 @@ The index for archived tasks are not used for any commands other than <code>unar
 <div class="content">
 <img src="images/ArchiveSequenceDiagram.png" alt="ArchiveSequenceDiagram" width="600">
 </div>
-<div class="title">Figure 20. Archive Sequence Diagram</div>
+<div class="title">Figure 21. Archive Sequence Diagram</div>
 </div>
 <div class="admonitionblock caution">
 <table>
@@ -1428,7 +1470,20 @@ StudyBuddy to keep track of relevant usage statistics of the user.
 </ol>
 </div>
 <div class="paragraph">
-<p>The user can gain or lose Productivity Points in StudyBuddy when certain actions or events are completed. These include:</p>
+<p>The object diagram for the Productivity feature is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/ProductivityObjectDiagram.png" alt="ProductivityObjectDiagram" width="900 title="Productivity object diagram"">
+</div>
+</div>
+<div class="paragraph">
+<p>The Productivity feature displays the Producitivity Points of the user, this is recorded in <code>currentScore</code>
+and <code>scoreList</code> attributes in <code>ScoreStats</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The user can gain or lose Productivity Points in StudyBuddy when certain actions or events are completed.
+These include:</p>
 </div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
@@ -1479,6 +1534,9 @@ displayed information when either of these are updated.</p>
 <li>
 <p><code>goal</code></p>
 </li>
+<li>
+<p>Any command that modifies the task list</p>
+</li>
 </ul>
 </div>
 </div>
@@ -1504,7 +1562,7 @@ If the daily goal has been reached, the user&#8217;s streak is incremented.</p>
 <div class="content">
 <img src="images/ProductivityActivityDiagram.png" alt="ProductivityActivityDiagram" width="400">
 </div>
-<div class="title">Figure 21. Productivity Feature Example Activity Diagram</div>
+<div class="title">Figure 22. Productivity Feature Example Activity Diagram</div>
 </div>
 <div class="paragraph">
 <p>Extension: Suppose the user sees the Productivity Points and clicks it
@@ -1603,7 +1661,7 @@ CAT
 <div class="content">
 <img src="images/ModuleSequenceDiagram.png" alt="ModuleSequenceDiagram" width="1000">
 </div>
-<div class="title">Figure 22. Sequence diagram for modules</div>
+<div class="title">Figure 23. Sequence diagram for modules</div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2588,4 +2646,4 @@ for every command.</p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 12:32:46 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 13:58:27 UTC</div></div></div></body></html>
