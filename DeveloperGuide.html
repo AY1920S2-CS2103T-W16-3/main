@@ -67,10 +67,10 @@
 <p>Study Buddy is a task-management tool made for students who want to be able to track and manage their tasks in one place.</p>
 </div>
 <div class="paragraph">
-<p>Study Buddy uses various visualization tools such as pie charts and calendars, provides useful features such as the Due Soon task list, a productivity tracker etc to make task management simple and convenient.</p>
+<p>It uses various visualization tools such as pie charts and calendars, provides useful features such as the Due Soon task list, a productivity tracker etc to make task management simple and convenient.</p>
 </div>
 <div class="paragraph">
-<p>In particular, Study Buddy is a Command Line Interface (<a href="#CLI">CLI</a>) application that also provides some Graphical User Interface (<a href="#GUI">GUI</a>). This means that users are expected to interact with the Study Buddy mainly through the command line, but each command executed will evoke a visual response as well.</p>
+<p>In particular, Study Buddy is a Command Line Interface (<a href="#CLI">CLI</a>) application that also provides some Graphical User Interface (<a href="#GUI">GUI</a>). This means that users are expected to interact with their Study Buddy mainly through the command line, but each command executed will evoke a visual response as well.</p>
 </div>
 <div class="paragraph">
 <p>The purpose of this guide is to help potential developers get up to speed on the Study Buddy code base and functionality. We hope that this document will ease the process of further enhancing and developing Study Buddy.</p>
@@ -597,6 +597,22 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </ol>
 </div>
 </li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Other commands like edit, archive etc also trigger due soon feature in a similar manner.
+</td>
+</tr>
+</table>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p><strong>When user refreshes due soon list:</strong></p>
 <div class="olist loweralpha">
@@ -694,18 +710,6 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 </div>
 </li>
 </ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Other commands like edit, archive etc also trigger due soon feature in a similar manner.
-</td>
-</tr>
-</table>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1562,7 +1566,17 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Value proposition</strong>: manages tasks faster than a typical mouse/<a href="#GUI">GUI</a> driven app</p>
+<p><strong>Value proposition</strong>:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>manages tasks faster than a typical mouse/<a href="#GUI">GUI</a> driven app</p>
+</li>
+<li>
+<p>uses interactive prompt to enhance user experience</p>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -2334,9 +2348,12 @@ for every command.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>While <a href="#AB3">AB3</a> uses the <code>Person</code> class which had 5 fields, Study buddy has 12 fields and every one of them is used in a major feature.</p>
+<p>While <a href="#AB3">AB3</a> uses the <code>Person</code> class which had 5 fields, Study buddy uses the <code>Task</code> class that has 12 fields and every one of them is used in a major feature.</p>
+</li>
+<li>
+<p>The <a href="#GUI">GUI</a> has seen a major revamp, with 5 different tabs as well as some sub-tabs.</p>
 </li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 19:04:06 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:48:53 UTC</div></div></div></body></html>
