@@ -41,6 +41,23 @@
 <li><a href="#dev-ops">8. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories">Appendix B: User Stories</a></li>
+<li><a href="#use-cases">Appendix C: Use Cases</a></li>
+<li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
+<li><a href="#glossary">Appendix E: Glossary</a></li>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
+<ul class="sectlevel2">
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-task">F.2. Deleting a task</a></li>
+<li><a href="#refreshing-the-due-soon-list">F.3. Refreshing the due soon list</a></li>
+<li><a href="#adding-a-duplicate-task">F.4. Adding a duplicate task</a></li>
+<li><a href="#filter-tasks">F.5. Filter tasks</a></li>
+<li><a href="#clear-tasks">F.6. Clear tasks</a></li>
+<li><a href="#view-renamed">F.7. View renamed</a></li>
+<li><a href="#exit">F.8. Exit</a></li>
+<li><a href="#saving-data">F.9. Saving data</a></li>
+</ul>
+</li>
+<li><a href="#effort">Appendix G: Effort</a></li>
 </ul>
 </div>
 </div>
@@ -2036,351 +2053,946 @@ The <code>LogsCenter</code> class is used to manage the logging levels and loggi
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">user who likes multitasking</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">adjust the application&#8217;s window size</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fit it with other windows</p>
-<p class="tableblock">[appendix]
-== Use Cases</p>
-<p class="tableblock">(For all use cases below, the <strong>System</strong> is <code>Study Buddy</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
-<p class="tableblock">[discrete]
-=== Use case: Add a new task</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User requests to add a new task.
-2. Study Buddy requests user to choose module from available module list.
-3. User chooses module.
-4. Study Buddy requests for task name.
-5. User provides task name.
-6. Study Buddy requests user to choose task type from available task type list.
-7. User provides task type.
-8. Study Buddy requests for task description.
-9. User provides task description.
-10. Study Buddy requests for task weight.
-11. User provides task weight.
-12. Study Buddy requests for estimated cost of time for this task.
-13. User provides estimated time cost for this task.
-14. Study Buddy requests for confirmation.
-15. User confirms.
-16. Study Buddy inserts the new task to user&#8217;s task list.
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong></p>
-<p class="tableblock">[none]
-* 3a. User can press enter to skip.
-+
-[none]
-<strong> Use case resumes at step 4.</p>
-<p class="tableblock">* 3b.
-The given index is invalid.
-+
-[none]
-</strong> 3b1. Study Buddy shows an error message.
-+
-Use case resumes at step 3.
-* 3c.
-The given module code is invalid.
-+
-[none]
-<strong> 3c1. Study Buddy shows an error message.
-+
-Use case resumes at step 3.
-[none]
-* 5a.
-The length of given task name exceeds 20 characters.
-+
-[none]
-</strong> 5a1. Study Buddy shows an error message.
-+
-Use case resumes at step 5.
-* 7a.
-The given index is invalid.
-+
-[none]
-<strong> 7a1. Study Buddy shows an error message.
-+
-Use case resumes at step 7.
-* 9a.
-User can press enter to skip.
-+
-[none]
-</strong> Use case resumes at step 10.
-+
-* 9b.
-The length of given task description exceeds 300 characters.
-+
-[none]
-<strong> 9b1. Study Buddy shows an error message.
-+
-Use case resumes at step 9.
-* 11a.
-User can press enter to skip.
-+
-[none]
-</strong> Use case resumes at step 12.
-+
-* 11b.
-The given weight is invalid.
-+
-[none]
-<strong> 11b1. Study Buddy shows an error message.
-+
-Use case resumes at step 11.
-* 13a.
-User can press enter to skip.
-+
-[none]
-</strong> Use case resumes at step 14.</p>
-<p class="tableblock">* 13b.
-The given estimated cost of time is invalid.
-+
-[none]
-<strong> 13b1. Study Buddy shows an error message.
-+
-Use case resumes at step 13.
-* a. At any time, user enters quit and press enter to exit the interaction.
-+
-Use case ends.</p>
-<p class="tableblock">[discrete]
-=== Use case: Edit task&#8217;s weight</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User requests to edit a specific task in the list
-2. Study Buddy asks for the index
-3. User provides index
-4. Study Buddy asks for the index of the field that he/she wish to edit for the task
-5. User selects index of Task weight
-6. Study Buddy asks for the new weight
-7. User provides the new weight
-8. Study Buddy updates the selected tasks weight to the new value
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong>
-[none]
-* 3a.
-The given index is invalid.
-+
-[none]
-</strong> 3a1. Study Buddy shows an error message.
-+
-Use case resumes at step 3.
-* 7a.
-The given weight is invalid.
-+
-[none]
-<strong> 7a1. Study Buddy shows an error message.
-+
-Use case resumes at step 7.
-* a. At any time, user enters quit and press enter to exit the interaction.
-+
-Use case ends.</p>
-<p class="tableblock">[discrete]
-=== Use case: List task</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User is on the <code>All tasks</code> or <code>productivity</code> tab.
-2. User requests to list tasks
-3. Study Buddy shows a list of unarchived tasks
-+
-Use case ends.</p>
-<p class="tableblock">[discrete]
-=== Use case: Delete task</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. Refer to List task use case
-2. User requests to delete a specific task in the list
-3. Study Buddy asks for the index
-4. User provides index
-5. Study Buddy deletes the task
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong></p>
-<p class="tableblock">[none]
-* 4a.
-The given index is invalid.
-+
-[none]
-</strong> 4a1. Study Buddy shows an error message.
-+
-Use case resumes at step 3.</p>
-<p class="tableblock">[discrete]
-=== Use case: Filter tasks</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User requests to filter tasks
-2. Study Buddy shows two options for filter
-3. User requests to filter by status
-4. Study Buddy provides options to filter by status
-5. User provides input
-6. Study Buddy shows filtered task list
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong></p>
-<p class="tableblock">[none]
-* 3a.
-The given index is invalid.
-+
-[none]
-<strong> 3a1. Study Buddy shows an error message.
-+
-Use case resumes at step 2.</p>
-<p class="tableblock">[none]
-* 3a.
-User chooses to filter by type.
-+
-[none]
-</strong> 4a. Study Buddy provides options to filter by type
-+
-Use case resumes at step 5.</p>
-<p class="tableblock">[discrete]
-=== Use case: View renamed</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User requests to view renamed tasks
-2. Study Buddy shows a list of renamed tasks
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong></p>
-<p class="tableblock">[none]
-* 1a.
-There are no duplicate tasks
-[none]
-<strong> 1a1. Study Buddy shows an empty list
-+
-Use case ends.</p>
-<p class="tableblock">[discrete]
-=== Use case: Refresh</p>
-<p class="tableblock"><strong>MSS</strong></p>
-<p class="tableblock">1. User notices Due Soon list needs to be updated
-2. User requests to refresh
-3. Study Buddy refreshes the Due Soon list and status tags
-+
-Use case ends.</p>
-<p class="tableblock"><strong>Extensions</strong></p>
-<p class="tableblock">[none]
-* 2a.
-The list is empty.
-+
-[none]
-</strong> 2a1. List remains the same
-+
-Use case ends.</p>
-<p class="tableblock">[none]
-* 2b.
-There is nothing to refresh
-+
-[none]
-<strong>* 2b1. List remains the same
-+
-Use case ends.</p>
-<p class="tableblock">[appendix]
-== Non Functional Requirements</p>
-<p class="tableblock">. Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.
-. Should come with automated unit tests and open source code.
-. Should work on both 32-bit and 64-bit environments.
-. Should be able to hold up to 1000 tasks without a noticeable sluggishness in performance for typical usage.
-. A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
-<p class="tableblock">[appendix]
-== Glossary</p>
-<p class="tableblock"><a id="mainstream-os"></a>
-Mainstream OS::
-Windows, Linux, Unix, OS-X
-<a id="GUI"></a>
-GUI::
-Graphical User Interface i.e a user interface that allows users to interact using graphical icons rather than text-based user interfaces
-<a id="Index"></a>
-Index::
-The index of a task refers to the sequence number of a task in the dashboard
-<a id="CLI"></a>
-CLI::
-Command Line Interface i.e a text base interface
-<a id="AB3"></a>
-AB3::
-Address Book Version 3 - the code base that Study Buddy is built upon</p>
-<p class="tableblock">[appendix]
-== Instructions for Manual Testing</p>
-<p class="tableblock">Given below are instructions to test the app manually.</p>
-<p class="tableblock">[NOTE]
-These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.</p>
-<p class="tableblock">=== Launch and Shutdown</p>
-<p class="tableblock">. Initial launch</p>
-<p class="tableblock">.. Download the jar file and copy into an empty folder
-.. Double-click the jar file<br>
-   Expected: Shows the <a href="#GUI">GUI</a> with a set of sample tasks.
-The window size may not be optimum.</p>
-<p class="tableblock">. Saving window preferences</p>
-<p class="tableblock">.. Resize the window to an optimum size.
-Move the window to a different location.
-Close the window.
-.. Re-launch the app by double-clicking the jar file.<br>
-   Expected: The most recent window size and location is retained.</p>
-<p class="tableblock">=== Deleting a task</p>
-<p class="tableblock">. Deleting a task while all tasks are listed</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; List all tasks using the <code>list</code> command.
-&#8230;&#8203; Multiple tasks in the list.</p>
-<p class="tableblock">.. Test case: <code>delete [Enter]</code> + <code>1</code><br>
-   Expected: First task is deleted from the list.
-Successful deletion indication in the status message.</p>
-<p class="tableblock">.. Test case: <code>delete [Enter]</code> + <code>0</code><br>
-   Expected: No task is deleted.
-Error details shown in the status message.
-.. Other incorrect delete commands to try: <code>delete x</code>(where x is anything)</p>
-<p class="tableblock">=== Refreshing the due soon list</p>
-<p class="tableblock">. Refreshing the due soon list when the time left is off</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Have some tasks in the due soon list
-&#8230;&#8203; Change the time of your PC to a time in the past/future</p>
-<p class="tableblock">.. Test case: Use the <code>refresh</code> command<br>
-   Expected: All the tags with time left now show updated time.
-Successful refresh indication in the status message.</p>
-<p class="tableblock">=== Adding a duplicate task</p>
-<p class="tableblock">. Adding a duplicate task to the list</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Have at least one task in the unarchived tasks list</p>
-<p class="tableblock">.. Test case: Use the <code>add</code> command to add a duplicate of an existing task<br>
-   Expected: It will add this duplicate task and append (1) at the end of its name.<br>
-Successful add indication in the status message.</p>
-<p class="tableblock">=== Filter tasks</p>
-<p class="tableblock">. Filters tasks by status or type</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Have a few tasks in the unarchived tasks list of different types and status'</p>
-<p class="tableblock">.. Test case: Use the <code>filter</code> command to filter by 'status' &#8594; 'pending'<br>
-   Expected: It will filter all your pending tasks in the list.<br>
-Successful filter indication in the status message.</p>
-<p class="tableblock">=== Clear tasks</p>
-<p class="tableblock">. Clears all tasks in the study buddy</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Have a few tasks in the unarchived tasks list</p>
-<p class="tableblock">.. Test case: Use the <code>clear</code> command<br>
-   Expected: It will clear everything in Study Buddy.<br>
-Successful clear indication in the status message.</p>
-<p class="tableblock">=== View renamed</p>
-<p class="tableblock">. Filters all tasks in your list with a number appended in brackets (auto-renamed)</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Have a few duplicated tasks in the unarchived tasks list</p>
-<p class="tableblock">.. Test case: Use the <code>View renamed</code> command<br>
-   Expected: It filters all the auto-renamed tasks out.<br>
-Successful filter indication in the status message.</p>
-<p class="tableblock">=== Exit</p>
-<p class="tableblock">. Exits from the application</p>
-<p class="tableblock">.. Prerequisites:
-&#8230;&#8203; Launch the application</p>
-<p class="tableblock">.. Test case: Use the <code>bye</code> command<br>
-   Expected: It exits the application.</p>
-<p class="tableblock">=== Saving data</p>
-<p class="tableblock">. Dealing with missing/corrupted data files</p>
-<p class="tableblock">.. Prerequisites: Delete the "tasklist.json" file from data folder.</p>
-<p class="tableblock">.. Test case: Launch the application<br>
-   Expected: The application indicates that the data file needed is missing and creates one.
-c
-.. Prerequisites: Modify the "tasklist.json" file to show some incorrect data.</p>
-<p class="tableblock">.. Test case: Launch the application<br>
-   Expected: The application indicates that the data file is corrupted.
-Application launches successfully but has no data.</p>
-<p class="tableblock">[appendix]
-== Effort</p>
-<p class="tableblock">*Interactive prompt</strong></p>
-<p class="tableblock">* <a href="#AB3">AB3</a> requires users to input a whole line of text at once, which is unintuitive and prone to typos by the user.</p>
-<p class="tableblock">* Furthermore, <a href="#AB3">AB3</a> uses tags like &#8220;\p&#8221; to break the user&#8217;s input up for parsing. This means that users will not be able to use these strings for any of their inputs.</p>
-<p class="tableblock">* Study buddy fixes that issue by introducing an interactive prompt for every command. This required a lot effort as there had to be an interactive prompt
-for every command.</p>
-<p class="tableblock"><strong>Refactoring</strong></p>
-<p class="tableblock">* While <a href="#AB3">AB3</a> uses the <code>Person</code> class which had 5 fields, Study buddy uses the <code>Task</code> class that has 12 fields and every one of them is used in a major feature.</p>
-<p class="tableblock">* The <a href="#GUI">GUI</a> has seen a major revamp, with 5 different tabs as well as some sub-tabs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fit it with other windows</p></td>
 </tr>
 </tbody>
 </table>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:52:58 UTC</div></div></div></body></html>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For all use cases below, the <strong>System</strong> is <code>Study Buddy</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<h3 id="use-case-add-a-new-task" class="discrete">Use case: Add a new task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a new task.</p>
+</li>
+<li>
+<p>Study Buddy requests user to choose module from available module list.</p>
+</li>
+<li>
+<p>User chooses module.</p>
+</li>
+<li>
+<p>Study Buddy requests for task name.</p>
+</li>
+<li>
+<p>User provides task name.</p>
+</li>
+<li>
+<p>Study Buddy requests user to choose task type from available task type list.</p>
+</li>
+<li>
+<p>User provides task type.</p>
+</li>
+<li>
+<p>Study Buddy requests for task description.</p>
+</li>
+<li>
+<p>User provides task description.</p>
+</li>
+<li>
+<p>Study Buddy requests for task weight.</p>
+</li>
+<li>
+<p>User provides task weight.</p>
+</li>
+<li>
+<p>Study Buddy requests for estimated cost of time for this task.</p>
+</li>
+<li>
+<p>User provides estimated time cost for this task.</p>
+</li>
+<li>
+<p>Study Buddy requests for confirmation.</p>
+</li>
+<li>
+<p>User confirms.</p>
+</li>
+<li>
+<p>Study Buddy inserts the new task to user&#8217;s task list.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a. User can press enter to skip.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case resumes at step 4.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3b.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3b1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>3c.
+The given module code is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3c1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>5a.
+The length of given task name exceeds 20 characters.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>5a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>7a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>7a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 7.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>9a.
+User can press enter to skip.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case resumes at step 10.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>9b.
+The length of given task description exceeds 300 characters.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>9b1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 9.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>11a.
+User can press enter to skip.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case resumes at step 12.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>11b.
+The given weight is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>11b1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 11.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>13a.
+User can press enter to skip.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>Use case resumes at step 14.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>13b.
+The given estimated cost of time is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>13b1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 13.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>a. At any time, user enters quit and press enter to exit the interaction.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-edit-task-s-weight" class="discrete">Use case: Edit task&#8217;s weight</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to edit a specific task in the list</p>
+</li>
+<li>
+<p>Study Buddy asks for the index</p>
+</li>
+<li>
+<p>User provides index</p>
+</li>
+<li>
+<p>Study Buddy asks for the index of the field that he/she wish to edit for the task</p>
+</li>
+<li>
+<p>User selects index of Task weight</p>
+</li>
+<li>
+<p>Study Buddy asks for the new weight</p>
+</li>
+<li>
+<p>User provides the new weight</p>
+</li>
+<li>
+<p>Study Buddy updates the selected tasks weight to the new value</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>7a.
+The given weight is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>7a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 7.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>a. At any time, user enters quit and press enter to exit the interaction.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-list-task" class="discrete">Use case: List task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User is on the <code>All tasks</code> or <code>productivity</code> tab.</p>
+</li>
+<li>
+<p>User requests to list tasks</p>
+</li>
+<li>
+<p>Study Buddy shows a list of unarchived tasks</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Refer to List task use case</p>
+</li>
+<li>
+<p>User requests to delete a specific task in the list</p>
+</li>
+<li>
+<p>Study Buddy asks for the index</p>
+</li>
+<li>
+<p>User provides index</p>
+</li>
+<li>
+<p>Study Buddy deletes the task</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 3.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-filter-tasks" class="discrete">Use case: Filter tasks</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to filter tasks</p>
+</li>
+<li>
+<p>Study Buddy shows two options for filter</p>
+</li>
+<li>
+<p>User requests to filter by status</p>
+</li>
+<li>
+<p>Study Buddy provides options to filter by status</p>
+</li>
+<li>
+<p>User provides input</p>
+</li>
+<li>
+<p>Study Buddy shows filtered task list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+The given index is invalid.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a1. Study Buddy shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 2.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>3a.
+User chooses to filter by type.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>4a. Study Buddy provides options to filter by type</p>
+<div class="paragraph">
+<p>Use case resumes at step 5.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-view-renamed" class="discrete">Use case: View renamed</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to view renamed tasks</p>
+</li>
+<li>
+<p>Study Buddy shows a list of renamed tasks</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a.
+There are no duplicate tasks</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>1a1. Study Buddy shows an empty list</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<h3 id="use-case-refresh" class="discrete">Use case: Refresh</h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User notices Due Soon list needs to be updated</p>
+</li>
+<li>
+<p>User requests to refresh</p>
+</li>
+<li>
+<p>Study Buddy refreshes the Due Soon list and status tags</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a.
+The list is empty.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. List remains the same</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b.
+There is nothing to refresh</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2b1. List remains the same</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="non-functional-requirements"><a class="link" href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should work on any <a href="#mainstream-os">mainstream OS</a> as long as it has Java <code>11</code> or above installed.</p>
+</li>
+<li>
+<p>Should come with automated unit tests and open source code.</p>
+</li>
+<li>
+<p>Should work on both 32-bit and 64-bit environments.</p>
+</li>
+<li>
+<p>Should be able to hold up to 1000 tasks without a noticeable sluggishness in performance for typical usage.</p>
+</li>
+<li>
+<p>A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="glossary"><a class="link" href="#glossary">Appendix E: Glossary</a></h2>
+<div class="sectionbody">
+<div id="mainstream-os" class="dlist">
+<dl>
+<dt class="hdlist1">Mainstream OS</dt>
+<dd>
+<p>Windows, Linux, Unix, OS-X</p>
+</dd>
+</dl>
+</div>
+<div id="GUI" class="dlist">
+<dl>
+<dt class="hdlist1">GUI</dt>
+<dd>
+<p>Graphical User Interface i.e a user interface that allows users to interact using graphical icons rather than text-based user interfaces</p>
+</dd>
+</dl>
+</div>
+<div id="Index" class="dlist">
+<dl>
+<dt class="hdlist1">Index</dt>
+<dd>
+<p>The index of a task refers to the sequence number of a task in the dashboard</p>
+</dd>
+</dl>
+</div>
+<div id="CLI" class="dlist">
+<dl>
+<dt class="hdlist1">CLI</dt>
+<dd>
+<p>Command Line Interface i.e a text base interface</p>
+</dd>
+</dl>
+</div>
+<div id="AB3" class="dlist">
+<dl>
+<dt class="hdlist1">AB3</dt>
+<dd>
+<p>Address Book Version 3 - the code base that Study Buddy is built upon</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Given below are instructions to test the app manually.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+These instructions only provide a starting point for testers to work on; testers are expected to do more <em>exploratory</em> testing.
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Initial launch</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Download the jar file and copy into an empty folder</p>
+</li>
+<li>
+<p>Double-click the jar file<br>
+   Expected: Shows the <a href="#GUI">GUI</a> with a set of sample tasks.
+The window size may not be optimum.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Saving window preferences</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Resize the window to an optimum size.
+Move the window to a different location.
+Close the window.</p>
+</li>
+<li>
+<p>Re-launch the app by double-clicking the jar file.<br>
+Expected: The most recent window size and location is retained.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-task"><a class="link" href="#deleting-a-task">F.2. Deleting a task</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a task while all tasks are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>List all tasks using the <code>list</code> command.</p>
+</li>
+<li>
+<p>Multiple tasks in the list.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: <code>delete [Enter]</code> + <code>1</code><br>
+   Expected: First task is deleted from the list.
+Successful deletion indication in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete [Enter]</code> + <code>0</code><br>
+   Expected: No task is deleted.
+Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete x</code>(where x is anything)</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="refreshing-the-due-soon-list"><a class="link" href="#refreshing-the-due-soon-list">F.3. Refreshing the due soon list</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Refreshing the due soon list when the time left is off</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have some tasks in the due soon list</p>
+</li>
+<li>
+<p>Change the time of your PC to a time in the past/future</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>refresh</code> command<br>
+   Expected: All the tags with time left now show updated time.
+Successful refresh indication in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-duplicate-task"><a class="link" href="#adding-a-duplicate-task">F.4. Adding a duplicate task</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a duplicate task to the list</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have at least one task in the unarchived tasks list</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>add</code> command to add a duplicate of an existing task<br>
+   Expected: It will add this duplicate task and append (1) at the end of its name.<br>
+Successful add indication in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="filter-tasks"><a class="link" href="#filter-tasks">F.5. Filter tasks</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filters tasks by status or type</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have a few tasks in the unarchived tasks list of different types and status'</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>filter</code> command to filter by 'status' &#8594; 'pending'<br>
+   Expected: It will filter all your pending tasks in the list.<br>
+Successful filter indication in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="clear-tasks"><a class="link" href="#clear-tasks">F.6. Clear tasks</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Clears all tasks in the study buddy</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have a few tasks in the unarchived tasks list</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>clear</code> command<br>
+   Expected: It will clear everything in Study Buddy.<br>
+Successful clear indication in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="view-renamed"><a class="link" href="#view-renamed">F.7. View renamed</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Filters all tasks in your list with a number appended in brackets (auto-renamed)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Have a few duplicated tasks in the unarchived tasks list</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>View renamed</code> command<br>
+   Expected: It filters all the auto-renamed tasks out.<br>
+Successful filter indication in the status message.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="exit"><a class="link" href="#exit">F.8. Exit</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Exits from the application</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>Launch the application</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Test case: Use the <code>bye</code> command<br>
+Expected: It exits the application.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.9. Saving data</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with missing/corrupted data files</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: Delete the "tasklist.json" file from data folder.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file needed is missing and creates one.
+c</p>
+</li>
+<li>
+<p>Prerequisites: Modify the "tasklist.json" file to show some incorrect data.</p>
+</li>
+<li>
+<p>Test case: Launch the application<br>
+   Expected: The application indicates that the data file is corrupted.
+Application launches successfully but has no data.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Interactive prompt</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="#AB3">AB3</a> requires users to input a whole line of text at once, which is unintuitive and prone to typos by the user.</p>
+</li>
+<li>
+<p>Furthermore, <a href="#AB3">AB3</a> uses tags like &#8220;\p&#8221; to break the user&#8217;s input up for parsing. This means that users will not be able to use these strings for any of their inputs.</p>
+</li>
+<li>
+<p>Study buddy fixes that issue by introducing an interactive prompt for every command. This required a lot effort as there had to be an interactive prompt
+for every command.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Refactoring</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>While <a href="#AB3">AB3</a> uses the <code>Person</code> class which had 5 fields, Study buddy uses the <code>Task</code> class that has 12 fields and every one of them is used in a major feature.</p>
+</li>
+<li>
+<p>The <a href="#GUI">GUI</a> has seen a major revamp, with 5 different tabs as well as some sub-tabs.</p>
+</li>
+</ul>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:57:12 UTC</div></div></div></body></html>
