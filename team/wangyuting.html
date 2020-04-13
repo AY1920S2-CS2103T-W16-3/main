@@ -1,6 +1,6 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Soumwyaa Sabarinathann - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Wang Yuting - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="draganddrop-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/draganddropLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main">AB-1</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">StudyBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Soumwyaa Sabarinathann - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="draganddrop-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/draganddropLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main">AB-1</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">StudyBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Wang Yuting - Project Portfolio</h1></div><div id="content"><div class="sect1">
 <h2 id="project-study-buddy"><a class="link" href="#project-study-buddy">PROJECT: Study Buddy</a></h2>
 <div class="sectionbody">
 
@@ -10,17 +10,13 @@
 <h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>StudyBuddy is a desktop application designed for students who <strong>wish to manage their module related tasks</strong> in a convenient and user-friendly interface.
-It is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) but still contains some aspects of Graphical User Interface (GUI) which was written using JavaFX.
-The codebase is in Java and contains about 13kLoc.</p>
+<p>StudyBuddy is a desktop application designed for students who <strong>wish to manage their module related tasks</strong> in a convenient and user-friendly interface. The application is written in Java and spans over 12k lines of code.</p>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="enhancements"><a class="link" href="#enhancements">Enhancements</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -28,84 +24,49 @@ The codebase is in Java and contains about 13kLoc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>Function</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>To</p>
+<p>It allows user to execute his/her command in an interactive way.</p>
 </li>
 <li>
-<p>Loads all due soon tasks (with updated time) into the panel when application is launched.</p>
+<p>Display clear instruction or error message at each interaction step.</p>
 </li>
 <li>
-<p>Displays time left before the deadline for each due soon task.</p>
+<p>When invalid command received (e.g. the user made a typo mistake), the interaction will not
+terminate, instead, it will response with clear instruction and wait for user&#8217;s next action.</p>
 </li>
 <li>
-<p>Automatically sorts tasks to be in order of most urgent to least urgent deadline.</p>
-</li>
-<li>
-<p>Automatically updates when changes are made to the data (additions, deletions, edits etc).</p>
+<p>Allow user to quit from interaction using "quit" keyword.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification: This feature is extremely helpful to the user because it helps to remind them of upcoming deadlines</p>
-</li>
-<li>
-<p>Highlights:</p>
+<p><strong>Justification</strong>:<br></p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>This enhancement affects existing commands and commands to be added in future since any command that changes data will affect it.</p>
+<p>This feature saves user from remembering long, wordy commands to use the command line interface.</p>
 </li>
 <li>
-<p>The implementation was challenging because it required changes to be made to a lot of commands.</p>
-</li>
-<li>
-<p>It involved working in the logic, model, storage and UI components of the code base.</p>
-</li>
-<li>
-<p>It also involved changing the GUI.</p>
-</li>
-</ol>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p><strong>Major enhancement</strong>: added <strong>task summary feature</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Allows user to refresh due soon task list</p>
-</li>
-<li>
-<p>This command will add any tasks that have recently become due soon</p>
-</li>
-<li>
-<p>It will also update the time left for each deadline on the due soon tasks</p>
+<p>The "stay and wait" reaction against any invalid input improves the typo-tolerance of the application, which contributes a
+notable benefit to CLI users.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification: This feature is extremely helpful to the user because if they have had the application open for a long time, the time left in due soon tasks and the due soon list itself may need refreshing.</p>
-</li>
-<li>
-<p>Highlights:</p>
+<p><strong>Highlights</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>This enhancement formed the foundation code base for a lot of other features that needed to be refreshed. For example, the refreshing of status tags is also done using this refresh class.</p>
+<p>The implementation was challenging because it required a huge changes in the original logic.</p>
 </li>
 <li>
-<p>It required working in the UI, logic and model components of the code base.</p>
+<p>The time left me to design and develop this logic was tight because
+I needed to finish it so that my team can started to work on their own part.</p>
 </li>
 </ol>
 </div>
@@ -118,85 +79,143 @@ The codebase is in Java and contains about 13kLoc.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>Function</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to add duplicate tasks in the list.</p>
+<p>The GUI of:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Landing page (i.e. the all tasks page)</p>
 </li>
 <li>
-<p>It however automatically appends brackets with a number to the task name of duplicate task.</p>
+<p>Modules page</p>
 </li>
 <li>
-<p>The number corresponds to the number of times task has been duplicated.</p>
+<p>Statistics page</p>
 </li>
 <li>
-<p>Ensures that edit and unarchive command do not cause duplication of tasks either.</p>
+<p>Calendar page</p>
+</li>
+<li>
+<p>The Task card (i.e. the items in task list)</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification:</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This feature is helpful to the user because the add task command involves adding several fields.</p>
+<p>Responsive layout. The inner components can automatically adjust themselves according to
+the current width and height.</p>
 </li>
 <li>
-<p>We can only detect duplicates at the end of task addition command, hence if the user makes a mistake in one field, they will have to re-enter everything if duplicates are not allowed.</p>
+<p>The mouse events when:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>hovering on menu bar item, calendar button, as well as tabs in modules and statistics page</p>
 </li>
 <li>
-<p>This way, user is given a choice whether or not to add duplicate task and they can go back and edit/delete as they like.</p>
+<p>focusing on list items (e.g. all tasks list)</p>
+</li>
+<li>
+<p>clicking on chars in statistics page</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Highlights:</p>
+<p><strong>Justification</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>This feature was quite difficult to implement because there are several corner cases to take care of.</p>
+<p>The GUI of this application follows a relaxed style,
+which helps users to ease the pressure accumulated from school.</p>
 </li>
 <li>
-<p>It required working on other commands, such as edit command (to stop user from editing a task to be a duplicate) and unarchive command (because user can unarchive a duplicate task).</p>
+<p>The responsive layout allows the application to be adapted to different screen sizes.</p>
 </li>
 <li>
-<p>Since study buddy already had a lot of tests and checks to prevent duplicate tasks, it required a very large amount of refactoring code.</p>
+<p>The mouse event makes it easier for user to focus on what he/she is doing.</p>
 </li>
 </ol>
+</div>
+</li>
+<li>
+<p><strong>Highlights</strong>:</p>
+<div class="paragraph">
+<p>To design and implement of the UI/UX requires lot of self-learning and reference.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the add and edit Task command</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>task summary feature</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>Function</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to delete an existing task in the list</p>
+<p>Automatically summarizes the collected data into different charts.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><strong>pie chart</strong> compares the number of tasks in different statuses.</p>
+</li>
+<li>
+<p><strong>area chart</strong> summarizes the task deadlines or start dates for different modules.</p>
+</li>
+<li>
+<p><strong>stacked bar chart</strong> compares the weight of different types of tasks in each module</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification: This feature is extremely helpful to the user because it enables them to remove tasks from their list.</p>
+<p>Retrieves and displays relevant tasks when user clicking on a chart.</p>
 </li>
 <li>
-<p>Highlights:</p>
+<p>Listen to the data change and update simultaneously.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Justification</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>This enhancement was a crucial command and is also used as a supporting command by a lot of other features.</p>
+<p>The statistics helps user to integrates scattered information in one place and represents in dynamic charts,
+witch makes the information more straightforward.</p>
 </li>
 <li>
-<p>It involved working in the UI, logic and model components of the code base.</p>
+<p>With this feature, user can be more productive as they have better idea of what is going on and
+what is more important.</p>
+</li>
+<li>
+<p>The statistics is auto-generated along the way the user managing their records using keyboard input,
+which means this feature can contribute significant value to those fast typist.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Highlights</strong>:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The data bind of each chart is not easy to implement, especially when I take this opportunity to
+practice on Lambda.</p>
+</li>
+<li>
+<p>It also needs to be careful when choosing a suitable chart for a data set. Even for the same collection of data,
+the comparison results obtained from different charts can be variant.</p>
 </li>
 </ol>
 </div>
@@ -205,34 +224,41 @@ The codebase is in Java and contains about 13kLoc.</p>
 </div>
 </li>
 <li>
-<p><strong>Major enhancement</strong>: added <strong>the edit command</strong></p>
+<p><strong>Major enhancement</strong>: added <strong>the Add and Edit command</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>Function</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to filter by status (eg: finished, pending etc) or by type (eg: assignment, quiz etc)</p>
+<p>Add: Allows user to add a new task in the list.</p>
+</li>
+<li>
+<p>Edit: Allows user to edit an existing task in the list.</p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification: This feature is extremely helpful to the user because it enables them to filter their list of all tasks by various categories.</p>
+<p><strong>Justification</strong>:</p>
+<div class="paragraph">
+<p>This feature is extremely helpful to the user because it enables them to insert and edit task.</p>
+</div>
 </li>
 <li>
-<p>Highlights:</p>
-<div class="olist arabic">
-<ol class="arabic">
+<p><strong>Highlights</strong>:</p>
+<div class="paragraph">
+<p>Implementing this basic functionality is not easy because it involves a lot of obvious and non-obvious validation,
+such as:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
 <li>
-<p>This enhancement was a crucial command.</p>
+<p>obvious: empty input for required fields, wrong input format etc.</p>
 </li>
 <li>
-<p>The implementation was tricky because as the number of choices user was given increased, the checks for exceptions etc became more complex.</p>
-</li>
-<li>
-<p>It involved working in the UI, logic and model components of the code base.</p>
+<p>non-obvious: the validation of time, task weight etc.</p>
 </li>
 </ol>
 </div>
@@ -241,80 +267,183 @@ The codebase is in Java and contains about 13kLoc.</p>
 </div>
 </li>
 <li>
-<p><strong>Minor enhancement</strong>: added <strong>the sort tasks command</strong></p>
+<p><strong>Minor enhancement</strong>: added <strong>the Sort command</strong></p>
 <div class="ulist">
 <ul>
 <li>
-<p>What it does:</p>
+<p><strong>Function</strong>:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to view all renamed tasks in their list</p>
+<p>Allows user to sort their tasks by:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Deadline / Task Start Date</p>
+</li>
+<li>
+<p>Task Name</p>
+</li>
+<li>
+<p>Creation Date &amp; Time</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification:</p>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>This feature is helpful to the user because they might want to see all the tasks that have auto-edited names in one place, so they can go back and edit.</p>
-</li>
-</ol>
+<p><strong>Justification</strong>:</p>
+<div class="paragraph">
+<p>This feature can help uer to prioritize their task by desired aspect.</p>
 </div>
 </li>
 </ul>
 </div>
 </li>
-<li>
-<p><strong>Minor enhancement</strong>: added <strong>the Exit command</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="code-contributed"><a class="link" href="#code-contributed">Code contributed:</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to exit the application</p>
-</li>
-<li>
-<p>In case user has entered this command by mistake, provides an option to go back.</p>
+<p><a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=wyt-sonia">code contribution link</a></p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Justification: This feature is extremely helpful to the user because it enables them to exit when needed.</p>
-</li>
-<li>
-<p>Highlights:
-This enhancement was a crucial command.</p>
-</li>
-</ul>
 </div>
-</li>
-<li>
-<p><strong>Minor enhancement</strong>: added <strong>the Clear command</strong></p>
-<div class="ulist">
-<ul>
-<li>
-<p>What it does:</p>
+<div class="sect2">
+<h3 id="team-based-tasks"><a class="link" href="#team-based-tasks">Team-based Tasks</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Allows user to delete all data that has been entered</p>
+<p>Morphed the original AB3 into a different product: Study Buddy</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/27">Interactive feature implemented with Add Task function</a></p>
 </li>
 </ol>
 </div>
 </li>
 <li>
-<p>Justification: This feature is helpful to the user if they decide to start with a fresh Study Buddy.</p>
+<p>Renamed the product</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/15">Update project name and Travis link</a></p>
 </li>
-</ul>
+</ol>
 </div>
 </li>
-</ul>
+<li>
+<p>Edited and provided all pictures for User Guide:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/265">UG update and bug fix</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/262">Bug fixes and UG update</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Improved the code quality for the whole project:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/276">Code quality</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/271">Code quality improvement</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/182">Code quality improves</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Troubleshoot and fixed bugs at the whole project scope:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/100">bug fix for overdue check</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/124">DG update and bug fix</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/98">Bug fixed: Bug with task index</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/59">Bug fix, Quit/Sort function implementing and UI improving</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/63">Bug fix for not handling invalid user input</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/279">more log, bug fix, typo fix</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/262">Bug fixes and UG update</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/240">module index bug fix</a></p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Helped Implemented the GUI for the whole project:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/74">GUI for list view updated and GUI bug fix</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/71">GUI improvement</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/59">Bug fix, Quit/Sort function implementing and UI improving</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/89">UI improvement and better tracking of task status</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/257">UI update and UG update</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="review-mentoring"><a class="link" href="#review-mentoring">Review/Mentoring</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Reviewed another team&#8217;s DG and provided useful feedback.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/206">Review for DG</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/207">Review for DG_02</a></p>
+</li>
+<li>
+<p><a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/210">Review for DG 03</a></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div class="sect2">
@@ -333,290 +462,421 @@ This enhancement was a crucial command.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<h2 id="user-interface-introduction"><a class="link" href="#user-interface-introduction">User Interface Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
+<p>(Contributed by Yuting, Hong Wen &amp; Teik Jun)</p>
 </div>
 <div class="paragraph">
-<p>Study Buddy is a desktop application which is designed for students who <strong>wish to manage their module related tasks</strong>.
-More importantly, Study Buddy is <strong>optimized for those who prefer to work with a Command Line Interface</strong> (CLI) while still having the benefits of a Graphical User Interface (GUI). This means that while you primarily interact with Study Buddy through text based commands, each command executed will evoke a visual response as well.</p>
+<p>Study Buddy makes use of color schemes and animations to enhance your user experience.</p>
 </div>
+<div class="sect2">
+<h3 id="dashboard"><a class="link" href="#dashboard">Dashboard</a></h3>
 <div class="paragraph">
-<p>You will never have to remember long, wordy commands to use your command line interface, since Study Buddy <strong>provides an interactive way of communication</strong>.
-This not only helps prevent typos, but also makes the application much easier to use!</p>
-</div>
-<div class="paragraph">
-<p>If you can type fast, Study Buddy can get your module management done faster than traditional GUI apps.</p>
-</div>
-<div class="paragraph">
-<p>The purpose of this document is to explain in detail, how users can utilize the various commands and functions that Study Buddy provides.</p>
-</div>
-<div class="paragraph">
-<p>Currently, we support both Windows and Mac operating systems.
-If you are interested, please jump to the <a href="#Quick Start">[Quick Start]</a> to get started.</p>
-</div>
-<div class="paragraph">
-<p>Hope you enjoy!</p>
+<p>The <strong>dashboard</strong> is the landing page each time the application is launched.<br>
+It consists of different components that can interact with you and provide you with meaningful information.</p>
 </div>
 <div class="sect3">
-<h4 id="useful-tips"><a class="link" href="#useful-tips">Useful tips</a></h4>
+<h4 id="navigation-menu-bar"><a class="link" href="#navigation-menu-bar">Navigation Menu Bar</a></h4>
 <div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
+<p>The <strong>menu bar</strong> is located at the top of the dashboard and is primarily used for navigation.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/nav_bar.png" alt="nav bar" width="790">
+</div>
+<div class="title">Figure 1. Menu bar</div>
+</div>
+<div class="paragraph">
+<p>Shortcuts are available for navigating to each page:</p>
+</div>
+<div class="paragraph">
+<p><kbd>F1</kbd> - Modules</p>
+</div>
+<div class="paragraph">
+<p><kbd>F3</kbd> - Statistics</p>
+</div>
+<div class="paragraph">
+<p><kbd>F4</kbd> - Calendar</p>
+</div>
+<div class="paragraph">
+<p><kbd>F5</kbd> - Productivity</p>
+</div>
+<div class="paragraph">
+<p><kbd>F6</kbd> - StudyBuddy (All Tasks)</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="all-tasks-panel"><a class="link" href="#all-tasks-panel">All Tasks Panel</a></h4>
+<div class="paragraph">
+<p>By default, the <strong>All Tasks Panel</strong> lists all unarchived task tasks with their detailed information in the order of creation date and time.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/all_tasks.png" alt="all tasks" width="600">
+</div>
+<div class="title">Figure 2. All Tasks Panel</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges"><a class="link" href="#task-badges">Task Badges</a></h5>
+<div class="paragraph">
+<p>To highlight <code>Module code</code>, <code>Task Type</code> and  <code>Task Status</code> of each task in the <strong>All Tasks list</strong> , we use <strong>Badges</strong>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Module Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light steelblue.</p>
+</li>
+<li>
+<p>If the task is not related to any module, the Module Badges will be omitted.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different types are in different colours.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Status</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different status types are in different colours.</p>
+</li>
+<li>
+<p>Tasks that are due within a week (i.e. 7 days) will be marked as <code>Due Soon</code>.
+You may need to use the refresh command (<a href="#Refresh">[Refresh]</a>) to refresh the status of all your tasks.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="tasks-due-soon-panel"><a class="link" href="#tasks-due-soon-panel">Tasks Due Soon Panel</a></h4>
+<div class="paragraph">
+<p>The tasks that are due within a week (i.e. 7 days) will be listed here.
+You can jump to <a href="#Due Soon Tasks">[Due Soon Tasks]</a> to get more details.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/due_soon.png" alt="due soon" width="600">
+</div>
+<div class="title">Figure 3. Task Due Soon Panel</div>
+</div>
+<div class="sect4">
+<h5 id="task-badges-2"><a class="link" href="#task-badges-2">Task Badges</a></h5>
+<div class="paragraph">
+<p>To highlight the <code>Weight &amp; Module Code</code>,
+<code>Time left for deadline</code> and  <code>Task Type</code> of each task in the <strong>Tasks Due Soon Panel</strong> , we use <strong>Badges</strong>.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Weight &amp; Module Code</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in steelblue.</p>
+</li>
+<li>
+<p>Display the weight and module code of a task.</p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Time left for deadline</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>All in light orange.</p>
+</li>
+<li>
+<p>Display the time left for a tasks' deadline.</p>
+</li>
+<li>
+<p>More information please refer to <a href="#Due Soon Tasks">[Due Soon Tasks]</a></p>
+</li>
+</ul>
+</div>
+</dd>
+<dt class="hdlist1">Task Type Badges</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Badges of different types are in different colors.</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="interactive-prompt-box"><a class="link" href="#interactive-prompt-box">Interactive Prompt Box</a></h4>
+<div class="paragraph">
+<p>The <strong>Interactive Prompt Box</strong> can be found at the bottom of the user interface.</p>
+</div>
+<div class="paragraph">
+<p>To interact with Study Buddy, you can enter the desired command in the box with the words <code>Please enter your command here&#8230;&#8203;</code>
+and press <kbd>enter</kbd> to execute.</p>
+</div>
+<div class="paragraph">
+<p>The reply from Study Buddy will be displayed in the box above.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/dashboard/prompt_box.png" alt="prompt box" width="790">
+</div>
+<div class="title">Figure 4. Interactive Prompt Box</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+To get more detailed information about how to use Study Buddy, please refer to <a href="#Features">[Features]</a>.
+==== Add
+(Contributed by Yuting)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This command enables you to add a new task into Study Buddy.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>You may need to adjust the size of the Study Buddy window when you launch it.</p>
+<p>Through the interaction, task&#8217;s details will be collected.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Required information: task name, task type, task deadline or duration</p>
 </li>
 <li>
-<p>The scroll bar on the right of the response box can be used to view the entire reply.</p>
+<p>Optional information: module, task description, task weight, estimated number of hours needed</p>
 </li>
 <li>
-<p>At any point during the execution of a command, you can use <code>quit</code> to quit the command and start over/try a different command.</p>
+<p>Input format requirement:</p>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 50%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Information Type</th>
+<th class="tableblock halign-left valign-top">Format Requirement</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>MODULE CODE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">2 or 3 letters + 4 digits + 1 letter (optional)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CS2101, CS2103T,<br>
+ LSM1101</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INDEX NUMBER OF<br>
+MODULE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TASK NAME</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No more than 20 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Demo presentation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>INDEX NUMBER OF<br>
+TASK TYPE</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Integer number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TASK DEADLINE<br>
+OR DURATION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Different task types apply different date and time format</p>
+<p class="tableblock">Deadline (for Assignment):<br>
+<code>HH:mm dd/MM/yyyy</code></p>
+<p class="tableblock">Duration (for other task types):<br>
+ <code>HH:mm dd/MM/yyyy-HH:mm dd/MM/yyyy</code><br></p>
+<p class="tableblock"><code>HH &#8594; hour, mm &#8594; minutes, dd &#8594; date, mm &#8594; month,
+yyyy &#8594; year</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Assignment:<br>
+23:59 01/05/2020</p>
+<p class="tableblock">Meeting:<br>
+14:0 15/04/2020-16:0 15/04/2020</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TASK DESCRIPTION</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No more than 300 characters</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">this is a valid description</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>TASK WEIGHT</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positive integer or float number from 0.0 to 100.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">12.0</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ESTIMATED NUMBER OF HOURS NEEDED</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Positive integer or float number</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">10.0</p></td>
+</tr>
+</tbody>
+</table>
 </li>
 <li>
-<p>Study Buddy will analyze your input and reply accordingly.
-It utilizes an "interactive command prompt". (explained in each command&#8217;s description under <a href="#Features">[Features]</a>)</p>
+<p>Other constraints::</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
+<li>
+<p>The application does not allow you to enter a name that has special characters (any character that is not a letter in the alphabet).</p>
 </li>
 <li>
-<p>In this document, <kbd>enter</kbd> indicates <strong>the enter key on your keyboard</strong>.</p>
+<p>The application does not allow you to assign date time that has already passed to a task.
+It must be a time in the future.</p>
 </li>
 <li>
-<p>In this document, <strong>|</strong> indicates an <strong>alternative option</strong> (i.e. A | B implies A or B).</p>
+<p>For duration, the two dates should follow the order of <code>start date</code>-<code>end date</code>, the <code>end date</code> should be later than <code>start date</code>.</p>
 </li>
 <li>
-<p>A task&#8217;s <strong>index number</strong>, refers to the number displayed on the left of a task in <strong>All Tasks Panel</strong>.
-Note that the index of the same task could be different after some commands, such as <code>filter</code>, <code>find</code> and <code>sort</code>.</p>
+<p>The total weight of tasks under the same module is capped at 100.0.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Both <code>archived</code> and <code>not archived tasks</code> will be taken into consideration.</p>
+</li>
+<li>
+<p>This constraint also applies to tasks without module information.
+Those tasks will be treated as from a same extra module.
+It is designed for you to practice your time management skill :).</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="commonly-used-symbols"><a class="link" href="#commonly-used-symbols">Commonly Used Symbols</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This symbol indicates something you should take note of.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-This symbol indicates a tip that you could use.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-This symbol indicates an aspect that should be used with caution.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This symbol indicates something to which we want to draw your attention.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="delete"><a class="link" href="#delete">Delete</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>This commands deletes a task from the existing list, using the index provided by you. Index simply refers to the number on the left of the task in the <code>All Tasks</code> panel.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Once a task is deleted, it cannot be retrieved.
-Use this command with caution!
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>After having added a task, you realise that there has been a change and you do not need to do that task anymore.</p>
-</div>
-<div class="paragraph">
-<p>Study Buddy provides you an option to delete that task from the list!</p>
-</div>
-<div class="paragraph">
-<p>To <code>delete</code>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initiate the command using keyword <code>delete</code></p>
 </li>
 <li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/delete/delete_index.png" alt="delete index" width="790">
-</div>
-<div class="title">Figure 1. Response to 'delete'</div>
+<p>All <code>index numbers</code> entered should be positive and within a valid range. (i.e When there is only 5 modules available, the valid module index number range is 1 to 5).</p>
+</li>
+<li>
+<p>The "Required Information" cannot be empty, on the other hand, you can press <kbd>enter</kbd> to skip the "Optional Information".</p>
+</li>
+</ol>
 </div>
 </li>
 <li>
-<p>Type the index of the task you want to delete. In this case, the index entered is 1.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/delete/delete_confirm.png" alt="delete confirm" width="790">
-</div>
-<div class="title">Figure 2. Asks for confirmation</div>
-</div>
-</li>
+<p>Adding duplicate tasks:</p>
+<div class="olist lowerroman">
+<ol class="lowerroman" type="i">
 <li>
-<p>Press <kbd>enter</kbd> again to confirm</p>
+<p>Look at <a href="#Add duplicates">[Add duplicates]</a> for more information.</p>
 </li>
-<li>
-<p>Task has been deleted!
-You will notice that the task at the index you selected has disappeared from the list of tasks.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/delete/delete_result.png" alt="delete result" width="790">
-</div>
-<div class="title">Figure 3. Updated All Tasks Panel</div>
+</ol>
 </div>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect3">
-<h4 id="add-duplicates"><a class="link" href="#add-duplicates">Add duplicates</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>This command accounts for you adding duplicate tasks.
-When you attempt to add a duplicate, the name will be modified slightly so that you can differentiate them.</p>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>Say you have tried to add a task, you enter all the fields needed and at the end, you realise that you have already added this task.</p>
-</div>
-<div class="paragraph">
-<p>Study Buddy lets you add duplicate tasks with a slight modification!
-So, now you can add the task and edit it as needed.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-A task is considered duplicate when the name, type, module, description, weightage, estimated time cost and deadline are the same.
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-This feature is case sensitive i.e if you have one task named "Homework" and another named "homework", they will be considered to be different.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To <code>add duplicates</code>:</p>
+<p>To <code>add</code>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Follow the same steps as in <a href="#Add">[Add]</a>, but enter a duplicate task.</p>
+<p>Initiate the command using keyword <code>add</code> + <kbd>enter</kbd>.</p>
 </li>
 <li>
-<p>Study Buddy should respond with:</p>
+<p>Study Buddy should start with asking module information with <code>a list of available modules</code> as:</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/duplicate/addDuplicate.png" alt="addDuplicate" width="790">
+<img src="../images/basic/add/add_module.png" alt="add module" width="790">
 </div>
-<div class="title">Figure 4. Reponse to adding a duplicate</div>
+<div class="title">Figure 5. Reponse to 'add', asks for module</div>
 </div>
 </li>
 <li>
-<p>Type in <code>yes</code> if you would like to continue and <code>no</code> if you do not.</p>
+<p>You can link this task with a module by entering its <code>MODULE CODE</code> | <code>INDEX NUMBER OF MODULE</code> here , or you can press <kbd>enter</kbd> to skip.
+Here we use "1" (CS2101) as an example.</p>
 </li>
 <li>
-<p>If you type <code>yes</code> and press <kbd>enter</kbd></p>
+<p>After the selection of module, Study Buddy should ask for the task name.
+Here we use "new task" as an example.</p>
 </li>
 <li>
-<p>The Study Buddy should respond with:</p>
+<p>After entered the task&#8217;s name and press <kbd>enter</kbd>, Study Buddy should prompt for task type with the list of available types as:</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/duplicate/addDuplicate1.png" alt="addDuplicate1" width="790">
+<img src="../images/basic/add/add_task_type.png" alt="add task type" width="790">
 </div>
-<div class="title">Figure 5. Response to adding duplicate</div>
-</div>
-</li>
-<li>
-<p>As you can see in the snippet above, Study Buddy will append a number in brackets to the task name.
-This number corresponds to the number of times this task name has been duplicated.</p>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-If you add two duplicates of a task (eg: task(1) and task(2)), and then delete task(1), when u try to duplicate it again, it will get added as task(3).
-The number will not reset to 2, because this is the third time you are attempting to duplicate.
-</td>
-</tr>
-</table>
+<div class="title">Figure 6. Asks for task&#8217;s type</div>
 </div>
 </li>
 <li>
-<p>If you choose to enter <code>no</code> at step 2, this is what you will see.</p>
+<p>You can use the <code>INDEX NUMBER</code> here to choose a task type.
+Here we use "1" (Assignment) as an example.</p>
+</li>
+<li>
+<p>After the selection of task type, Study Buddy will prompt for new task&#8217;s date-time information together with the type related date-time format (i.e. different task types support different date-time formats).
+Here we use "14:00 04/05/2020" as an example.</p>
+</li>
+<li>
+<p>Next, Study Buddy should ask for the new task&#8217;s description, and we use "new task description" as an example.</p>
+</li>
+<li>
+<p>Then, Study Buddy should ask for the new task&#8217;s weight.
+Here we use "10" as an example.</p>
+</li>
+<li>
+<p>Next, Study Buddy will prompt for the estimated number of hours needed for this new task.
+Here we use "10" as an example.</p>
+</li>
+<li>
+<p>Once you specify the estimated time needed and press <kbd>enter</kbd>, Study Buddy should respond with the task details collected and ask for your confirmation to add the task as:</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/duplicate/addDuplicate2.png" alt="addDuplicate2" width="790">
+<img src="../images/basic/add/add_task_info_1.png" alt="add task info 1" width="790">
 </div>
-<div class="title">Figure 6. Response to choosing not to add</div>
+<div class="title">Figure 7. Asks for user conformation to add a new task</div>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/basic/add/add_task_info_2.png" alt="add task info 2" width="790">
+</div>
+<div class="title">Figure 8. Task details collected</div>
+</div>
+</li>
+<li>
+<p>Now, by pressing <kbd>enter</kbd> the new task will be added into your Study Buddy.
+Meanwhile, the <strong>All Tasks Panel</strong> will update accordingly.
+For this example, the panel should update as below.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/basic/add/add_result.png" alt="add result" width="790">
+</div>
+<div class="title">Figure 9. New task added</div>
 </div>
 </li>
 </ol>
@@ -628,503 +888,161 @@ The number will not reset to 2, because this is the third time you are attemptin
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can view all tasks that have been auto-edited this way, using the <a href="#view-renamed">View renamed</a>
+Remember, you can use <code>quit</code> command to quit at any step.
+==== Edit
+(Contributed by Yuting)
 </td>
 </tr>
 </table>
 </div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Use the <a href="#Edit">[Edit]</a> to edit your duplicated tasks!
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="view-renamed"><a class="link" href="#view-renamed">View renamed</a></h4>
 <div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>This commands filters all renamed tasks in the list i.e tasks that have a number appended to their names.</p>
+<p>This command is for you to edit an existing task.
+To indicate the task you want to edit, you need to provide its index number.</p>
 </div>
 <div class="paragraph">
 <p><strong>Example:</strong></p>
 </div>
 <div class="paragraph">
-<p>Say you want to go back and edit all the renamed tasks in your list.
-However, you do not want to scroll through the entire list to find them.</p>
+<p>Say when there are some typo in an existing task.
+You can use this command to edit as you wish.</p>
 </div>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>Study Buddy provides you an option to view all your renamed tasks in the list!</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-You will still need to navigate to the main list and use that index to perform any index based operations (eg: delete, edit etc)
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To <code>view renamed</code>:</p>
+<p><strong>Constraints</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Initiate the command using keyword <code>view renamed</code></p>
+<p>Each new value entered will be checked under the same constrain of add command.
+More info you can refer from <a href="#Add">[Add]</a>.</p>
 </li>
 <li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/viewrenamed/viewRenamed1.png" alt="viewRenamed1" width="790">
-</div>
-<div class="title">Figure 7. Response to 'view renamed'</div>
-</div>
+<p>When editing weight or module, the application will also make sure the total weight of related module&#8217;s tasks will not overflow (i.e. exceed 100).</p>
 </li>
 <li>
-<p>Press <kbd>enter</kbd> again to confirm</p>
+<p>You cannot edit a task to be a duplicate. i.e all the fields cannot be the same as a task that already exists.</p>
 </li>
 <li>
-<p>Renamed tasks have been filtered!</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/viewrenamed/viewRenamed2.png" alt="viewRenamed2" width="790">
-</div>
-<div class="title">Figure 8. Updated list of renamed tasks</div>
-</div>
+<p>Due to the <code>deadline/Duration format</code> is different from <code>Assignment</code> to <code>Other Task Types</code>, we currently don&#8217;t support:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>Assignment</code> &#8594; <code>Another Tsk Type</code> editing</p>
+</li>
+<li>
+<p><code>Another Tsk Type</code> &#8594; <code>Assignment</code> editing</p>
 </li>
 </ol>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-In order to navigate back to the main list, use <a href="#List">[List]</a>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect3">
-<h4 id="Filter"><a class="link" href="#Filter">Filter</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>This commands helps you filter your tasks by category.
-The two categories available are status and type.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Note that Due Soon tasks are already filtered for you.
-Refer to <a href="#due-soon-tasks">Due Soon Tasks</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-To navigate back to your main list, check out <a href="#List">[List]</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>Say you want to view a list of all your pending tasks.</p>
-</div>
-<div class="paragraph">
-<p>Study Buddy provides an option to filter your list!</p>
-</div>
-<div class="paragraph">
-<p>To <code>filter</code>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initiate the command using keyword <code>filter</code></p>
-</li>
-<li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/filter/filter_term.png" alt="filter term" width="790">
-</div>
-<div class="title">Figure 9. Response to 'filter'</div>
-</div>
-</li>
-<li>
-<p>Enter your choice.
-If you enter 1, you have chosen to filter by status.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/filter/filter_status.png" alt="filter status" width="790">
-</div>
-<div class="title">Figure 10. Response to filter by 'status'</div>
-</div>
-</li>
-<li>
-<p>You can then proceed to choose what status type you would like to filter by.
-Here we have filtered by "Pending" as an example.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/filter/filter_status_result.png" alt="filter status result" width="790">
-</div>
-<div class="title">Figure 11. Response to filter by status tag 'Pending'</div>
-</div>
-</li>
-<li>
-<p>At point 3 above, if you enter 2 instead, you have chosen to filter by task types.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/filter/filter_type.png" alt="filter type" width="790">
-</div>
-<div class="title">Figure 12. Response to filter by task 'type'</div>
-</div>
-</li>
-<li>
-<p>Once again, imagine your study buddy currently looks like Figure 30 above. (at point 4)</p>
-</li>
-<li>
-<p>You can then proceed to choose what task type you would like to filter by.
-Here we have filtered by "assignment" as an example.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/filter/filter_type_result.png" alt="filter type result" width="790">
-</div>
-<div class="title">Figure 13. Response to filter by task type 'assignment'</div>
 </div>
 </li>
 </ol>
 </div>
 </div>
-<div class="sect3">
-<h4 id="Refresh"><a class="link" href="#Refresh">Refresh</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
 </div>
 <div class="paragraph">
-<p>This commands refreshes the list of tasks Due Soon as well as status tags.</p>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-Due soon list shows tasks due within the next week.
-Details are in <a href="#due-soon-tasks">Due Soon Tasks</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Status tags include information on the tasks' status, eg: pending, overdue etc.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>Say you left Study Buddy open for a few days.
-When you come back, you notice that the time left for the deadline on the Due Soon tasks is not accurate.</p>
-</div>
-<div class="paragraph">
-<p>You can refresh them!</p>
-</div>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-Anytime you notice an inconsistency in time left/status, use this command!
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>To <code>refresh</code>:</p>
+<p>To <code>edit</code>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Say this is what Study Buddy looks like and you notice that the task "Homework 1" is still in pending status although it should be in due soon status.</p>
+<p>Initiate the command using keyword <code>edit</code> + <kbd>enter</kbd>.</p>
+</li>
+<li>
+<p>Study Buddy should start the task editing interaction by asking you the index number of the desired task.
+Here use "1" (Homework 1) as an example.</p>
+</li>
+<li>
+<p>When you specified the target task, Study Buddy should continue the interaction by prompting you with the list of editable information.
+You can choose any of them via an index number.
+Here we use "2" (Task name) as an example.</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/basic/refresh/refresh_before.png" alt="refresh before" width="790">
+<img src="../images/basic/edit/edit_response_index.png" alt="edit response index" width="790">
 </div>
-<div class="title">Figure 14. Current state (needs to be refreshed)</div>
+<div class="title">Figure 10. List of editable fields</div>
 </div>
 </li>
 <li>
-<p>Initiate the refresh command using keyword <code>refresh</code> and press <kbd>enter</kbd> to confirm the action.</p>
+<p>After you selected the field to edit, Study Buddy should asks you for the new value.
+For this example, let&#8217;s use "Updated Task" as the new task name.</p>
 </li>
 <li>
-<p>Tasks have been refreshed! You will notice that the pending task has now moved to the due soon list and the status has been updated.</p>
+<p>Once you specified the updated information and press <kbd>enter</kbd>, the updated record will be captured, and the <strong>All Tasks Panel</strong> will update automatically.
+For this example, the panel should update as below.</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/basic/refresh/refresh_result.png" alt="refresh result" width="790">
+<img src="../images/basic/edit/edit_result.png" alt="edit result" width="790">
 </div>
-<div class="title">Figure 15. Refreshed Study Buddy</div>
+<div class="title">Figure 11. Task edited</div>
+</div>
+<div id="Sort" class="paragraph">
+<p>==== Sort
+(Contributed by Yuting)</p>
 </div>
 </li>
 </ol>
 </div>
-</div>
-<div class="sect2">
-<h3 id="due-soon-tasks"><a class="link" href="#due-soon-tasks">Due Soon Tasks</a></h3>
 <div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
+<p>This command is for you to reorder the task list in <strong>All Tasks Panel</strong>.</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Currently you can sort tasks by their</dt>
+<dd>
+<div class="ulist">
+<ul>
+<li>
+<p>Deadline / Task Start Date</p>
+</li>
+<li>
+<p>Task Name</p>
+</li>
+<li>
+<p>Creation Date &amp; Time</p>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>The Due Soon task list is always on display in your application under <code>Study Buddy</code> &#8594; <code>All tasks</code></p>
+<p><strong>Example</strong></p>
 </div>
 <div class="paragraph">
-<p>It provides the following functionality:</p>
+<p>When you want to sort all your unarchived tasks by their deadline or start date, you may utilize this command to achieve the desired order.</p>
+</div>
+<div class="paragraph">
+<p>To <code>sort</code>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>It displays your tasks that are due within the next week. (uses deadline you have provided)</p>
+<p>Initiate the command using keyword <code>sort</code> + <kbd>enter</kbd>.</p>
+</li>
+<li>
+<p>Study Buddy should provide the list of sorting options as below， and you can use the index number to select the desired sort.
+Here we use <code>1</code> (Deadline / Task Start Date) as an example.</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/duesoon/due_soon.png" alt="due soon" width="790">
+<img src="../images/basic/sort/sort_term.png" alt="sort term" width="790">
 </div>
-<div class="title">Figure 16. Due Soon List</div>
+<div class="title">Figure 12. Sorting options and the order of the tasks before sort</div>
 </div>
 </li>
 <li>
-<p>It automatically sorts these tasks in an ascending order of deadlines.</p>
+<p>After the selection, Study Buddy should ask for your confirmation to perform the reorder.
+You can press <kbd>enter</kbd> again to confirm.
+Meanwhile, the tasks in <strong>All Tasks Panel</strong> will be sorted accordingly.</p>
 <div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/duesoon/due_soon_sort.png" alt="due soon sort" width="790">
+<img src="../images/basic/sort/sort_result.png" alt="sort result" width="790">
 </div>
-<div class="title">Figure 17. Due Soon List Auto-Sort</div>
-</div>
-</li>
-<li>
-<p>It automatically adds applicable tasks when you make changes to your main list, such as add (<a href="#Add">[Add]</a>) or delete (<a href="#delete">Delete</a>).</p>
-</li>
-<li>
-<p>It displays a tag with the time left to the deadline.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/duesoon/due_soon_tag.png" alt="due soon tag" width="790">
-</div>
-<div class="title">Figure 18. Due Soon List Time Tags</div>
-</div>
-</li>
-<li>
-<p>It provides a <a href="#Refresh">Refresh</a> function that allows you to refresh time/state of this list if needed.</p>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Time left is never displayed in days and minutes.
-Hence if the current time is 9:00 am on 01/04/2020 and the task deadline is 9:02 am on 02/04/2020, it will show time left as 1 day. (not 1 day and 2 minutes)
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Due soon list will never display finished tasks. eg: if you unarchive a completed task, it will not appear in the Due Soon list.
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">Saving Data</a></h3>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>Study Buddy data is automatically saved in the hard disk after any command that changes the data.</p>
-</div>
-<div class="paragraph">
-<p>There is no need to save manually.</p>
-</div>
-<div class="paragraph">
-<p>When the application is closed and re-opened, you should be able to see all the data you have added previously!</p>
-</div>
-<div class="sect3">
-<h4 id="clear"><a class="link" href="#clear">Clear</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>This commands clears all data in the Study Buddy.</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-Be careful with this command!
-It will remove any data you may have entered into the Study Buddy and you cannot retrieve it.
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>Say you have finished a semester and would like to clear everything in your Study Buddy and start over.</p>
-</div>
-<div class="paragraph">
-<p>You can always clear everything!</p>
-</div>
-<div class="paragraph">
-<p>To <code>clear</code>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initiate the command using keyword <code>clear</code></p>
-</li>
-<li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/clear/clear_confirm.png" alt="clear confirm" width="790">
-</div>
-<div class="title">Figure 19. Response to 'clear'</div>
-</div>
-</li>
-<li>
-<p>Type yes and hit <kbd>enter</kbd> again to confirm</p>
-</li>
-<li>
-<p>Study Buddy has been cleared completely!</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/clear/clear_result.png" alt="clear result" width="790">
-</div>
-<div class="title">Figure 20. View empty Study Buddy</div>
-</div>
-</li>
-<li>
-<p>At step 2, if you choose to type no and hit <kbd>enter</kbd>, this is what you will see.</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/clear/clear_no_result.png" alt="clear no result" width="790">
-</div>
-<div class="title">Figure 21. Response to choosing not to clear</div>
-</div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="exit"><a class="link" href="#exit">Exit</a></h4>
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="paragraph">
-<p>This command exits from Study Buddy.</p>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-All your data will be saved and reloaded when you open the application later!
-You can find details about this in <a href="#saving-data">Saving Data</a>
-</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p><strong>Example:</strong></p>
-</div>
-<div class="paragraph">
-<p>After working all day, you would like to close the application and have a good night&#8217;s sleep.</p>
-</div>
-<div class="paragraph">
-<p>You can always exit the application!</p>
-</div>
-<div class="paragraph">
-<p>To <code>exit</code>:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Initiate the command using keyword <code>bye</code></p>
-</li>
-<li>
-<p>Study Buddy should respond with:</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/exit/exit_confirm.png" alt="exit confirm" width="790">
-</div>
-<div class="title">Figure 22. Response to 'bye'</div>
-</div>
-</li>
-<li>
-<p>Type 'yes' and press <kbd>enter</kbd> to exit, the Study Buddy window will close automatically.</p>
-</li>
-<li>
-<p>If instead, you type 'no' and press <kbd>enter</kbd>, this is what you will see,</p>
-<div class="imageblock" style="text-align: center">
-<div class="content">
-<img src="../images/basic/exit/exit_no.png" alt="exit no" width="790">
-</div>
-<div class="title">Figure 23. Response to choosing not to exit</div>
+<div class="title">Figure 13. The order of the tasks after sort</div>
 </div>
 </li>
 </ol>
@@ -1136,75 +1054,334 @@ You can find details about this in <a href="#saving-data">Saving Data</a>
 <i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-You can still use <code>quit</code> command to go back!
+The tasks in <strong>All Tasks Panel</strong> will not change back to the original order by itself.<br>
+You can use <code>sort</code> &#8594; <code>Creation Date &amp; Time</code> to do so.
+=== Statistics
+(Contributed by Yuting)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>With all the tasks and modules' information you entered, Study Buddy can provide you with a real-time visualized statistics about:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Task status</p>
+</li>
+<li>
+<p>Module related tasks' deadline/ start date</p>
+</li>
+<li>
+<p>Module related tasks' weight</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>It utilizes different types of charts to make the information more intuitive.
+In addition, the chart is always updated in sync with your task records.
+Especially when you execute commands such as
+<code>add</code> <code>edit</code> <code>delete</code> <code>sort</code>  <code>find</code> <code>archive</code> <code>done</code> <code>list</code> and <code>clear</code>.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+The colour theme will also change randomly, hope you enjoy :)
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The statistics feature is built on top of the data collected from the basic functionality described in <a href="#Basic features">[Basic features]</a>.
+Which means Study Buddy only supports keyboard input for statistics generating.<br>
+Therefore, even though this feature involves mouse-clicking, it is still designed for a fast typist.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="navigate-to-statistics-page"><a class="link" href="#navigate-to-statistics-page">Navigate to Statistics Page</a></h4>
+<div class="paragraph">
+<p>You can navigate to Statistics page by clicking the <strong>Statistics</strong> from the menu bar.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_nav.png" alt="stats nav" width="790">
+</div>
+<div class="title">Figure 14. Entry of Statistics page</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="statistics-page-user-interface-and-interaction"><a class="link" href="#statistics-page-user-interface-and-interaction">Statistics Page User Interface and Interaction</a></h4>
+<div class="paragraph">
+<p>The left panel contains different charts for different statistics.
+You can use the tabs circled in light orange to navigate.</p>
+</div>
+<div class="paragraph">
+<p>When you click on a statistics chart, the associated task records will be listed automatically in the right-side panel.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_ui.png" alt="stats ui" width="790">
+</div>
+<div class="title">Figure 15. Statistics Page User Interface </div>
+</div>
+<div class="sect4">
+<h5 id="task-status-tab"><a class="link" href="#task-status-tab">Task Status Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>This clickable <strong>pie chart</strong> compares the number of tasks in different statuses.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_pie.png" alt="stats pie" width="790">
+</div>
+<div class="title">Figure 16. Task Status Chart</div>
+</div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>When you click on the chart, all tasks with the selected status will display on the right-side panel automatically.</p>
+<div class="paragraph">
+<p>Here is an example when you are clicking on the <strong>Due Soon</strong> portion.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The part highlighted by light purple lines represents all your Due Soon tasks.
+When you are clicking on it, all tasks with Due Soon status will be listed in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_pie_click.png" alt="stats pie click" width="790">
+</div>
+<div class="title">Figure 17. Clicking on 'Due Soon' part</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="module-related-tasks-deadline-start-date-tab"><a class="link" href="#module-related-tasks-deadline-start-date-tab">Module Related Tasks' Deadline/Start Date Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>This clickable <strong>area chart</strong> summarizes the task deadlines or start dates for different modules.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_area.png" alt="stats area" width="790">
+</div>
+<div class="title">Figure 18. Module Related Tasks' Deadline/Start Date Chart</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Chart Details</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>X-axis</strong> represents a particular date.</p>
+</li>
+<li>
+<p>The <strong>Y-axis</strong> represents the number of tasks.</p>
+</li>
+<li>
+<p>The <strong>area</strong> (i.e. The triangles or quadrilaterals exclude their vertices) with the same background colour represents the tasks under the same module.</p>
+</li>
+<li>
+<p>The <strong>data point</strong> (i.e. The vertices of the triangles or quadrilaterals) represents tasks under a particular module, which will due or start on the same specific data.</p>
+</li>
+<li>
+<p>Tasks under different module have a different background colour.</p>
+</li>
+<li>
+<p>Only the tasks due or start within <strong>the next 60 days</strong> will display in both chart or right-side panel.</p>
+</li>
+<li>
+<p>Since the colour of each module is translucent, "extra" colours may appear as a result of data overlapping.</p>
+</li>
+<li>
+<p>When clicking on an overlapping area, only one layer&#8217;s related records will be listed in the right-side panel.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>After you click on the chart, the related task records will display on the right-side panel automatically.</p>
+<div class="paragraph">
+<p>Here are two different behaviours according to the place you click.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Click on data area</strong>:</p>
+<div class="paragraph">
+<p>The tasks under a particular module will be listed in the right-side panel.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example when you are clicking on the area of module "CS2101".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The parts highlighted using light purple lines represents the tasks under module "CS2101".
+When you are clicking on those areas, the tasks under CS2101 and will due or start within the next 60 days will display in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_area_click_area.png" alt="stats area click area" width="790">
+</div>
+<div class="title">Figure 19. Clicking on the area of module 'CS2101'</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Click on data point</strong>:</p>
+<div class="paragraph">
+<p>The tasks under a particular module and will due or start on a specific date will be listed in the right-side panel.</p>
+</div>
+<div class="paragraph">
+<p>Here is an example when you are clicking on the data point of tasks under module "CS2101" and will due or start on 13/04/2020.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The point circled in light purple is the data point you clicked.
+After you clicked on this point, the tasks under module "CS2101" and will due or start on 13/04/2020 will display in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_click_point.png" alt="stats click point" width="790">
+</div>
+<div class="title">Figure 20. Clicking on the data point of module 'CS2101&#8217;s tasks which will due or start on 13/04/2020</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="module-related-tasks-weight-tab"><a class="link" href="#module-related-tasks-weight-tab">Module Related Tasks' Weight Tab</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Introduction</dt>
+<dd>
+<p>This clickable <strong>stacked bar chart</strong> compares the weight of different types of tasks in each module.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_bar.png" alt="stats bar" width="790">
+</div>
+<div class="title">Figure 21. Module Related Tasks' Weight Chart</div>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Chart Details</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>X-axis</strong> represents different modules.</p>
+</li>
+<li>
+<p>The <strong>Y-axis</strong> represents the weight-sum under the same module.</p>
+</li>
+<li>
+<p>The <strong>blocks</strong> in each bar represent the total weight of a particular task type.</p>
+</li>
+<li>
+<p>Different task type has a different background colour.</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</dd>
+<dt class="hdlist1">Clicking Action</dt>
+<dd>
+<p>After you click on the chart, the tasks under the selected module and type will display on the right-side panel automatically.</p>
+<div class="paragraph">
+<p>Here is an example when you are clicking on the block which represents the assignments of module "CS2101".</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The block highlighted using light purple lines represents the assignments of module "CS2101".
+When you are clicking it, all assignments of module "CS2101" will show in the right-side panel.</p>
+<div class="paragraph">
+<p>You can refer to the screenshot below where the relevant information is highlighted for you.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/stats/stats_bar_click.png" alt="stats bar click" width="790">
+</div>
+<div class="title">Figure 22. Clicking on the block of 'CS2101''s assignments</div>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+As the data of charts are filled dynamically, thus it is possible that their labels can overlap together.<br>
+This is an unfixed bug regarding the JDK which is caused by JavaFX chart off-sync.
+To get more information, you may refer to <a href="{jdk_bug_report}">here</a>.<br>
+When this issue happens, you can use any command that can trigger chart updating to refresh the chart.
 </td>
 </tr>
 </table>
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="Summary"><a class="link" href="#Summary">Command Summary</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>(Contributed by Souwmyaa)<br></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>help <a href="#Help">[Help]</a></p>
-</li>
-<li>
-<p>add <a href="#Add">[Add]</a></p>
-</li>
-<li>
-<p>edit <a href="#Edit">[Edit]</a></p>
-</li>
-<li>
-<p>archive <a href="#Archive/ Unarchive">[Archive/ Unarchive]</a></p>
-</li>
-<li>
-<p>clear <a href="#clear">Clear</a></p>
-</li>
-<li>
-<p>create mods <a href="#Create Modules">[Create Modules]</a></p>
-</li>
-<li>
-<p>delete <a href="#delete">Delete</a></p>
-</li>
-<li>
-<p>view renamed <a href="#view-renamed">View renamed</a></p>
-</li>
-<li>
-<p>done <a href="#Done">[Done]</a></p>
-</li>
-<li>
-<p>find <a href="#Find">[Find]</a></p>
-</li>
-<li>
-<p>list <a href="#List">[List]</a></p>
-</li>
-<li>
-<p>goal <a href="#Goal">[Goal]</a></p>
-</li>
-<li>
-<p>filter <a href="#Filter">Filter</a></p>
-</li>
-<li>
-<p>sort <a href="#Sort">[Sort]</a></p>
-</li>
-<li>
-<p>refresh <a href="#Refresh">Refresh</a></p>
-</li>
-<li>
-<p>calendar <a href="#Calendar">[Calendar]</a></p>
-</li>
-<li>
-<p>bye <a href="#exit">Exit</a></p>
-</li>
-</ol>
 </div>
 <div class="sect2">
 <h3 id="developer-guide"><a class="link" href="#developer-guide">Developer Guide</a></h3>
@@ -1219,221 +1396,153 @@ You can still use <code>quit</code> command to go back!
 </tbody>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="introduction-2"><a class="link" href="#introduction-2">Introduction</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Study Buddy is a task-management tool made for students who want to be able to track and manage their tasks in one place.</p>
-</div>
-<div class="paragraph">
-<p>It uses various visualization tools such as pie charts and calendars, provides useful features such as the Due Soon task list, a productivity tracker etc to make task management simple and convenient.</p>
-</div>
-<div class="paragraph">
-<p>In particular, Study Buddy is a Command Line Interface (<a href="#CLI">CLI</a>) application that also provides some Graphical User Interface (<a href="#GUI">GUI</a>). This means that users are expected to interact with their Study Buddy mainly through the command line, but each command executed will evoke a visual response as well.</p>
-</div>
-<div class="paragraph">
-<p>The purpose of this guide is to help potential developers get up to speed on the Study Buddy code base and functionality. We hope that this document will ease the process of further enhancing and developing Study Buddy.</p>
-</div>
 <div class="sect2">
-<h3 id="Design-Model"><a class="link" href="#Design-Model">Model component</a></h3>
+<h3 id="ui-component"><a class="link" href="#ui-component">UI component</a></h3>
 <div class="imageblock">
 <div class="content">
-<img src="../images/ModelClassDiagram.png" alt="ModelClassDiagram" width="500">
+<img src="../images/UiClassDiagram.png" alt="UiClassDiagram" width="650">
 </div>
-<div class="title">Figure 24. Structure of the Model Component</div>
-</div>
-<div class="paragraph">
-<p><strong>API</strong> : <a href="{repoURL}/blob/master/src/main/java/draganddrop/studybuddy/model/Model.java"><code>Model.java</code></a></p>
+<div class="title">Figure 23. Structure of the UI Component</div>
 </div>
 <div class="paragraph">
-<p>The <code>Model</code>,</p>
+<p><strong>API</strong> : <a href="{repoURL}/tree/master/src/main/java/draganddrop/studybuddy/ui"><code>Ui.java</code></a></p>
 </div>
+<div class="paragraph">
+<p>The <code>UI</code> consists of a <code>MainWindow</code> which is made up by different components such as <code>StatusBarFooter</code>, <code>FeedbackDisplayBox</code>,
+ <code>CommandBox</code> as well as variants <code>Panels</code> and <code>Cards</code>. All these components, including the <code>MainWindow</code>, inherit from the abstract <code>UiPart</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The <code>UI</code> component uses JavaFx UI framework.
+The layout of these UI parts are defined in matching <code>.fxml</code> files that are in the <code>src/main/resources/view</code> folder.
+For example, the layout of the <a href="{repoURL}/blob/master/src/main/java/draganddrop/studybuddy/ui/MainWindow.java"><code>MainWindow</code></a> is specified in <a href="{repoURL}/blob/master/src/main/resources/view/MainWindow.fxml"><code>MainWindow.fxml</code></a></p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">The <code>UI</code> component</dt>
+<dd>
 <div class="ulist">
 <ul>
 <li>
-<p>stores a <code>UserPref</code> object that represents the user&#8217;s preferences.</p>
+<p><strong>Interacts with user</strong> in an interactive process with the help of <code>Logic</code> component.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>CommandBox</code> collects the user keyboard input.</p>
 </li>
 <li>
-<p>stores the Study Buddy data.</p>
+<p><code>Logic</code> parses user input in each interaction and executes the command subsequently if the interaction ends without any exception.</p>
 </li>
 <li>
-<p>exposes an unmodifiable <code>ObservableList&lt;Task&gt;</code> that can be 'observed' e.g. the UI can be bound to this list so that the UI automatically updates when the data in the list change.</p>
-</li>
+<p><code>FeedbackDisplayBox</code> responses system information to user, such as error message and command execution result.</p>
+<div class="ulist">
+<ul>
 <li>
-<p>does not depend on any of the other three components.</p>
+<p>When invalid input received, proper message will respond via <code>FeedbackDisplayBox</code>. The interaction of the command will not be terminated, user can continue with the process with valid input.</p>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="due-soon-tasks-feature"><a class="link" href="#due-soon-tasks-feature">Due Soon Tasks Feature</a></h3>
+</li>
+<li>
+<p><strong>Listens for changes to Model data</strong> so that the UI can be updated simultaneously.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>All Cards components and <code>CalenderPanel</code>, <code>ModuleListPanel</code>, <code>ProductivityPanel</code> and <code>TaskSummaryPanel</code> will listen to
+the changes to Model data.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+The command execution will only terminate in two scenarios:<br>
+1.  When the command is successfully executed.<br>
+2.  When the user enter <code>quit</code> and <kbd>enter</kbd> to exit the execution.
+=== Interactive Command Process Feature
+</td>
+</tr>
+</table>
+</div>
 <div class="sect3">
 <h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
-<div class="paragraph">
-<p>The Due Soon Tasks feature allows users to view the tasks that have deadlines within the next week.</p>
-</div>
-<div class="paragraph">
-<p>This feature is implemented using a panel on the main window with a list of tasks Due Soon that is updated with every command that may affect Due Soon task list (such as add, delete or archive).</p>
-</div>
-<div class="paragraph">
-<p>Some situations that trigger due soon feature are:</p>
-</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>When user enters a task:</strong></p>
+<p><strong>Feature introduction</strong></p>
+<div class="paragraph">
+<p>The Interactive Command Process Feature allows user to execute his/her command in an
+interactive way.</p>
+</div>
+</li>
+<li>
+<p><strong>Implementation detail</strong></p>
+<div class="paragraph">
+<p>This feature applies on all commands provided by Study Buddy and is implemented using:</p>
+</div>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>What it does:<br></p>
+<p>The <code><strong>CommandBox</strong></code> from <code>UI</code> component to collect user input and init an associate interactivePrompt</p>
+</li>
+<li>
+<p>The <code><strong>InteractivePrompt</strong></code> from <code>Logic</code> component to parse user input step by step and generate meaningful response
+message accordingly.
+It also produces an executable <code>Command</code> from each successful interaction to perform the user&#8217;s desired action.</p>
 <div class="olist lowerroman">
 <ol class="lowerroman" type="i">
 <li>
-<p>When a task that is added to the main list, is due within the next week, it is automatically added to the list of due soon tasks.<br></p>
-</li>
-<li>
-<p>The list is automatically sorted to be in increasing order of deadlines.<br></p>
-</li>
-<li>
-<p>The time left for the deadline is also added.</p>
-<div class="imageblock">
+<p>Different types of <code>InteractivePrompt</code> such as <code>AddTaskInteractivePrompt</code> are provided to handel interactions with different purpose.</p>
+<div class="imageblock" style="text-align: center">
 <div class="content">
-<img src="../images/AddDueSoonActivityDiagram.png" alt="AddDueSoonActivityDiagram" width="200">
+<img src="../images/AddTaskObjectDiagram.png" alt="AddTaskObjectDiagram" width="550">
 </div>
-<div class="title">Figure 25. Activity Diagram for Add to Due Soon list</div>
+<div class="title">Figure 24. Object diagram when user add task using interactive command process</div>
+</div>
+</li>
+<li>
+<p>Allow user to quit from each step of an interaction using <code>quit</code> (case insensitive) key word. Here is an example of user quiting from add task interactive command process.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/QuitFromInteractionActivityDiagram.png" alt="QuitFromInteractionActivityDiagram" width="550">
+</div>
+<div class="title">Figure 25. Activity diagram when user quite from add task interactive command process</div>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario"><a class="link" href="#example-usage-scenario">Example Usage Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the interactive command process mechanism behaves at each step.</p>
 </div>
 <div class="paragraph">
-<p>{bl}</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Details:<br></p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>The add command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case AddTaskInteractivePrompt).<br></p>
-</li>
-<li>
-<p>In the AddTaskInteractivePrompt class, the data entered by user is parsed.<br></p>
-</li>
-<li>
-<p>If there are no errors, the AddTaskCommand object is created which triggers the addTask() function in Model.<br></p>
-</li>
-<li>
-<p>This function in turns calls addTask() function in Study Buddy.<br></p>
-</li>
-<li>
-<p>This function calls the isDueSoon() function in Task to confirm if the task belong to the due soon list.<br></p>
-</li>
-<li>
-<p>If it does, it is added to due soon list and main list, and the due soon list is sorted. Else, it is simply added to the main list.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/AddDueSoonSequence.png" alt="AddDueSoonSequence" width="800">
-</div>
-<div class="title">Figure 26. Sequence Diagram for Add to Due Soon list</div>
+<p>Step 1. The user launches the application for the first time and skips the user guid.
+By following the hint from <code>UI</code> (i.e. when <code>CommandBox</code> is idle, it should display "Please enter your command here&#8230;&#8203;"),
+he can try some random input and hit enter to get the list of available commands.</p>
 </div>
 <div class="paragraph">
-<p>{bl}</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-{bl}
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>When user deletes a task:</strong></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>What it does:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>When a task that is deleted from the main list occurs in the due soon list as well, it is automatically deleted.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DeleteDueSoonActivityDiagram.png" alt="DeleteDueSoonActivityDiagram" width="200">
-</div>
-<div class="title">Figure 27. Activity Diagram for Delete from Due Soon list</div>
-</div>
-<div class="paragraph">
-<p>{bl}</p>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Details:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>The delete command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case DeleteTaskInteractivePrompt).</p>
-</li>
-<li>
-<p>In the DeleteTaskInteractivePrompt class, the data entered by user is parsed.</p>
-</li>
-<li>
-<p>If there are no errors, the DeleteTaskCommand object is created which triggers the deleteTask() function in Model.</p>
-</li>
-<li>
-<p>This function in turns calls removeTask() function in Study Buddy.</p>
-</li>
-<li>
-<p>removeTask() calls the updateDeleteDueSoon() function in StudyBuddy which checks if the task exists in the due soon list.</p>
-</li>
-<li>
-<p>If it does, it is deleted from the due soon list and main list. Else, it is simply deleted from the main list.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DeleteDueSoonSequence.png" alt="DeleteDueSoonSequence" width="800">
-</div>
-<div class="title">Figure 28. Sequence Diagram for Delete from Due Soon list</div>
-</div>
-<div class="paragraph">
-<p>{bl}</p>
-</div>
-<div class="admonitionblock caution">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
-</td>
-<td class="content">
-The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
-</td>
-</tr>
-</table>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
+<p>Step 2. The user picks a command from the list and type it in the <code>CommandBox</code>. The guide information of the next step will
+display in <code>FeedbackDisplayBox</code> after user press enter.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -1442,621 +1551,333 @@ The lifeline for every member should end at the destroy marker (X) but due to a 
 <i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
-Other commands like edit, archive etc also trigger due soon feature in a similar manner.
+For some commands there is only one interaction involved, such as <code>help</code> and <code>list</code>. In such a case
+the application will execute the command right after user press enter.
 </td>
 </tr>
 </table>
 </div>
+<div class="paragraph">
+<p>Step 3. The user made a typo mistake in the data and time filed when adding a task record.
+Proper massage with the error type and the correct format of the data and time will be displayed in the
+<code>FeedbackDisplayBox</code>. User can follow the instruction to continue the interaction.</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The user is performing an interaction to edit a task, but realized he/she
+chose a wrong task from the list, he/she can use <code>quit</code> to exit
+the process without making any changes to the task.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-react-to-an-invalid-input"><a class="link" href="#aspect-how-to-react-to-an-invalid-input">Aspect: How to react to an invalid input</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> provides relevant error message and stays at current interaction step.</p>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>If the next input is</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Invalid: provides the relevant error message and continue waiting for another input.</p>
+</li>
+<li>
+<p>Valid: start next interaction step.</p>
+</li>
+<li>
+<p><code>quit</code>: quite from the command process.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Pros: Save the data from previous stages, especially in add task interaction, thus user no need to repeatedly
+enter the same information. Also the clear instruction provided by error message makes the
+interaction more straightforward. Besides, this approach can improve the typo-tolerance of the application.</p>
+</li>
+<li>
+<p>Cons: The interaction can only be stopped when user successfully complete the process or use
+<code>quit</code> to exit half-way.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Quite from current step with proper error message.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Quit the interaction immediately, which allows user to start with a new
+interaction. It will be useful when user want to quit from a particular process but forgets the exit command
+(i.e. <code>quit</code>).</p>
+</li>
+<li>
+<p>Cons: User has to restart the entire interaction process when the he/she enter
+invalid command.
+=== Task Summary Feature</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>When user refreshes due soon list:</strong></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>What it does:<br></p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>Refreshes the list of due soon tasks and status tags. This command is useful for a situation where due soon list is not up to date due to a drastic change in time.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DueSoonActivityDiagram.png" alt="DueSoonActivityDiagram" width="500">
+<p><strong>Feature introduction</strong></p>
+<div class="paragraph">
+<p>The task summary feature automatically summarizes the collected data into different charts.
+It also allows the user to click on a chart to find the relevant tasks.
+The UI of the feature is in the <code>Statistics</code> Page.</p>
 </div>
-<div class="title">Figure 29. Activity diagram for refresh</div>
+</li>
+<li>
+<p><strong>Implementation detail</strong></p>
+<div class="paragraph">
+<p>This feature is implemented using <code>JavaFx</code> charts such as <code>PieChart</code>, <code>AreaChart</code> and <code>StackedBarChart</code>, as well as a
+<code>Task List Panel</code>.</p>
 </div>
 <div class="paragraph">
-<p>{bl}</p>
-</div>
-</li>
-</ol>
+<p>The <code>Task List Panel</code> is used to show the relevant task records when the user clicks on <code>charts</code>.</p>
 </div>
 </li>
 <li>
-<p>Details:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>The refresh command when entered by the user, triggers the creation of an object of the InteractivePrompt class (in this case RefreshTaskInteractivePrompt).</p>
-</li>
-<li>
-<p>In the RefreshTaskInteractivePrompt class, the data entered by user is parsed.</p>
-</li>
-<li>
-<p>If there are no errors, the RefreshCommand object is created which clears the due soon list and then, iterates through the main list and calls addDueSoonTask() in Model, for any tasks that are due soon.</p>
-<div class="imageblock">
-<div class="content">
-<img src="../images/DueSoonSequenceDiagram.png" alt="DueSoonSequenceDiagram" width="800">
-</div>
-<div class="title">Figure 30. Sequence diagram for refresh</div>
-</div>
-<div class="paragraph">
-<p>{bl}</p>
-</div>
-<div class="admonitionblock caution">
+<p><strong>Table of Charts &amp; DataBind &amp; OnClick Action</strong></p>
+<div class="admonitionblock tip">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-caution" title="Caution"></i>
+<i class="fa icon-tip" title="Tip"></i>
 </td>
 <td class="content">
-The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+To improve the readability, only the tasks due or start within the next <strong>60 days</strong> will be counted into <code>Area Chart</code>.
 </td>
 </tr>
 </table>
 </div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p><strong>When the application launches:</strong></p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>What it does:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>It loads the due soon tasks into a panel by filtering tasks that are due soon from the main list.</p>
-</li>
-<li>
-<p>This is necessary, because old list of due soon tasks may not be up-to-date.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Details:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>The addTask() function in StudyBuddy class already checks if task is due soon and adds to due soon list (as mentioned above).</p>
-</li>
-<li>
-<p>While all tasks are being added to their respective lists in JsonSerializableStudyBuddy class, the due soon list gets automatically updated.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-Calculation of time left for deadline and check for if task is due soon can be found in the Task class.
-</td>
-</tr>
-</table>
-</div>
-<h3 id="use-case-list-task" class="discrete">Use case: List task</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User is on the <code>All tasks</code> or <code>productivity</code> tab.</p>
-</li>
-<li>
-<p>User requests to list tasks</p>
-</li>
-<li>
-<p>Study Buddy shows a list of unarchived tasks</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<h3 id="use-case-delete-task" class="discrete">Use case: Delete task</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Refer to List task use case</p>
-</li>
-<li>
-<p>User requests to delete a specific task in the list</p>
-</li>
-<li>
-<p>Study Buddy asks for the index</p>
-</li>
-<li>
-<p>User provides index</p>
-</li>
-<li>
-<p>Study Buddy deletes the task</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>4a.
-The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>4a1. Study Buddy shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 3.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-filter-tasks" class="discrete">Use case: Filter tasks</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to filter tasks</p>
-</li>
-<li>
-<p>Study Buddy shows two options for filter</p>
-</li>
-<li>
-<p>User requests to filter by status</p>
-</li>
-<li>
-<p>Study Buddy provides options to filter by status</p>
-</li>
-<li>
-<p>User provides input</p>
-</li>
-<li>
-<p>Study Buddy shows filtered task list</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a.
-The given index is invalid.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a1. Study Buddy shows an error message.</p>
-<div class="paragraph">
-<p>Use case resumes at step 2.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>3a.
-User chooses to filter by type.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>4a. Study Buddy provides options to filter by type</p>
-<div class="paragraph">
-<p>Use case resumes at step 5.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-view-renamed" class="discrete">Use case: View renamed</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User requests to view renamed tasks</p>
-</li>
-<li>
-<p>Study Buddy shows a list of renamed tasks</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a.
-There are no duplicate tasks</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>1a1. Study Buddy shows an empty list</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<h3 id="use-case-refresh" class="discrete">Use case: Refresh</h3>
-<div class="paragraph">
-<p><strong>MSS</strong></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>User notices Due Soon list needs to be updated</p>
-</li>
-<li>
-<p>User requests to refresh</p>
-</li>
-<li>
-<p>Study Buddy refreshes the Due Soon list and status tags</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p><strong>Extensions</strong></p>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a.
-The list is empty.</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2a1. List remains the same</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2b.
-There is nothing to refresh</p>
-<div class="ulist none">
-<ul class="none">
-<li>
-<p>2b1. List remains the same</p>
-<div class="paragraph">
-<p>Use case ends.</p>
-</div>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="user-stories"><a class="link" href="#user-stories">Appendix A: User Stories</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Priorities: High (must have) - <code>* * *</code>, Medium (nice to have) - <code>* *</code>, Low (unlikely to have) - <code>*</code></p>
-</div>
-<table class="tableblock frame-all grid-all" style="width: 59%;">
+<table class="tableblock frame-all grid-all spread">
 <colgroup>
-<col style="width: 22%;">
-<col style="width: 23%;">
+<col style="width: 37.5%;">
 <col style="width: 25%;">
-<col style="width: 30%;">
+<col style="width: 37.5%;">
 </colgroup>
 <thead>
 <tr>
-<th class="tableblock halign-left valign-top">Priority</th>
-<th class="tableblock halign-left valign-top">As a &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">I want to &#8230;&#8203;</th>
-<th class="tableblock halign-left valign-top">So that I can&#8230;&#8203;</th>
+<th class="tableblock halign-left valign-top">Chart Type</th>
+<th class="tableblock halign-left valign-top">Data Used</th>
+<th class="tableblock halign-left valign-top">OnClick Action</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">new user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">see usage instructions</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">refer to instructions when I forget how to use the App</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>PieChart</strong><br>
+{bl}
+Compare the number of tasks in different statuses.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{bl}
+<code>TaskStatus</code>, <code>TaskCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display all tasks with the selected status.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view a list of my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know what I have Pending</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>AreaChar</strong><br>
+{bl}
+Summarize the task deadlines or start dates for different modules.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{bl}
+<code>ModuleCode</code>, <code>Deadline/Start date</code>,<br>
+ <code>TaskCount</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Click on area</strong>:<br>
+Display tasks under the selected module.<br>
+{bl}
+<strong>Click on data point</strong>:<br>
+Display tasks under the selected module and will due or start the chosen date.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add a new task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks in one place</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">delete a task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">remove entries that I no longer need</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mark a task as completed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update my list of Pending tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* * *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">find a task by keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">locate details of a task without having to go through the entire list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with task deadline extended</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">edit the particular task</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">update my task accordingly</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user with many deadlines</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sort tasks in order of deadlines</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">organise my list by priority</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">archive tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">separate the tasks that are not applicable right now</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view renamed tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">easily filter out any renamed data in my list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">filter all pending tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my Pending tasks in one place</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who likes organization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view all my tasks that are Due Soon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">know what to focus on in the next week</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who makes typos</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">be able to edit a task I have added</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">correct any typos I have made</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who is forgetful</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have an interactive command prompt</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">not have to remember long commands</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who is starting a new semester</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">clear all my tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">start adding on to an empty list</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who takes many modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">add my modules</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">view my modules</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who has many tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check the summary of their current status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">better plan my time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who has many tasks</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">check the summary of their current status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">better plan my time</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who finds it hard to keep track of all my deadlines</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a calendar</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">easily find tasks due on a day</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who is stressed out by all my deadlines</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have a fun todolist</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have fun while completing my tasks</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>* *</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">user who wants to be more productive</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">have an overview of my task completed this week</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">monitor my progress</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>StackedBar Chart</strong><br>
+{bl}
+Compare the weight of different types of tasks in each module.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{bl}
+<code>ModuleCode</code>, <code>TaskType</code>, <code>WeightSum</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Display tasks under the selected module and type.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="sect2">
-<h3 id="saving-data-2"><a class="link" href="#saving-data-2">Saving data</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with missing/corrupted data files</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: Delete the "tasklist.json" file from data folder.</p>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/TaskSummaryOnClickActivityDiagram.png" alt="TaskSummaryOnClickActivityDiagram" width="650">
+</div>
+<div class="title">Figure 26. Sequence diagram for task summary UI update when data change</div>
+</div>
 </li>
 <li>
-<p>Test case: Launch the application<br>
-   Expected: The application indicates that the data file needed is missing and creates one.
-c</p>
-</li>
-<li>
-<p>Prerequisites: Modify the "tasklist.json" file to show some incorrect data.</p>
-</li>
-<li>
-<p>Test case: Launch the application<br>
-   Expected: The application indicates that the data file is corrupted.
-Application launches successfully but has no data.</p>
+<p><strong>OnChangeListener</strong></p>
+<div class="paragraph">
+<p>The feature listens to the change of <code>Model&#8217;s</code> <code>UnArchived Task Records</code>, <code>Archived Task Records</code> and <code>Module Records</code>.</p>
+</div>
+<div class="paragraph">
+<p>Once a change is captured, the charts will automatically re-render to show the latest statistics.</p>
+</div>
+<div class="paragraph">
+<p>Currently, commands as <code>add</code> <code>edit</code> <code>delete</code> <code>sort</code> <code>find</code> <code>archive</code> <code>done</code> <code>list</code> <code>clear</code> etc. can
+trigger the refresh of the charts.</p>
+</div>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/TaskSummaryOnDataChangeSequenceDiagram.png" alt="TaskSummaryOnDataChangeSequenceDiagram" width="800">
+</div>
+<div class="title">Figure 27. Sequence diagram for task summary UI update when data change</div>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+It is possible that the labels of charts can overlap together.
+This is an unfixed bug regarding the JDK which is caused by JavaFX chart off-sync. To get more information, you may refer to <a href="{jdk_bug_report}">here</a>.
+When this issue happens, you can use any command that can trigger chart updating to refresh.
+</td>
+</tr>
+</table>
+</div>
 </li>
 </ol>
 </div>
+</div>
+<div class="sect3">
+<h4 id="example-usage-scenario-2"><a class="link" href="#example-usage-scenario-2">Example Usage Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the task summary mechanism behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1. The user launches the application for the first time, the statistics will perform on top of the sample records,
+and the result will be visualized into different charts organized in the <code>Tab Panel</code>. After the user clicks <code>Statistics</code>
+from the top menu bar, the <code>Tab Panel</code> and the <code>Task List Panel</code> will display.</p>
+</div>
+<div class="paragraph">
+<p>Step 2. The user navigates to the <code>Statistics</code> Page for the first time. The <code>Tab Panel</code> should
+display the <code>Pie Chart</code> and the <code>Task List Panel</code> is empty with a title: "Click on Chart to View Related Tasks".
+Indeed, this is how the <code>Statistics</code> Page looks like every time the user navigates back from another Page.</p>
+</div>
+<div class="paragraph">
+<p>Step 3. The user clicks on <code>Pie Chart</code> 's <code>Pending</code> portion. All tasks in <code>Pending</code> status should display in <code>Task List Panel</code>.
+Meanwhile, the title of the Panel will change to "PENDING: # Tasks" (# stands for the number of <code>Pending</code> tasks).</p>
+</div>
+<div class="paragraph">
+<p>Step 4. The user clicks on <code>Area Chart</code> 's <code>CS2101</code> area. All tasks under <code>CS2101</code> should display in <code>Task List Panel</code>.
+Meanwhile, the title of the Panel will change to "Tasks under CS2101".</p>
+</div>
+<div class="paragraph">
+<p>Step 5. The user executes <code>add</code> command at <code>Statistics</code> Page,
+the charts should update automatically.</p>
+</div>
+<div class="paragraph">
+<p>Step 6. The user executes <code>done</code> command at another page, and navigate back to <code>Statistics</code> Page
+the charts should show the latest statistics.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-will-this-feature-contribute-value-to-cli-user"><a class="link" href="#aspect-will-this-feature-contribute-value-to-cli-user">Aspect: Will this feature contribute value to CLI user</a></h5>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Consideration</dt>
+<dd>
+<p>Task Summary feature involves mouse clicking event when user retrieving relevant tasks.</p>
+</dd>
+<dt class="hdlist1">Explanation</dt>
+<dd>
+<p>The Task Summary Feature provides tow main services:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <strong>automatic statistics</strong> of the user input (i.e. the tasks and modules information).</p>
 </li>
+<li>
+<p>The relevant <strong>records retrieving</strong>.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The retrieving service is built on top of the statistics result.
+Meanwhile, the statistics is auto-generated along the way the user managing their records using <strong>keyboard input</strong>.<br>
+Therefore, this feature can make a fast typist be more productive, especially when Study Buddy primarily
+supports the CLI.</p>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect4">
+<h5 id="aspect-how-to-update-charts"><a class="link" href="#aspect-how-to-update-charts">Aspect: How to update charts</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Use <code>onChangeListener</code> to monitor the data update and re-render the UI simultaneously.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: More user-friendly, no need to ask user to manually update.</p>
+</li>
+<li>
+<p>Cons: Might encounter JavaFX chart off-sync bug, and results in label overlapping. But user can always use another
+command which can trigger data updating to walk around this problem.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Trigger the UI rendering by asking the user to re-launch the application or navigate away and back to the page.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Safe from the JavaFX chart off-sync bug.</p>
+</li>
+<li>
+<p>Cons: Force user to close or navigate around the application every time he/she wants to
+check the updated charts.</p>
+<div class="olist arabic">
+<ol class="arabic">
 <li>
 <p>Diagrams:</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ModelClassDiagram.puml">Model class diagram</a></p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/UiClassDiagram.puml">UI class diagram</a></p>
 </li>
 <li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/DueSoonActivityDiagram.puml">Due soon activity diagram</a></p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/AddTaskObjectDiagram.puml">Add task object diagram</a></p>
 </li>
 <li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/DueSoonSequenceDiagram.puml">Due soon sequence diagram</a></p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/QuitFromInteractionActivityDiagram.puml">Quit from interaction activity diagram</a></p>
 </li>
 <li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/AddDueSoonActivityDiagram.puml">Add due soon task activity diagram</a></p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/TaskSummaryOnClickActivityDiagram.puml">Task summary on click activity diagram</a></p>
 </li>
 <li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/AddDueSoonSequence.puml">Add due soon task sequence diagram</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/DeleteDueSoonActivityDiagram.puml">Delete due soon task activity diagram</a></p>
-</li>
-<li>
-<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/DeleteDueSoonSequence.puml">Delete due soon task sequence diagram</a></p>
+<p><a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/TaskSummaryOnDataChangeSequenceDiagram.puml">Task summary on data changing sequence diagram</a></p>
 </li>
 </ol>
 </div>
 </li>
 </ol>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="team-based-tasks"><a class="link" href="#team-based-tasks">Team-based Tasks</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Refactored all occurrences of Address Book to Study Buddy. Link to PR <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/135">Refactor</a></p>
 </li>
-<li>
-<p>Added the introduction, commonly used symbols, summary and useful tips sections to user guide. Links to PR <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/245">Useful tips and symbols</a> and <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/176">Introduction</a></p>
-</li>
-<li>
-<p>Added the introduction to developer guide. Link to PR <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/185">Introduction</a></p>
-</li>
-<li>
-<p>Added the Study Buddy icon. Link to PR <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/68">Logo Update</a></p>
-</li>
-<li>
-<p>Added all <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/labels">labels</a> and <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/milestones?state=closed">milestones</a> to the issue tracker.</p>
-</li>
-<li>
-<p>Attempted to find bugs in all team members code to help them fix any issues. Example issue <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/107">Bug in Tags</a></p>
-</li>
-<li>
-<p>Helped maintained consistency in UG and DG by editing some other team member&#8217;s parts and diagram colors. Link to PR <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/252">Consistency in Documentation</a></p>
-</li>
-<li>
-<p>Revised documentation and notified members if they had missed a certain feature/aspect that could cause confusion to users/testers. Example issue <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/256">Reminder to edit UG</a></p>
-</li>
-<li>
-<p>Wrote test cases for error-prone classes, even if they were not mine. The following links <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/166">Parser Tests</a> and <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/139">Interactive Prompt tests</a> display my team testing work.</p>
-</li>
-<li>
-<p>Contributed to the <a href="https://github.com/nus-cs2103-AY1920S2/forum/issues/75">forum</a>.</p>
-</li>
-</ol>
+</ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="review-mentoring"><a class="link" href="#review-mentoring">Review/Mentoring</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>If a fellow team member&#8217;s PR did not pass the tests required, I left helpful comments in order to reduce their work load.
-eg: <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/59" class="bare">https://github.com/AY1920S2-CS2103T-W16-3/main/pull/59</a></p>
-</li>
-<li>
-<p>Reviewed another team&#8217;s DG and provided useful feedback. <a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/208">Review 1</a> and <a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/204">Review 2</a></p>
-</li>
-</ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="code-contributed-a-href-https-nus-cs2103-ay1920s2-github-io-tp-dashboard-undefined-search-souwmyaa-class-bare-https-nus-cs2103-ay1920s2-github-io-tp-dashboard-undefined-search-souwmyaa-a"><a class="link" href="#code-contributed-a-href-https-nus-cs2103-ay1920s2-github-io-tp-dashboard-undefined-search-souwmyaa-class-bare-https-nus-cs2103-ay1920s2-github-io-tp-dashboard-undefined-search-souwmyaa-a">Code contributed: <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=souwmyaa" class="bare">https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=souwmyaa</a></a></h3>
-
 </div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:07:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:38:12 UTC</div></div></div></body></html>
