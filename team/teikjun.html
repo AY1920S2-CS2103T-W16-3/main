@@ -1,0 +1,567 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Tan Teik Jun - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="draganddrop-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://se-edu.github.io/"><img src="../images/draganddropLogo.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main">AB-1</a></li><li class="nav-item"><a class="nav-link active" href="../index.html">AB-3</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">StudyBuddy</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W16-3/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"></div><div id="content"><div class="sect2">
+<h3 id="span-class-teal-strong-tan-teik-jun-project-portfolio-strong-span"><a class="link" href="#span-class-teal-strong-tan-teik-jun-project-portfolio-strong-span"><span class="teal"><strong>Tan Teik Jun - Project Portfolio</strong></span></a></h3>
+<div class="paragraph">
+<p><span class="teal"><strong>Project: Study Buddy</strong></span></p>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Overview</strong></span></p>
+</div>
+<div class="paragraph">
+<p>StudyBuddy is a desktop application designed for students who <strong>wish to manage their module related tasks</strong> in a convenient and user-friendly interface. The application is written in Java and spans over 12k lines of code.</p>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Summary of contributions</strong></span></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>Productivity feature</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+It allows the user to keep track of productivity in a fun manner. The productivity feature displays metrics that are recorded over the past day, week, and more. It also introduces a point and rank system to gamify the user experience.</p>
+</li>
+<li>
+<p>Justification:
+This is helpful to the user as it allows the user to keep track of progress in an interesting way.</p>
+</li>
+<li>
+<p>Highlights:
+This implementation was challenging because it required a lot of statistics to be logged all over the application. Finally, these statistics needed to be displayed on the Ui in an visually appealing and useful manner.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Major enhancement</strong>: added <strong>the Edit Task command</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function:
+The edit command allows the user to edit any information about the tasks.
+This includes the task name, date, description, etc.</p>
+</li>
+<li>
+<p>Justification:
+If the user needs to edit the detail of the task, the user can simply use the edit
+command instead of deleting the task and creating a new one. This is hugely convenient for the user.</p>
+</li>
+<li>
+<p>Highlights:
+This implementation was challenging because editing things may lead to a lot of side effects. However, I have managed to avoid these side effects by using defensive programming.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added <strong>the Find Task command</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: Allows user to find an existing task in the list</p>
+</li>
+<li>
+<p>Justification: Helpful to the user when the list is long because it enables them to look for a certain task in the list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added <strong>the List command</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: Allows user to list all the existing tasks.</p>
+</li>
+<li>
+<p>Justification: After using a command like Find or Filter, the List command is necessary to recover the original list.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added <strong>the Help command</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: Shows the user the list of available commands and the user guide.</p>
+</li>
+<li>
+<p>Justification: Users require the help command when they are unsure of how to use the application.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added <strong>navigation shortcuts for pages</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Function: Allows user to navigate the pages using keys instead of using</p>
+</li>
+<li>
+<p>Justification: This feature helps fast typists (the target user) work more efficiently.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Code contributed:</strong></span><br>
+<a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=teikjun" class="bare">https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=teikjun</a></p>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Team-based Tasks</strong></span><br>
+1. Set up the team repository and ensured that the repository was protected from any accidental merges.<br>
+2. Ensured that the integration process was smooth and bug-free. Set up Travis and AppVeyor to ensure that only working code is integrated.<br>
+3. Ensured code quality was well-maintained. Set up Codacy to keep track of code quality and coverage.<br>
+4. Ensured that the code was well-tested. I wrote tests for classes that were error-prone, and set up Coveralls to keep track of code coverage.<br>
+5. Helped to maintain the issue tracker. Links to issues <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/46">#46</a>, <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/issues/47">#47</a>.<br></p>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Review/Mentoring</strong></span><br>
+1. Reviewed other members Pull Requests and helped them learn git workflow. Example Pull Request: <a href="https://github.com/AY1920S2-CS2103T-W16-3/main/pull/56">#56</a><br>
+2. Reviewed another team&#8217;s DG and provided useful feedback. Example Issue: <a href="https://github.com/AY1920S2-CS2103T-W17-3/main/issues/209">#209</a></p>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>User guide</strong></span></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below is a section that I contributed to the User Guide. It showcases my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="productivity"><a class="link" href="#productivity">Productivity</a></h3>
+<div class="paragraph">
+<p>(Contributed by Teik Jun)</p>
+</div>
+<div class="paragraph">
+<p>The productivity page shows insights related to your productivity over the past day, week and more.
+By keeping tabs on your past productivity, you can improve your future productivity.
+The productivity feature also gamifies your task management experience.
+Doing work has never been more fun!</p>
+</div>
+<div class="sect3">
+<h4 id="daily-productivity-tab"><a class="link" href="#daily-productivity-tab">Daily Productivity Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/productivity/daily_tab.png" alt="daily tab" width="790">
+</div>
+<div class="title">Figure 1. Daily Productivity Tab</div>
+</div>
+<div class="paragraph">
+<p>To get started, click on the Productivity menu button or type <kbd>F6</kbd>.
+The daily productivity tab tracks the number of tasks you completed today.
+As you complete tasks using the <code>done</code> command, you will get closer to your daily goal.</p>
+</div>
+<div class="paragraph">
+<p>Completing your goal each day adds to your streak.
+Your streak will reset to zero if you fail to complete your goal.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You can set a daily goal for the number of tasks you want to complete using the command <code>goal</code>.
+Refer to <a href="#Goal">[Goal]</a> for more details on the <code>goal</code> command.
+Note that the streak can only be increased once a day,
+even if you change your goal after completing your streak.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="weekly-productivity-tab"><a class="link" href="#weekly-productivity-tab">Weekly Productivity Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/productivity/weekly_tab.png" alt="weekly tab" width="790">
+</div>
+<div class="title">Figure 2. Weekly Productivity Tab</div>
+</div>
+<div class="paragraph">
+<p>On the weekly productivity tab, you can look back on your progress over the past week.
+The weekly tab displays information about your productivity for the past seven days.</p>
+</div>
+<div class="paragraph">
+<p>Here, you can keep track of the total number of tasks you completed this week.
+You can visualize the number of tasks you completed using the bar chart shown.</p>
+</div>
+<div class="paragraph">
+<p>Furthermore, you can keep track of the number of tasks that went overdue this week,
+so that you can be more punctual in the future.</p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+If you complete or add a task while looking at the weekly tab or productivity points tab,
+the color theme changes randomly.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="productivity-points-tab"><a class="link" href="#productivity-points-tab">Productivity Points Tab</a></h4>
+<div class="imageblock" style="text-align: center">
+<div class="content">
+<img src="../images/productivity/points-tab.png" alt="points tab" width="790">
+</div>
+<div class="title">Figure 3. Productivity Points Tab</div>
+</div>
+<div class="paragraph">
+<p>You can go to this tab directly by clicking your Productivity Point count on the top right of the menu.
+The Productivity Points tab displays your current Productivity Points (PP) and your progression.</p>
+</div>
+<div class="paragraph">
+<p>You gain Productivity Points upon adding tasks, completing tasks, and using advanced features in StudyBuddy.
+On the other hand, you lose Productivity Points when your tasks go Overdue.</p>
+</div>
+<div class="paragraph">
+<p>Here are some examples of how to obtain Productivity Points in StudyBuddy:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Adding a task: <em>+1</em></p>
+</li>
+<li>
+<p>Completing a task: <em>+10</em></p>
+</li>
+<li>
+<p>Completing your daily goal: <em>+(points equivalent to daily goal)</em></p>
+</li>
+<li>
+<p>Using advanced features; <em>+1</em> (Explore StudyBuddy to find out more!)</p>
+</li>
+<li>
+<p>Letting a task go Overdue: <em>-1</em></p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+You start with some productivity points.
+They&#8217;re free! :)
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p><span class="teal"><strong>Developer Guide</strong></span></p>
+</div>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are some sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="Design-Logic"><a class="link" href="#Design-Logic">Logic component</a></h3>
+<div id="fig-LogicClassDiagram" class="imageblock">
+<div class="content">
+<img src="../images/LogicClassDiagram.png" alt="LogicClassDiagram" width="800">
+</div>
+<div class="title">Figure 4. Structure of the Logic Component</div>
+</div>
+<div class="paragraph">
+<p><strong>API</strong> :
+<a href="{repoURL}/blob/master/src/main/java/draganddrop/studybuddy/logic/Logic.java"><code>Logic.java</code></a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>After receiving the user input from Ui, <code>InteractivePrompt</code> processes the user&#8217;s input.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>If the user input is complicated, <code>InteractivePrompt</code> uses <code>Parser</code> classes to
+parse the input.</p>
+</li>
+<li>
+<p>If more information is needed from the user, <code>InteractivePrompt</code> signals the <code>Ui</code>
+component to prompt the user for more information using the <code>interact</code> command.
+Otherwise, if no more information is needed, proceed to the next step.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
+</li>
+<li>
+<p>The command execution can affect the <code>Model</code> (e.g. adding or editing a task).</p>
+</li>
+<li>
+<p>The result of the command execution is encapsulated as a <code>CommandResult</code> object which is passed back to the <code>Ui</code>.</p>
+</li>
+<li>
+<p>In addition, the <code>CommandResult</code> object can also instruct the <code>Ui</code> to perform certain actions, such as displaying a help message to the user.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Given below is the Sequence Diagram for interactions within the <code>Logic</code> component for the <code>interact("list")</code> API call.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ListTaskSequenceDiagram.png" alt="ListTaskSequenceDiagram" width="700">
+</div>
+<div class="title">Figure 5. Sequence diagram for list</div>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+The lifeline for every member should end at the destroy marker (X) but due to a limitation of PlantUML, the lifeline reaches the end of diagram.
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="productivity-feature"><a class="link" href="#productivity-feature">Productivity feature</a></h3>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<div class="paragraph">
+<p>The productivity feature displays insights related to the user&#8217;s productivity over the
+past day, week and more on the Productivity panel.
+The Productivity page is integrated with the main page as a side panel.</p>
+</div>
+<div class="paragraph">
+<p>The Productivity page is further composed of 3 tabs:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Daily Productivity Tab</p>
+</li>
+<li>
+<p>Weekly Productivity Tab</p>
+</li>
+<li>
+<p>Productivity Points Tab</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The Productivity page can be viewed by clicking on the Productivity menu item,
+which directs the user to the Daily Productivity Tab.
+The Productivity page can also be viewed by clicking on the Productivity Points shown on
+the top right of the application window.
+This directs the user to the Productivity Points Tab.</p>
+</div>
+<div class="paragraph">
+<p>The productivity feature is facilitated by the <code>Statistics</code> class, which allows
+StudyBuddy to keep track of relevant usage statistics of the user.
+<code>Statistics</code> is further composed of classes that keep track of specific statistics:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>CompletionStats</code> keeps track of the number of tasks completed by the user each day and each week</p>
+</li>
+<li>
+<p><code>OverdueStats</code> keeps track of the number of tasks that went overdue each day and each week.</p>
+</li>
+<li>
+<p><code>ScoreStats</code> keeps track of the user&#8217;s Productivity Points and rank each day</p>
+</li>
+<li>
+<p><code>GeneralStats</code> keeps track of the user&#8217;s goal, streak, and other statistics not covered by the other statistics classes</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The object diagram for the Productivity feature is shown below:<br></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ProductivityObjectDiagram.png" alt="ProductivityObjectDiagram" width="900 title="Productivity object diagram"">
+</div>
+</div>
+<div class="paragraph">
+<p>The Productivity feature displays the Producitivity Points of the user, this is recorded in <code>currentScore</code>
+and <code>scoreList</code> attributes in <code>ScoreStats</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The user can gain or lose Productivity Points in StudyBuddy when certain actions or events are completed.
+These include:</p>
+</div>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Adding a task: <em>+1</em></p>
+</li>
+<li>
+<p>Completing a task: <em>+10</em></p>
+</li>
+<li>
+<p>Completing your daily goal: <em>+(points equivalent to daily goal)</em></p>
+</li>
+<li>
+<p>Using advanced features; <em>+1</em></p>
+</li>
+<li>
+<p>Letting a task go Overdue: <em>-1</em></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Each usage statistic is updated accordingly when the respective user action or event
+has concluded. These statistics are then rendered on the <code>ProductivityPanel</code>.
+The chart visualizations are implemented using <code>ProgressIndicator</code>, <code>BarChart</code> and <code>AreaChart</code>.</p>
+</div>
+<div class="paragraph">
+<p>When the statistics are updated, the task list&#8217;s event listener and classes implementing
+<code>GoalObserver</code> will be informed of the changes. <code>ProductivityPanel</code> re-renders the
+displayed information when either of these are updated.</p>
+</div>
+<div class="paragraph">
+<p>The data displayed will be automatically updated upon calling any of the following commands:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>add</code></p>
+</li>
+<li>
+<p><code>done</code></p>
+</li>
+<li>
+<p><code>delete</code></p>
+</li>
+<li>
+<p><code>refresh</code></p>
+</li>
+<li>
+<p><code>goal</code></p>
+</li>
+<li>
+<p>Any command that modifies the task list</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="example-use-scenario"><a class="link" href="#example-use-scenario">Example Use Scenario</a></h4>
+<div class="paragraph">
+<p>Given below is an example usage scenario and how the
+Productivity feature behaves at each step.</p>
+</div>
+<div class="paragraph">
+<p>Step 1: The user launches the application.
+Step 2: The Productivity feature displays the user&#8217;s Productivity Points on the top right of the screen.
+Step 3: The user clicks the Productivity Menu button
+Step 4: The Daily Productivity Tab is displayed to the user
+Step 5: The user completes a task using <code>done</code>
+Step 6: The daily number of tasks is added and Productivity Points is increased.
+If the daily goal has been reached, the user&#8217;s streak is incremented.</p>
+</div>
+<div class="paragraph">
+<p>Here is an activity diagram of the aforementioned steps:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ProductivityActivityDiagram.png" alt="ProductivityActivityDiagram" width="400">
+</div>
+<div class="title">Figure 6. Productivity Feature Example Activity Diagram</div>
+</div>
+<div class="paragraph">
+<p>Extension: Suppose the user sees the Productivity Points and clicks it
+Step 3: The user clicks the Productivity Points on the top right of the screen
+Step 4: The Productivity Points Tab is displayed to the user</p>
+</div>
+<div class="paragraph">
+<p>From here, the user can continue to manage tasks as per Step 5 and 6 above,
+or navigate to other Productivity tabs.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="sect4">
+<h5 id="aspect-how-to-re-render-productivity-panel-when-statistics-are-updated"><a class="link" href="#aspect-how-to-re-render-productivity-panel-when-statistics-are-updated">Aspect: How to re-render Productivity Panel when statistics are updated</a></h5>
+<div class="paragraph">
+<p><strong>Alternative 1</strong>: re-render only the values that have been updated</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: maximizes loading speed and minimizes lag for the user</p>
+</li>
+<li>
+<p>Cons: increases complexity for codebase, higher chance of bugs occuring</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 2</strong>: always re-render the whole Productivity Panel</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: easy to implement</p>
+</li>
+<li>
+<p>Cons: may result in slower loading speed and more lag for the user</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Alternative 3 (current choice)</strong>: re-render only the values that have been updated
+if it does not result in increased code complexity</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: improves loading speed and decreases lag for the user,
+while keeping the codebase readable and easy to reason with.</p>
+</li>
+<li>
+<p>Cons: may result in slower loading speed. However, based on testing,
+this trade-off does not result in any measurable delay.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Diagrams:<br>
+<a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ListTaskSequenceDiagram.puml">Add List Task Sequence Diagram</a><br>
+<a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/LogicClassDiagram.puml">Add Logic Class Diagram</a><br>
+<a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ProductivityObjectDiagram.puml">Add Productivity Feature Object Diagram</a><br>
+<a href="https://github.com/AY1920S2-CS2103T-W16-3/main/blob/master/docs/diagrams/ProductivityActivityDiagram.puml">Add Productivity Feature Activity Diagram</a></p>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:50:54 UTC</div></div></div></body></html>
